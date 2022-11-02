@@ -115,7 +115,7 @@
 
 body {
   font-family: Clashdisplay, sans-serif;
-  color: #333;
+  color: #000;
   font-size: 1.5rem;
   line-height: 130%;
 }
@@ -1134,6 +1134,10 @@ p {
 .link-dark-bakground {
   color: #fff;
   text-decoration: underline;
+}
+
+.body {
+  color: #000;
 }
 
 @media screen and (max-width: 991px) {
