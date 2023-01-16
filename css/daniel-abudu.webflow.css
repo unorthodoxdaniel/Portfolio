@@ -923,16 +923,6 @@ p {
   width: 38rem;
 }
 
-.heading {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
-
-.heading-2 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
-
 .projects-section {
   display: -webkit-box;
   display: -webkit-flex;
@@ -991,10 +981,6 @@ p {
 
 .link-container {
   margin-top: 2.75rem;
-}
-
-.image {
-  position: absolute;
 }
 
 .project-container {
@@ -1134,10 +1120,6 @@ p {
 .link-dark-bakground {
   color: #fff;
   text-decoration: underline;
-}
-
-.body {
-  color: #000;
 }
 
 @media screen and (max-width: 991px) {
