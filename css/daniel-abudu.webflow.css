@@ -1730,8 +1730,12 @@ p {
     margin-right: 0;
   }
 
+  .hero {
+    padding-top: 9rem;
+  }
+
   .container {
-    width: 17rem;
+    width: 85%;
   }
 
   .tag-section {
