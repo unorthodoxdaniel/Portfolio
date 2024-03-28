@@ -24,10 +24,10 @@
 }
 
 .w-checkbox-input--inputType-custom {
-  width: 12px;
-  height: 12px;
   border: 1px solid #ccc;
   border-radius: 2px;
+  width: 12px;
+  height: 12px;
 }
 
 .w-checkbox-input--inputType-custom.w--redirected-checked {
@@ -44,10 +44,10 @@
 }
 
 .w-form-formradioinput--inputType-custom {
-  width: 12px;
-  height: 12px;
   border: 1px solid #ccc;
   border-radius: 50%;
+  width: 12px;
+  height: 12px;
 }
 
 .w-form-formradioinput--inputType-custom.w--redirected-focus {
@@ -115,24 +115,24 @@ p {
 }
 
 .form-checkbox-icon {
+  border-radius: .125rem;
   width: .875rem;
   height: .875rem;
-  border-radius: .125rem;
   margin: 0 .5rem 0 0;
 }
 
 .form-checkbox-icon.w--redirected-checked {
-  width: .875rem;
-  height: .875rem;
   background-size: 90%;
   border-radius: .125rem;
+  width: .875rem;
+  height: .875rem;
   margin: 0 .5rem 0 0;
 }
 
 .form-checkbox-icon.w--redirected-focus {
+  border-radius: .125rem;
   width: .875rem;
   height: .875rem;
-  border-radius: .125rem;
   margin: 0 .5rem 0 0;
   box-shadow: 0 0 .25rem 0 #3898ec;
 }
@@ -536,9 +536,9 @@ p {
 }
 
 .form-radio-icon.w--redirected-checked {
+  border-width: .25rem;
   width: .875rem;
   height: .875rem;
-  border-width: .25rem;
 }
 
 .form-radio-icon.w--redirected-focus {
@@ -574,8 +574,8 @@ p {
 }
 
 .form-input {
-  min-height: 3rem;
   background-color: rgba(0, 0, 0, 0);
+  min-height: 3rem;
   margin-bottom: .75rem;
   padding: .5rem 1rem;
 }
@@ -808,9 +808,9 @@ p {
 }
 
 .project-type {
-  height: 51rem;
   color: #fff;
   text-align: center;
+  height: 51rem;
   position: relative;
 }
 
@@ -845,12 +845,12 @@ p {
 }
 
 .project-container {
-  width: 100%;
-  height: 100%;
   background-color: rgba(1, 1, 1, .72);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   display: flex;
   position: absolute;
   top: 0%;
@@ -881,11 +881,11 @@ p {
 
 .cta {
   z-index: 2;
-  width: 24rem;
   color: #fff;
   background-color: #111;
   border: 2px solid #000;
   justify-content: space-between;
+  width: 24rem;
   padding: 2.5rem;
   text-decoration: none;
   display: flex;
@@ -894,19 +894,19 @@ p {
 
 .border {
   z-index: 1;
+  border: 2px solid #000;
   width: 24rem;
   height: 100%;
-  border: 2px solid #000;
   position: absolute;
   bottom: -10%;
   left: 3%;
 }
 
 .visit-site {
-  width: 12rem;
   color: #111;
   background-color: #fff;
   justify-content: space-between;
+  width: 12rem;
   padding: 1rem;
   font-size: 1rem;
   text-decoration: none;
@@ -915,9 +915,9 @@ p {
 }
 
 .border-small {
+  border: 2px solid #fff;
   width: 12rem;
   height: 100%;
-  border: 2px solid #fff;
   position: absolute;
   bottom: -10%;
   left: 3%;
@@ -983,10 +983,10 @@ p {
 }
 
 .div-block-2 {
-  width: 4.5rem;
-  height: 4.5rem;
   border-radius: 50%;
   flex: none;
+  width: 4.5rem;
+  height: 4.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -1013,10 +1013,10 @@ p {
 }
 
 .object-fit {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0%;
   bottom: 0%;
@@ -1032,9 +1032,9 @@ p {
 }
 
 .availability-details-container {
+  justify-content: space-between;
   width: 100%;
   max-width: 66.8125rem;
-  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
@@ -1052,10 +1052,10 @@ p {
 }
 
 .availability-indicator {
-  width: 1rem;
-  height: 1rem;
   background-color: #37f037;
   border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
 }
 
 .copy-email {
@@ -1075,11 +1075,11 @@ p {
 }
 
 .icon-embed-xxsmall {
-  width: 1rem;
-  height: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 1rem;
+  height: 1rem;
   display: flex;
 }
 
@@ -1454,8 +1454,8 @@ p {
   }
 
   .availability-details-container {
-    width: 25rem;
     flex-direction: column;
+    width: 25rem;
     padding-left: 0;
   }
 
