@@ -1193,6 +1193,7 @@ p {
 .image {
   width: 100%;
   max-width: none;
+  display: none;
 }
 
 @media screen and (max-width: 991px) {
