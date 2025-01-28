@@ -898,8 +898,8 @@ p {
   background-color: #111;
   border: 2px solid #000;
   justify-content: space-between;
-  width: 24rem;
-  padding: 2.5rem;
+  width: 20rem;
+  padding: 1rem 1.5rem;
   text-decoration: none;
   display: flex;
   position: relative;
@@ -908,7 +908,7 @@ p {
 .border {
   z-index: 1;
   border: 2px solid #000;
-  width: 24rem;
+  width: 20rem;
   height: 100%;
   position: absolute;
   bottom: -10%;
@@ -919,9 +919,9 @@ p {
   color: #111;
   background-color: #fff;
   justify-content: space-between;
-  width: 12rem;
-  padding: 1rem;
-  font-size: 1rem;
+  width: 8rem;
+  padding: .5rem 1rem;
+  font-size: .875rem;
   text-decoration: none;
   display: flex;
   position: relative;
@@ -929,7 +929,7 @@ p {
 
 .border-small {
   border: 2px solid #fff;
-  width: 12rem;
+  width: 8rem;
   height: 100%;
   position: absolute;
   bottom: -10%;
@@ -1564,6 +1564,12 @@ p {
 
   .container {
     width: 25rem;
+  }
+
+  .visit-site {
+    width: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .availability-details-container {
