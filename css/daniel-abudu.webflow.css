@@ -1342,6 +1342,10 @@ p {
   overflow: hidden;
 }
 
+.div-block-17 {
+  width: 100%;
+}
+
 @media screen and (max-width: 991px) {
   .padding-xlarge {
     padding: 3rem;
@@ -1941,6 +1945,7 @@ p {
   .div-block-6 {
     width: 85%;
     padding-top: 3rem;
+    padding-bottom: 4rem;
   }
 
   .div-block-9 {
@@ -1962,6 +1967,17 @@ p {
     inset: auto 0% 0%;
   }
 
+  .div-block-11 {
+    grid-row-gap: 2rem;
+    flex-flow: column;
+    width: 100%;
+    display: flex;
+  }
+
+  .div-block-12, .testimonial-copy {
+    width: 100%;
+  }
+
   .heading-2 {
     font-size: 2rem;
   }
@@ -1970,8 +1986,16 @@ p {
     font-size: 1.5rem;
   }
 
+  .div-block-16 {
+    width: 100%;
+  }
+
   .text-block {
     font-size: 1.2rem;
+  }
+
+  .div-block-18, .div-block-19 {
+    width: 100%;
   }
 }
 
