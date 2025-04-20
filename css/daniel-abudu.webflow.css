@@ -790,8 +790,10 @@ p {
 }
 
 .hero {
+  color: #fff;
+  background-color: #000;
   justify-content: center;
-  padding-top: 10rem;
+  padding-top: 5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
@@ -799,14 +801,16 @@ p {
 
 .container {
   width: 100%;
-  max-width: 66.8125rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .projects-section {
+  color: #fff;
+  background-color: #000;
   justify-content: center;
-  padding: 10rem 2rem 7rem;
+  padding: 4rem 2rem 0;
   display: flex;
 }
 
@@ -836,6 +840,10 @@ p {
   display: flex;
 }
 
+.link-box.hide {
+  display: none;
+}
+
 .text-span {
   text-decoration: underline;
 }
@@ -846,6 +854,7 @@ p {
 }
 
 .background-video.new {
+  border-radius: 4px;
   width: 100%;
   height: auto;
   padding-top: 61%;
@@ -905,9 +914,18 @@ p {
   position: relative;
 }
 
+.cta.hide-mob {
+  z-index: auto;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
 .border {
-  z-index: 1;
-  border: 2px solid #000;
+  z-index: 0;
+  background-color: #0000;
+  border: 2px solid #fff;
+  border-radius: 4px;
   width: 20rem;
   height: 100%;
   position: absolute;
@@ -918,6 +936,7 @@ p {
 .visit-site {
   color: #111;
   background-color: #fff;
+  border-radius: 4px;
   justify-content: space-between;
   width: 8rem;
   padding: .5rem 1rem;
@@ -929,6 +948,7 @@ p {
 
 .border-small {
   border: 2px solid #fff;
+  border-radius: 4px;
   width: 8rem;
   height: 100%;
   position: absolute;
@@ -967,6 +987,7 @@ p {
   z-index: 10;
   width: 12.45rem;
   height: auto;
+  display: none;
   position: fixed;
   inset: auto 0% 0% auto;
 }
@@ -976,6 +997,10 @@ p {
   padding-top: 10rem;
   padding-bottom: 10rem;
   display: flex;
+}
+
+.testimonials.hide {
+  display: none;
 }
 
 .testimonial {
@@ -1030,6 +1055,8 @@ p {
 }
 
 .quick-nav {
+  color: #fff;
+  background-color: #000;
   justify-content: center;
   padding-top: 1rem;
   padding-left: 2rem;
@@ -1041,7 +1068,7 @@ p {
 .availability-details-container {
   justify-content: space-between;
   width: 100%;
-  max-width: 66.8125rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0;
@@ -1052,14 +1079,16 @@ p {
 .availability {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
+  color: #fff;
   align-items: center;
   font-size: .8rem;
   font-weight: 700;
+  text-decoration: none;
   display: flex;
 }
 
 .availability-indicator {
-  background-color: #37f037;
+  background-color: #2cb946;
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
@@ -1156,11 +1185,11 @@ p {
 .div-block-6 {
   z-index: 2;
   width: 100%;
-  max-width: 66.8125rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 6.75rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
   position: relative;
   inset: 0%;
 }
@@ -1183,17 +1212,134 @@ p {
 }
 
 .div-block-9 {
+  border-radius: 4px;
   flex-flow: column;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 58%;
   display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.div-block-9.no-padding {
+  padding-top: 0%;
 }
 
 .image {
   width: 100%;
   max-width: none;
   display: none;
+}
+
+.div-block-10 {
+  z-index: 10;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  position: fixed;
+  inset: auto 0% 0% auto;
+}
+
+.image-2 {
+  width: 10rem;
+}
+
+.div-block-11 {
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  display: grid;
+}
+
+.div-block-12 {
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  text-align: left;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.div-block-13 {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.div-block-14 {
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  flex-flow: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.testimonial-copy {
+  grid-row-gap: 1.5rem;
+  text-align: left;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.paragraph-copy {
+  color: #ccc;
+  text-align: left;
+  font-size: .875rem;
+  line-height: 1.3;
+}
+
+.heading-2 {
+  font-size: 4rem;
+}
+
+.heading-3 {
+  font-size: 3rem;
+}
+
+.div-block-15 {
+  z-index: 5;
+  justify-content: flex-end;
+  align-items: center;
+  width: 2rem;
+  display: flex;
+  position: fixed;
+  inset: 0% 0% 0% auto;
+}
+
+.div-block-16 {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+.text-block {
+  color: #a6a6a6;
+}
+
+.paragraph-2 {
+  color: #ccc;
+}
+
+.video {
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
@@ -1588,7 +1734,7 @@ p {
   }
 
   .div-block-9 {
-    width: 25rem;
+    width: auto;
   }
 }
 
@@ -1696,7 +1842,7 @@ p {
   }
 
   .hero {
-    padding-top: 8rem;
+    padding-top: 4rem;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1705,7 +1851,13 @@ p {
     width: 85%;
   }
 
-  .projects-section, .project-type {
+  .projects-section {
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .project-type, .footer {
     padding-left: 0;
     padding-right: 0;
   }
@@ -1720,12 +1872,26 @@ p {
     padding: 1.5rem 2rem;
   }
 
+  .cta.hide-mob {
+    display: none;
+  }
+
   .border {
     width: 17rem;
   }
 
   .tag-text {
     font-size: .75rem;
+  }
+
+  .div-block {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .div-block-2 {
+    width: 4rem;
+    height: 4rem;
   }
 
   .testimonial-info-text.grey {
@@ -1780,9 +1946,352 @@ p {
   .div-block-9 {
     width: 100%;
   }
+
+  .div-block-10 {
+    z-index: 10;
+    color: #000;
+    background-color: #fff;
+    border-top: 1px solid #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    position: fixed;
+    inset: auto 0% 0%;
+  }
+
+  .heading-2 {
+    font-size: 2rem;
+  }
+
+  .heading-3 {
+    font-size: 1.5rem;
+  }
+
+  .text-block {
+    font-size: 1.2rem;
+  }
+}
+
+#w-node-_7debb393-04e9-7bda-09d2-c22b908c74e0-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-_789533f9-9b9a-a4f0-0cb0-2ec61b4e9438-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-_9776e3e4-80e6-4cb5-966e-18803fb92c27-7b6b8f38, #w-node-e50a1172-f337-6a4d-9c58-ce71cf07069a-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+#w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684906-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684909-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd8068491f-7b6b8f38, #w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684926-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+#w-node-e768a0e2-fb74-31d4-0333-cf2bc29763d8-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-e768a0e2-fb74-31d4-0333-cf2bc29763db-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-e768a0e2-fb74-31d4-0333-cf2bc29763f7-7b6b8f38, #w-node-_31657553-5cce-8776-736c-e00d6fa485dd-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+#w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c798247-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c79824a-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c79826d-7b6b8f38, #w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c798273-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+#w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5cea-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5ced-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5d06-7b6b8f38, #w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5d0c-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+#w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044a3-7b6b8f38 {
+  grid-area: span 1 / span 7 / span 1 / span 7;
+}
+
+#w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044a6-7b6b8f38 {
+  grid-area: span 1 / span 5 / span 1 / span 5;
+}
+
+#w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044c1-7b6b8f38, #w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044c9-7b6b8f38 {
+  grid-area: span 1 / span 6 / span 1 / span 6;
+}
+
+@media screen and (max-width: 991px) {
+  #w-node-_7debb393-04e9-7bda-09d2-c22b908c74e0-7b6b8f38, #w-node-_789533f9-9b9a-a4f0-0cb0-2ec61b4e9438-7b6b8f38, #w-node-_9776e3e4-80e6-4cb5-966e-18803fb92c27-7b6b8f38, #w-node-e50a1172-f337-6a4d-9c58-ce71cf07069a-7b6b8f38, #w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684906-7b6b8f38, #w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684909-7b6b8f38, #w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd8068491f-7b6b8f38, #w-node-_6d6a6d92-ae89-e7ba-d9ae-d8dd80684926-7b6b8f38, #w-node-e768a0e2-fb74-31d4-0333-cf2bc29763d8-7b6b8f38, #w-node-e768a0e2-fb74-31d4-0333-cf2bc29763db-7b6b8f38, #w-node-e768a0e2-fb74-31d4-0333-cf2bc29763f7-7b6b8f38, #w-node-_31657553-5cce-8776-736c-e00d6fa485dd-7b6b8f38, #w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c798247-7b6b8f38, #w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c79824a-7b6b8f38, #w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c79826d-7b6b8f38, #w-node-b0b9198e-49c3-8fe2-1d3f-6bc65c798273-7b6b8f38, #w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5cea-7b6b8f38, #w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5ced-7b6b8f38, #w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5d06-7b6b8f38, #w-node-_3e960f94-6c09-3fb4-1595-65d29e9d5d0c-7b6b8f38, #w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044a3-7b6b8f38, #w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044a6-7b6b8f38, #w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044c1-7b6b8f38, #w-node-a19a2fbf-befb-76a3-bbdc-5a8bd89044c9-7b6b8f38 {
+    grid-column: span 12 / span 12;
+  }
 }
 
 
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-light-italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-medium-italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-regular-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-bold-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk';
+  src: url('../fonts/test-founders-grotesk-semibold-italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-light-italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-semibold-italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-medium-italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-bold-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-regular-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test Founders Grotesk Text';
+  src: url('../fonts/test-founders-grotesk-text-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-thin-italic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-black-italic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-medium-italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-extralight-italic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-bold-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-light-italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Test The Future';
+  src: url('../fonts/test-the-future-extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Clashdisplay';
   src: url('../fonts/ClashDisplay-Extralight.otf') format('opentype');
@@ -1822,6 +2331,104 @@ p {
   font-family: 'Clashdisplay';
   src: url('../fonts/ClashDisplay-Semibold.otf') format('opentype');
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-ExtralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Extrabold.otf') format('opentype'), url('../fonts/TestNational2-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-BoldItalic.otf') format('opentype'), url('../fonts/TestNational2-ExtraboldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Testnational 2';
+  src: url('../fonts/TestNational2-Light.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
