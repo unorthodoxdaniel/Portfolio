@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Nombres — French Number Drill</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --paper: #f5efe0;
+    --aged: #e8dcc8;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --faded: #8a7a5e;
+    --green: #2d6a4f;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Courier Prime', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 28px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 24px;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-style: italic;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  header p {
+    color: var(--faded);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .mode-selector {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .mode-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 1.5px solid var(--faded);
+    background: transparent;
+    color: var(--faded);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .mode-btn.active, .mode-btn:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    background: var(--aged);
+  }
+
+  .mode-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--aged);
+    max-width: 700px;
+    width: 100%;
+    padding: 48px 40px;
+    box-shadow: 4px 4px 0 var(--aged);
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px;
+    right: -12px; bottom: -12px;
+    border: 1px solid var(--aged);
+    z-index: -1;
+  }
+
+  .noble-hint {
+    font-style: italic;
+    color: var(--faded);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    border-left: 3px solid var(--gold);
+    padding-left: 16px;
+    margin-bottom: 32px;
+    min-height: 50px;
+  }
+
+  .question-area {
+    text-align: center;
+    margin: 32px 0;
+  }
+
+  .number-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.04em;
+  }
+
+  .direction-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faded);
+    margin-bottom: 32px;
+  }
+
+  .answer-reveal {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-style: italic;
+    color: var(--red);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: center;
+  }
+
+  .answer-reveal.show { opacity: 1; }
+
+  .audio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 8px 4px;
+    border-radius: 2px;
+  }
+
+  .audio-btn:hover { background: var(--ink); color: var(--paper); }
+  .audio-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .audio-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--aged);
+  }
+
+  .primary-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .primary-btn:hover { background: var(--red); }
+
+  .secondary-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .secondary-btn:hover { background: var(--aged); }
+
+  .progress-bar {
+    max-width: 700px;
+    width: 100%;
+    height: 3px;
+    background: var(--aged);
+    margin-bottom: 24px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faded);
+  }
+
+  .stat strong { color: var(--ink); font-size: 1.1rem; display: block; font-family: 'Playfair Display', serif; }
+
+  /* Breakdown panel */
+  .breakdown {
+    background: var(--aged);
+    padding: 20px 24px;
+    margin-top: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    line-height: 1.9;
+    display: none;
+  }
+
+  .breakdown.show { opacity: 1; display: block; }
+  .breakdown .chunk { color: var(--red); font-style: italic; }
+
+  /* Type-in mode */
+  .type-input {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    padding: 8px 4px;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  .type-input::placeholder { color: var(--aged); }
+
+  .result-badge {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 8px auto;
+    font-family: 'Courier Prime', monospace;
+  }
+
+  .result-badge.correct { background: #d4edda; color: var(--green); }
+  .result-badge.wrong { background: #fde8e8; color: var(--red); }
+  .result-badge.hidden { display: none; }
+
+  /* Range pills */
+  .range-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .range-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1.5px solid var(--aged);
+    background: transparent;
+    color: var(--faded);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .range-btn.active, .range-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .range-btn.active { background: rgba(184,134,11,0.08); }
+
+  footer {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+    color: var(--faded);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+    border-top: 1px solid var(--aged);
+    padding-top: 20px;
+  }
+
+  @keyframes flash-correct {
+    0% { background: white; }
+    30% { background: #d4f5e2; }
+    100% { background: white; }
+  }
+
+  @keyframes flash-wrong {
+    0% { background: white; }
+    30% { background: #fde8e8; }
+    100% { background: white; }
+  }
+
+  .card.flash-correct { animation: flash-correct 0.5s ease; }
+  .card.flash-wrong { animation: flash-wrong 0.5s ease; }
+
+  .speaking-indicator {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 0.8s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .noble-intro {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: 700px;
+    width: 100%;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    border-radius: 2px;
+  }
+
+  .noble-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 14px;
+    color: var(--gold);
+  }
+
+  .noble-intro p {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: rgba(245,239,224,0.8);
+    margin-bottom: 8px;
+  }
+
+  .noble-intro strong { color: var(--paper); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Les Nombres</h1>
+  <p>A French Number Drill — Noble Method</p>
+</header>
+
+<div class="noble-intro">
+  <h2>How this works...</h2>
+  <p>Think of French numbers as <strong>building blocks, not memorisation</strong>. You already know the blocks — we're just going to stack them differently.</p>
+  <p>The key insight: French counts in <strong>chunks</strong>. Sixty-nineteen (79), four-twenties (80), four-twenty-ten (90). Once the logic clicks, the numbers build themselves.</p>
+  <p>Press <strong>Hear it</strong> to listen, <strong>Break it down</strong> to see the logic. Don't rush — let the pattern sink in.</p>
+</div>
+
+<!-- Mode selector -->
+<div class="mode-selector">
+  <button class="mode-btn active" onclick="setMode('flash')">Flash Cards</button>
+  <button class="mode-btn" onclick="setMode('type')">Type It</button>
+  <button class="mode-btn" onclick="setMode('listen')">Hear & Guess</button>
+</div>
+
+<!-- Range selector -->
+<div class="range-group">
+  <button class="range-btn active" onclick="setRange('41-69')" id="range-41-69">41–69</button>
+  <button class="range-btn" onclick="setRange('70-79')" id="range-70-79">70–79 <em style="font-size:0.65em">(tricky!)</em></button>
+  <button class="range-btn" onclick="setRange('80-99')" id="range-80-99">80–99 <em style="font-size:0.65em">(trickiest!)</em></button>
+  <button class="range-btn" onclick="setRange('100-999')" id="range-100-999">100s</button>
+  <button class="range-btn" onclick="setRange('1000+')" id="range-1000+">1000+</button>
+  <button class="range-btn" onclick="setRange('mixed')" id="range-mixed">🎲 All mixed</button>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+
+<div class="stats">
+  <div><strong id="stat-seen">0</strong> Seen</div>
+  <div><strong id="stat-correct">0</strong> Correct</div>
+  <div><strong id="stat-streak">0</strong> Streak</div>
+</div>
+
+<div class="card" id="main-card">
+  
+  <!-- Flash card mode -->
+  <div id="mode-flash">
+    <div class="noble-hint" id="noble-hint">Loading your first number...</div>
+    <div class="question-area">
+      <div class="number-display" id="number-display">—</div>
+      <div class="direction-label">What is this in French?</div>
+      <div style="text-align:center; margin-bottom: 16px;">
+        <button class="audio-btn" id="audio-num-btn" onclick="speakNumber()">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.97z"/></svg>
+          Hear it
+        </button>
+      </div>
+      <div class="answer-reveal" id="answer-reveal">—</div>
+      <div class="breakdown" id="breakdown-panel"></div>
+    </div>
+    <div class="controls">
+      <button class="secondary-btn" id="reveal-btn" onclick="revealAnswer()">Reveal</button>
+      <button class="primary-btn" id="next-btn" onclick="nextQuestion()" style="display:none">Next →</button>
+      <button class="secondary-btn" id="breakdown-btn" onclick="toggleBreakdown()" style="display:none">Break it down</button>
+    </div>
+    <div id="flash-feedback" style="text-align:center; margin-top:16px; display:none;">
+      <button class="audio-btn" onclick="markCorrect()" style="border-color:var(--green);color:var(--green)">✓ Got it</button>
+      <button class="audio-btn" onclick="markWrong()" style="border-color:var(--red);color:var(--red)">✗ Missed it</button>
+    </div>
+  </div>
+
+  <!-- Type it mode -->
+  <div id="mode-type" style="display:none">
+    <div class="noble-hint" id="noble-hint-type">Loading...</div>
+    <div class="question-area">
+      <div class="number-display" id="number-display-type">—</div>
+      <div class="direction-label">Type the French word(s)</div>
+      <input class="type-input" id="type-input" placeholder="e.g. quatre-vingt-dix..." onkeydown="handleTypeKey(event)" />
+      <div class="result-badge hidden" id="type-badge"></div>
+      <div class="answer-reveal" id="answer-reveal-type" style="font-size:1.4rem">—</div>
+      <div class="breakdown" id="breakdown-panel-type"></div>
+    </div>
+    <div class="controls">
+      <button class="primary-btn" id="check-btn" onclick="checkType()">Check</button>
+      <button class="primary-btn" id="next-btn-type" onclick="nextQuestion()" style="display:none">Next →</button>
+      <button class="secondary-btn" id="breakdown-btn-type" onclick="toggleBreakdown('type')" style="display:none">Break it down</button>
+    </div>
+    <div style="text-align:center; margin-top:16px;">
+      <button class="audio-btn" id="audio-type-btn" onclick="speakNumber()">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.97z"/></svg>
+        Hear it
+      </button>
+    </div>
+  </div>
+
+  <!-- Listen & Guess mode -->
+  <div id="mode-listen" style="display:none">
+    <div class="noble-hint" id="noble-hint-listen">Loading...</div>
+    <div class="question-area">
+      <div style="text-align:center; margin: 24px 0 8px;">
+        <div style="font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--faded);margin-bottom:16px;">Listen carefully, then type the number</div>
+        <button class="audio-btn" id="audio-listen-btn" onclick="speakAndWait()" style="font-size:0.9rem;padding:14px 28px;">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.97z"/></svg>
+          ▶ Play Number
+        </button>
+      </div>
+      <input class="type-input" id="listen-input" placeholder="Type the number you heard..." onkeydown="handleListenKey(event)" style="margin-top:24px;" />
+      <div class="result-badge hidden" id="listen-badge"></div>
+      <div class="answer-reveal" id="answer-reveal-listen" style="font-size:1.6rem;margin-top:8px;">—</div>
+      <div class="breakdown" id="breakdown-panel-listen"></div>
+    </div>
+    <div class="controls">
+      <button class="primary-btn" id="check-listen-btn" onclick="checkListen()">Check</button>
+      <button class="primary-btn" id="next-btn-listen" onclick="nextQuestion()" style="display:none">Next →</button>
+      <button class="secondary-btn" id="breakdown-btn-listen" onclick="toggleBreakdown('listen')" style="display:none">Break it down</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Uses your browser's built-in speech synthesis (French voice).<br>
+  Numbers adapt to your chosen range. Flip between modes any time — progress carries over.
+</footer>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const ones = ['','un','deux','trois','quatre','cinq','six','sept','huit','neuf',
+              'dix','onze','douze','treize','quatorze','quinze','seize',
+              'dix-sept','dix-huit','dix-neuf'];
+
+const tens = ['','','vingt','trente','quarante','cinquante','soixante',
+              'soixante','quatre-vingt','quatre-vingt'];
+
+function toFrench(n) {
+  if (n === 0) return 'zéro';
+  if (n < 0) return 'moins ' + toFrench(-n);
+
+  if (n >= 1000000) {
+    const m = Math.floor(n / 1000000);
+    const r = n % 1000000;
+    return (m === 1 ? 'un million' : toFrench(m) + ' millions') + (r ? ' ' + toFrench(r) : '');
+  }
+
+  if (n >= 1000) {
+    const k = Math.floor(n / 1000);
+    const r = n % 1000;
+    return (k === 1 ? 'mille' : toFrench(k) + ' mille') + (r ? ' ' + toFrench(r) : '');
+  }
+
+  if (n >= 100) {
+    const h = Math.floor(n / 100);
+    const r = n % 100;
+    const base = (h === 1 ? 'cent' : toFrench(h) + ' cent');
+    if (r === 0) return h === 1 ? 'cent' : toFrench(h) + ' cents';
+    return base + ' ' + toFrench(r);
+  }
+
+  // 70-79: soixante + 10-19
+  if (n >= 70 && n <= 79) {
+    const r = n - 60;
+    return 'soixante-' + ones[r];
+  }
+
+  // 80-99
+  if (n >= 80 && n <= 89) {
+    const r = n - 80;
+    if (r === 0) return 'quatre-vingts';
+    return 'quatre-vingt-' + ones[r];
+  }
+
+  if (n >= 90 && n <= 99) {
+    const r = n - 80;
+    return 'quatre-vingt-' + ones[r];
+  }
+
+  // 60-69
+  if (n >= 60 && n <= 69) {
+    const r = n - 60;
+    if (r === 0) return 'soixante';
+    if (r === 1) return 'soixante et un';
+    return 'soixante-' + ones[r];
+  }
+
+  // 20-59
+  if (n >= 20) {
+    const t = Math.floor(n / 10);
+    const r = n % 10;
+    if (r === 0) return tens[t];
+    if (r === 1) return tens[t] + ' et un';
+    return tens[t] + '-' + ones[r];
+  }
+
+  return ones[n];
+}
+
+// ─── NOBLE HINTS ─────────────────────────────────────────────────────────────
+
+function getNobleHint(n) {
+  if (n >= 70 && n <= 79) {
+    const extra = n - 60;
+    return `Here's the trick — French never invented a word for "seventy." Instead, they say sixty-${extra === 11 ? 'eleven' : extra === 12 ? 'twelve' : extra === 13 ? 'thirteen' : extra}. So ${n} is literally "soixante" (sixty) + "${ones[extra]}."`;
+  }
+  if (n === 80) return `Eighty in French is "four-twenties" — quatre-vingts. Think of it like an old way of counting: 4 × 20 = 80. The Swiss say "huitante" but proper French stacks twenties!`;
+  if (n >= 81 && n <= 89) return `After four-twenties (80), you just add on: quatre-vingt-${ones[n-80]}. It's eighty plus ${n-80}.`;
+  if (n >= 90 && n <= 99) {
+    return `Ninety is "four-twenty-ten" — quatre-vingt-dix. So ${n} is four-twenty-${n-80}. Your brain wants to say "nonante" but French says "quatre-vingt-${ones[n-80]}."`;
+  }
+  if (n >= 100 && n <= 199) {
+    const r = n - 100;
+    return r === 0 ? `One hundred is simply "cent." Clean and simple.` : `One hundred and ${r}: "cent ${toFrench(r)}." Just cent + whatever comes after.`;
+  }
+  if (n >= 200 && n < 1000) {
+    const h = Math.floor(n/100); const r = n%100;
+    return `${h} hundreds: "${toFrench(h)} cent${r===0?'s':''}." When cent ends the number, it gets an 's' — but loses it if anything follows.`;
+  }
+  if (n >= 1000) {
+    return `Thousands use "mille" — which never changes. Un mille, deux mille... no plural 's' needed.`;
+  }
+  if (n >= 41 && n <= 49) return `In the forties, French uses "et" (and) only with one: quarante et un (41). Everything else just hyphenates: quarante-deux, quarante-trois...`;
+  if (n >= 51 && n <= 59) return `Fifty is "cinquante." Same pattern — cinquante et un for 51, then cinquante-deux, trois... The et un rule applies to all tens in this zone.`;
+  if (n >= 61 && n <= 69) {
+    const r = n - 60;
+    return r === 1 ? `Sixty-one uses the "et un" pattern: soixante et un.` : `Sixty-${r}: soixante-${ones[r]}. Still straightforward — enjoy it before the seventies hit!`;
+  }
+  return `Say it out loud as you see it. The rhythm matters more than the spelling at first.`;
+}
+
+// ─── BREAKDOWN ───────────────────────────────────────────────────────────────
+
+function getBreakdown(n) {
+  const fr = toFrench(n);
+  if (n >= 70 && n <= 79) {
+    return `<span class="chunk">soixante</span> (60) + <span class="chunk">${ones[n-60]}</span> (${n-60}) = <strong>${fr}</strong>`;
+  }
+  if (n >= 80 && n <= 99) {
+    const r = n - 80;
+    if (n === 80) return `<span class="chunk">quatre</span> (4) × <span class="chunk">vingt</span> (20) = <strong>quatre-vingts</strong>`;
+    return `<span class="chunk">quatre-vingt</span> (80) + <span class="chunk">${ones[r]}</span> (${r}) = <strong>${fr}</strong>`;
+  }
+  if (n >= 100 && n < 1000) {
+    const h = Math.floor(n/100); const r = n%100;
+    return `<span class="chunk">${toFrench(h)}</span> (${h}) × <span class="chunk">cent</span> (100)${r ? ` + <span class="chunk">${toFrench(r)}</span> (${r})` : ''} = <strong>${fr}</strong>`;
+  }
+  if (n >= 1000) {
+    const k = Math.floor(n/1000); const r = n%1000;
+    return `<span class="chunk">${k===1?'mille':toFrench(k)+' mille'}</span> (${k*1000})${r ? ` + <span class="chunk">${toFrench(r)}</span> (${r})` : ''} = <strong>${fr}</strong>`;
+  }
+  const t = Math.floor(n/10); const r = n%10;
+  if (n >= 20 && r > 0) {
+    return `<span class="chunk">${tens[t]}</span> (${t*10}) + <span class="chunk">${r===1?'et un':ones[r]}</span> (${r}) = <strong>${fr}</strong>`;
+  }
+  return `<strong>${fr}</strong>`;
+}
+
+// ─── RANGES ──────────────────────────────────────────────────────────────────
+
+const ranges = {
+  '41-69': () => randInt(41, 69),
+  '70-79': () => randInt(70, 79),
+  '80-99': () => randInt(80, 99),
+  '100-999': () => {
+    // weighted toward multiples of 10 and 100 for practice
+    const roll = Math.random();
+    if (roll < 0.3) return Math.floor(Math.random()*9+1)*100;
+    if (roll < 0.6) return Math.floor(Math.random()*90+10)*10;
+    return randInt(100, 999);
+  },
+  '1000+': () => {
+    const roll = Math.random();
+    if (roll < 0.4) return [1000,2000,5000,10000,100000,1000000][Math.floor(Math.random()*6)];
+    return randInt(1000, 9999);
+  },
+  'mixed': () => {
+    const all = [
+      () => randInt(41,99),
+      () => randInt(70,99),
+      () => randInt(80,99),
+      () => randInt(100,999),
+      () => randInt(1000,9999),
+    ];
+    return all[Math.floor(Math.random()*all.length)]();
+  }
+};
+
+function randInt(a, b) { return Math.floor(Math.random()*(b-a+1))+a; }
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+
+let currentMode = 'flash';
+let currentRange = '41-69';
+let currentNumber = 0;
+let stats = { seen: 0, correct: 0, streak: 0 };
+let answerShown = false;
+let isSpeaking = false;
+let pendingAudio = null;
+
+// ─── SPEECH ──────────────────────────────────────────────────────────────────
+
+function speak(text, lang = 'fr-FR') {
+  return new Promise(resolve => {
+    if (!window.speechSynthesis) { resolve(); return; }
+    speechSynthesis.cancel();
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = lang;
+    utt.rate = 0.85;
+    utt.pitch = 1;
+    // Try to find a French voice
+    const voices = speechSynthesis.getVoices();
+    const frVoice = voices.find(v => v.lang.startsWith('fr'));
+    if (frVoice) utt.voice = frVoice;
+    utt.onend = resolve;
+    utt.onerror = resolve;
+    speechSynthesis.speak(utt);
+  });
+}
+
+function speakNumber() {
+  if (!currentNumber) return;
+  speak(toFrench(currentNumber));
+}
+
+function speakAndWait() {
+  speakNumber();
+}
+
+// ─── GENERATE QUESTION ───────────────────────────────────────────────────────
+
+function generateNumber() {
+  return ranges[currentRange]();
+}
+
+function loadQuestion() {
+  currentNumber = generateNumber();
+  answerShown = false;
+
+  const fr = toFrench(currentNumber);
+  const hint = getNobleHint(currentNumber);
+
+  if (currentMode === 'flash') {
+    document.getElementById('number-display').textContent = currentNumber.toLocaleString();
+    document.getElementById('noble-hint').textContent = hint;
+    document.getElementById('answer-reveal').textContent = fr;
+    document.getElementById('answer-reveal').classList.remove('show');
+    document.getElementById('reveal-btn').style.display = '';
+    document.getElementById('next-btn').style.display = 'none';
+    document.getElementById('breakdown-btn').style.display = 'none';
+    document.getElementById('flash-feedback').style.display = 'none';
+    const bp = document.getElementById('breakdown-panel');
+    bp.classList.remove('show'); bp.style.display = 'none';
+  }
+
+  if (currentMode === 'type') {
+    document.getElementById('number-display-type').textContent = currentNumber.toLocaleString();
+    document.getElementById('noble-hint-type').textContent = hint;
+    document.getElementById('type-input').value = '';
+    document.getElementById('type-input').disabled = false;
+    document.getElementById('type-input').focus();
+    document.getElementById('answer-reveal-type').textContent = fr;
+    document.getElementById('answer-reveal-type').classList.remove('show');
+    const badge = document.getElementById('type-badge');
+    badge.className = 'result-badge hidden';
+    document.getElementById('check-btn').style.display = '';
+    document.getElementById('next-btn-type').style.display = 'none';
+    document.getElementById('breakdown-btn-type').style.display = 'none';
+    const bp = document.getElementById('breakdown-panel-type');
+    bp.classList.remove('show'); bp.style.display = 'none';
+  }
+
+  if (currentMode === 'listen') {
+    document.getElementById('noble-hint-listen').textContent = hint;
+    document.getElementById('listen-input').value = '';
+    document.getElementById('listen-input').disabled = false;
+    document.getElementById('answer-reveal-listen').textContent = currentNumber.toLocaleString();
+    document.getElementById('answer-reveal-listen').classList.remove('show');
+    const badge = document.getElementById('listen-badge');
+    badge.className = 'result-badge hidden';
+    document.getElementById('check-listen-btn').style.display = '';
+    document.getElementById('next-btn-listen').style.display = 'none';
+    document.getElementById('breakdown-btn-listen').style.display = 'none';
+    const bp = document.getElementById('breakdown-panel-listen');
+    bp.classList.remove('show'); bp.style.display = 'none';
+    // Auto-play
+    setTimeout(speakNumber, 600);
+  }
+}
+
+// ─── FLASH MODE ──────────────────────────────────────────────────────────────
+
+function revealAnswer() {
+  document.getElementById('answer-reveal').classList.add('show');
+  document.getElementById('reveal-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = '';
+  document.getElementById('breakdown-btn').style.display = '';
+  document.getElementById('flash-feedback').style.display = 'block';
+  stats.seen++;
+  updateStats();
+  // Auto-speak the answer
+  setTimeout(speakNumber, 300);
+}
+
+function markCorrect() {
+  stats.correct++;
+  stats.streak++;
+  flashCard('correct');
+  updateStats();
+  setTimeout(nextQuestion, 400);
+}
+
+function markWrong() {
+  stats.streak = 0;
+  flashCard('wrong');
+  updateStats();
+  setTimeout(nextQuestion, 400);
+}
+
+function flashCard(type) {
+  const card = document.getElementById('main-card');
+  card.classList.remove('flash-correct','flash-wrong');
+  void card.offsetWidth;
+  card.classList.add('flash-'+type);
+  setTimeout(() => card.classList.remove('flash-'+type), 600);
+}
+
+// ─── TYPE MODE ───────────────────────────────────────────────────────────────
+
+function normalise(s) {
+  return s.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[-\s]+/g,' ')
+    .trim();
+}
+
+function checkType() {
+  const val = document.getElementById('type-input').value;
+  if (!val.trim()) return;
+  const correct = toFrench(currentNumber);
+  const isRight = normalise(val) === normalise(correct);
+  const badge = document.getElementById('type-badge');
+  badge.className = 'result-badge ' + (isRight ? 'correct' : 'wrong');
+  badge.textContent = isRight ? '✓ Correct!' : '✗ Not quite';
+  document.getElementById('answer-reveal-type').classList.add('show');
+  document.getElementById('type-input').disabled = true;
+  document.getElementById('check-btn').style.display = 'none';
+  document.getElementById('next-btn-type').style.display = '';
+  document.getElementById('breakdown-btn-type').style.display = '';
+  stats.seen++;
+  if (isRight) { stats.correct++; stats.streak++; flashCard('correct'); }
+  else { stats.streak = 0; flashCard('wrong'); }
+  updateStats();
+  setTimeout(speakNumber, 300);
+}
+
+function handleTypeKey(e) {
+  if (e.key === 'Enter') {
+    if (document.getElementById('check-btn').style.display !== 'none') checkType();
+    else nextQuestion();
+  }
+}
+
+// ─── LISTEN MODE ─────────────────────────────────────────────────────────────
+
+function checkListen() {
+  const val = document.getElementById('listen-input').value;
+  if (!val.trim()) return;
+  const isRight = parseInt(val.trim()) === currentNumber || val.trim() === currentNumber.toString();
+  const badge = document.getElementById('listen-badge');
+  badge.className = 'result-badge ' + (isRight ? 'correct' : 'wrong');
+  badge.textContent = isRight ? '✓ Correct!' : `✗ It was ${currentNumber.toLocaleString()}`;
+  document.getElementById('answer-reveal-listen').classList.add('show');
+  document.getElementById('listen-input').disabled = true;
+  document.getElementById('check-listen-btn').style.display = 'none';
+  document.getElementById('next-btn-listen').style.display = '';
+  document.getElementById('breakdown-btn-listen').style.display = '';
+  stats.seen++;
+  if (isRight) { stats.correct++; stats.streak++; flashCard('correct'); }
+  else { stats.streak = 0; flashCard('wrong'); }
+  updateStats();
+  // Show French word too
+  setTimeout(() => {
+    document.getElementById('answer-reveal-listen').textContent = `${currentNumber.toLocaleString()} — ${toFrench(currentNumber)}`;
+    speakNumber();
+  }, 300);
+}
+
+function handleListenKey(e) {
+  if (e.key === 'Enter') {
+    if (document.getElementById('check-listen-btn').style.display !== 'none') checkListen();
+    else nextQuestion();
+  }
+}
+
+// ─── BREAKDOWN TOGGLE ────────────────────────────────────────────────────────
+
+function toggleBreakdown(mode) {
+  const id = mode ? `breakdown-panel-${mode}` : 'breakdown-panel';
+  const panel = document.getElementById(id);
+  const content = getBreakdown(currentNumber);
+  panel.innerHTML = content;
+  if (panel.classList.contains('show')) {
+    panel.classList.remove('show');
+    setTimeout(() => { panel.style.display='none'; }, 300);
+  } else {
+    panel.style.display = 'block';
+    setTimeout(() => panel.classList.add('show'), 10);
+  }
+}
+
+// ─── NAVIGATION ──────────────────────────────────────────────────────────────
+
+function nextQuestion() { loadQuestion(); }
+
+function updateStats() {
+  document.getElementById('stat-seen').textContent = stats.seen;
+  document.getElementById('stat-correct').textContent = stats.correct;
+  document.getElementById('stat-streak').textContent = stats.streak;
+  const pct = stats.seen > 0 ? Math.min(100, (stats.correct/Math.max(stats.seen,1))*100) : 0;
+  document.getElementById('progress').style.width = pct + '%';
+}
+
+// ─── MODE / RANGE SWITCHING ──────────────────────────────────────────────────
+
+function setMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  ['flash','type','listen'].forEach(m => {
+    document.getElementById('mode-'+m).style.display = m === mode ? '' : 'none';
+  });
+  loadQuestion();
+}
+
+function setRange(range) {
+  currentRange = range;
+  document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('range-'+range).classList.add('active');
+  loadQuestion();
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+
+// Wait for voices to load
+window.speechSynthesis.onvoiceschanged = () => {};
+
+window.onload = () => {
+  // small delay so voices load
+  setTimeout(loadQuestion, 200);
+};
+</script>
+</body>
+</html>
