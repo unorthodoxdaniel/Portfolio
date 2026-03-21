@@ -413,10 +413,14 @@
 
 <div class="noble-intro">
   <h2>How this works...</h2>
-  <div class="noble-intro-grid">
+  <div class="noble-intro-grid" style="grid-template-columns: 1fr 1fr;">
     <div class="noble-intro-block">
       <h3>Imparfait</h3>
       <p>The "<strong>used to / was doing</strong>" tense. Irregular verbs just swap in a new stem — the endings <strong>never change</strong>. Learn the stem, the rest is free.</p>
+    </div>
+    <div class="noble-intro-block">
+      <h3>Passé Composé</h3>
+      <p>The "<strong>I did / I have done</strong>" past. <strong>avoir or être</strong> + past participle. Regular participles are easy; a handful of irregulars are worth memorising cold.</p>
     </div>
     <div class="noble-intro-block">
       <h3>Futur Proche</h3>
@@ -432,8 +436,11 @@
 <!-- Tense selector -->
 <div class="mode-selector">
   <button class="mode-btn active" id="tab-imp" onclick="setTense('imp')">Imparfait</button>
+  <button class="mode-btn" id="tab-pc" onclick="setTense('pc')">Passé Composé</button>
   <button class="mode-btn" id="tab-fp" onclick="setTense('fp')">Futur Proche</button>
   <button class="mode-btn" id="tab-fs" onclick="setTense('fs')">Futur Simple</button>
+  <button class="mode-btn" id="tab-mix-past" onclick="setTense('mix-past')">🎲 Past Mixed</button>
+  <button class="mode-btn" id="tab-mix-future" onclick="setTense('mix-future')">🎲 Future Mixed</button>
   <button class="mode-btn" id="tab-mix" onclick="setTense('mix')">🎲 All Mixed</button>
 </div>
 
@@ -544,6 +551,28 @@ const data = {
     { en: "I will have to work.", fr: "Je devrai travailler.", stem: "devr", stemPos: [3,7], verb: "devoir → devr-", hint: "devoir's futur stem is devr— (drop the -oir). Je devr-ai. This is how necessity sounds in the future tense." },
     { en: "I will receive a message.", fr: "Je recevrai un message.", stem: "recevr", stemPos: [3,9], verb: "recevoir → recevr-", hint: "recevoir → recevr— (drop the -oir, keep the rest). Je recevr-ai. apercevoir follows the exact same logic." },
     { en: "I will notice him.", fr: "Je l'apercevrai.", stem: "apercevr", stemPos: [5,13], verb: "apercevoir → apercevr-", hint: "apercevoir mirrors recevoir: apercevr— stem. Je l'apercevr-ai. Once you know one -cevoir verb, you know them all." },
+  ],
+  pc: [
+    { en: "I ate.", fr: "J'ai mangé.", stem: "mangé", stemPos: [4,9], verb: "manger → mangé", aux: "avoir", hint: "Passé composé = avoir/être + past participle. Regular -er verbs: drop -er, add -é. J'ai mangé." },
+    { en: "She called.", fr: "Elle a appelé.", stem: "appelé", stemPos: [7,13], verb: "appeler → appelé", aux: "avoir", hint: "Elle a appelé. Regular -er verb: -er → -é. The auxiliary avoir is conjugated; the participle stays fixed." },
+    { en: "We left.", fr: "Nous sommes partis.", stem: "partis", stemPos: [13,19], verb: "partir → parti", aux: "être", hint: "partir uses être as its auxiliary. Nous sommes partis — the participle agrees with the subject: add -s for masculine plural." },
+    { en: "He arrived.", fr: "Il est arrivé.", stem: "arrivé", stemPos: [7,13], verb: "arriver → arrivé", aux: "être", hint: "arriver is an être verb — think of the 'house of être' (DR & MRS VANDERTRAMP). Il est arrivé. No agreement needed for masculine singular." },
+    { en: "They came.", fr: "Ils sont venus.", stem: "venus", stemPos: [9,14], verb: "venir → venu", aux: "être", hint: "venir takes être. Ils sont venus — venu + -s for masculine plural agreement. Être verbs always agree with the subject." },
+    { en: "I finished.", fr: "J'ai fini.", stem: "fini", stemPos: [4,8], verb: "finir → fini", aux: "avoir", hint: "Regular -ir verbs: drop -ir, add -i. J'ai fini. Clean, simple. Finir, choisir, remplir all follow this pattern." },
+    { en: "She chose.", fr: "Elle a choisi.", stem: "choisi", stemPos: [7,13], verb: "choisir → choisi", aux: "avoir", hint: "Elle a choisi. Same -ir pattern as finir. The auxiliary avoir is conjugated to agree with the subject; the participle doesn't change." },
+    { en: "I did that.", fr: "J'ai fait ça.", stem: "fait", stemPos: [4,8], verb: "faire → fait", aux: "avoir", hint: "faire → fait (irregular). J'ai fait. fait is one of the most common participles — worth memorising immediately." },
+    { en: "He said something.", fr: "Il a dit quelque chose.", stem: "dit", stemPos: [5,8], verb: "dire → dit", aux: "avoir", hint: "dire → dit (irregular). Il a dit. The participle dit is short and sharp — you'll hear it constantly." },
+    { en: "I had a dream.", fr: "J'ai eu un rêve.", stem: "eu", stemPos: [4,6], verb: "avoir → eu", aux: "avoir", hint: "avoir → eu (irregular). J'ai eu — avoir using itself as an auxiliary. The participle eu is tiny and pronounced 'uh'." },
+    { en: "She was happy.", fr: "Elle a été heureuse.", stem: "été", stemPos: [7,10], verb: "être → été", aux: "avoir", hint: "être → été (irregular). Note it uses avoir as auxiliary, not être! Elle a été. Contrast with imparfait: elle était." },
+    { en: "I saw him.", fr: "Je l'ai vu.", stem: "vu", stemPos: [7,9], verb: "voir → vu", aux: "avoir", hint: "voir → vu (irregular). Je l'ai vu — the object pronoun l' comes before the auxiliary. The participle vu is short and easy." },
+    { en: "We took the train.", fr: "Nous avons pris le train.", stem: "pris", stemPos: [12,16], verb: "prendre → pris", aux: "avoir", hint: "prendre → pris (irregular). Nous avons pris. Also: comprendre → compris, apprendre → appris — same family." },
+    { en: "I put the book down.", fr: "J'ai mis le livre.", stem: "mis", stemPos: [4,7], verb: "mettre → mis", aux: "avoir", hint: "mettre → mis (irregular). J'ai mis. Also promettre → promis, admettre → admis. All the -mettre verbs share this pattern." },
+    { en: "She wrote a letter.", fr: "Elle a écrit une lettre.", stem: "écrit", stemPos: [7,12], verb: "écrire → écrit", aux: "avoir", hint: "écrire → écrit (irregular). Elle a écrit. The participle écrit looks like the verb minus the final -e. Décrire follows the same rule." },
+    { en: "I read the article.", fr: "J'ai lu l'article.", stem: "lu", stemPos: [4,6], verb: "lire → lu", aux: "avoir", hint: "lire → lu (irregular). J'ai lu — tiny participle, big verb. Relire → relu follows the same pattern." },
+    { en: "He came back.", fr: "Il est revenu.", stem: "revenu", stemPos: [7,13], verb: "revenir → revenu", aux: "être", hint: "revenir takes être (it's built on venir). Il est revenu. Re- prefix doesn't change the auxiliary. No agreement needed for masculine singular." },
+    { en: "She went up.", fr: "Elle est montée.", stem: "montée", stemPos: [8,15], verb: "monter → monté", aux: "être", hint: "monter takes être. Elle est montée — the participle agrees with the subject: add -e for feminine. One extra letter, big grammatical signal." },
+    { en: "I got up.", fr: "Je me suis levé.", stem: "levé", stemPos: [12,16], verb: "se lever → levé", aux: "être (reflexive)", hint: "Reflexive verbs always use être. Je me suis levé — the reflexive pronoun me sits between the subject and the auxiliary suis." },
+    { en: "She fell asleep.", fr: "Elle s'est endormie.", stem: "endormie", stemPos: [11,19], verb: "s'endormir → endormi", aux: "être (reflexive)", hint: "s'endormir is reflexive → être auxiliary. Elle s'est endormie — the participle agrees with the feminine subject: endormi + e." },
   ]
 };
 
@@ -554,7 +583,7 @@ const data = {
 let tense = 'imp';
 let currentQ = null;
 let stats = { seen: 0, correct: 0, streak: 0 };
-let queues = { imp: [], fp: [], fs: [] };
+let queues = { imp: [], fp: [], fs: [], pc: [] };
 
 function shuffle(arr) {
   const a = [...arr];
@@ -574,7 +603,7 @@ function getNext(t) {
 //  RENDER
 // ─────────────────────────────────────────────
 
-const tenseNames = { imp: 'Imparfait', fp: 'Futur Proche', fs: 'Futur Simple' };
+const tenseNames = { imp: 'Imparfait', fp: 'Futur Proche', fs: 'Futur Simple', pc: 'Passé Composé' };
 
 function highlightStem(fr, stemPos) {
   if (!stemPos) return fr;
@@ -584,12 +613,26 @@ function highlightStem(fr, stemPos) {
 }
 
 function loadQ() {
-  const t = tense === 'mix' ? ['imp','fp','fs'][Math.floor(Math.random()*3)] : tense;
+  let t;
+  if (tense === 'mix') {
+    t = ['imp','fp','fs','pc'][Math.floor(Math.random()*4)];
+  } else if (tense === 'mix-past') {
+    t = ['imp','pc'][Math.floor(Math.random()*2)];
+  } else if (tense === 'mix-future') {
+    t = ['fp','fs'][Math.floor(Math.random()*2)];
+  } else {
+    t = tense;
+  }
   currentQ = getNext(t);
   currentQ._tense = t;
 
   document.getElementById('noble-hint').textContent = currentQ.hint;
-  document.getElementById('tense-label').textContent = tenseNames[t];
+
+  const tenseLabel = document.getElementById('tense-label');
+  const isMixed = tense === 'mix' || tense === 'mix-past' || tense === 'mix-future';
+  tenseLabel.textContent = isMixed ? '' : tenseNames[t];
+  tenseLabel.style.display = isMixed ? 'none' : '';
+
   document.getElementById('english-sentence').textContent = currentQ.en;
 
   const ar = document.getElementById('answer-reveal');
@@ -634,6 +677,8 @@ function toggleBreakdown() {
     html = `<span class="chunk">${currentQ.stem}—</span> stem (from ${currentQ.verb}) + imparfait ending → <strong>${currentQ.fr}</strong>`;
   } else if (t === 'fp') {
     html = `<span class="chunk">aller</span> (conjugated: ${currentQ.stem}) + <span class="chunk">infinitive</span> → <strong>${currentQ.fr}</strong>`;
+  } else if (t === 'pc') {
+    html = `<span class="chunk">${currentQ.aux}</span> (auxiliary) + <span class="chunk">past participle: ${currentQ.stem}</span> (from ${currentQ.verb}) → <strong>${currentQ.fr}</strong>`;
   } else {
     html = `Irregular stem: <span class="chunk">${currentQ.stem}—</span> (${currentQ.verb}) + futur simple ending → <strong>${currentQ.fr}</strong>`;
   }
@@ -670,8 +715,9 @@ function updateStats() {
 
 function setTense(t) {
   tense = t;
-  ['imp','fp','fs','mix'].forEach(id => {
-    document.getElementById('tab-'+id).classList.remove('active');
+  ['imp','fp','fs','pc','mix-past','mix-future','mix'].forEach(id => {
+    const el = document.getElementById('tab-'+id);
+    if (el) el.classList.remove('active');
   });
   document.getElementById('tab-'+t).classList.add('active');
   loadQ();
