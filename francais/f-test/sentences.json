@@ -137,7 +137,7 @@
   { "fr": "Soit dit en passant, c'est pas la première fois.", "en": "By the way, it's not the first time.", "tense": "présent", "topic": "argument", "verb": "être", "gap": "Soit dit", "register": "spoken", "note": "<strong>Soit dit en passant</strong> = by the way / let it be said in passing. Fixed expression using subjonctif of <em>être</em>. Used to add a pointed aside — often implies a pattern of behaviour." },
   { "fr": "C'est bien ça le paradoxe.", "en": "That's exactly the paradox.", "tense": "présent", "topic": "opinion", "verb": "être", "gap": "bien", "register": "spoken", "note": "<strong>C'est bien ça</strong> = that's exactly it / that's precisely it. <em>Bien</em> here is an intensifier, not 'well'. Short and definitive — used to name the contradiction at the heart of an argument." },
   { "fr": "On peut pas nier que la tendance va dans ce sens.", "en": "You can't deny that the trend is going in that direction.", "tense": "présent", "topic": "society", "verb": "nier", "gap": "nier", "register": "spoken", "note": "<strong>On peut pas nier que + indicatif</strong> = you can't deny that. Indicatif follows because the speaker accepts the fact. Used to concede a point strategically before pivoting." },
-    [
+    
   { "fr": "Elle ne fait que se plaindre depuis ce matin.", "en": "She's done nothing but complain since this morning.", "tense": "présent", "topic": "argument", "verb": "faire", "gap": "fait", "note": "<strong>Ne faire que + infinitif</strong> = to do nothing but / to only do. Very common in spoken French to express frustration." },
   { "fr": "Plus on attend, moins on a de chances.", "en": "The longer we wait, the fewer chances we have.", "tense": "présent", "topic": "opinion", "verb": "attendre", "gap": "attend", "note": "<strong>Plus… moins…</strong> = the more… the less…. A parallel comparative structure — both clauses in the same tense." },
   { "fr": "Je n'en reviens pas qu'il ait dit ça.", "en": "I can't believe he said that.", "tense": "présent", "topic": "emotion", "verb": "revenir", "gap": "reviens", "note": "<strong>Ne pas en revenir</strong> = to not be able to believe something. Triggers subjonctif in the subordinate clause." },
@@ -260,8 +260,5 @@
   { "fr": "Il n'y a pas de quoi en faire un drame.", "en": "There's no need to make a big deal of it.", "tense": "présent", "topic": "argument", "verb": "avoir", "gap": "a", "note": "<strong>Il n'y a pas de quoi + infinitif</strong> = there's no reason to. <em>En faire un drame</em> = to make a drama of it. Common when downplaying a situation." },
   { "fr": "C'est ce qui nous différencie des autres.", "en": "That's what sets us apart from the others.", "tense": "présent", "topic": "opinion", "verb": "différencier", "gap": "différencie", "note": "<strong>Ce qui + verbe</strong> = what (subject relative pronoun). <strong>Différencier de</strong> = to differentiate / set apart from. Useful for comparison and opinion tasks." },
   { "fr": "Il n'est pas dit qu'on réussira du premier coup.", "en": "It's not certain we'll succeed on the first try.", "tense": "présent", "topic": "opinion", "verb": "dire", "gap": "est dit", "note": "<strong>Il n'est pas dit que + futur/subjonctif</strong> = it's not certain that. Expresses uncertainty about an outcome. <em>Du premier coup</em> = on the first try." }
-
-    
-    
 
 ]
