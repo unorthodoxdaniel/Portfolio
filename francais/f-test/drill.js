@@ -11,17 +11,21 @@ async function loadSentences() {
   SENTENCE_BANK = await res.json();
 }
 
-function getFilteredBank(tense, topic) {
-  return SENTENCE_BANK.filter(s =>
-    (tense === 'all' || s.tense === tense) &&
-    (topic === 'all' || s.topic === topic)
-  );
+function getFilteredBank(tense, topic, register) {
+  return SENTENCE_BANK.filter(s => {
+    const matchTense    = tense    === 'all' || s.tense    === tense;
+    const matchTopic    = topic    === 'all' || s.topic    === topic;
+    const sRegister     = s.register || 'written';
+    const matchRegister = register  === 'all' || sRegister  === register;
+    return matchTense && matchTopic && matchRegister;
+  });
 }
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 let currentMode     = 'translate';
 let currentTense    = 'all';
 let currentTopic    = 'all';
+let currentRegister = 'all';
 let currentSentence = null;
 let stats           = { seen: 0, correct: 0, streak: 0 };
 let pool            = [];
@@ -78,7 +82,7 @@ function escapeRegex(s) {
 
 // ── POOL MANAGEMENT ────────────────────────────────────────────────────────
 function refreshPool() {
-  pool = shuffled(getFilteredBank(currentTense, currentTopic));
+  pool = shuffled(getFilteredBank(currentTense, currentTopic, currentRegister));
   updateStats();
 }
 
@@ -100,6 +104,14 @@ function setTense(t, el) {
 function setTopic(t, el) {
   currentTopic = t;
   document.querySelectorAll('[data-topic]').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  refreshPool();
+  loadQuestion();
+}
+
+function setRegister(r, el) {
+  currentRegister = r;
+  document.querySelectorAll('[data-register]').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   refreshPool();
   loadQuestion();
@@ -130,10 +142,14 @@ function loadQuestion() {
 }
 
 function metaHTML(s) {
+  const reg = s.register || 'written';
+  const regColor = reg === 'spoken' ? 'var(--red)' : 'var(--faded)';
+  const regLabel = reg === 'spoken' ? '🎙 spoken' : '✍ written';
   return `<div class="meta-row">
     <span class="tense-tag">${s.tense}</span>
     <span class="topic-tag">${s.topic}</span>
     <span class="topic-tag" style="border-color:var(--blue);color:var(--blue)">${s.verb}</span>
+    <span class="topic-tag" style="border-color:${regColor};color:${regColor}">${regLabel}</span>
   </div>`;
 }
 
