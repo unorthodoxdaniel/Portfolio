@@ -205,6 +205,15 @@
   .result-badge.correct { background: #d4edda; color: var(--green); display: inline-block; }
   .result-badge.wrong   { background: #fde8e8; color: var(--red);   display: inline-block; }
   .result-badge.partial { background: #fff3cd; color: #856404;       display: inline-block; }
+  .result-badge.revealed { background: #e8f0fe; color: var(--blue);  display: inline-block; }
+
+  .btn-reveal {
+    font-family: 'Courier Prime', monospace; font-size: 0.82rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 12px 20px; background: transparent; color: var(--gold);
+    border: 1.5px solid var(--gold); cursor: pointer; transition: all 0.2s; border-radius: 2px;
+  }
+  .btn-reveal:hover { background: #fdf6e3; }
 
   /* ── Controls ── */
   .controls {
@@ -569,9 +578,35 @@ function controlsHTML(checkId, nextId, showSpeak=true) {
     <button class="btn-primary" id="${checkId}" onclick="doCheck()">Check</button>
     <button class="btn-primary" id="${nextId}" onclick="loadQuestion()" style="display:none">Next →</button>
     <button class="btn-secondary" onclick="skipQuestion()">Skip</button>
+    <button class="btn-reveal" id="reveal-btn" onclick="revealAnswer()">Reveal Answer</button>
     ${speakBtn}
     <span class="kbd-hint"><kbd>Enter</kbd> check · <kbd>→</kbd> skip</span>
   </div>`;
+}
+
+function revealAnswer() {
+  if (checked) return;
+  checked = true;
+  const badge    = document.getElementById('badge');
+  const block    = document.getElementById('answer-block');
+  const ctEl     = document.getElementById('correct-text');
+  const notesEl  = document.getElementById('notes-text');
+  const checkBtn = document.getElementById('check-btn');
+  const nextBtn  = document.getElementById('next-btn');
+  const revealBtn= document.getElementById('reveal-btn');
+
+  badge.className  = 'result-badge revealed';
+  badge.textContent = '👁 Answer revealed';
+  ctEl.textContent  = currentSentence.fr;
+  notesEl.innerHTML = currentSentence.note || '';
+  block.style.display = 'block';
+  setTimeout(() => block.classList.add('show'), 10);
+  if (checkBtn)  checkBtn.style.display  = 'none';
+  if (revealBtn) revealBtn.style.display = 'none';
+  if (nextBtn)   nextBtn.style.display   = '';
+
+  stats.seen++; stats.streak = 0; updateStats();
+  setTimeout(() => speak(currentSentence.fr), 300);
 }
 
 // ── TRANSLATE MODE ─────────────────────────────────────────────────────────
