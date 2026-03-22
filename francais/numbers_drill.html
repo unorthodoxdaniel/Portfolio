@@ -443,6 +443,7 @@
   <button class="range-btn" onclick="setRange('80-99')" id="range-80-99">80–99 <em style="font-size:0.65em">(trickiest!)</em></button>
   <button class="range-btn" onclick="setRange('100-999')" id="range-100-999">100s</button>
   <button class="range-btn" onclick="setRange('1000+')" id="range-1000+">1000+</button>
+  <button class="range-btn" onclick="setRange('40-99')" id="range-40-99">40–99 🎯 <em style="font-size:0.65em">(blind drill)</em></button>
   <button class="range-btn" onclick="setRange('mixed')" id="range-mixed">🎲 All mixed</button>
 </div>
 
@@ -685,6 +686,12 @@ const ranges = {
     if (roll < 0.4) return [1000,2000,5000,10000,100000,1000000][Math.floor(Math.random()*6)];
     return randInt(1000, 9999);
   },
+  '40-99': () => {
+    // Bias: 70-99 appears ~2/3 of the time, 40-69 ~1/3
+    const roll = Math.random();
+    if (roll < 0.33) return randInt(40, 69);
+    return randInt(70, 99);
+  },
   'mixed': () => {
     const all = [
       () => randInt(41,99),
@@ -753,7 +760,9 @@ function loadQuestion() {
 
   if (currentMode === 'flash') {
     document.getElementById('number-display').textContent = currentNumber.toLocaleString();
-    document.getElementById('noble-hint').textContent = hint;
+    const hintEl = document.getElementById('noble-hint');
+    hintEl.textContent = currentRange === '40-99' ? '' : hint;
+    hintEl.style.display = currentRange === '40-99' ? 'none' : '';
     document.getElementById('answer-reveal').textContent = fr;
     document.getElementById('answer-reveal').classList.remove('show');
     document.getElementById('reveal-btn').style.display = '';
@@ -766,7 +775,9 @@ function loadQuestion() {
 
   if (currentMode === 'type') {
     document.getElementById('number-display-type').textContent = currentNumber.toLocaleString();
-    document.getElementById('noble-hint-type').textContent = hint;
+    const hintElType = document.getElementById('noble-hint-type');
+    hintElType.textContent = currentRange === '40-99' ? '' : hint;
+    hintElType.style.display = currentRange === '40-99' ? 'none' : '';
     document.getElementById('type-input').value = '';
     document.getElementById('type-input').disabled = false;
     document.getElementById('type-input').focus();
@@ -782,7 +793,9 @@ function loadQuestion() {
   }
 
   if (currentMode === 'listen') {
-    document.getElementById('noble-hint-listen').textContent = hint;
+    const hintElListen = document.getElementById('noble-hint-listen');
+    hintElListen.textContent = currentRange === '40-99' ? '' : hint;
+    hintElListen.style.display = currentRange === '40-99' ? 'none' : '';
     document.getElementById('listen-input').value = '';
     document.getElementById('listen-input').disabled = false;
     document.getElementById('answer-reveal-listen').textContent = currentNumber.toLocaleString();
