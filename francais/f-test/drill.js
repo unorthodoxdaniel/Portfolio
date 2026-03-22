@@ -147,6 +147,7 @@ function controlsHTML(checkId, nextId, showSpeak = true) {
   return `<div class="controls">
     <button class="btn-primary" id="${checkId}" onclick="doCheck()">Check</button>
     <button class="btn-primary" id="${nextId}" onclick="loadQuestion()" style="display:none">Next →</button>
+    <button class="btn-secondary" id="reveal-btn" onclick="revealAnswer()">Reveal</button>
     <button class="btn-secondary" onclick="skipQuestion()">Skip</button>
     ${speakBtn}
     <span class="kbd-hint"><kbd>Enter</kbd> check · <kbd>→</kbd> skip</span>
@@ -248,6 +249,33 @@ function renderFreeWrite(area) {
   document.getElementById('main-input').focus();
 }
 
+// ── REVEAL ─────────────────────────────────────────────────────────────────
+function revealAnswer() {
+  if (checked) return;
+  checked = true;
+  const badge    = document.getElementById('badge');
+  const block    = document.getElementById('answer-block');
+  const ctEl     = document.getElementById('correct-text');
+  const notesEl  = document.getElementById('notes-text');
+  const checkBtn = document.getElementById('check-btn');
+  const nextBtn  = document.getElementById('next-btn');
+  const revealBtn= document.getElementById('reveal-btn');
+
+  badge.className   = 'result-badge partial';
+  badge.textContent = '↔ Revealed';
+  ctEl.textContent  = currentSentence.fr;
+  notesEl.innerHTML = currentSentence.note || '';
+  block.style.display = 'block';
+  setTimeout(() => block.classList.add('show'), 10);
+  if (checkBtn)  checkBtn.style.display  = 'none';
+  if (revealBtn) revealBtn.style.display = 'none';
+  if (nextBtn)   nextBtn.style.display   = '';
+  stats.seen++;
+  stats.streak = 0;
+  updateStats();
+  setTimeout(() => speak(currentSentence.fr), 300);
+}
+
 // ── CHECKING ───────────────────────────────────────────────────────────────
 function doCheck() {
   if (checked) { loadQuestion(); return; }
@@ -274,6 +302,8 @@ function showAnswer(isCorrect, label = '') {
   setTimeout(() => block.classList.add('show'), 10);
   if (checkBtn) checkBtn.style.display = 'none';
   if (nextBtn)  nextBtn.style.display  = '';
+  const revealBtn = document.getElementById('reveal-btn');
+  if (revealBtn) revealBtn.style.display = 'none';
 
   stats.seen++;
   if (isCorrect) { stats.correct++; stats.streak++; flashCard('correct'); }
