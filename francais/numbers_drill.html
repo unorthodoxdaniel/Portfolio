@@ -372,6 +372,8 @@
   .card.flash-correct { animation: flash-correct 0.5s ease; }
   .card.flash-wrong { animation: flash-wrong 0.5s ease; }
 
+  .noble-hint { display: none !important; }
+
   .speaking-indicator {
     display: inline-block;
     width: 8px; height: 8px;
@@ -446,6 +448,7 @@
   <button class="range-btn active" onclick="setRange('41-69')" id="range-41-69">41–69</button>
   <button class="range-btn" onclick="setRange('70-79')" id="range-70-79">70–79 <em style="font-size:0.65em">(tricky!)</em></button>
   <button class="range-btn" onclick="setRange('80-99')" id="range-80-99">80–99 <em style="font-size:0.65em">(trickiest!)</em></button>
+  <button class="range-btn" onclick="setRange('40-99')" id="range-40-99">🎲 40–99</button>
   <button class="range-btn" onclick="setRange('100-999')" id="range-100-999">100s</button>
   <button class="range-btn" onclick="setRange('1000+')" id="range-1000+">1000+</button>
   <button class="range-btn" onclick="setRange('mixed')" id="range-mixed">🎲 All mixed</button>
@@ -675,6 +678,10 @@ function getBreakdown(n) {
 // ─── RANGES ──────────────────────────────────────────────────────────────────
 
 const ranges = {
+  '40-99': () => {
+    // 40-60 appear less often (~30%), 61-99 more often (~70%)
+    return Math.random() < 0.30 ? randInt(40, 60) : randInt(61, 99);
+  },
   '41-69': () => randInt(41, 69),
   '70-79': () => randInt(70, 79),
   '80-99': () => randInt(80, 99),
