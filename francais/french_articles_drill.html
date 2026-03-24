@@ -1,9 +1,17 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Les Articles — French Drill</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#1a1209;--paper:#f5efe0;--aged:#e8dcc8;--red:#c0392b;--gold:#b8860b;--faded:#8a7a5e;--green:#2d6a4f;}
 *{box-sizing:border-box;margin:0;padding:0;}
-.wrap{font-family:'Courier Prime',monospace;background:var(--paper);color:var(--ink);padding:1.5rem 1rem;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(180,160,120,0.15) 28px);}
+body{background:var(--paper);min-height:100vh;}
+.wrap{font-family:'Courier Prime',monospace;background:var(--paper);color:var(--ink);padding:1.5rem 1rem;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(180,160,120,0.15) 28px);max-width:700px;margin:0 auto;}
+.page-wrap{display:flex;flex-direction:column;align-items:center;padding:32px 20px 60px;}
 .header{text-align:center;margin-bottom:1.5rem;border-bottom:2px solid var(--gold);padding-bottom:1.25rem;}
 .header h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-style:italic;letter-spacing:-0.02em;color:var(--ink);}
 .header p{color:var(--faded);font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;margin-top:5px;}
@@ -23,7 +31,7 @@
 .stats strong{color:var(--ink);font-size:1rem;display:block;font-family:'Playfair Display',serif;}
 .ref-section{margin-bottom:1.25rem;}
 .ref-title{font-size:0.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.14em;border-bottom:1px solid var(--aged);padding-bottom:5px;margin-bottom:8px;}
-.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:5px;}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:5px;}
 .ref-chip{background:white;border:1px solid var(--aged);padding:6px 9px;font-size:0.75rem;}
 .ref-fr{font-family:'Playfair Display',serif;font-style:italic;color:var(--red);display:block;margin-bottom:1px;}
 .ref-en{color:var(--faded);font-size:0.68rem;}
@@ -52,8 +60,8 @@
 .audio-btn.speaking{background:var(--red);color:white;border-color:var(--red);}
 .audio-btn svg{width:13px;height:13px;fill:currentColor;}
 .breakdown{background:var(--aged);padding:14px 16px;margin-top:14px;font-size:0.8rem;line-height:1.9;}
-.bd-row{display:flex;gap:8px;align-items:baseline;margin-bottom:3px;}
-.bd-fr{font-family:'Playfair Display',serif;font-style:italic;color:var(--red);min-width:150px;font-size:0.88rem;}
+.bd-row{display:flex;gap:8px;align-items:baseline;margin-bottom:3px;flex-wrap:wrap;}
+.bd-fr{font-family:'Playfair Display',serif;font-style:italic;color:var(--red);min-width:120px;font-size:0.88rem;}
 .bd-en{color:var(--faded);font-size:0.78rem;}
 .tip{margin-top:12px;padding:12px 14px;background:#fdf8ef;border-left:3px solid var(--gold);font-size:0.78rem;color:var(--faded);line-height:1.7;font-style:italic;}
 .tip strong{color:var(--ink);font-style:normal;}
@@ -67,7 +75,7 @@
 .secondary-btn:hover{background:var(--aged);}
 .done-card{background:white;border:1px solid var(--aged);padding:2.5rem 1.5rem;box-shadow:4px 4px 0 var(--aged);text-align:center;position:relative;}
 .done-card::before{content:'';position:absolute;top:10px;left:10px;right:-10px;bottom:-10px;border:1px solid var(--aged);z-index:-1;}
-.done-title{font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--ink);margin-bottom:10px;}
+.done-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,5vw,2rem);font-style:italic;color:var(--ink);margin-bottom:10px;}
 .done-sub{font-size:0.8rem;color:var(--faded);line-height:1.9;margin-bottom:1.5rem;}
 .done-sub strong{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);font-style:italic;display:block;margin-bottom:6px;}
 .done-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
@@ -75,8 +83,14 @@
 .tier-1{background:#e8f4fd;color:#1a5276;}
 .tier-2{background:#fef9e7;color:#7d6608;}
 .tier-3{background:#fdedec;color:#922b21;}
+.back-home{display:inline-flex;align-items:center;gap:7px;font-family:'Courier Prime',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faded);text-decoration:none;padding:8px 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;margin-bottom:20px;}
+.back-home:hover{color:var(--ink);border-bottom-color:var(--ink);}
+.back-home svg{width:12px;height:12px;fill:currentColor;}
 </style>
-
+</head>
+<body>
+<div class="page-wrap">
+<a href="f-index.html" class="back-home"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>Home</a>
 <div class="wrap" id="root">
 <div class="header">
   <h1>Les Articles</h1>
@@ -99,7 +113,7 @@
 <div id="card-area"></div>
 <div id="done-area"></div>
 </div>
-
+</div>
 <script>
 // ── VOICE ────────────────────────────────────────────────────────────────────
 let frVoice=null;
@@ -359,3 +373,5 @@ function renderDone(){
 renderButtons();
 setTier('t1');
 </script>
+</body>
+</html>

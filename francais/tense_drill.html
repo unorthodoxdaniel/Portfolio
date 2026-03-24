@@ -228,22 +228,6 @@
   .breakdown.show { opacity: 1; display: block; }
   .breakdown .chunk { color: var(--red); font-style: italic; }
 
-  .why-not {
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: rgba(192,57,43,0.07);
-    border-left: 3px solid var(--red);
-    font-size: 0.82rem;
-    line-height: 1.75;
-    color: var(--ink);
-  }
-
-  .why-not em {
-    font-style: italic;
-    color: var(--red);
-    font-weight: bold;
-  }
-
   /* ── CONTROLS ── */
   .controls {
     display: flex;
@@ -418,9 +402,14 @@
     border-top: 1px solid var(--aged);
     padding-top: 20px;
   }
+
+.back-home{display:inline-flex;align-items:center;gap:7px;font-family:"Courier Prime",monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faded);text-decoration:none;padding:8px 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;margin-bottom:20px;align-self:flex-start;}
+.back-home:hover{color:var(--ink);border-bottom-color:var(--ink);}
+.back-home svg{width:12px;height:12px;fill:currentColor;}
 </style>
 </head>
 <body>
+<a href="f-index.html" class="back-home"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>Home</a>
 
 <header>
   <h1>Les Temps</h1>
@@ -429,14 +418,10 @@
 
 <div class="noble-intro">
   <h2>How this works...</h2>
-  <div class="noble-intro-grid" style="grid-template-columns: 1fr 1fr;">
+  <div class="noble-intro-grid">
     <div class="noble-intro-block">
       <h3>Imparfait</h3>
       <p>The "<strong>used to / was doing</strong>" tense. Irregular verbs just swap in a new stem — the endings <strong>never change</strong>. Learn the stem, the rest is free.</p>
-    </div>
-    <div class="noble-intro-block">
-      <h3>Passé Composé</h3>
-      <p>The "<strong>I did / I have done</strong>" past. <strong>avoir or être</strong> + past participle. Regular participles are easy; a handful of irregulars are worth memorising cold.</p>
     </div>
     <div class="noble-intro-block">
       <h3>Futur Proche</h3>
@@ -452,11 +437,8 @@
 <!-- Tense selector -->
 <div class="mode-selector">
   <button class="mode-btn active" id="tab-imp" onclick="setTense('imp')">Imparfait</button>
-  <button class="mode-btn" id="tab-pc" onclick="setTense('pc')">Passé Composé</button>
   <button class="mode-btn" id="tab-fp" onclick="setTense('fp')">Futur Proche</button>
   <button class="mode-btn" id="tab-fs" onclick="setTense('fs')">Futur Simple</button>
-  <button class="mode-btn" id="tab-mix-past" onclick="setTense('mix-past')">🎲 Past Mixed</button>
-  <button class="mode-btn" id="tab-mix-future" onclick="setTense('mix-future')">🎲 Future Mixed</button>
   <button class="mode-btn" id="tab-mix" onclick="setTense('mix')">🎲 All Mixed</button>
 </div>
 
@@ -530,41 +512,6 @@ const data = {
     { en: "We used to see each other every week.", fr: "Nous nous voyions chaque semaine.", stem: "voy", stemPos: [8,11], verb: "voir → voy-", hint: "Nous voyions — voy + ions. The stem is voy— because that's what nous voyons gives you." },
     { en: "I knew the answer.", fr: "Je savais la réponse.", stem: "sav", stemPos: [3,6], verb: "savoir → sav-", hint: "savoir's imparfait stem is sav— (nous savons). Je sav-ais. In English we say 'knew' — in French it's a smooth, regular-looking -ais ending." },
     { en: "She knew where it was.", fr: "Elle savait où c'était.", stem: "sav", stemPos: [4,7], verb: "savoir → sav-", hint: "Elle sav-ait. And notice c'était at the end — the ét— stem of être appearing in the same sentence!" },
-
-    // ── DESCRIPTIONS: weather ──
-    { en: "It was raining.", fr: "Il pleuvait.", stem: "pleuv", stemPos: [3,8], verb: "pleuvoir → pleuv-", hint: "Weather is almost always imparfait — it describes an ongoing background condition, not a completed event. pleuvoir → pleuv— stem. Il pleuv-ait.", category: "description" },
-    { en: "It was hot.", fr: "Il faisait chaud.", stem: "fais", stemPos: [3,7], verb: "faire → fais-", hint: "Weather in French uses faire: il fait chaud/froid/beau. In the past, describing weather = imparfait. Il fais-ait chaud — a background state, not a one-time event.", category: "description" },
-    { en: "It was cold outside.", fr: "Il faisait froid dehors.", stem: "fais", stemPos: [3,7], verb: "faire → fais-", hint: "Again, weather description → imparfait. Il faisait froid. The cold wasn't an event — it was the backdrop everything else happened against.", category: "description" },
-    { en: "The sky was grey.", fr: "Le ciel était gris.", stem: "ét", stemPos: [9,12], verb: "être → ét-", hint: "Describing the sky (or any scene) uses imparfait. It sets the scene — it was grey, it had always been grey, it was still grey. ét-ait.", category: "description" },
-    { en: "It was snowing.", fr: "Il neigeait.", stem: "neige", stemPos: [3,8], verb: "neiger → neige-", hint: "neiger → imparfait stem neige— (take nous present neigeons, drop -ons). Weather action ongoing in background = imparfait every time.", category: "description" },
-
-    // ── DESCRIPTIONS: physical / hair ──
-    { en: "She had long hair.", fr: "Elle avait les cheveux longs.", stem: "av", stemPos: [4,6], verb: "avoir → av-", hint: "Physical descriptions use imparfait — hair colour, length, style. These are states, not events. Elle av-ait les cheveux longs.", category: "description" },
-    { en: "He had brown eyes.", fr: "Il avait les yeux marron.", stem: "av", stemPos: [3,5], verb: "avoir → av-", hint: "Eye and hair colour are classic imparfait territory — they describe what someone was like, not what happened. Il av-ait les yeux marron.", category: "description" },
-    { en: "She was tall.", fr: "Elle était grande.", stem: "ét", stemPos: [4,7], verb: "être → ét-", hint: "Physical descriptions (tall, short, thin, pretty) are imparfait. They describe a state of being, not an action. Elle ét-ait grande.", category: "description" },
-    { en: "He was wearing a red coat.", fr: "Il portait un manteau rouge.", stem: "port", stemPos: [3,7], verb: "porter → port-", hint: "Wearing something is a state, not a punctual event — so it's imparfait. Il port-ait. Compare: 'he put on a coat' (event) would be passé composé.", category: "description" },
-
-    // ── MENTAL STATES ──
-    { en: "I wanted to leave.", fr: "Je voulais partir.", stem: "voul", stemPos: [3,7], verb: "vouloir → voul-", hint: "Mental states (wanting, thinking, believing, feeling) are almost always imparfait — they describe what you were experiencing, not a sudden action. Je voul-ais.", category: "mental_state" },
-    { en: "She thought it was strange.", fr: "Elle pensait que c'était bizarre.", stem: "pens", stemPos: [4,8], verb: "penser → pens-", hint: "Thinking is a mental state — ongoing, background. Elle pens-ait. And c'était again — a second imparfait for another state. States stack in imparfait.", category: "mental_state" },
-    { en: "He believed in it.", fr: "Il y croyait.", stem: "croy", stemPos: [5,9], verb: "croire → croy-", hint: "croire (to believe) — stem is croy— (nous croyons → remove -ons). Belief is a mental state: imparfait. Il y croy-ait.", category: "mental_state" },
-    { en: "I loved that film.", fr: "J'adorais ce film.", stem: "ador", stemPos: [2,6], verb: "adorer → ador-", hint: "Loving something is a state, not an event. J'ador-ais — imparfait. Contrast with 'I saw the film' (event → passé composé). J'ai vu / J'adorais.", category: "mental_state" },
-    { en: "I was afraid.", fr: "J'avais peur.", stem: "av", stemPos: [2,4], verb: "avoir → av-", hint: "Emotions are expressed with avoir in French: avoir peur, avoir faim, avoir honte. As a state, they use imparfait. J'av-ais peur — ongoing fear, not a sudden scare.", category: "mental_state" },
-
-    // ── SI (IF) CLAUSES ──
-    { en: "If I had time, I would come.", fr: "Si j'avais le temps, je viendrais.", stem: "av", stemPos: [5,7], verb: "avoir → av-", hint: "In si + imparfait → conditionnel sentences, the si clause always takes the imparfait. Si j'av-ais — not passé composé, not futur. It's a hypothetical state.", category: "si_clause" },
-    { en: "If she knew, she would tell us.", fr: "Si elle savait, elle nous dirait.", stem: "sav", stemPos: [7,10], verb: "savoir → sav-", hint: "Si + imparfait for hypotheticals. Elle sav-ait — this is a condition, not a past event. The conditionnel (dirait) in the main clause is your clue to look for imparfait in the si clause.", category: "si_clause" },
-
-    // ── USED TO (habitual / repeated actions) ──
-    { en: "We used to go to the beach every summer.", fr: "Nous allions à la plage chaque été.", stem: "all", stemPos: [5,8], verb: "aller → all-", hint: "'Every summer' screams habitual past → imparfait. Nous all-ions. aller's imparfait stem is all— (from nous allons). Repeated routine = imparfait.", category: "habitual" },
-    { en: "He went there every morning.", fr: "Il y allait tous les matins.", stem: "all", stemPos: [5,8], verb: "aller → all-", hint: "'Every morning' — repeated, habitual action. Il all-ait. No 'used to' in the English but the meaning is identical: it was his routine. Habitual = imparfait.", category: "habitual" },
-    { en: "Every evening, she read a book.", fr: "Chaque soir, elle lisait un livre.", stem: "lis", stemPos: [12,15], verb: "lire → lis-", hint: "Chaque soir (every evening) = habitual past = imparfait. lire → lis— stem (nous lisons). Elle lis-ait. The regularity of the action is the signal.", category: "habitual" },
-    { en: "We played outside all day.", fr: "Nous jouions dehors toute la journée.", stem: "jou", stemPos: [5,8], verb: "jouer → jou-", hint: "'All day' suggests ongoing duration, not a single completed event. Nous jou-ions. Even without 'used to', a habitual or prolonged past action → imparfait.", category: "habitual" },
-    { en: "He worked until midnight every night.", fr: "Il travaillait jusqu'à minuit tous les soirs.", stem: "travaill", stemPos: [3,11], verb: "travailler → travaill-", hint: "'Every night' = habitual = imparfait. Il travaill-ait. The imparfait here implies this was his regular pattern — you could insert 'used to' and it would be equally valid.", category: "habitual" },
-
-    // ── REPETITION / ONGOING ──
-    { en: "She always sang in the shower.", fr: "Elle chantait toujours sous la douche.", stem: "chant", stemPos: [4,9], verb: "chanter → chant-", hint: "Always (toujours) + past action = habitual imparfait. Elle chant-ait. The singing was a recurring backdrop, not a specific event that happened once.", category: "habitual" },
-    { en: "They kept coming back.", fr: "Ils revenaient sans cesse.", stem: "reven", stemPos: [4,9], verb: "revenir → reven-", hint: "sans cesse (constantly) signals repetition → imparfait. revenir → reven— stem. Ils reven-aient. Repeated, unresolved, ongoing — all roads lead to imparfait.", category: "habitual" },
   ],
   fp: [
     { en: "I'm going to eat.", fr: "Je vais manger.", stem: "vais", stemPos: [3,7], verb: "aller + infinitive", hint: "Futur proche = aller (conjugated) + infinitive. Je vais = I am going. Bolt on the infinitive. Done." },
@@ -602,77 +549,6 @@ const data = {
     { en: "I will have to work.", fr: "Je devrai travailler.", stem: "devr", stemPos: [3,7], verb: "devoir → devr-", hint: "devoir's futur stem is devr— (drop the -oir). Je devr-ai. This is how necessity sounds in the future tense." },
     { en: "I will receive a message.", fr: "Je recevrai un message.", stem: "recevr", stemPos: [3,9], verb: "recevoir → recevr-", hint: "recevoir → recevr— (drop the -oir, keep the rest). Je recevr-ai. apercevoir follows the exact same logic." },
     { en: "I will notice him.", fr: "Je l'apercevrai.", stem: "apercevr", stemPos: [5,13], verb: "apercevoir → apercevr-", hint: "apercevoir mirrors recevoir: apercevr— stem. Je l'apercevr-ai. Once you know one -cevoir verb, you know them all." },
-  ],
-  pc: [
-    { en: "I ate.", fr: "J'ai mangé.", stem: "mangé", stemPos: [4,9], verb: "manger → mangé", aux: "avoir", hint: "Passé composé = avoir/être + past participle. Regular -er verbs: drop -er, add -é. J'ai mangé." },
-    { en: "She called.", fr: "Elle a appelé.", stem: "appelé", stemPos: [7,13], verb: "appeler → appelé", aux: "avoir", hint: "Elle a appelé. Regular -er verb: -er → -é. The auxiliary avoir is conjugated; the participle stays fixed." },
-    { en: "We left.", fr: "Nous sommes partis.", stem: "partis", stemPos: [13,19], verb: "partir → parti", aux: "être", hint: "partir uses être as its auxiliary. Nous sommes partis — the participle agrees with the subject: add -s for masculine plural." },
-    { en: "He arrived.", fr: "Il est arrivé.", stem: "arrivé", stemPos: [7,13], verb: "arriver → arrivé", aux: "être", hint: "arriver is an être verb — think of the 'house of être' (DR & MRS VANDERTRAMP). Il est arrivé. No agreement needed for masculine singular." },
-    { en: "They came.", fr: "Ils sont venus.", stem: "venus", stemPos: [9,14], verb: "venir → venu", aux: "être", hint: "venir takes être. Ils sont venus — venu + -s for masculine plural agreement. Être verbs always agree with the subject." },
-    { en: "I finished.", fr: "J'ai fini.", stem: "fini", stemPos: [4,8], verb: "finir → fini", aux: "avoir", hint: "Regular -ir verbs: drop -ir, add -i. J'ai fini. Clean, simple. Finir, choisir, remplir all follow this pattern." },
-    { en: "She chose.", fr: "Elle a choisi.", stem: "choisi", stemPos: [7,13], verb: "choisir → choisi", aux: "avoir", hint: "Elle a choisi. Same -ir pattern as finir. The auxiliary avoir is conjugated to agree with the subject; the participle doesn't change." },
-    { en: "I did that.", fr: "J'ai fait ça.", stem: "fait", stemPos: [4,8], verb: "faire → fait", aux: "avoir", hint: "faire → fait (irregular). J'ai fait. fait is one of the most common participles — worth memorising immediately." },
-    { en: "He said something.", fr: "Il a dit quelque chose.", stem: "dit", stemPos: [5,8], verb: "dire → dit", aux: "avoir", hint: "dire → dit (irregular). Il a dit. The participle dit is short and sharp — you'll hear it constantly." },
-    { en: "I had a dream.", fr: "J'ai eu un rêve.", stem: "eu", stemPos: [4,6], verb: "avoir → eu", aux: "avoir", hint: "avoir → eu (irregular). J'ai eu — avoir using itself as an auxiliary. The participle eu is tiny and pronounced 'uh'." },
-    { en: "She was happy.", fr: "Elle a été heureuse.", stem: "été", stemPos: [7,10], verb: "être → été", aux: "avoir", hint: "être → été (irregular). Note it uses avoir as auxiliary, not être! Elle a été. Contrast with imparfait: elle était." },
-    { en: "I saw him.", fr: "Je l'ai vu.", stem: "vu", stemPos: [7,9], verb: "voir → vu", aux: "avoir", hint: "voir → vu (irregular). Je l'ai vu — the object pronoun l' comes before the auxiliary. The participle vu is short and easy." },
-    { en: "We took the train.", fr: "Nous avons pris le train.", stem: "pris", stemPos: [12,16], verb: "prendre → pris", aux: "avoir", hint: "prendre → pris (irregular). Nous avons pris. Also: comprendre → compris, apprendre → appris — same family." },
-    { en: "I put the book down.", fr: "J'ai mis le livre.", stem: "mis", stemPos: [4,7], verb: "mettre → mis", aux: "avoir", hint: "mettre → mis (irregular). J'ai mis. Also promettre → promis, admettre → admis. All the -mettre verbs share this pattern." },
-    { en: "She wrote a letter.", fr: "Elle a écrit une lettre.", stem: "écrit", stemPos: [7,12], verb: "écrire → écrit", aux: "avoir", hint: "écrire → écrit (irregular). Elle a écrit. The participle écrit looks like the verb minus the final -e. Décrire follows the same rule." },
-    { en: "I read the article.", fr: "J'ai lu l'article.", stem: "lu", stemPos: [4,6], verb: "lire → lu", aux: "avoir", hint: "lire → lu (irregular). J'ai lu — tiny participle, big verb. Relire → relu follows the same pattern." },
-    { en: "He came back.", fr: "Il est revenu.", stem: "revenu", stemPos: [7,13], verb: "revenir → revenu", aux: "être", hint: "revenir takes être (it's built on venir). Il est revenu. Re- prefix doesn't change the auxiliary. No agreement needed for masculine singular." },
-    { en: "She went up.", fr: "Elle est montée.", stem: "montée", stemPos: [8,15], verb: "monter → monté", aux: "être", hint: "monter takes être. Elle est montée — the participle agrees with the subject: add -e for feminine. One extra letter, big grammatical signal." },
-    { en: "I got up.", fr: "Je me suis levé.", stem: "levé", stemPos: [12,16], verb: "se lever → levé", aux: "être (reflexive)", hint: "Reflexive verbs always use être. Je me suis levé — the reflexive pronoun me sits between the subject and the auxiliary suis." },
-    { en: "She fell asleep.", fr: "Elle s'est endormie.", stem: "endormie", stemPos: [11,19], verb: "s'endormir → endormi", aux: "être (reflexive)", hint: "s'endormir is reflexive → être auxiliary. Elle s'est endormie — the participle agrees with the feminine subject: endormi + e." },
-
-    // ── TRICKY PASSÉ COMPOSÉ ──
-    { en: "She was happy. (one specific moment)", fr: "Elle a été heureuse.", stem: "été", stemPos: [7,10], verb: "être → été", aux: "avoir", hint: "Tricky: a specific past moment → passé composé, even with 'was'. Elle a été — être uses avoir here! Contrast with the imparfait elle était (ongoing state). The distinction is event vs. backdrop.", category: "tricky" },
-    { en: "Suddenly, it rained.", fr: "Tout à coup, il a plu.", stem: "plu", stemPos: [17,19], verb: "pleuvoir → plu", aux: "avoir", hint: "Weather is usually imparfait, but a sudden, specific weather event (tout à coup!) → passé composé. Il a plu. plu is the irregular participle of pleuvoir. The word 'soudain' or 'tout à coup' is a classic signal to use passé composé.", category: "tricky" },
-    { en: "I knew the answer instantly.", fr: "J'ai su la réponse instantanément.", stem: "su", stemPos: [4,6], verb: "savoir → su", aux: "avoir", hint: "savoir in passé composé (j'ai su) means 'I found out / I came to know' — a moment of realisation. Compare imparfait je savais = I knew (ongoing). Same verb, different meaning depending on tense.", category: "tricky" },
-    { en: "He could finally open the jar.", fr: "Il a pu ouvrir le bocal.", stem: "pu", stemPos: [5,7], verb: "pouvoir → pu", aux: "avoir", hint: "pouvoir in passé composé = 'managed to / succeeded in'. Il a pu — an achieved action. Je pouvais (imparfait) = I was able to (ongoing capacity). Same verb, completely different nuance.", category: "tricky" },
-    { en: "She finally wanted to talk.", fr: "Elle a voulu parler.", stem: "voulu", stemPos: [7,12], verb: "vouloir → voulu", aux: "avoir", hint: "vouloir in passé composé = a specific decision or attempt. Elle a voulu parler — she made the move to talk. Je voulais (imparfait) = I was wanting to (ongoing desire). Key difference: completed will vs. background wish.", category: "tricky" },
-    { en: "We had a great time. (it's over now)", fr: "Nous avons eu beaucoup de plaisir.", stem: "eu", stemPos: [12,14], verb: "avoir → eu", aux: "avoir", hint: "The experience is over and done — passé composé. Nous avons eu. Compare imparfait nous avions (we had / we used to have). Passé composé closes the chapter; imparfait leaves it open.", category: "tricky" },
-    { en: "He passed away last year.", fr: "Il est mort l'an dernier.", stem: "mort", stemPos: [7,11], verb: "mourir → mort", aux: "être", hint: "mourir takes être and has an irregular participle: mort. Il est mort — specific completed event, hence passé composé. 'Last year' (l'an dernier) is a typical time marker for passé composé.", category: "tricky" },
-    { en: "I lived there for two years.", fr: "J'ai habité là pendant deux ans.", stem: "habité", stemPos: [4,10], verb: "habiter → habité", aux: "avoir", hint: "Even though 'lived' seems like a state (→ imparfait instinct!), pendant deux ans marks a completed, bounded period → passé composé. Imparfait would leave the living open-ended.", category: "tricky" },
-    { en: "She loved Paris when she visited.", fr: "Elle a adoré Paris quand elle l'a visité.", stem: "adoré", stemPos: [7,12], verb: "adorer → adoré", aux: "avoir", hint: "Tricky: adorer is normally a state → imparfait. But here she loved it during a specific, completed visit. The emotion attached to a single bounded event → passé composé.", category: "tricky" },
-    { en: "He went up to get his coat. (and came back down)", fr: "Il est monté chercher son manteau.", stem: "monté", stemPos: [7,13], verb: "monter → monté", aux: "être", hint: "monter takes être. Il est monté — a specific completed movement. Contrast: when monter means 'to put something upstairs' it uses avoir. Here it's pure movement → être.", category: "tricky" },
-    { en: "They didn't speak to each other for a week.", fr: "Ils ne se sont pas parlé pendant une semaine.", stem: "parlé", stemPos: [19,25], verb: "se parler → parlé", aux: "être (reflexive)", hint: "Reflexive → être. But: reflexive verbs with indirect objects don't agree! Ils se sont parlé — no -s on parlé, because 'se' here is indirect (parler à quelqu'un). A genuine exam trap.", category: "tricky" },
-    { en: "It happened three times.", fr: "C'est arrivé trois fois.", stem: "arrivé", stemPos: [8,14], verb: "arriver → arrivé", aux: "être", hint: "Specific counted events → passé composé. C'est arrivé — arriver takes être. 'Three times' (trois fois) signals discrete completed events, not a habitual background.", category: "tricky" },
-    { en: "She got dressed quickly.", fr: "Elle s'est habillée vite.", stem: "habillée", stemPos: [11,19], verb: "s'habiller → habillé", aux: "être (reflexive)", hint: "Reflexive verb → être. Elle s'est habillée — participle agrees with the feminine subject: habillé + e. vite (quickly) signals a single completed action, not a state.", category: "tricky" },
-    { en: "We met at the station.", fr: "Nous nous sommes rencontrés à la gare.", stem: "rencontrés", stemPos: [16,27], verb: "se rencontrer → rencontré", aux: "être (reflexive)", hint: "Reflexive → être. Nous nous sommes rencontrés — plural masculine agreement on the participle. A first meeting is a specific event: passé composé. If you met every week, it would be nous nous rencontrions (imparfait).", category: "tricky" },
-    { en: "He brought the wine.", fr: "Il a apporté le vin.", stem: "apporté", stemPos: [5,12], verb: "apporter → apporté", aux: "avoir", hint: "A specific completed action — he brought it, done. J'ai apporté. Regular -er verb: -er → -é. Don't confuse apporter (to bring something) with amener (to bring someone).", category: "tricky" },
-    { en: "I didn't sleep last night.", fr: "Je n'ai pas dormi la nuit dernière.", stem: "dormi", stemPos: [11,16], verb: "dormir → dormi", aux: "avoir", hint: "Negation doesn't change the tense logic. La nuit dernière = specific completed night → passé composé. Je n'ai pas dormi. The ne…pas wraps around the auxiliary, not the participle.", category: "tricky" },
-    { en: "She waited for an hour.", fr: "Elle a attendu une heure.", stem: "attendu", stemPos: [7,14], verb: "attendre → attendu", aux: "avoir", hint: "A bounded, completed wait → passé composé. Elle a attendu. Regular -re verbs: drop -re, add -u. Compare: elle attendait = she was waiting (still ongoing, imparfait).", category: "tricky" },
-    { en: "The war lasted four years.", fr: "La guerre a duré quatre ans.", stem: "duré", stemPos: [11,16], verb: "durer → duré", aux: "avoir", hint: "Despite lasting years, a bounded historical event uses passé composé. La guerre a duré — it started and it ended. Compare: pendant la guerre, il neigeait (imparfait for the backdrop while it went on).", category: "tricky" },
-    { en: "I worked all day. (it's done)", fr: "J'ai travaillé toute la journée.", stem: "travaillé", stemPos: [4,13], verb: "travailler → travaillé", aux: "avoir", hint: "Even 'all day' can be passé composé if the day is over and the work is complete. J'ai travaillé. Contrast with je travaillais toute la journée (I would work all day / habitual). Context decides.", category: "tricky" },
-    { en: "They saw each other and fell in love.", fr: "Ils se sont vus et sont tombés amoureux.", stem: "vus", stemPos: [14,17], verb: "se voir → vu", aux: "être (reflexive)", hint: "Two passé composé events in sequence: ils se sont vus (they saw each other) — reflexive, participle agrees with plural masculine: vu+s. Then sont tombés amoureux — tomber takes être, another agreement.", category: "tricky" },
-    { en: "He came in, sat down, and said nothing.", fr: "Il est entré, s'est assis et n'a rien dit.", stem: "entré", stemPos: [7,12], verb: "entrer → entré", aux: "être", hint: "A sequence of completed events = passé composé. entrer → être; s'asseoir → reflexive être (participle assis is irregular); dire → avoir, dit. Three tenses, all passé composé — a narrative chain of events.", category: "tricky" },
-    { en: "I had coffee this morning.", fr: "J'ai pris un café ce matin.", stem: "pris", stemPos: [4,8], verb: "prendre → pris", aux: "avoir", hint: "ce matin (this morning, now over) = passé composé. J'ai pris. prendre → pris (irregular). Note that 'avoir' here is a trap — the sentence uses prendre (to take/have), not avoir itself.", category: "tricky" },
-    { en: "She understood immediately.", fr: "Elle a compris tout de suite.", stem: "compris", stemPos: [7,14], verb: "comprendre → compris", aux: "avoir", hint: "A single moment of comprehension → passé composé. Elle a compris — compris is the irregular participle (comprendre follows prendre: pris → compris). tout de suite confirms the instantaneous, completed nature.", category: "tricky" },
-  ],
-
-  // ── MULTI-VERB SENTENCES (mixed / compound) ──
-  mix_sentences: [
-    // ── MULTIPLE IMPARFAIT ──
-    { en: "It was raining and she was wearing a red coat.", fr: "Il pleuvait et elle portait un manteau rouge.", tenses: ["imp","imp"], hint: "Two imparfait: weather description (ongoing backdrop) + state of dress (what she was wearing, not the act of putting it on). Both are simultaneous states. pleuvait + portait.", breakdown: "Both verbs describe simultaneous ongoing conditions — weather and appearance. Neither is a completed event that happened at a specific moment.", whyNotOther: "Passé composé would imply punctual events: 'it suddenly rained' (il a plu) or 'she put the coat on' (elle a mis le manteau). Here nothing happens — conditions simply exist." },
-    { en: "He was tall, had blue eyes, and always smiled.", fr: "Il était grand, avait les yeux bleus et souriait toujours.", tenses: ["imp","imp","imp"], hint: "Three imparfait: physical description (être), physical feature (avoir), habitual behaviour (sourire + toujours). States and habits stacked together — textbook imparfait.", breakdown: "All three describe what he was like as a person. His height, his eye colour, his characteristic smile. None of these are completed events — they're a portrait.", whyNotOther: "Il a été grand / il a eu les yeux bleus / il a souri (passé composé) would mean he completed being tall, or smiled once. Physical traits and habitual actions use imparfait." },
-    { en: "She wanted to leave but she was tired.", fr: "Elle voulait partir mais elle était fatiguée.", tenses: ["imp","imp"], hint: "Two mental/physical states: desire (vouloir) and physical condition (être fatiguée). Both imparfait — states that existed simultaneously, neither completed.", breakdown: "voulait = ongoing desire. était = ongoing physical condition. Both coexisted at the same moment in the background. mais (but) connects two simultaneous states, not two events.", whyNotOther: "Elle a voulu partir means she made a specific attempt to leave. Elle a été fatiguée means she became tired at a moment. The 'but' here connects states, not actions." },
-    { en: "Every day I took the bus and read the newspaper.", fr: "Chaque jour je prenais le bus et lisais le journal.", tenses: ["imp","imp"], hint: "chaque jour (every day) = habitual past. Both verbs form a daily routine: prenais + lisais. Repeated actions in a past routine → imparfait.", breakdown: "Both are habits: taking the bus was routine, reading was routine. Chaque jour makes them explicit habits. Routines and repeated actions are the core territory of imparfait.", whyNotOther: "J'ai pris le bus et j'ai lu le journal (passé composé) = I took the bus and read the paper on one specific occasion. Chaque jour shifts these from events to habits." },
-
-    // ── MULTIPLE PASSÉ COMPOSÉ ──
-    { en: "She arrived, sat down, and opened her book.", fr: "Elle est arrivée, s'est assise et a ouvert son livre.", tenses: ["pc","pc","pc"], hint: "Three passé composé in a narrative sequence. arriver → être (arrivée, fem agreement); s'asseoir → reflexive être (assise, irregular participle); ouvrir → avoir (ouvert, irregular).", breakdown: "A narrative chain: she arrived (event 1), sat down (event 2), opened her book (event 3). Each event completed before the next began. Passé composé advances the story.", whyNotOther: "If she habitually arrived, sat, and opened her book — that would be imparfait. But this is a specific occasion with a sequence of events — passé composé." },
-    { en: "He woke up, got dressed, and left.", fr: "Il s'est réveillé, s'est habillé et est parti.", tenses: ["pc","pc","pc"], hint: "Three consecutive events, all passé composé. se réveiller (reflexive → être, masc: réveillé); s'habiller (reflexive → être, masc: habillé); partir (être, masc: parti).", breakdown: "A morning sequence on a specific day. Each action is complete before the next. This is narrative passé composé — advancing from one event to the next.", whyNotOther: "Chaque matin il se réveillait, s'habillait et partait (imparfait) = this was his morning routine. Without the habitual marker, a specific morning's events = passé composé." },
-    { en: "I bought the tickets and called my friend.", fr: "J'ai acheté les billets et j'ai appelé mon ami.", tenses: ["pc","pc"], hint: "Two completed actions. acheté (acheter, regular -er → -é); appelé (appeler, same sound: -é). Both use avoir. Both happened and are done.", breakdown: "Two discrete, completed actions: the buying and the calling. Both are finished. Passé composé for completed, specific past actions.", whyNotOther: "J'achetais les billets et j'appelais (imparfait) would mean I used to buy tickets and call — a recurring pattern. Here it happened once, specifically." },
-    { en: "They saw each other and fell in love.", fr: "Ils se sont vus et sont tombés amoureux.", tenses: ["pc","pc"], hint: "Two passé composé. se voir → reflexive être, participle vu + s for plural masculine agreement: vus. tomber → être, participle tombé + s: tombés. Both are completed events.", breakdown: "Two pivotal events in sequence. They saw each other (event, completed). They fell in love (event, completed). A before-and-after story — passé composé.", whyNotOther: "Ils se voyaient et tombaient amoureux (imparfait) would imply this was happening repeatedly or gradually. But love at first sight is an event, not a backdrop." },
-
-    // ── MIXED: IMPARFAIT + PASSÉ COMPOSÉ ──
-    { en: "She was reading when he called.", fr: "Elle lisait quand il a appelé.", tenses: ["imp","pc"], hint: "Classic pattern: lisait (imparfait, ongoing background action) + a appelé (passé composé, the interrupting event). quand often signals this contrast.", breakdown: "lisait = she was in the middle of reading — ongoing, not yet complete. a appelé = a specific call that happened and interrupted the reading. Background vs. foreground event.", whyNotOther: "Elle a lu quand il a appelé (both passé composé) = she read (finished), then he called — sequential events. But 'was reading' means reading was already in progress → imparfait." },
-    { en: "I was walking home when it started to rain.", fr: "Je rentrais à pied quand il a commencé à pleuvoir.", tenses: ["imp","pc"], hint: "rentrais (imparfait, ongoing journey) + a commencé (passé composé, the event that interrupted). Starting to rain is a change of state — a moment, not a backdrop.", breakdown: "The walk was ongoing and unfinished (imparfait). The rain starting was a punctual event that occurred during the walk (passé composé). The quand links background to interrupting event.", whyNotOther: "Je suis rentré à pied quand il a commencé (both passé composé) = I walked home, finished, then it started raining. Different meaning — sequence vs. interruption." },
-    { en: "He was tired, so he took a nap.", fr: "Il était fatigué, alors il a fait une sieste.", tenses: ["imp","pc"], hint: "était (imparfait, ongoing state) → explains the event. a fait (passé composé, the action taken). The state causes the action. alors signals the result.", breakdown: "The tiredness was an ongoing condition (imparfait). The nap was a specific action taken as a result (passé composé). A state setting up an event — one of the most common mixed patterns.", whyNotOther: "Il a été fatigué... would mean he was tired at a specific moment (not as a state). But fatigue here is a condition that existed — imparfait." },
-    { en: "While we were eating, someone knocked on the door.", fr: "Pendant que nous mangions, quelqu'un a frappé à la porte.", tenses: ["imp","pc"], hint: "pendant que (while) + imparfait for the ongoing action (mangions); passé composé for the interrupting event (a frappé). Pendant que + imparfait is a golden rule.", breakdown: "The meal was ongoing (imparfait). The knock was a single event that cut through it (passé composé). The while-construction makes the ongoing action the backdrop.", whyNotOther: "pendant que nous avons mangé would mean we finished eating and then the knock came. But 'while' requires the action to be in progress — imparfait." },
-    { en: "They used to live here, but they moved away.", fr: "Ils habitaient ici, mais ils sont partis.", tenses: ["imp","pc"], hint: "habitaient (imparfait, habitual/ongoing state: they lived here over time) + sont partis (passé composé: the event that ended it — they left). A before/after structure.", breakdown: "The living was an ongoing state or habit (imparfait). The departure was a decisive event that changed everything (passé composé). The contrast of tenses marks the pivot.", whyNotOther: "Ils ont habité ici (passé composé) would suggest a bounded period — like for two years. habitaient emphasises the open-ended, ongoing nature of the living." },
-    { en: "It was dark, I couldn't see anything, but I heard a noise.", fr: "Il faisait nuit et je ne voyais rien, mais j'ai entendu un bruit.", tenses: ["imp","imp","pc"], hint: "faisait nuit (imparfait, condition/weather) + ne voyais rien (imparfait, ongoing inability) + j'ai entendu (passé composé, the specific sound event). Scene setting in imparfait; event in passé composé.", breakdown: "Two imparfait establish the scene: darkness (condition) and inability to see (state). Then passé composé: a specific noise happened, breaking into the scene. Background × 2, then foreground event.", whyNotOther: "If all three were passé composé, you'd have a sequence of events (it got dark, then I didn't see, then I heard). But the darkness and blindness are conditions that existed, not events that happened." },
-    { en: "We had been friends for years, but that day everything changed.", fr: "Nous étions amis depuis des années, mais ce jour-là tout a changé.", tenses: ["imp","pc"], hint: "étions (imparfait) + depuis = state that had been going on for a long time. a changé (passé composé) = the pivotal event. depuis + imparfait is a classic combination.", breakdown: "The friendship was a long-running state (imparfait, especially with depuis for ongoing states). The change was a specific event on a specific day (passé composé). The tense contrast creates the dramatic before/after.", whyNotOther: "Nous avons été amis depuis des années would be incorrect — depuis with passé composé in the past usually implies the state is over and closed. depuis + imparfait for an ongoing past state." },
   ]
 };
 
@@ -683,7 +559,7 @@ const data = {
 let tense = 'imp';
 let currentQ = null;
 let stats = { seen: 0, correct: 0, streak: 0 };
-let queues = { imp: [], fp: [], fs: [], pc: [], mix_sentences: [] };
+let queues = { imp: [], fp: [], fs: [] };
 
 function shuffle(arr) {
   const a = [...arr];
@@ -703,7 +579,7 @@ function getNext(t) {
 //  RENDER
 // ─────────────────────────────────────────────
 
-const tenseNames = { imp: 'Imparfait', fp: 'Futur Proche', fs: 'Futur Simple', pc: 'Passé Composé', mix_sentences: 'Mixed Sentence' };
+const tenseNames = { imp: 'Imparfait', fp: 'Futur Proche', fs: 'Futur Simple' };
 
 function highlightStem(fr, stemPos) {
   if (!stemPos) return fr;
@@ -713,28 +589,12 @@ function highlightStem(fr, stemPos) {
 }
 
 function loadQ() {
-  let t;
-  if (tense === 'mix') {
-    // 20% chance of a multi-verb sentence in all-mixed mode
-    t = Math.random() < 0.2 ? 'mix_sentences' : ['imp','fp','fs','pc'][Math.floor(Math.random()*4)];
-  } else if (tense === 'mix-past') {
-    // 25% chance of a multi-verb sentence in past-mixed mode
-    t = Math.random() < 0.25 ? 'mix_sentences' : ['imp','pc'][Math.floor(Math.random()*2)];
-  } else if (tense === 'mix-future') {
-    t = ['fp','fs'][Math.floor(Math.random()*2)];
-  } else {
-    t = tense;
-  }
+  const t = tense === 'mix' ? ['imp','fp','fs'][Math.floor(Math.random()*3)] : tense;
   currentQ = getNext(t);
   currentQ._tense = t;
 
   document.getElementById('noble-hint').textContent = currentQ.hint;
-
-  const tenseLabel = document.getElementById('tense-label');
-  const isMixed = tense === 'mix' || tense === 'mix-past' || tense === 'mix-future';
-  tenseLabel.textContent = isMixed ? '' : tenseNames[t];
-  tenseLabel.style.display = (isMixed || t === 'mix_sentences') ? 'none' : '';
-
+  document.getElementById('tense-label').textContent = tenseNames[t];
   document.getElementById('english-sentence').textContent = currentQ.en;
 
   const ar = document.getElementById('answer-reveal');
@@ -777,26 +637,8 @@ function toggleBreakdown() {
   let html = '';
   if (t === 'imp') {
     html = `<span class="chunk">${currentQ.stem}—</span> stem (from ${currentQ.verb}) + imparfait ending → <strong>${currentQ.fr}</strong>`;
-    if (currentQ.category || true) {
-      // Always show why-not-passé-composé for imparfait sentences
-      const whyNot = getWhyNotPC(currentQ);
-      html += `<div class="why-not">🔴 <em>Why not passé composé?</em> ${whyNot}</div>`;
-    }
   } else if (t === 'fp') {
     html = `<span class="chunk">aller</span> (conjugated: ${currentQ.stem}) + <span class="chunk">infinitive</span> → <strong>${currentQ.fr}</strong>`;
-  } else if (t === 'pc') {
-    html = `<span class="chunk">${currentQ.aux}</span> (auxiliary) + <span class="chunk">past participle: ${currentQ.stem}</span> (from ${currentQ.verb}) → <strong>${currentQ.fr}</strong>`;
-    const whyNot = getWhyNotIMP(currentQ);
-    html += `<div class="why-not">🔵 <em>Why not imparfait?</em> ${whyNot}</div>`;
-  } else if (t === 'mix_sentences') {
-    html = `<strong>${currentQ.fr}</strong><br><br>`;
-    // Show tense labels
-    const labels = (currentQ.tenses || []).map(t2 => `<span class="chunk">${tenseNames[t2] || t2}</span>`).join(' + ');
-    html += `Tenses used: ${labels}<br><br>`;
-    html += `<strong>Why these tenses?</strong> ${currentQ.breakdown}`;
-    if (currentQ.whyNotOther) {
-      html += `<div class="why-not">↔ <em>Why not the other way?</em> ${currentQ.whyNotOther}</div>`;
-    }
   } else {
     html = `Irregular stem: <span class="chunk">${currentQ.stem}—</span> (${currentQ.verb}) + futur simple ending → <strong>${currentQ.fr}</strong>`;
   }
@@ -804,27 +646,6 @@ function toggleBreakdown() {
   bd.innerHTML = html;
   bd.style.display = 'block';
   setTimeout(() => bd.classList.add('show'), 10);
-}
-
-function getWhyNotPC(q) {
-  // Generate context-sensitive reasoning for why this imparfait sentence isn't passé composé
-  const cat = q.category;
-  if (cat === 'description') return "Passé composé marks completed events. Descriptions — weather, physical appearance, scenes — are states that existed as a backdrop, not things that happened and ended.";
-  if (cat === 'mental_state') return "Mental states (wanting, thinking, believing, feeling) are ongoing conditions, not completed actions. Passé composé would imply a sudden mental event, not a state of mind.";
-  if (cat === 'si_clause') return "In si + imparfait → conditionnel sentences, the si clause always takes imparfait. It's a hypothetical condition, not a completed past action. Passé composé in a si clause means something different.";
-  if (cat === 'habitual') return "Habitual and repeated past actions use imparfait. Passé composé would mean it happened once on a specific occasion. Words like 'every day', 'always', 'used to' signal imparfait.";
-  // Default for other imparfait (être, avoir states)
-  return "This is a state or ongoing condition, not a completed event. Passé composé closes an action; imparfait leaves it open. States that existed as background — tiredness, location, possession — use imparfait.";
-}
-
-function getWhyNotIMP(q) {
-  // Generate context-sensitive reasoning for why this passé composé sentence isn't imparfait
-  const cat = q.category;
-  if (cat === 'tricky') {
-    // Hint at the trickiness
-    return "This looks like it could be imparfait (a state, an emotion, a weather word) — but the action is bounded and completed. A specific event happened and ended. That's the domain of passé composé, not the backdrop that imparfait describes.";
-  }
-  return "This is a completed, specific past action — it happened, and it's done. Imparfait would describe an ongoing state or repeated habit. Passé composé marks the event itself.";
 }
 
 function mark(correct) {
@@ -854,9 +675,8 @@ function updateStats() {
 
 function setTense(t) {
   tense = t;
-  ['imp','fp','fs','pc','mix-past','mix-future','mix'].forEach(id => {
-    const el = document.getElementById('tab-'+id);
-    if (el) el.classList.remove('active');
+  ['imp','fp','fs','mix'].forEach(id => {
+    document.getElementById('tab-'+id).classList.remove('active');
   });
   document.getElementById('tab-'+t).classList.add('active');
   loadQ();

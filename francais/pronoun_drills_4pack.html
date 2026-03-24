@@ -1,31 +1,37 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Les Pronoms — Four-Part Drill</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root { --ink:#1a1209; --paper:#f5efe0; --aged:#e8dcc8; --red:#c0392b; --gold:#b8860b; --faded:#8a7a5e; --green:#2d6a4f; }
 * { box-sizing:border-box; margin:0; padding:0; }
 .wrap { font-family:'Courier Prime',monospace; background:var(--paper); color:var(--ink); padding:2rem 1rem; min-height:400px; background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(180,160,120,0.15) 28px); }
 .stage-label { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faded); margin-bottom:0.3rem; }
-.stage-title { font-family:'Playfair Display',serif; font-size:22px; font-style:italic; color:var(--ink); margin-bottom:0.2rem; font-weight:400; }
+.stage-title { font-family:'Playfair Display',serif; font-size:clamp(1.2rem,4vw,22px); font-style:italic; color:var(--ink); margin-bottom:0.2rem; font-weight:400; }
 .stage-sub { font-size:13px; color:var(--faded); margin-bottom:1.25rem; letter-spacing:0.04em; }
 .noble-note { font-style:italic; color:var(--faded); font-size:13px; line-height:1.8; border-left:3px solid var(--gold); padding-left:14px; margin-bottom:1.5rem; }
 .card { background:white; border:1px solid var(--aged); padding:2rem; box-shadow:4px 4px 0 var(--aged); position:relative; margin-bottom:1.5rem; }
 .card::before { content:''; position:absolute; top:10px; left:10px; right:-10px; bottom:-10px; border:1px solid var(--aged); z-index:-1; }
 .item-counter { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--faded); margin-bottom:0.5rem; }
 .say-aloud { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; font-weight:700; }
-.prompt-en { font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:var(--ink); margin-bottom:1.25rem; line-height:1.5; }
+.prompt-en { font-family:'Playfair Display',serif; font-size:clamp(1rem,3.5vw,19px); font-style:italic; color:var(--ink); margin-bottom:1.25rem; line-height:1.5; }
 .answer-row { display:flex; align-items:center; gap:10px; }
 .answer-area { flex:1; min-height:48px; border:none; border-bottom:2px solid var(--aged); padding:0.6rem 0.25rem; font-family:'Courier Prime',monospace; font-size:15px; color:var(--ink); background:transparent; cursor:pointer; display:flex; align-items:center; transition:border-color 0.2s; }
 .answer-area:hover { border-color:var(--ink); }
 .answer-area.revealed { cursor:default; border-color:var(--gold); }
 .hint { font-size:12px; color:var(--aged); font-style:italic; }
-.reveal-text { font-family:'Playfair Display',serif; font-size:20px; font-style:italic; color:var(--red); }
+.reveal-text { font-family:'Playfair Display',serif; font-size:clamp(1rem,4vw,20px); font-style:italic; color:var(--red); }
 .speak-btn { flex-shrink:0; width:36px; height:36px; border-radius:2px; border:1.5px solid var(--ink); background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--ink); transition:background 0.15s; }
 .speak-btn:hover { background:var(--ink); color:var(--paper); }
 .speak-btn:disabled { opacity:0.25; cursor:not-allowed; }
 .speak-btn.speaking { background:var(--red); color:white; border-color:var(--red); }
 .breakdown { margin-top:1rem; padding-top:1rem; border-top:1px solid var(--aged); }
-.breakdown-row { display:flex; gap:8px; align-items:baseline; margin-bottom:5px; }
-.bd-fr { font-family:'Playfair Display',serif; font-size:14px; font-style:italic; color:var(--red); min-width:160px; }
+.breakdown-row { display:flex; gap:8px; align-items:baseline; margin-bottom:5px; flex-wrap:wrap; }
+.bd-fr { font-family:'Playfair Display',serif; font-size:14px; font-style:italic; color:var(--red); min-width:120px; }
 .bd-en { font-size:13px; color:var(--faded); }
 .tip { margin-top:0.75rem; padding:0.6rem 1rem; background:var(--aged); font-size:13px; color:var(--faded); line-height:1.6; font-style:italic; }
 .tip strong { color:var(--ink); font-style:normal; }
@@ -41,7 +47,7 @@ button.primary:hover { background:var(--red); border-color:var(--red); }
 .stage-nav { display:flex; gap:6px; margin-bottom:1.25rem; flex-wrap:wrap; }
 .stage-dot { width:8px; height:8px; border-radius:50%; background:var(--aged); transition:background 0.2s; }
 .done-card { text-align:center; padding:2.5rem 1.5rem; }
-.done-title { font-family:'Playfair Display',serif; font-size:26px; font-style:italic; color:var(--ink); margin-bottom:0.5rem; }
+.done-title { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,5vw,26px); font-style:italic; color:var(--ink); margin-bottom:0.5rem; }
 .done-sub { font-size:13px; color:var(--faded); margin-bottom:1.5rem; line-height:1.8; }
 .voice-note { font-size:11px; color:var(--aged); margin-top:0.5rem; font-style:italic; }
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:1rem; }
@@ -54,20 +60,26 @@ button.primary:hover { background:var(--red); border-color:var(--red); }
 .drill-card:hover { box-shadow:5px 5px 0 var(--aged); }
 .drill-card.completed { border-color:var(--gold); }
 .drill-card-num { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; }
-.drill-card-title { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; color:var(--ink); margin-bottom:0.2rem; }
+.drill-card-title { font-family:'Playfair Display',serif; font-size:clamp(0.9rem,3vw,15px); font-style:italic; color:var(--ink); margin-bottom:0.2rem; }
 .drill-card-sub { font-size:12px; color:var(--faded); }
 .drill-card-done { font-size:11px; margin-top:0.4rem; color:var(--green); letter-spacing:0.08em; text-transform:uppercase; }
-.page-wrap { display:flex; flex-direction:column; align-items:center; padding:40px 20px 60px; }
-header { text-align:center; margin-bottom:40px; border-bottom:2px solid var(--gold); padding-bottom:24px; width:100%; max-width:700px; }
-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3.2rem); font-style:italic; letter-spacing:-0.02em; color:var(--ink); }
+.page-wrap { display:flex; flex-direction:column; align-items:center; padding:32px 20px 60px; }
+header { text-align:center; margin-bottom:32px; border-bottom:2px solid var(--gold); padding-bottom:24px; width:100%; max-width:700px; }
+header h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,3.2rem); font-style:italic; letter-spacing:-0.02em; color:var(--ink); }
 header p { color:var(--faded); font-size:0.85rem; letter-spacing:0.15em; text-transform:uppercase; margin-top:6px; }
 .noble-intro { background:var(--ink); color:var(--paper); max-width:700px; width:100%; padding:28px 32px; margin-bottom:28px; }
 .noble-intro h2 { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; margin-bottom:12px; color:var(--gold); }
 .noble-intro p { font-size:0.82rem; line-height:1.8; color:rgba(245,239,224,0.78); margin-bottom:6px; }
 .noble-intro strong { color:var(--paper); }
 footer { max-width:700px; width:100%; text-align:center; margin-top:24px; color:var(--faded); font-size:0.75rem; letter-spacing:0.08em; line-height:1.8; border-top:1px solid var(--aged); padding-top:20px; }
+.back-home { display:inline-flex; align-items:center; gap:7px; font-family:'Courier Prime',monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--faded); text-decoration:none; padding:8px 0; border-bottom:1px solid transparent; transition:color 0.2s,border-color 0.2s; margin-bottom:20px; align-self:flex-start; }
+.back-home:hover { color:var(--ink); border-bottom-color:var(--ink); }
+.back-home svg { width:12px; height:12px; fill:currentColor; }
 </style>
-<div class="page-wrap" style="background:var(--paper); min-height:100vh;">
+</head>
+<body style="background:var(--paper); min-height:100vh;">
+<div class="page-wrap">
+<a href="f-index.html" class="back-home"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>Home</a>
 <header>
   <h1>Les Pronoms</h1>
   <p>Four-Part Pronoun Drill — Noble Method</p>
@@ -311,3 +323,5 @@ function renderDone(app){
 }
 render();
 </script>
+</body>
+</html>
