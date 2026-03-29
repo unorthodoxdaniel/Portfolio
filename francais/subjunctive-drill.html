@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subjonctif — Noble Method Drill</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --cream-dark: #ede7d9;
+    --ink: #1a1a14;
+    --ink-light: #3d3a2e;
+    --ink-faint: #7a7060;
+    --gold: #b8952a;
+    --gold-light: #d4b04a;
+    --gold-pale: #f0e4b8;
+    --red: #8b2a2a;
+    --green: #2a5c3a;
+    --rule: #c8bfa0;
+    --shadow: rgba(26,26,20,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* Header */
+  .masthead {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .home-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .home-nav a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .home-nav a:hover { color: var(--gold); border-color: var(--gold); }
+
+  .masthead-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .masthead h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  .masthead-sub {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-faint);
+  }
+
+  /* Tab nav */
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 36px;
+  }
+
+  .tab-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1.5px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Score bar */
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 20px;
+    background: var(--cream-dark);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    margin-bottom: 32px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .score-item { display: flex; align-items: center; gap: 8px; color: var(--ink-faint); }
+  .score-val { color: var(--ink); font-weight: 700; font-size: 15px; }
+  .score-streak .score-val { color: var(--gold); }
+  .score-bar .divider { width: 1px; height: 20px; background: var(--rule); }
+
+  /* Question card */
+  .question-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 36px 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px var(--shadow);
+    position: relative;
+  }
+
+  .q-number {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .q-trigger {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+
+  .q-sentence {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .q-sentence .blank {
+    display: inline-block;
+    min-width: 90px;
+    border-bottom: 1.5px solid var(--ink);
+    margin: 0 4px;
+    vertical-align: bottom;
+    color: var(--ink-faint);
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+
+  .q-sentence .infinitive {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    color: var(--gold);
+    background: var(--gold-pale);
+    padding: 1px 8px;
+    border-radius: 2px;
+    margin-left: 6px;
+  }
+
+  /* Input row */
+  .input-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .answer-input {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.1rem;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1.5px solid var(--rule);
+    border-radius: 2px;
+    padding: 10px 16px;
+    flex: 1;
+    max-width: 260px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .answer-input:focus { border-color: var(--gold); }
+  .answer-input.correct { border-color: var(--green); background: #f0f7f2; }
+  .answer-input.incorrect { border-color: var(--red); background: #fdf2f2; }
+
+  .submit-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    border: none;
+    border-radius: 2px;
+    padding: 11px 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--ink-light); }
+  .submit-btn:disabled { background: var(--rule); cursor: default; }
+
+  .next-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: none;
+    border: 1.5px solid var(--gold);
+    border-radius: 2px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: none;
+  }
+
+  .next-btn:hover { background: var(--gold); color: var(--cream); }
+
+  /* Feedback */
+  .feedback {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    padding: 10px 0;
+    min-height: 28px;
+    display: none;
+  }
+
+  .feedback.correct { color: var(--green); }
+  .feedback.incorrect { color: var(--red); }
+
+  /* Hint */
+  .hint-toggle {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+
+  .hint-toggle:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hint-panel {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: var(--gold-pale);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .hint-panel.open { display: block; }
+
+  .hint-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .conj-table {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .conj-table td {
+    padding: 3px 12px 3px 0;
+    color: var(--ink-light);
+  }
+
+  .conj-table td:first-child {
+    color: var(--ink-faint);
+    font-style: italic;
+    width: 80px;
+  }
+
+  .conj-table td.form {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* Progress bar */
+  .progress-wrap {
+    height: 3px;
+    background: var(--rule);
+    border-radius: 2px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* Reference panel */
+  .ref-section {
+    margin-bottom: 40px;
+  }
+
+  .ref-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+
+  .ref-heading em { font-style: italic; color: var(--ink-faint); font-size: 1rem; }
+
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .ref-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 18px 20px;
+  }
+
+  .ref-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .ref-card-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .ref-rule { font-style: italic; color: var(--ink-faint); font-size: 0.9rem; margin-bottom: 12px; }
+
+  /* Divider rule */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    margin: 32px 0;
+  }
+
+  /* Accuracy tracker */
+  .verb-accuracy {
+    margin-top: 32px;
+  }
+
+  .acc-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    font-size: 0.95rem;
+  }
+
+  .acc-verb {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    min-width: 100px;
+  }
+
+  .acc-bar-wrap {
+    flex: 1;
+    height: 4px;
+    background: var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .acc-bar { height: 100%; border-radius: 2px; transition: width 0.4s; }
+  .acc-pct { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--ink-faint); min-width: 36px; text-align: right; }
+
+  @media (max-width: 600px) {
+    .page { padding: 28px 18px 60px; }
+    .masthead h1 { font-size: 1.9rem; }
+    .question-card { padding: 24px 20px; }
+    .ref-grid { grid-template-columns: 1fr 1fr; }
+    .input-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="home-nav">
+    <a href="f-index.html">← All drills</a>
+  </div>
+
+  <div class="masthead">
+    <div class="masthead-label">The Noble Method — French Grammar Series</div>
+    <h1>Le <em>Subjonctif</em></h1>
+    <div class="masthead-sub">Present tense · Conjugation drill with reference</div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('drill')">Drill</button>
+    <button class="tab-btn" onclick="switchTab('reference')">Reference</button>
+    <button class="tab-btn" onclick="switchTab('progress')">Progress</button>
+  </div>
+
+  <!-- DRILL TAB -->
+  <div id="tab-drill" class="tab-panel active">
+
+    <div class="score-bar">
+      <div class="score-item">
+        <span>Score</span>
+        <span class="score-val" id="score-correct">0</span>/<span class="score-val" id="score-total">0</span>
+      </div>
+      <div class="divider"></div>
+      <div class="score-item score-streak">
+        <span>Streak</span>
+        <span class="score-val" id="score-streak">0</span>
+      </div>
+      <div class="divider"></div>
+      <div class="score-item">
+        <span>Accuracy</span>
+        <span class="score-val" id="score-pct">—</span>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <div class="q-number" id="q-number">Question 1</div>
+      <div class="q-trigger" id="q-trigger"></div>
+      <div class="q-sentence" id="q-sentence"></div>
+
+      <div class="input-row">
+        <input type="text" class="answer-input" id="answer-input" placeholder="votre réponse…" autocomplete="off" autocorrect="off" spellcheck="false">
+        <button class="submit-btn" id="submit-btn" onclick="checkAnswer()">Vérifier</button>
+        <button class="next-btn" id="next-btn" onclick="nextQuestion()">Suivant →</button>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <button class="hint-toggle" id="hint-toggle" onclick="toggleHint()">▸ Conjugaison</button>
+      <div class="hint-panel" id="hint-panel">
+        <div class="hint-title" id="hint-title"></div>
+        <table class="conj-table" id="hint-table"></table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REFERENCE TAB -->
+  <div id="tab-reference" class="tab-panel">
+
+    <div class="ref-section">
+      <div class="ref-heading">Formation <em>— the general rule</em></div>
+      <p style="font-style:italic; color:var(--ink-light); margin-bottom:18px; font-size:1rem;">
+        Take the <strong>ils/elles</strong> form of the present indicative → drop <strong>-ent</strong> → add the subjunctive endings:<br>
+        <span style="font-family:'Courier Prime',monospace; color:var(--ink); font-size:0.95rem;">-e &nbsp;·&nbsp; -es &nbsp;·&nbsp; -e &nbsp;·&nbsp; -ions &nbsp;·&nbsp; -iez &nbsp;·&nbsp; -ent</span>
+      </p>
+      <div class="ornament">· · ·</div>
+    </div>
+
+    <div class="ref-section">
+      <div class="ref-heading">Regular verbs <em>— one model each</em></div>
+      <div class="ref-grid" id="ref-regular"></div>
+    </div>
+
+    <div class="ornament">✦</div>
+
+    <div class="ref-section">
+      <div class="ref-heading">Irregular verbs <em>— memorise these</em></div>
+      <div class="ref-grid" id="ref-irregular"></div>
+    </div>
+
+    <div class="ornament">· · ·</div>
+
+    <div class="ref-section">
+      <div class="ref-heading">Trigger phrases <em>— when to use the subjunctive</em></div>
+      <div style="font-family:'Courier Prime',monospace; font-size:13px; line-height:2.1; color:var(--ink-light);">
+        <div><span style="color:var(--gold);">il faut que</span> &nbsp;·&nbsp; necessity / obligation</div>
+        <div><span style="color:var(--gold);">je veux que / je voudrais que</span> &nbsp;·&nbsp; desire</div>
+        <div><span style="color:var(--gold);">bien que / quoique</span> &nbsp;·&nbsp; concession (although)</div>
+        <div><span style="color:var(--gold);">pour que</span> &nbsp;·&nbsp; purpose (so that)</div>
+        <div><span style="color:var(--gold);">il est possible que / il se peut que</span> &nbsp;·&nbsp; possibility</div>
+        <div><span style="color:var(--gold);">je ne pense pas que</span> &nbsp;·&nbsp; qualified doubt</div>
+        <div><span style="color:var(--gold);">avant que</span> &nbsp;·&nbsp; before</div>
+        <div><span style="color:var(--gold);">à moins que</span> &nbsp;·&nbsp; unless</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROGRESS TAB -->
+  <div id="tab-progress" class="tab-panel">
+    <div class="ref-heading" style="font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; padding-bottom:10px; border-bottom:1px solid var(--rule); margin-bottom:20px;">Accuracy by verb</div>
+    <div class="verb-accuracy" id="verb-accuracy">
+      <p style="color:var(--ink-faint); font-style:italic;">Complete some questions to see your progress.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+
+const CONJUNCTIONS = {
+  parler:    { type:'regular-er', label:'parler (-er)',  rule:'parlent → parl-', forms:{je:'parle',tu:'parles','il/elle':'parle',nous:'parlions',vous:'parliez','ils/elles':'parlent'} },
+  finir:     { type:'regular-ir', label:'finir (-ir)',   rule:'finissent → finiss-', forms:{je:'finisse',tu:'finisses','il/elle':'finisse',nous:'finissions',vous:'finissiez','ils/elles':'finissent'} },
+  attendre:  { type:'regular-re', label:'attendre (-re)',rule:'attendent → attend-', forms:{je:'attende',tu:'attendes','il/elle':'attende',nous:'attendions',vous:'attendiez','ils/elles':'attendent'} },
+  être:      { type:'irregular',  label:'être',          rule:'irregular — memorise', forms:{je:'sois',tu:'sois','il/elle':'soit',nous:'soyons',vous:'soyez','ils/elles':'soient'} },
+  avoir:     { type:'irregular',  label:'avoir',         rule:'irregular — memorise', forms:{je:'aie',tu:'aies','il/elle':'ait',nous:'ayons',vous:'ayez','ils/elles':'aient'} },
+  aller:     { type:'irregular',  label:'aller',         rule:'irregular — memorise', forms:{je:'aille',tu:'ailles','il/elle':'aille',nous:'allions',vous:'alliez','ils/elles':'aillent'} },
+  faire:     { type:'irregular',  label:'faire',         rule:'irregular — memorise', forms:{je:'fasse',tu:'fasses','il/elle':'fasse',nous:'fassions',vous:'fassiez','ils/elles':'fassent'} },
+  pouvoir:   { type:'irregular',  label:'pouvoir',       rule:'irregular — memorise', forms:{je:'puisse',tu:'puisses','il/elle':'puisse',nous:'puissions',vous:'puissiez','ils/elles':'puissent'} },
+  savoir:    { type:'irregular',  label:'savoir',        rule:'irregular — memorise', forms:{je:'sache',tu:'saches','il/elle':'sache',nous:'sachions',vous:'sachiez','ils/elles':'sachent'} },
+  vouloir:   { type:'irregular',  label:'vouloir',       rule:'irregular — memorise', forms:{je:'veuille',tu:'veuilles','il/elle':'veuille',nous:'voulions',vous:'vouliez','ils/elles':'veuillent'} },
+};
+
+const VF = {
+  voir:      {je:'voie',tu:'voies','il/elle':'voie',nous:'voyions',vous:'voyiez','ils/elles':'voient'},
+  venir:     {je:'vienne',tu:'viennes','il/elle':'vienne',nous:'venions',vous:'veniez','ils/elles':'viennent'},
+  comprendre:{je:'comprenne',tu:'comprennes','il/elle':'comprenne',nous:'comprenions',vous:'compreniez','ils/elles':'comprennent'},
+  partir:    {je:'parte',tu:'partes','il/elle':'parte',nous:'partions',vous:'partiez','ils/elles':'partent'},
+  prendre:   {je:'prenne',tu:'prennes','il/elle':'prenne',nous:'prenions',vous:'preniez','ils/elles':'prennent'},
+  dire:      {je:'dise',tu:'dises','il/elle':'dise',nous:'disions',vous:'disiez','ils/elles':'disent'},
+  choisir:   {je:'choisisse',tu:'choisisses','il/elle':'choisisse',nous:'choisissions',vous:'choisissiez','ils/elles':'choisissent'},
+  réussir:   {je:'réussisse',tu:'réussisses','il/elle':'réussisse',nous:'réussissions',vous:'réussissiez','ils/elles':'réussissent'},
+  maigrir:   {je:'maigrisse',tu:'maigrisses','il/elle':'maigrisse',nous:'maigrissions',vous:'maigrissiez','ils/elles':'maigrissent'},
+  trouver:   {je:'trouve',tu:'trouves','il/elle':'trouve',nous:'trouvions',vous:'trouviez','ils/elles':'trouvent'},
+  aimer:     {je:'aime',tu:'aimes','il/elle':'aime',nous:'aimions',vous:'aimiez','ils/elles':'aiment'},
+  ranger:    {je:'range',tu:'ranges','il/elle':'range',nous:'rangions',vous:'rangiez','ils/elles':'rangent'},
+  applaudir: {je:'applaudisse',tu:'applaudisses','il/elle':'applaudisse',nous:'applaudissions',vous:'applaudissiez','ils/elles':'applaudissent'},
+};
+
+const QUESTIONS = [
+  // il faut que
+  { trigger:'il faut que', sentence:'Il faut que tu ___ à l\'heure.', verb:'être', person:'tu' },
+  { trigger:'il faut que', sentence:'Il faut qu\'il ___ la vérité.', verb:'savoir', person:'il/elle' },
+  { trigger:'il faut que', sentence:'Il faut que nous ___ ensemble.', verb:'aller', person:'nous' },
+  { trigger:'il faut que', sentence:'Il faut que vous ___ patient.', verb:'être', person:'vous' },
+  { trigger:'il faut que', sentence:'Il faut qu\'on ___ plus attention.', verb:'faire', person:'il/elle' },
+  { trigger:'il faut que', sentence:'Il faut que tu ___ de la patience.', verb:'avoir', person:'tu' },
+  { trigger:'il faut que', sentence:'Il faut que nous ___ attention.', verb:'faire', person:'nous' },
+  { trigger:'il faut que', sentence:'Il faut que tu ___ avec lui.', verb:'parler', person:'tu' },
+  { trigger:'il faut que', sentence:'Il faut que vous ___ avant de partir.', verb:'attendre', person:'vous' },
+  { trigger:'il faut que', sentence:'Il faut qu\'on ___ la vérité.', verb:'dire', person:'il/elle', altVerb:'dire', altForms:VF.dire },
+  { trigger:'il est nécessaire que', sentence:'Il est nécessaire que nous ___ cet examen.', verb:'réussir', person:'nous', altVerb:'réussir', altForms:VF.réussir },
+  { trigger:'il est nécessaire que', sentence:'Il est nécessaire que vous ___ vos devoirs.', verb:'faire', person:'vous' },
+  { trigger:'il est essentiel que', sentence:'Il est essentiel que tu ___ là.', verb:'être', person:'tu' },
+  { trigger:'il est important que', sentence:'Il est important que vous ___ une décision.', verb:'prendre', person:'vous', altVerb:'prendre', altForms:VF.prendre },
+  // je veux / je souhaite / je désire
+  { trigger:'je veux que', sentence:'Je veux que tu ___ ce film.', verb:'voir', person:'tu', altVerb:'voir', altForms:VF.voir },
+  { trigger:'je voudrais que', sentence:'Je voudrais qu\'il ___ plus tôt.', verb:'venir', person:'il/elle', altVerb:'venir', altForms:VF.venir },
+  { trigger:'je veux que', sentence:'Je veux que nous ___ une solution.', verb:'trouver', person:'nous', altVerb:'trouver', altForms:VF.trouver },
+  { trigger:'je veux que', sentence:'Je veux qu\'elles ___ la réunion.', verb:'finir', person:'ils/elles' },
+  { trigger:'je veux que', sentence:'Je veux que tu ___ heureux.', verb:'être', person:'tu' },
+  { trigger:'je souhaite que', sentence:'Je souhaite que vous ___ ce projet.', verb:'aimer', person:'vous', altVerb:'aimer', altForms:VF.aimer },
+  { trigger:'je souhaite que', sentence:'Je souhaite qu\'ils ___ venir.', verb:'pouvoir', person:'ils/elles' },
+  { trigger:'je désire que', sentence:'Je désire que tu ___ à ton examen.', verb:'réussir', person:'tu', altVerb:'réussir', altForms:VF.réussir },
+  { trigger:'j\'aimerais que', sentence:'J\'aimerais qu\'il ___ la bonne réponse.', verb:'choisir', person:'il/elle', altVerb:'choisir', altForms:VF.choisir },
+  // j'ai peur que / je suis content que / je crains que
+  { trigger:'j\'ai peur que', sentence:'J\'ai peur que tu ___.', verb:'partir', person:'tu', altVerb:'partir', altForms:VF.partir },
+  { trigger:'je suis content que', sentence:'Je suis content qu\'elle ___.', verb:'réussir', person:'il/elle', altVerb:'réussir', altForms:VF.réussir },
+  { trigger:'je crains que', sentence:'Je crains qu\'il ne ___ pas la vérité.', verb:'savoir', person:'il/elle' },
+  { trigger:'je doute que', sentence:'Je doute qu\'elle ___ à la réunion.', verb:'aller', person:'il/elle' },
+  { trigger:'je doute que', sentence:'Je doute qu\'ils ___ la bonne réponse.', verb:'choisir', person:'ils/elles', altVerb:'choisir', altForms:VF.choisir },
+  // bien que / quoique
+  { trigger:'bien que', sentence:'Bien qu\'il ___ fatigué, il continue.', verb:'être', person:'il/elle' },
+  { trigger:'bien que', sentence:'Bien qu\'elle ___ la réponse, elle hésite.', verb:'savoir', person:'il/elle' },
+  { trigger:'bien que', sentence:'Bien que nous ___ le temps, on attend.', verb:'avoir', person:'nous' },
+  { trigger:'bien que', sentence:'Bien qu\'il ___ le français, il hésite.', verb:'parler', person:'il/elle' },
+  { trigger:'bien que', sentence:'Bien qu\'elle ___, elle mange bien.', verb:'maigrir', person:'il/elle', altVerb:'maigrir', altForms:VF.maigrir },
+  { trigger:'bien que', sentence:'Bien que tu ___ aider, ce n\'est pas possible.', verb:'vouloir', person:'tu' },
+  // pour que / afin que
+  { trigger:'pour que', sentence:'Je parle lentement pour qu\'il ___.', verb:'comprendre', person:'il/elle', altVerb:'comprendre', altForms:VF.comprendre },
+  { trigger:'pour que', sentence:'Elle écrit pour que tu ___ répondre.', verb:'pouvoir', person:'tu' },
+  { trigger:'pour que', sentence:'Je répète pour qu\'ils ___ noter.', verb:'pouvoir', person:'ils/elles' },
+  { trigger:'pour que', sentence:'Je reviens pour que tu ___ partir.', verb:'pouvoir', person:'tu' },
+  { trigger:'afin que', sentence:'Je travaille afin que mes enfants ___ une meilleure vie.', verb:'avoir', person:'ils/elles' },
+  // il est possible que / il se peut que / il est probable que
+  { trigger:'il est possible que', sentence:'Il est possible qu\'il ___ en retard.', verb:'être', person:'il/elle' },
+  { trigger:'il est possible que', sentence:'Il est possible que tu ___ raison.', verb:'avoir', person:'tu' },
+  { trigger:'il est possible que', sentence:'Il est possible qu\'ils ___ partir.', verb:'vouloir', person:'ils/elles' },
+  { trigger:'il est possible que', sentence:'Il est possible qu\'il ___ un rendez-vous.', verb:'avoir', person:'il/elle' },
+  { trigger:'il se peut que', sentence:'Il se peut qu\'ils ___ après la réunion.', verb:'venir', person:'ils/elles', altVerb:'venir', altForms:VF.venir },
+  // je ne pense pas que / je ne crois pas que
+  { trigger:'je ne pense pas que', sentence:'Je ne pense pas qu\'elle ___ ça.', verb:'faire', person:'il/elle' },
+  { trigger:'je ne pense pas que', sentence:'Je ne pense pas qu\'il ___ venir.', verb:'pouvoir', person:'il/elle' },
+  { trigger:'je ne pense pas que', sentence:'Je ne pense pas que tu ___ tort.', verb:'avoir', person:'tu' },
+  { trigger:'je ne crois pas que', sentence:'Je ne crois pas qu\'il ___ là.', verb:'être', person:'il/elle' },
+  // avant que / à moins que / de peur que / à condition que
+  { trigger:'avant que', sentence:'Appelle-moi avant qu\'il ___.', verb:'partir', person:'il/elle', altVerb:'partir', altForms:VF.partir },
+  { trigger:'avant que', sentence:'Finis ça avant que je ___.', verb:'partir', person:'je', altVerb:'partir', altForms:VF.partir },
+  { trigger:'avant que', sentence:'Il est parti de peur que tu ne le ___.', verb:'voir', person:'tu', altVerb:'voir', altForms:VF.voir },
+  { trigger:'à moins que', sentence:'On part, à moins que tu ___ venir.', verb:'vouloir', person:'tu' },
+  { trigger:'à moins que', sentence:'Ils restent, à moins qu\'il ___ trop tard.', verb:'être', person:'il/elle' },
+  { trigger:'il est temps que', sentence:'Il est temps que vous ___ une décision.', verb:'prendre', person:'vous', altVerb:'prendre', altForms:VF.prendre },
+  // from class notes sentences
+  { trigger:'je souhaite que', sentence:'Le professeur souhaite que tu ___ ton exposé.', verb:'finir', person:'tu' },
+  { trigger:'je veux que', sentence:'Je veux que vous ___ à la fin.', verb:'applaudir', person:'vous', altVerb:'applaudir', altForms:VF.applaudir },
+  { trigger:'mes parents exigent que', sentence:'Mes parents exigent que je ___ ma chambre.', verb:'ranger', person:'je', altVerb:'ranger', altForms:VF.ranger },
+  { trigger:'il est possible que', sentence:'Il est possible que le train n\'___ pas à l\'heure.', verb:'arriver', person:'il/elle', altVerb:'arriver', altForms:{je:'arrive',tu:'arrives','il/elle':'arrive',nous:'arrivions',vous:'arriviez','ils/elles':'arrivent'} },
+  { trigger:'je suis surpris que', sentence:'Je suis surpris qu\'elle ___ si tôt.', verb:'venir', person:'il/elle', altVerb:'venir', altForms:VF.venir },
+  { trigger:'nous voudrions que', sentence:'Nous voudrions que vous ___ notre offre.', verb:'accepter', person:'vous', altVerb:'accepter', altForms:{je:'accepte',tu:'acceptes','il/elle':'accepte',nous:'acceptions',vous:'acceptiez','ils/elles':'acceptent'} },
+];
+
+
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+
+let queue = [];
+let current = null;
+let qIndex = 0;
+let correct = 0;
+let total = 0;
+let streak = 0;
+let hintOpen = false;
+let answered = false;
+const verbStats = {}; // verb → { correct, total }
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function buildQueue() {
+  queue = shuffle([...QUESTIONS]);
+}
+
+function getAnswer(q) {
+  if (q.altForms) return q.altForms[q.person];
+  const conj = CONJUNCTIONS[q.verb];
+  if (conj) return conj.forms[q.person];
+  return '';
+}
+
+function getVerbLabel(q) {
+  if (q.altVerb) return q.altVerb;
+  return q.verb;
+}
+
+function getVerbForms(q) {
+  if (q.altForms) return q.altForms;
+  const conj = CONJUNCTIONS[q.verb];
+  if (conj) return conj.forms;
+  const vf = VF[q.verb];
+  if (vf) return vf;
+  return {};
+}
+
+function renderQuestion() {
+  if (qIndex >= queue.length) {
+    buildQueue();
+    qIndex = 0;
+  }
+  current = queue[qIndex];
+  answered = false;
+  hintOpen = false;
+
+  document.getElementById('q-number').textContent = `Question ${total + 1}`;
+  document.getElementById('q-trigger').textContent = current.trigger.toUpperCase();
+
+  // Build sentence display
+  const infinitiveTag = `<span class="infinitive">${current.verb}</span>`;
+  const blankTag = `<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>`;
+  let display = current.sentence.replace('___', blankTag + infinitiveTag);
+  document.getElementById('q-sentence').innerHTML = display;
+
+  // Reset input
+  const inp = document.getElementById('answer-input');
+  inp.value = '';
+  inp.className = 'answer-input';
+  inp.disabled = false;
+  inp.focus();
+
+  document.getElementById('submit-btn').style.display = '';
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('next-btn').style.display = 'none';
+
+  const fb = document.getElementById('feedback');
+  fb.style.display = 'none';
+  fb.className = 'feedback';
+
+  document.getElementById('hint-panel').className = 'hint-panel';
+  document.getElementById('hint-toggle').textContent = '▸ Conjugaison';
+
+  // Populate hint
+  const verbLabel = getVerbLabel(current);
+  document.getElementById('hint-title').textContent = `Subjonctif de « ${verbLabel} »`;
+  const forms = getVerbForms(current);
+  const persons = ['je','tu','il/elle','nous','vous','ils/elles'];
+  let rows = '';
+  for (const p of persons) {
+    const highlight = p === current.person ? ' style="color:var(--gold);font-weight:700;"' : '';
+    rows += `<tr><td>${p}</td><td class="form"${highlight}>${forms[p] || '—'}</td></tr>`;
+  }
+  document.getElementById('hint-table').innerHTML = rows;
+
+  // Progress
+  const pct = Math.min(100, Math.round((total % 30) / 30 * 100));
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+function toggleHint() {
+  hintOpen = !hintOpen;
+  document.getElementById('hint-panel').className = 'hint-panel' + (hintOpen ? ' open' : '');
+  document.getElementById('hint-toggle').textContent = (hintOpen ? '▾' : '▸') + ' Conjugaison';
+}
+
+function normalise(s) {
+  return s.trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/['']/g, "'");
+}
+
+function checkAnswer() {
+  if (answered) return;
+  const inp = document.getElementById('answer-input');
+  const raw = inp.value;
+  const expected = getAnswer(current);
+  const correct_answer = normalise(raw) === normalise(expected);
+
+  answered = true;
+  inp.disabled = true;
+  document.getElementById('submit-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = '';
+
+  // Stats
+  const vk = current.verb;
+  if (!verbStats[vk]) verbStats[vk] = { correct:0, total:0 };
+  verbStats[vk].total++;
+  total++;
+  document.getElementById('score-total').textContent = total;
+
+  const fb = document.getElementById('feedback');
+  fb.style.display = 'block';
+
+  if (correct_answer) {
+    correct++;
+    streak++;
+    inp.className = 'answer-input correct';
+    fb.className = 'feedback correct';
+    fb.textContent = '✓ Correct.';
+    verbStats[vk].correct++;
+    // Weight: push harder verbs forward
+    if (streak > 2) qIndex++;
+  } else {
+    streak = 0;
+    inp.className = 'answer-input incorrect';
+    fb.className = 'feedback incorrect';
+    fb.innerHTML = `✗ &nbsp;La forme correcte est <strong style="font-family:'Courier Prime',monospace">${expected}</strong>.`;
+    // Re-insert this question later in queue
+    const reInsert = Math.min(qIndex + 3, queue.length);
+    queue.splice(reInsert, 0, current);
+  }
+
+  document.getElementById('score-correct').textContent = correct;
+  document.getElementById('score-streak').textContent = streak;
+  const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+  document.getElementById('score-pct').textContent = pct + '%';
+}
+
+function nextQuestion() {
+  qIndex++;
+  renderQuestion();
+}
+
+// Enter key support
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    if (!answered) checkAnswer();
+    else nextQuestion();
+  }
+});
+
+// ── REFERENCE PANEL ───────────────────────────────────────────────────────────
+
+function buildRefGrid(containerId, verbs) {
+  const container = document.getElementById(containerId);
+  let html = '';
+  for (const [key, data] of Object.entries(verbs)) {
+    const persons = ['je','tu','il/elle','nous','vous','ils/elles'];
+    let rows = '';
+    for (const p of persons) {
+      rows += `<tr><td>${p}</td><td class="form">${data.forms[p] || '—'}</td></tr>`;
+    }
+    html += `
+      <div class="ref-card">
+        <div class="ref-card-title">${data.label}</div>
+        <div class="ref-card-sub">${data.type || 'irrégulier'}</div>
+        ${data.rule ? `<div class="ref-rule">${data.rule}</div>` : ''}
+        <table class="conj-table">${rows}</table>
+      </div>`;
+  }
+  container.innerHTML = html;
+}
+
+const regularVerbs = {
+  parler:   CONJUNCTIONS.parler,
+  finir:    CONJUNCTIONS.finir,
+  attendre: CONJUNCTIONS.attendre,
+};
+
+const irregularVerbs = {
+  être:    CONJUNCTIONS.être,
+  avoir:   CONJUNCTIONS.avoir,
+  aller:   CONJUNCTIONS.aller,
+  faire:   CONJUNCTIONS.faire,
+  pouvoir: CONJUNCTIONS.pouvoir,
+  savoir:  CONJUNCTIONS.savoir,
+  vouloir: CONJUNCTIONS.vouloir,
+};
+
+buildRefGrid('ref-regular', regularVerbs);
+buildRefGrid('ref-irregular', irregularVerbs);
+
+// ── PROGRESS TAB ──────────────────────────────────────────────────────────────
+
+function renderProgress() {
+  const container = document.getElementById('verb-accuracy');
+  const keys = Object.keys(verbStats);
+  if (keys.length === 0) {
+    container.innerHTML = '<p style="color:var(--ink-faint); font-style:italic;">Complete some questions to see your progress.</p>';
+    return;
+  }
+  let html = '';
+  keys.sort((a,b) => {
+    const pa = verbStats[a].correct / verbStats[a].total;
+    const pb = verbStats[b].correct / verbStats[b].total;
+    return pa - pb;
+  });
+  for (const v of keys) {
+    const s = verbStats[v];
+    const pct = Math.round(s.correct / s.total * 100);
+    const color = pct >= 80 ? 'var(--green)' : pct >= 50 ? 'var(--gold)' : 'var(--red)';
+    html += `
+      <div class="acc-row">
+        <div class="acc-verb">${v}</div>
+        <div class="acc-bar-wrap"><div class="acc-bar" style="width:${pct}%;background:${color}"></div></div>
+        <div class="acc-pct">${pct}%</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:11px;color:var(--ink-faint);min-width:60px;text-align:right">${s.correct}/${s.total}</div>
+      </div>`;
+  }
+  container.innerHTML = html;
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────────────
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    if (b.textContent.toLowerCase().startsWith(name === 'drill' ? 'drill' : name === 'reference' ? 'ref' : 'prog')) {
+      b.classList.add('active');
+    }
+  });
+  // fix tab matching
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    const map = { drill:'drill', reference:'reference', progress:'progress' };
+    if (b.getAttribute('onclick') === `switchTab('${name}')`) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  if (name === 'progress') renderProgress();
+}
+
+// ── START ─────────────────────────────────────────────────────────────────────
+buildQueue();
+renderQuestion();
+</script>
+</body>
+</html>
