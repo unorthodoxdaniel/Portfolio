@@ -9,7 +9,7 @@
   :root {
     --cream: #f5f0e8;
     --cream-dark: #ede7d9;
-    --ink: #1a1a14;
+    --ink: #1a1209;
     --ink-light: #3d3a2e;
     --ink-faint: #7a7060;
     --gold: #b8952a;
@@ -108,6 +108,125 @@
     font-size: 1rem;
     color: var(--ink-faint);
   }
+
+  /* Noble intro box */
+  .noble-intro {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 28px 36px;
+    margin-bottom: 36px;
+    border-radius: 2px;
+  }
+
+  .noble-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  .noble-intro p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.82);
+    margin-bottom: 10px;
+  }
+
+  .noble-intro p:last-child { margin-bottom: 0; }
+
+  .noble-intro strong { color: var(--cream); }
+  .noble-intro em { color: rgba(245,240,232,0.7); font-style: italic; }
+
+  .noble-intro-warning {
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+    color: rgba(245,240,232,0.75) !important;
+    margin-top: 4px;
+  }
+
+  /* Understanding section in reference */
+  .understanding-block {
+    background: var(--cream-dark);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+
+  .understanding-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .understanding-block p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--ink-light);
+    margin-bottom: 10px;
+  }
+
+  .understanding-block p:last-child { margin-bottom: 0; }
+
+  .understanding-block strong { color: var(--ink); }
+
+  .understanding-block .example {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: #fff;
+    border-left: 2px solid var(--gold);
+    padding: 8px 14px;
+    margin: 10px 0;
+    display: block;
+    line-height: 1.9;
+  }
+
+  .understanding-block .example .label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .trap-box {
+    background: #fff0f0;
+    border: 1px solid #d4a0a0;
+    border-left: 3px solid var(--red);
+    border-radius: 2px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+  }
+
+  .trap-box h4 {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .trap-box p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+
+  .trap-box p:last-child { margin-bottom: 0; }
+  .trap-box strong { color: var(--ink); }
+  .trap-box .example { font-family:'Courier Prime',monospace; font-size:12px; color:var(--ink); display:block; margin-top:6px; }
 
   /* Tab nav */
   .tab-nav {
@@ -480,6 +599,13 @@
     <div class="masthead-sub">Present tense · Conjugation drill with reference</div>
   </div>
 
+  <div class="noble-intro">
+    <h2>What is the subjunctive?</h2>
+    <p>The subjunctive (<em>le subjonctif</em>) is a verbal <strong>mode</strong> — not a tense — used to express actions or states that are uncertain, desired, hypothetical, or subjective. It almost always appears in a subordinate clause introduced by <strong>que</strong>, after a main clause containing an emotion, desire, doubt, necessity, or certain fixed conjunctions.</p>
+    <p>The key rule: <strong>two different subjects, one per clause.</strong> <em>Je veux partir</em> (one subject → infinitive). <em>Je veux qu'il parte</em> (two subjects → subjunctive). If the subject is the same in both clauses, use the infinitive instead.</p>
+    <p class="noble-intro-warning">⚠ Not every <em>que</em> triggers the subjunctive. <em>Je pense que</em>, <em>je crois que</em>, and <em>je sais que</em> use the <strong>indicative</strong> — they express belief or knowledge, not doubt. It is only the <strong>negative</strong> form — <em>je ne pense pas que, je ne crois pas que</em> — that introduces enough uncertainty to require the subjunctive.</p>
+  </div>
+
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('drill')">Drill</button>
     <button class="tab-btn" onclick="switchTab('reference')">Reference</button>
@@ -534,6 +660,58 @@
 
   <!-- REFERENCE TAB -->
   <div id="tab-reference" class="tab-panel">
+
+    <div class="ref-section">
+      <div class="ref-heading">Understanding the subjunctive <em>— read this until it sticks</em></div>
+
+      <div class="understanding-block">
+        <h3>The core idea</h3>
+        <p>The subjunctive expresses something <strong>filtered through a mind</strong> — a desire, a fear, a doubt, a judgment. The indicative expresses facts and beliefs held as true. That's the real difference: not certainty vs uncertainty exactly, but whether you're stating a fact or colouring it with feeling or subjectivity.</p>
+        <p>It almost always lives in a subordinate clause after <strong>que</strong>, triggered by the main clause. The formula is:</p>
+        <span class="example">Main clause (trigger) + <strong>que</strong> + subject + <strong>subjunctive verb</strong></span>
+        <p>And the golden rule: <strong>two different subjects</strong> are required. Same subject → use the infinitive instead.</p>
+        <span class="example"><span class="label">same subject → infinitive</span>Je veux <strong>partir</strong>. &nbsp;(I want to leave.)<br><span class="label">different subjects → subjunctive</span>Je veux qu'il <strong>parte</strong>. &nbsp;(I want him to leave.)</span>
+      </div>
+
+      <div class="trap-box">
+        <h4>⚠ Common trap — je pense que vs je ne pense pas que</h4>
+        <p><strong>Je pense que, je crois que, je sais que</strong> → <strong>indicative</strong>. These express a belief held as true, not a doubt. The verb after <em>que</em> conjugates normally.</p>
+        <span class="example">Je pense qu'il <strong>est</strong> là. &nbsp;(indicative — I believe this to be true)</span>
+        <p>But negate them and you introduce enough doubt to flip to subjunctive:</p>
+        <span class="example">Je ne pense pas qu'il <strong>soit</strong> là. &nbsp;(subjunctive — I'm not sure)</span>
+        <p>Same applies to <em>je crois que → je ne crois pas que</em>, and <em>il est certain que → il n'est pas certain que</em>.</p>
+      </div>
+
+      <div class="trap-box">
+        <h4>⚠ Common trap — il est probable que vs il est possible que</h4>
+        <p><strong>Il est probable que</strong> → <strong>indicative</strong>. High probability is treated like a fact.<br>
+        <strong>Il est possible que</strong> → <strong>subjunctive</strong>. Possibility is uncertain enough to require it.</p>
+        <span class="example">Il est probable qu'il <strong>viendra</strong>. &nbsp;(indicative)<br>Il est possible qu'il <strong>vienne</strong>. &nbsp;(subjunctive)</span>
+      </div>
+
+      <div class="understanding-block">
+        <h3>Five categories of triggers</h3>
+        <p><strong>1. Desire & preference</strong> — wanting, wishing, preferring something for someone else.<br>
+        <em>vouloir que, souhaiter que, désirer que, préférer que, aimer que, exiger que</em></p>
+        <p><strong>2. Emotion</strong> — happiness, fear, sadness, anger, surprise about something.<br>
+        <em>être content que, avoir peur que, être triste que, être fâché que, être surpris que, craindre que</em></p>
+        <p><strong>3. Necessity & judgment</strong> — something must happen or is important/essential.<br>
+        <em>il faut que, il est nécessaire que, il est essentiel que, il est important que, il est temps que, il convient que</em></p>
+        <p><strong>4. Doubt & possibility</strong> — uncertainty about whether something is or will be true.<br>
+        <em>douter que, il est possible que, il se peut que, il est peu probable que, ne pas penser que, ne pas croire que</em></p>
+        <p><strong>5. Fixed conjunctions</strong> — certain linking words always require subjunctive, no exception.<br>
+        <em>bien que, quoique, pour que, afin que, avant que, à moins que, de peur que, à condition que, sans que</em></p>
+      </div>
+
+      <div class="understanding-block">
+        <h3>The conjunction list — no exceptions</h3>
+        <p>These conjunctions <strong>always</strong> take the subjunctive regardless of the meaning of the sentence around them. Memorise them as a fixed list.</p>
+        <span class="example">bien que / quoique &nbsp;→&nbsp; although<br>pour que / afin que &nbsp;→&nbsp; so that<br>avant que &nbsp;→&nbsp; before<br>à moins que &nbsp;→&nbsp; unless<br>de peur que &nbsp;→&nbsp; for fear that<br>à condition que &nbsp;→&nbsp; provided that<br>sans que &nbsp;→&nbsp; without</span>
+        <p>Note: <strong>après que</strong> (after) technically takes the indicative in standard French — the opposite of <em>avant que</em>. Worth knowing because it surprises people.</p>
+      </div>
+
+      <div class="ornament">· · ·</div>
+    </div>
 
     <div class="ref-section">
       <div class="ref-heading">Formation <em>— the general rule</em></div>
