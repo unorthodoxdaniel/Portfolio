@@ -393,10 +393,24 @@
     padding: 10px 22px;
     cursor: pointer;
     transition: all 0.2s;
-    display: none;
   }
 
   .next-btn:hover { background: var(--gold); color: var(--cream); }
+
+  .audio-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    color: var(--ink-faint);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+  }
+
+  .audio-btn:hover { border-color: var(--gold); color: var(--gold); }
 
   /* Feedback */
   .feedback {
@@ -644,7 +658,8 @@
       <div class="input-row">
         <input type="text" class="answer-input" id="answer-input" placeholder="votre réponse…" autocomplete="off" autocorrect="off" spellcheck="false">
         <button class="submit-btn" id="submit-btn" onclick="checkAnswer()">Vérifier</button>
-        <button class="next-btn" id="next-btn" onclick="nextQuestion()">Suivant →</button>
+        <button class="next-btn" id="next-btn" onclick="nextQuestion()" style="display:none">Suivant →</button>
+        <button class="audio-btn" id="audio-btn" onclick="playAudio()" title="Écouter">🔊</button>
       </div>
 
       <div class="feedback" id="feedback"></div>
@@ -980,6 +995,32 @@ function normalise(s) {
     .replace(/['']/g, "'");
 }
 
+// ── AUDIO ─────────────────────────────────────────────────────────────────────
+
+function buildFullSentence() {
+  // Replace ___ with the correct answer in the sentence
+  const expected = getAnswer(current);
+  return current.sentence.replace('___', expected);
+}
+
+function playAudio(text) {
+  const toSpeak = text || buildFullSentence();
+  if (!toSpeak) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(toSpeak);
+  utt.lang = 'fr-FR';
+  utt.rate = 0.9;
+  const voices = window.speechSynthesis.getVoices();
+  const frVoice = voices.find(v => v.lang.startsWith('fr'));
+  if (frVoice) utt.voice = frVoice;
+  window.speechSynthesis.speak(utt);
+}
+
+// Pre-load voices
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
 function checkAnswer() {
   if (answered) return;
   const inp = document.getElementById('answer-input');
@@ -1025,6 +1066,9 @@ function checkAnswer() {
   document.getElementById('score-streak').textContent = streak;
   const pct = total > 0 ? Math.round(correct / total * 100) : 0;
   document.getElementById('score-pct').textContent = pct + '%';
+
+  // Auto-play the full correct sentence
+  setTimeout(() => playAudio(), 300);
 }
 
 function nextQuestion() {
