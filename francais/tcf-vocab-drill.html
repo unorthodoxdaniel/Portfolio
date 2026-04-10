@@ -876,6 +876,44 @@
     transition: border-color 0.2s;
   }
   .voice-select:focus { border-color: var(--gold); }
+  .listen-loop-row {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin-bottom: 0;
+  }
+  .listen-loop-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: none;
+    color: var(--ink-faint);
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .listen-loop-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .listen-loop-btn.active { background: var(--gold-pale); border-color: var(--gold); color: var(--ink); }
+  .player-loop-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .player-loop-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .player-loop-btn.active { background: var(--gold-pale); border-color: var(--gold); color: var(--ink); }
+
   .voice-hint {
     font-family: 'EB Garamond', serif;
     font-style: italic;
@@ -1012,6 +1050,12 @@
         <p class="voice-hint" id="voice-hint">Chargement des voix…</p>
       </div>
 
+      <div class="listen-loop-row">
+        <button class="listen-loop-btn" id="listen-loop-btn" onclick="toggleListenLoop()">
+          <span id="listen-loop-icon">↺</span> Boucle automatique <span id="listen-loop-state">désactivée</span>
+        </button>
+      </div>
+
       <button class="listen-start-btn" id="listen-start-btn" onclick="startListening()">▶ &nbsp; Commencer l'écoute</button>
     </div>
 
@@ -1056,6 +1100,7 @@
             <button class="pspeed-btn active" id="pspeed-normal" onclick="setPlayerSpeed('normal')">Normale</button>
             <button class="pspeed-btn" id="pspeed-fast" onclick="setPlayerSpeed('fast')">Rapide</button>
           </div>
+          <button class="player-loop-btn" id="player-loop-btn" onclick="toggleListenLoop()">↺ Boucle <span id="player-loop-state">off</span></button>
           <button class="player-stop-btn" onclick="stopListening()">✕ Arrêter</button>
         </div>
       </div>
@@ -2074,6 +2119,7 @@ let listenPaused = false;
 let listenStage = 0; // 0=word_fr, 1=meaning, 2=sentence_fr, 3=sentence_en, 4=word_fr_repeat
 let selectedVoiceFr = null;
 let selectedVoiceEn = null;
+let listenLoop = false;
 
 function loadVoices() {
   const voices = speechSynth.getVoices();
@@ -2128,11 +2174,12 @@ const PAUSE_BETWEEN_WORDS = { normal: 1600, slow: 2400 };
 const SPEED_RATE = { normal: 0.88, slow: 0.72, fast: 1.05 };
 
 const STAGE_META = [
-  { label: 'Mot en français', mainKey: 'fr', subKey: 'type', subIsType: true },
-  { label: 'Signification',   mainKey: 'en', subKey: null },
-  { label: 'Phrase TCF',      mainKey: 'sentence', subKey: null },
-  { label: 'Traduction',      mainKey: 'sen_en', subKey: null },
-  { label: 'À retenir',       mainKey: 'fr', subKey: null },
+  { label: 'Mot en français', mainKey: 'fr',      subKey: 'type', subIsType: true, lang: 'fr' },
+  { label: 'Signification',   mainKey: 'en',      subKey: null,                   lang: 'en' },
+  { label: 'Phrase TCF',      mainKey: 'sentence', subKey: null,                  lang: 'fr' },
+  { label: 'Traduction',      mainKey: 'sen_en',  subKey: null,                   lang: 'en' },
+  { label: 'Phrase — répétition', mainKey: 'sentence', subKey: null,              lang: 'fr' },
+  { label: 'À retenir',       mainKey: 'fr',      subKey: null,                   lang: 'fr' },
 ];
 
 function initListenCatGrid() {
@@ -2168,6 +2215,22 @@ function setPlayerSpeed(s) {
   document.getElementById('pspeed-slow').classList.toggle('active', s === 'slow');
   document.getElementById('pspeed-normal').classList.toggle('active', s === 'normal');
   document.getElementById('pspeed-fast').classList.toggle('active', s === 'fast');
+}
+
+function toggleListenLoop() {
+  listenLoop = !listenLoop;
+  // Setup screen button
+  const icon = document.getElementById('listen-loop-icon');
+  const state = document.getElementById('listen-loop-state');
+  const btn = document.getElementById('listen-loop-btn');
+  if (icon) icon.textContent = listenLoop ? '↺' : '↺';
+  if (state) state.textContent = listenLoop ? 'activée' : 'désactivée';
+  if (btn) btn.classList.toggle('active', listenLoop);
+  // Player button
+  const pstate = document.getElementById('player-loop-state');
+  const pbtn = document.getElementById('player-loop-btn');
+  if (pstate) pstate.textContent = listenLoop ? 'on' : 'off';
+  if (pbtn) pbtn.classList.toggle('active', listenLoop);
 }
 
 function startListening() {
@@ -2263,12 +2326,31 @@ function setSpeakingVisible(v) {
 function playCurrentStage() {
   if (!listenPlaying || listenPaused) return;
   if (listenIndex >= listenWords.length) {
-    // Session complete
+    if (listenLoop) {
+      // Reshuffle and restart
+      const diffOrder = ['essential', 'intermediate', 'advanced'];
+      listenWords = shuffle([...CATEGORIES[listenCat].words]).sort(
+        (a, b) => diffOrder.indexOf(a.diff) - diffOrder.indexOf(b.diff)
+      );
+      // Randomise within each difficulty tier
+      const tiers = ['essential','intermediate','advanced'];
+      let result = [];
+      for (const t of tiers) {
+        result = result.concat(shuffle(listenWords.filter(w => w.diff === t)));
+      }
+      listenWords = result;
+      listenIndex = 0;
+      listenStage = 0;
+      updatePlayerProgress();
+      playCurrentStage();
+      return;
+    }
+    // No loop — session complete
     listenPlaying = false;
     document.getElementById('ctrl-play-btn').textContent = '▶';
-    document.getElementById('player-stage').textContent = 'Terminé';
+    document.getElementById('player-stage').textContent = 'Terminé ✓';
     document.getElementById('player-main').textContent = 'Session complète';
-    document.getElementById('player-sub').textContent = '';
+    document.getElementById('player-sub').textContent = 'Activez la boucle pour recommencer automatiquement.';
     document.getElementById('player-type').textContent = '';
     setSpeakingVisible(false);
     return;
@@ -2279,10 +2361,12 @@ function playCurrentStage() {
 
   const w = listenWords[listenIndex];
   const meta = STAGE_META[listenStage];
-  const textToSpeak = w[meta.mainKey] || '';
+  let textToSpeak = w[meta.mainKey] || '';
+  // Replace ' / ' with ', ' so TTS doesn't say "slash"
+  textToSpeak = textToSpeak.replace(/ \/ /g, ', ');
 
   // Determine language and voice
-  const isFr = listenStage === 0 || listenStage === 2 || listenStage === 4;
+  const isFr = STAGE_META[listenStage].lang === 'fr';
 
   speechSynth && speechSynth.cancel();
   setSpeakingVisible(true);
