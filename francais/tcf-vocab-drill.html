@@ -702,6 +702,188 @@
     color: var(--ink-faint);
   }
 
+  /* ── LISTEN MODE ── */
+  .listen-setup {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 32px 36px;
+    box-shadow: 0 2px 12px var(--shadow);
+    margin-bottom: 24px;
+  }
+  .listen-setup h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .listen-setup p {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.92rem;
+    color: var(--ink-faint);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  .listen-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .listen-cat-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--cream-dark);
+    color: var(--ink-faint);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .listen-cat-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .listen-cat-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .listen-cat-btn .lcat-name { font-size: 11px; font-weight: 700; }
+  .listen-cat-btn .lcat-count { font-size: 9px; opacity: 0.7; }
+  .listen-options {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .listen-opt-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .listen-speed-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: none;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .listen-speed-btn.active { background: var(--gold); color: var(--cream); border-color: var(--gold); }
+  .listen-speed-btn:hover:not(.active) { border-color: var(--gold); color: var(--ink); }
+  .listen-start-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    border: none;
+    border-radius: 2px;
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .listen-start-btn:hover { background: var(--ink-light); }
+  .listen-start-btn:disabled { background: var(--rule); cursor: default; }
+  .listen-player { display: none; background: #fff; border: 1px solid var(--rule); border-radius: 2px; box-shadow: 0 2px 20px var(--shadow); overflow: hidden; }
+  .listen-player.active { display: block; }
+  .player-header { background: var(--ink); color: var(--cream); padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .player-cat-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; font-weight: 400; }
+  .player-counter { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(245,240,232,0.6); }
+  .player-progress-wrap { height: 3px; background: rgba(255,255,255,0.15); }
+  .player-progress-fill { height: 100%; background: var(--gold); transition: width 0.5s ease; }
+  .player-card { padding: 36px 40px; min-height: 220px; display: flex; flex-direction: column; justify-content: center; }
+  .player-stage { font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; height: 14px; }
+  .player-main { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 10px; min-height: 2.4rem; }
+  .player-sub { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--ink-faint); font-style: italic; line-height: 1.6; min-height: 1.6rem; }
+  .player-type { font-family: 'EB Garamond', serif; font-size: 0.85rem; color: var(--ink-faint); font-style: italic; margin-top: 4px; }
+  .player-speaking { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.3s; }
+  .player-speaking.visible { opacity: 1; }
+  .speak-bar { width: 3px; border-radius: 2px; background: var(--gold); animation: speakbar 0.5s ease-in-out infinite alternate; }
+  .speak-bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+  .speak-bar:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+  .speak-bar:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+  .speak-bar:nth-child(4) { height: 16px; animation-delay: 0.15s; }
+  .speak-bar:nth-child(5) { height: 8px; animation-delay: 0.05s; }
+  @keyframes speakbar { from { transform: scaleY(0.4); opacity:0.5; } to { transform: scaleY(1); opacity:1; } }
+  .player-controls { padding: 20px 28px 28px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 16px; }
+  .player-btns { display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .ctrl-btn { font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border: 1.5px solid var(--rule); border-radius: 2px; background: none; color: var(--ink-faint); cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 20px; }
+  .ctrl-btn:hover { border-color: var(--gold); color: var(--ink); }
+  .ctrl-btn .ctrl-icon { font-size: 20px; line-height: 1; }
+  .ctrl-btn .ctrl-label { font-size: 9px; opacity: 0.7; }
+  .ctrl-play { width: 72px; height: 72px; border-radius: 50%; background: var(--ink); color: var(--cream); border: none; font-size: 26px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.1s; flex-shrink: 0; }
+  .ctrl-play:hover { background: var(--ink-light); }
+  .ctrl-play:active { transform: scale(0.95); }
+  .player-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .player-speed-row { display: flex; gap: 8px; align-items: center; }
+  .player-speed-label { font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+  .pspeed-btn { font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.1em; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 2px; background: none; color: var(--ink-faint); cursor: pointer; transition: all 0.15s; }
+  .pspeed-btn.active { background: var(--gold-pale); color: var(--ink); border-color: var(--gold); }
+  .pspeed-btn:hover:not(.active) { border-color: var(--ink-faint); }
+  .player-stop-btn { font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); background: none; border: 1px solid var(--rule); border-radius: 2px; padding: 5px 12px; cursor: pointer; transition: all 0.2s; }
+  .player-stop-btn:hover { border-color: var(--red); color: var(--red); }
+
+  .listen-voices {
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .voice-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .voice-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    min-width: 110px;
+    flex-shrink: 0;
+  }
+  .voice-select {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.92rem;
+    color: var(--ink);
+    background: var(--cream-dark);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 7px 12px;
+    flex: 1;
+    min-width: 200px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .voice-select:focus { border-color: var(--gold); }
+  .voice-hint {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
   @media (max-width: 600px) {
     .page { padding: 28px 18px 60px; }
     .masthead h1 { font-size: 1.8rem; }
@@ -711,6 +893,11 @@
     .gloss-row { grid-template-columns: 1fr; }
     .gloss-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 0 0 8px; margin-bottom: 8px; }
     .gloss-right { padding-left: 0; }
+    .player-card { padding: 24px 20px; }
+    .player-main { font-size: 1.4rem; }
+    .player-controls { padding: 16px 20px 24px; }
+    .listen-setup { padding: 24px 20px; }
+    .ctrl-play { width: 80px; height: 80px; font-size: 30px; }
   }
 </style>
 </head>
@@ -730,6 +917,7 @@
   <div class="mode-tabs">
     <button class="mode-tab active" id="tab-drill" onclick="switchMode('drill')">Drill</button>
     <button class="mode-tab" id="tab-glossary" onclick="switchMode('glossary')">Glossaire</button>
+    <button class="mode-tab" id="tab-listen" onclick="switchMode('listen')">&#127911; Écoute</button>
   </div>
 
   <!-- ═══ DRILL PANEL ═══ -->
@@ -794,6 +982,85 @@
 
     <!-- Glossary content -->
     <div id="gloss-content"></div>
+  </div>
+
+  <!-- ═══ LISTEN PANEL ═══ -->
+  <div id="panel-listen" style="display:none">
+
+    <div class="listen-setup" id="listen-setup">
+      <h2>Mode Écoute <em>— mains libres</em></h2>
+      <p>Choisissez un thème. Le mot en français, sa signification, la phrase TCF, et la traduction sont lus à la suite. Un thème complet dure environ 20–25 minutes.</p>
+
+      <div class="listen-cat-grid" id="listen-cat-grid"></div>
+
+      <div class="listen-options">
+        <span class="listen-opt-label">Vitesse :</span>
+        <button class="listen-speed-btn" id="lspeed-slow" onclick="setListenSpeed('slow')">Lente</button>
+        <button class="listen-speed-btn active" id="lspeed-normal" onclick="setListenSpeed('normal')">Normale</button>
+        <button class="listen-speed-btn" id="lspeed-fast" onclick="setListenSpeed('fast')">Rapide</button>
+      </div>
+
+      <div class="listen-voices" id="listen-voices">
+        <div class="voice-row">
+          <label class="voice-label">Voix française</label>
+          <select class="voice-select" id="voice-fr"></select>
+        </div>
+        <div class="voice-row">
+          <label class="voice-label">Voix anglaise</label>
+          <select class="voice-select" id="voice-en"></select>
+        </div>
+        <p class="voice-hint" id="voice-hint">Chargement des voix…</p>
+      </div>
+
+      <button class="listen-start-btn" id="listen-start-btn" onclick="startListening()">▶ &nbsp; Commencer l'écoute</button>
+    </div>
+
+    <div class="listen-player" id="listen-player">
+      <div class="player-header">
+        <span class="player-cat-name" id="player-cat-name">—</span>
+        <span class="player-counter" id="player-counter">0 / 0</span>
+      </div>
+      <div class="player-progress-wrap">
+        <div class="player-progress-fill" id="player-progress-fill" style="width:0%"></div>
+      </div>
+      <div class="player-card">
+        <div class="player-stage" id="player-stage"></div>
+        <div class="player-main" id="player-main"></div>
+        <div class="player-sub" id="player-sub"></div>
+        <div class="player-type" id="player-type"></div>
+        <div class="player-speaking" id="player-speaking">
+          <span class="speak-bar"></span>
+          <span class="speak-bar"></span>
+          <span class="speak-bar"></span>
+          <span class="speak-bar"></span>
+          <span class="speak-bar"></span>
+          lecture en cours
+        </div>
+      </div>
+      <div class="player-controls">
+        <div class="player-btns">
+          <button class="ctrl-btn" onclick="listenPrev()" title="Mot précédent">
+            <span class="ctrl-icon">⏮</span>
+            <span class="ctrl-label">Précédent</span>
+          </button>
+          <button class="ctrl-play" id="ctrl-play-btn" onclick="toggleListenPlay()">▶</button>
+          <button class="ctrl-btn" onclick="listenNext()" title="Mot suivant">
+            <span class="ctrl-icon">⏭</span>
+            <span class="ctrl-label">Suivant</span>
+          </button>
+        </div>
+        <div class="player-meta">
+          <div class="player-speed-row">
+            <span class="player-speed-label">Vitesse :</span>
+            <button class="pspeed-btn" id="pspeed-slow" onclick="setPlayerSpeed('slow')">Lente</button>
+            <button class="pspeed-btn active" id="pspeed-normal" onclick="setPlayerSpeed('normal')">Normale</button>
+            <button class="pspeed-btn" id="pspeed-fast" onclick="setPlayerSpeed('fast')">Rapide</button>
+          </div>
+          <button class="player-stop-btn" onclick="stopListening()">✕ Arrêter</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
@@ -1693,18 +1960,7 @@ function restartSession() {
   renderCard();
 }
 
-// ─────────────────────────────────────────────
-// MODE SWITCHING
-// ─────────────────────────────────────────────
-function switchMode(mode) {
-  const isDrill = mode === 'drill';
-  document.getElementById('panel-drill').style.display = isDrill ? '' : 'none';
-  document.getElementById('panel-glossary').style.display = isDrill ? 'none' : '';
-  document.getElementById('tab-drill').classList.toggle('active', isDrill);
-  document.getElementById('tab-glossary').classList.toggle('active', !isDrill);
-  if (!isDrill) renderGlossary();
-  else speechSynth && speechSynth.cancel();
-}
+
 
 // ─────────────────────────────────────────────
 // GLOSSARY
@@ -1807,10 +2063,287 @@ function renderGlossary() {
 }
 
 // ─────────────────────────────────────────────
+// LISTEN MODE
+// ─────────────────────────────────────────────
+let listenCat = 'daily';
+let listenSpeed = 'normal';
+let listenWords = [];
+let listenIndex = 0;
+let listenPlaying = false;
+let listenPaused = false;
+let listenStage = 0; // 0=word_fr, 1=meaning, 2=sentence_fr, 3=sentence_en, 4=word_fr_repeat
+let selectedVoiceFr = null;
+let selectedVoiceEn = null;
+
+function loadVoices() {
+  const voices = speechSynth.getVoices();
+  if (voices.length === 0) return; // not ready yet
+
+  const frSelect = document.getElementById('voice-fr');
+  const enSelect = document.getElementById('voice-en');
+  const hint = document.getElementById('voice-hint');
+
+  const frVoices = voices.filter(v => v.lang.startsWith('fr'));
+  const enVoices = voices.filter(v => v.lang.startsWith('en'));
+
+  // Populate French dropdown
+  frSelect.innerHTML = frVoices.length === 0
+    ? '<option value="">Aucune voix française trouvée</option>'
+    : frVoices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
+
+  // Populate English dropdown
+  enSelect.innerHTML = enVoices.length === 0
+    ? '<option value="">Aucune voix anglaise trouvée</option>'
+    : enVoices.map((v, i) => `<option value="${i}">${v.name} (${v.lang})</option>`).join('');
+
+  // Set defaults — prefer local/premium voices
+  const bestFr = frVoices.findIndex(v => v.localService) !== -1
+    ? frVoices.findIndex(v => v.localService)
+    : 0;
+  const bestEn = enVoices.findIndex(v => v.localService) !== -1
+    ? enVoices.findIndex(v => v.localService)
+    : 0;
+
+  frSelect.selectedIndex = bestFr;
+  enSelect.selectedIndex = bestEn;
+
+  selectedVoiceFr = frVoices[bestFr] || null;
+  selectedVoiceEn = enVoices[bestEn] || null;
+
+  frSelect.onchange = () => { selectedVoiceFr = frVoices[parseInt(frSelect.value)] || null; };
+  enSelect.onchange = () => { selectedVoiceEn = enVoices[parseInt(enSelect.value)] || null; };
+
+  const total = frVoices.length + enVoices.length;
+  hint.textContent = `${total} voix trouvées sur cet appareil. Choisissez celles que vous préférez.`;
+}
+
+// Voices load asynchronously — try immediately and on the voiceschanged event
+if (speechSynth) {
+  loadVoices();
+  speechSynth.onvoiceschanged = loadVoices;
+}
+
+const PAUSE_BETWEEN = { normal: 900, slow: 1400 };
+const PAUSE_BETWEEN_WORDS = { normal: 1600, slow: 2400 };
+const SPEED_RATE = { normal: 0.88, slow: 0.72, fast: 1.05 };
+
+const STAGE_META = [
+  { label: 'Mot en français', mainKey: 'fr', subKey: 'type', subIsType: true },
+  { label: 'Signification',   mainKey: 'en', subKey: null },
+  { label: 'Phrase TCF',      mainKey: 'sentence', subKey: null },
+  { label: 'Traduction',      mainKey: 'sen_en', subKey: null },
+  { label: 'À retenir',       mainKey: 'fr', subKey: null },
+];
+
+function initListenCatGrid() {
+  const grid = document.getElementById('listen-cat-grid');
+  let html = '';
+  for (const [key, cat] of Object.entries(CATEGORIES)) {
+    const total = cat.words.length;
+    html += `<button class="listen-cat-btn${key === listenCat ? ' active' : ''}" onclick="selectListenCat('${key}')">
+      <span class="lcat-name">${cat.name}</span>
+      <span class="lcat-count">${cat.en} · ${total} mots</span>
+    </button>`;
+  }
+  grid.innerHTML = html;
+}
+
+function selectListenCat(key) {
+  listenCat = key;
+  document.querySelectorAll('.listen-cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.listen-cat-btn').forEach(b => {
+    if (b.querySelector('.lcat-name').textContent === CATEGORIES[key].name) b.classList.add('active');
+  });
+}
+
+function setListenSpeed(s) {
+  listenSpeed = s;
+  document.getElementById('lspeed-slow').classList.toggle('active', s === 'slow');
+  document.getElementById('lspeed-normal').classList.toggle('active', s === 'normal');
+  document.getElementById('lspeed-fast').classList.toggle('active', s === 'fast');
+}
+
+function setPlayerSpeed(s) {
+  listenSpeed = s;
+  document.getElementById('pspeed-slow').classList.toggle('active', s === 'slow');
+  document.getElementById('pspeed-normal').classList.toggle('active', s === 'normal');
+  document.getElementById('pspeed-fast').classList.toggle('active', s === 'fast');
+}
+
+function startListening() {
+  const cat = CATEGORIES[listenCat];
+  // Sort: essential first, then intermediate, then advanced
+  const diffOrder = ['essential', 'intermediate', 'advanced'];
+  listenWords = [...cat.words].sort((a, b) => diffOrder.indexOf(a.diff) - diffOrder.indexOf(b.diff));
+  listenIndex = 0;
+  listenStage = 0;
+  listenPlaying = true;
+  listenPaused = false;
+
+  document.getElementById('listen-setup').style.display = 'none';
+  const player = document.getElementById('listen-player');
+  player.classList.add('active');
+
+  document.getElementById('player-cat-name').textContent = cat.name;
+  updatePlayerProgress();
+  updatePlayerDisplay();
+  playCurrentStage();
+}
+
+function stopListening() {
+  listenPlaying = false;
+  listenPaused = false;
+  speechSynth && speechSynth.cancel();
+  document.getElementById('listen-setup').style.display = '';
+  document.getElementById('listen-player').classList.remove('active');
+  document.getElementById('ctrl-play-btn').textContent = '▶';
+  setSpeakingVisible(false);
+}
+
+function toggleListenPlay() {
+  if (!listenPlaying && !listenPaused) return;
+  if (listenPaused) {
+    listenPaused = false;
+    listenPlaying = true;
+    document.getElementById('ctrl-play-btn').textContent = '⏸';
+    playCurrentStage();
+  } else {
+    listenPaused = true;
+    listenPlaying = false;
+    speechSynth && speechSynth.cancel();
+    document.getElementById('ctrl-play-btn').textContent = '▶';
+    setSpeakingVisible(false);
+  }
+}
+
+function listenPrev() {
+  speechSynth && speechSynth.cancel();
+  listenStage = 0;
+  listenIndex = Math.max(0, listenIndex - 1);
+  updatePlayerProgress();
+  updatePlayerDisplay();
+  if (listenPlaying) playCurrentStage();
+}
+
+function listenNext() {
+  speechSynth && speechSynth.cancel();
+  listenStage = 0;
+  listenIndex = Math.min(listenWords.length - 1, listenIndex + 1);
+  updatePlayerProgress();
+  updatePlayerDisplay();
+  if (listenPlaying) playCurrentStage();
+}
+
+function updatePlayerProgress() {
+  const total = listenWords.length;
+  const pct = total > 0 ? Math.round((listenIndex / total) * 100) : 0;
+  document.getElementById('player-progress-fill').style.width = pct + '%';
+  document.getElementById('player-counter').textContent = `${listenIndex + 1} / ${total}`;
+}
+
+function updatePlayerDisplay() {
+  if (listenIndex >= listenWords.length) return;
+  const w = listenWords[listenIndex];
+  const meta = STAGE_META[listenStage];
+  document.getElementById('player-stage').textContent = meta.label;
+  document.getElementById('player-main').textContent = w[meta.mainKey] || '';
+  if (meta.subIsType) {
+    document.getElementById('player-sub').textContent = '';
+    document.getElementById('player-type').textContent = w.type;
+  } else {
+    document.getElementById('player-sub').textContent = meta.subKey ? w[meta.subKey] : '';
+    document.getElementById('player-type').textContent = '';
+  }
+}
+
+function setSpeakingVisible(v) {
+  document.getElementById('player-speaking').classList.toggle('visible', v);
+}
+
+function playCurrentStage() {
+  if (!listenPlaying || listenPaused) return;
+  if (listenIndex >= listenWords.length) {
+    // Session complete
+    listenPlaying = false;
+    document.getElementById('ctrl-play-btn').textContent = '▶';
+    document.getElementById('player-stage').textContent = 'Terminé';
+    document.getElementById('player-main').textContent = 'Session complète';
+    document.getElementById('player-sub').textContent = '';
+    document.getElementById('player-type').textContent = '';
+    setSpeakingVisible(false);
+    return;
+  }
+
+  updatePlayerDisplay();
+  document.getElementById('ctrl-play-btn').textContent = '⏸';
+
+  const w = listenWords[listenIndex];
+  const meta = STAGE_META[listenStage];
+  const textToSpeak = w[meta.mainKey] || '';
+
+  // Determine language and voice
+  const isFr = listenStage === 0 || listenStage === 2 || listenStage === 4;
+
+  speechSynth && speechSynth.cancel();
+  setSpeakingVisible(true);
+
+  const utt = new SpeechSynthesisUtterance(textToSpeak);
+  utt.lang = isFr ? 'fr-FR' : 'en-US';
+  // Rapide only applies to French — English stays at normal rate
+  utt.rate = isFr ? SPEED_RATE[listenSpeed] : Math.min(SPEED_RATE[listenSpeed], SPEED_RATE['normal']);
+  if (isFr && selectedVoiceFr) utt.voice = selectedVoiceFr;
+  if (!isFr && selectedVoiceEn) utt.voice = selectedVoiceEn;
+
+  utt.onend = () => {
+    if (!listenPlaying || listenPaused) { setSpeakingVisible(false); return; }
+    setSpeakingVisible(false);
+
+    // Determine pause duration
+    const isLastStage = listenStage === STAGE_META.length - 1;
+    const pauseMs = isLastStage ? PAUSE_BETWEEN_WORDS[listenSpeed] : PAUSE_BETWEEN[listenSpeed];
+
+    setTimeout(() => {
+      if (!listenPlaying || listenPaused) return;
+      if (isLastStage) {
+        // Move to next word
+        listenStage = 0;
+        listenIndex++;
+        updatePlayerProgress();
+      } else {
+        listenStage++;
+      }
+      playCurrentStage();
+    }, pauseMs);
+  };
+
+  utt.onerror = () => { setSpeakingVisible(false); };
+  speechSynth.speak(utt);
+}
+
+// ─────────────────────────────────────────────
+// MODE SWITCHING — updated to include listen
+// ─────────────────────────────────────────────
+function switchMode(mode) {
+  speechSynth && speechSynth.cancel();
+  if (mode !== 'listen') { listenPlaying = false; listenPaused = false; }
+
+  document.getElementById('panel-drill').style.display = mode === 'drill' ? '' : 'none';
+  document.getElementById('panel-glossary').style.display = mode === 'glossary' ? '' : 'none';
+  document.getElementById('panel-listen').style.display = mode === 'listen' ? '' : 'none';
+
+  document.getElementById('tab-drill').classList.toggle('active', mode === 'drill');
+  document.getElementById('tab-glossary').classList.toggle('active', mode === 'glossary');
+  document.getElementById('tab-listen').classList.toggle('active', mode === 'listen');
+
+  if (mode === 'glossary') renderGlossary();
+}
+
+// ─────────────────────────────────────────────
 // INIT
 // ─────────────────────────────────────────────
 initCategoryGrid();
 initGlossCatNav();
+initListenCatGrid();
 buildQueue();
 renderCard();
 </script>
