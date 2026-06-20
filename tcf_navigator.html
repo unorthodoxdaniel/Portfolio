@@ -343,6 +343,25 @@ function clusterCardHtml(c,innerTop,unit,sort){
     +'<div class="variants-panel">'+top3.map(function(i){return qRowHtml(i.p,i.n,i.lm);}).join('')+restHtml+'</div></div></div>';
 }
 
+// T2 subgroup panel — shows sub-scenario question guides (no item filtering)
+function t2SgPanelHtml(subgroups){
+  if(!subgroups||!subgroups.length)return'';
+  var html='<div class="subgroups-panel"><div class="subgroups-label">Sous-scénarios</div>';
+  subgroups.forEach(function(sg){
+    var descHtml=sg.desc?'<div class="sg-desc">'+esc(sg.desc)+'</div>':'';
+    var qsHtml=sg.questions&&sg.questions.length
+      ?'<div class="sg-qs"><div class="sg-qs-label">Questions à poser</div>'
+        +sg.questions.map(function(q){return'<div class="q-row"><span>'+esc(q)+'</span></div>';}).join('')
+        +'</div>':'';
+    html+='<div class="sg-card">'
+      +'<div class="sg-head"><span class="sg-title">'+esc(sg.title)+'</span>'
+      +'<span class="sg-chevron">▶</span></div>'
+      +'<div class="sg-body">'+descHtml+qsHtml+'</div></div>';
+  });
+  html+='</div>';
+  return html;
+}
+
 // T2 scenario cluster card (with optional subgroups)
 function t2ClusterCardHtml(c, sort){
   var allItems=sortItems(c.items,sort);
@@ -353,7 +372,7 @@ function t2ClusterCardHtml(c, sort){
   var top3=showItems.slice(0,3),rest=showItems.slice(3);
   var rb=isR(c.lm)?'<span class="badge-recent">'+lmStr(c.lm)+'</span>':'';
   var qHtml=c.questions&&c.questions.length?'<div class="questions-panel"><div class="ql">Questions clés</div>'+c.questions.map(function(qq){return'<div class="q-item">'+esc(qq)+'</div>';}).join('')+'</div>':'';
-  var sgHtml=c.subgroups&&c.subgroups.length?sgPanelHtml(c.subgroups,c.items,sort,false):'';
+  var sgHtml=c.subgroups&&c.subgroups.length?t2SgPanelHtml(c.subgroups):'';
   var restHtml=rest.length
     ?'<button class="variants-toggle">▶ Voir les variantes ('+rest.length+')</button>'
      +'<div class="variants-list">'+rest.map(function(i){return qRowHtml(i.p,i.n,i.lm);}).join('')+'</div>':'';

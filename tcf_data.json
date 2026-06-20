@@ -13774,71 +13774,71 @@
           }
         ],
         "questions": [
-          "Combien de temps êtes-vous resté ?",
-          "Quelles activités avez-vous faites ?",
-          "Est-ce que la destination était chère ?"
+          "Quelle est la destination / le type de séjour ?",
+          "Quelles sont les dates et la durée ?",
+          "Quel est le budget / les tarifs ?",
+          "Quels sont les hébergements disponibles ?",
+          "Quelles activités sont proposées / recommandées ?"
         ],
         "lm": 202606,
         "subgroups": [
           {
-            "id": "sg_vacances_office",
-            "title": "Office du tourisme & hébergement",
-            "desc": "Se renseigner auprès d'un office du tourisme, une agence ou pour trouver un hébergement.",
-            "qKeywords": [
-              "office.*tourisme",
-              "tourisme.*office",
-              "agence.*voyage",
-              "voyage.*agence",
-              "hébergement",
-              "partir.*week-end",
-              "week-end.*région",
-              "louer.*chalet",
-              "chalet.*mer",
-              "agence.*location.*voiture",
-              "location.*voiture.*vacances",
-              "réserver",
-              "région.*visiter",
-              "visiter.*région",
-              "musée.*tourisme",
-              "circuit.*touristique",
-              "séjour.*canada"
+            "id": "sg_vac_office",
+            "title": "Office du tourisme / agence",
+            "desc": "Je travaille à l'office de tourisme / dans une agence touristique",
+            "questions": [
+              "Quels hébergements recommandez-vous (hôtel, gîte, camping) ?",
+              "Quelles activités sont disponibles dans la région ?",
+              "Quels sont les tarifs et les horaires d'ouverture ?",
+              "Comment se déplacer sur place ?"
             ]
           },
           {
-            "id": "sg_vacances_animal_appart",
-            "title": "Garder animal ou appartement",
-            "desc": "Un ami part en vacances et vous demande de garder son chien ou surveiller son appartement.",
-            "qKeywords": [
-              "garder.*animal.*vacances",
-              "vacances.*animal",
-              "garder.*chien.*vacances",
-              "vacances.*chien",
-              "surveiller.*appartement",
-              "appartement.*surveiller",
-              "s'occuper.*appartement",
-              "absent.*vacances",
-              "partir.*vacances.*laiss",
-              "vacances.*garder"
+            "id": "sg_vac_ami_raconte",
+            "title": "Ami qui raconte ses vacances",
+            "desc": "Un ami/voisin/collègue revient de vacances et vous voulez faire pareil",
+            "questions": [
+              "C'était où exactement ? Comment c'était ?",
+              "Où as-tu logé ? Quel prix ?",
+              "Quelles activités as-tu faites ?",
+              "Qu'est-ce que tu recommanderais ?",
+              "À quelle période tu y es allé(e) ?"
             ]
           },
           {
-            "id": "sg_vacances_recits",
-            "title": "Récits de vacances",
-            "desc": "Un ami ou collègue revient de vacances et vous raconte son séjour.",
-            "qKeywords": [
-              "vacances.*formidable",
-              "formidable.*vacances",
-              "bord.*mer.*vacances",
-              "montagne.*vacances",
-              "vacances.*montagne",
-              "séjour.*magnifique",
-              "revient.*vacances",
-              "rentré.*vacances",
-              "retour.*vacances",
-              "viens.*terminer.*séjour",
-              "semaine.*canada.*vacances",
-              "vacances.*canada",
-              "vacances.*semaine"
+            "id": "sg_vac_conseils",
+            "title": "Conseils week-end / destination",
+            "desc": "Ami/voisin/collègue connaît bien une région et vous donne des conseils",
+            "questions": [
+              "Qu'est-ce qu'il y a à voir / à faire là-bas ?",
+              "Où est-ce qu'on peut loger ?",
+              "C'est loin ? Comment y aller ?",
+              "À quelle saison c'est le mieux ?",
+              "C'est dans quel budget ?"
+            ]
+          },
+          {
+            "id": "sg_vac_garder_animal",
+            "title": "Garder l'animal / l'appartement",
+            "desc": "Quelqu'un part en vacances et vous demande de garder son animal ou logement",
+            "questions": [
+              "Il faut le nourrir combien de fois par jour ? Avec quoi ?",
+              "Il a besoin de sortir ? À quelle fréquence ?",
+              "Il y a des médicaments ou des besoins particuliers ?",
+              "Tu pars du combien au combien ?",
+              "Qu'est-ce que je fais s'il y a un problème ?"
+            ]
+          },
+          {
+            "id": "sg_vac_location_voiture",
+            "title": "Location de voiture / vélo en vacances",
+            "desc": "Louer un véhicule pour les vacances au Canada",
+            "questions": [
+              "Quels modèles / types de véhicules sont disponibles ?",
+              "Quel est le tarif à la journée / à la semaine ?",
+              "L'assurance est incluse ?",
+              "Quels documents sont nécessaires ?",
+              "Où et quand récupérer / rendre le véhicule ?"
             ]
           }
         ]
@@ -14624,9 +14624,48 @@
         ],
         "lm": 0,
         "questions": [
-          "Je suis votre voisin(e). Vous venez de vous installer dans l'immeuble. Vous me posez des questions sur l'organisation de",
-          "Je suis votre voisin, vous êtes nouveau dans l'immeuble. Posez-moi des questions sur le voisinage.",
-          "Je suis votre voisin(e). Vous venez d'arriver dans la ville et vous ne connaissez personne. Vous me demandez conseil pou"
+          "Quels commerces / services sont disponibles dans le quartier ?",
+          "Comment sont les voisins / l'ambiance du quartier ?",
+          "Quelles activités / sorties recommandez-vous ?",
+          "Y a-t-il des associations ou clubs dans le coin ?",
+          "Comment se déplacer depuis ici ?"
+        ],
+        "subgroups": [
+          {
+            "id": "sg_nv_immeuble",
+            "title": "Règles et vie de l'immeuble",
+            "desc": "Questions pratiques sur l'organisation de la résidence",
+            "questions": [
+              "Comment fonctionne le tri des déchets / les poubelles ?",
+              "Il y a des règles de bruit / horaires à respecter ?",
+              "Où se trouve le local à vélos / la cave ?",
+              "Les parties communes, comment ça marche ?",
+              "À qui s'adresse-t-on s'il y a un problème ?"
+            ]
+          },
+          {
+            "id": "sg_nv_quartier",
+            "title": "Découverte du quartier / de la ville",
+            "desc": "Commerces, lieux, activités, transports dans le quartier",
+            "questions": [
+              "Où est le supermarché / la boulangerie le plus proche ?",
+              "Il y a des restaurants ou cafés sympas par ici ?",
+              "Comment prendre les transports en commun ?",
+              "Qu'est-ce qu'il y a à faire le week-end ?",
+              "Y a-t-il des parcs ou espaces verts dans le coin ?"
+            ]
+          },
+          {
+            "id": "sg_nv_social",
+            "title": "Rencontres et vie sociale",
+            "desc": "Faire des amis, s'intégrer, trouver des activités sociales",
+            "questions": [
+              "Comment est-ce qu'on peut rencontrer des gens ici ?",
+              "Il y a des associations ou clubs pour les nouveaux arrivants ?",
+              "Les gens du quartier, ils sont comment ?",
+              "Est-ce qu'il y a des événements de quartier ?"
+            ]
+          }
         ]
       },
       {
@@ -15320,44 +15359,48 @@
           }
         ],
         "questions": [
-          "À partir de quel âge ?",
-          "Quels sont les horaires ?",
-          "Combien coûtent les cours ?"
+          "Quelles activités / quel sport pratiques-tu / proposez-vous ?",
+          "Quels sont les horaires et les tarifs ?",
+          "Faut-il un équipement particulier ?",
+          "C'est pour tous les niveaux ?",
+          "Comment s'inscrire ?"
         ],
         "lm": 202606,
         "subgroups": [
           {
             "id": "sg_sport_club",
-            "title": "Rejoindre un club sportif",
-            "desc": "S'inscrire à un club de sport, prendre des cours, participer à une activité.",
-            "qKeywords": [
-              "club.*sport",
-              "sport.*club",
-              "cours.*danse",
-              "danse.*cours",
-              "cours.*dessin",
-              "dessin.*cours",
-              "accueil.*sport",
-              "sport.*accueil",
-              "inscription.*sport",
-              "sport.*inscription"
+            "title": "Club / accueil d'un club sportif",
+            "desc": "Je travaille à l'accueil d'un club, piscine, école de danse...",
+            "questions": [
+              "Quelles activités proposez-vous ?",
+              "Quels sont les horaires des séances ?",
+              "Quel est le tarif d'inscription / de l'abonnement ?",
+              "Il faut apporter son propre équipement ?",
+              "C'est ouvert à tous les niveaux / tous les âges ?"
             ]
           },
           {
-            "id": "sg_sport_velo_course",
-            "title": "Vélo, course à pied & sports urbains",
-            "desc": "Faire du vélo à Ottawa, participer à une course à pied, sports d'hiver.",
-            "qKeywords": [
-              "vélo.*ottawa",
-              "ottawa.*vélo",
-              "vélo.*ville",
-              "course à pied",
-              "course.*pied",
-              "randonnée.*forêt",
-              "ski.*fond",
-              "sports.*hiver",
-              "hiver.*sport",
-              "courir.*ville"
+            "id": "sg_sport_ami",
+            "title": "Ami qui pratique un sport",
+            "desc": "Un ami pratique un sport et vous voulez le rejoindre ou en savoir plus",
+            "questions": [
+              "Tu pratiques ce sport depuis combien de temps ?",
+              "C'est où ? C'est à quelle heure ?",
+              "C'est difficile pour un débutant ?",
+              "Il faut quel équipement au départ ?",
+              "Je peux venir essayer une séance ?"
+            ]
+          },
+          {
+            "id": "sg_sport_velo",
+            "title": "Vélo en ville / location de vélo",
+            "desc": "Se déplacer à vélo ou louer un vélo dans une nouvelle ville",
+            "questions": [
+              "Il y a des pistes cyclables sécurisées ?",
+              "Où est-ce qu'on peut louer un vélo ?",
+              "Quel est le tarif et les conditions de location ?",
+              "Il y a des équipements de sécurité fournis ?",
+              "C'est dangereux de circuler à vélo ici ?"
             ]
           }
         ]
@@ -15997,12 +16040,51 @@
           }
         ],
         "questions": [
-          "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "Quelles activités sont proposées ?",
+          "Quels sont les horaires et les tarifs ?",
+          "Comment s'inscrire ?",
+          "C'est pour quel niveau / quel âge ?",
+          "Où est-ce situé ?"
         ],
         "lm": 202606,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_cc_centre",
+            "title": "Centre culturel / sportif / mairie",
+            "desc": "Je travaille dans un centre culturel, au service culturel de la mairie",
+            "questions": [
+              "Quelles activités proposez-vous (sport, arts, musique...) ?",
+              "Quels sont les créneaux horaires disponibles ?",
+              "Quel est le tarif d'inscription ou d'abonnement ?",
+              "Faut-il s'inscrire à l'avance ?",
+              "Il y a des activités pour les enfants / seniors ?"
+            ]
+          },
+          {
+            "id": "sg_cc_cours",
+            "title": "Cours particulier (musique, cuisine, dessin…)",
+            "desc": "Voisin / ami / professeur qui donne des cours ou y participe",
+            "questions": [
+              "Les cours durent combien de temps ?",
+              "C'est pour quel niveau ?",
+              "Quel est le tarif par séance / par mois ?",
+              "On est combien par cours ?",
+              "Il faut apporter du matériel ?"
+            ]
+          },
+          {
+            "id": "sg_cc_enfants",
+            "title": "Activités pour enfants après l'école",
+            "desc": "Parent cherche une activité pour son enfant",
+            "questions": [
+              "À partir de quel âge c'est accessible ?",
+              "Les cours sont à quelle heure après l'école ?",
+              "Comment s'inscrire ? Il y a une liste d'attente ?",
+              "Quel est le tarif mensuel ?",
+              "Il faut un équipement particulier ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Arrivée dans ville / au Canada",
@@ -16493,62 +16575,36 @@
           }
         ],
         "questions": [
-          "Combien de jours de congé avez-vous ?",
-          "Quels sont les horaires habituels ?",
-          "Le rythme de travail est-il stressant ?"
+          "Comment s'est passée votre installation ?",
+          "Quelles sont les démarches administratives à faire en arrivant ?",
+          "Comment trouver un logement ?",
+          "Comment fonctionne le système de santé ?",
+          "Comment sont les conditions de travail au Canada ?"
         ],
         "lm": 202605,
         "subgroups": [
           {
-            "id": "sg_arrivee_admin",
-            "title": "Démarches & administration",
-            "desc": "Démarches d'immigration, inscriptions, documents, logement à l'arrivée.",
-            "qKeywords": [
-              "immigration.*québec",
-              "installer.*canada",
-              "s'installer.*canada",
-              "immigrer",
-              "projet.*immigration",
-              "démarches",
-              "documents.*canada",
-              "permis",
-              "visa",
-              "centre.*accueil",
-              "association.*franco"
+            "id": "sg_arr_ami",
+            "title": "Ami installé au Canada",
+            "desc": "Un ami a immigré/étudié au Canada et partage son expérience",
+            "questions": [
+              "C'était difficile de s'adapter au début ?",
+              "Comment tu as trouvé ton logement ?",
+              "Le système de santé, comment ça marche ?",
+              "Comment sont les conditions de travail par rapport à chez nous ?",
+              "Qu'est-ce que tu aurais fait différemment ?"
             ]
           },
           {
-            "id": "sg_arrivee_langue",
-            "title": "Cours de français & langue",
-            "desc": "Trouver des cours de français au Canada, préparer son niveau de langue.",
-            "qKeywords": [
-              "cours.*français",
-              "français.*cours",
-              "professeur.*français",
-              "langue.*cours",
-              "centre.*français",
-              "école.*français",
-              "apprendre.*français",
-              "niveau.*français",
-              "cours.*langue"
-            ]
-          },
-          {
-            "id": "sg_arrivee_quotidien",
-            "title": "S'installer & vie pratique",
-            "desc": "Trouver un logement, comprendre la ville, les transports, les services du quotidien.",
-            "qKeywords": [
-              "arrivé.*canada",
-              "canada.*arrivé",
-              "installé.*canada",
-              "canada.*installé",
-              "nouveau.*canada",
-              "canada.*nouveau",
-              "s'adapter.*canada",
-              "vie.*canada",
-              "vivre.*canada",
-              "quartier.*canada",
-              "ville.*canada"
+            "id": "sg_arr_pro",
+            "title": "Service officiel / association franco-canadienne",
+            "desc": "Mairie, association, centre culturel qui aide les nouveaux arrivants",
+            "questions": [
+              "Quelles sont les démarches à faire à l'arrivée ?",
+              "Vous proposez quels types d'aide / d'activités ?",
+              "Comment s'inscrire / quels sont les tarifs ?",
+              "Y a-t-il des cours de langue ou d'intégration ?",
+              "À qui s'adresser pour trouver un emploi / un logement ?"
             ]
           }
         ]
@@ -17061,101 +17117,48 @@
           }
         ],
         "questions": [
-          "Quelle est l'ambiance de travail ?",
-          "Y a-t-il des horaires flexibles ?",
-          "Comment s'organisent les équipes ?"
+          "C'est dans quel secteur / quel type d'entreprise ?",
+          "Quelles sont les conditions de travail (horaires, salaire…) ?",
+          "Comment est l'ambiance dans l'équipe ?",
+          "Il y a des avantages particuliers ?",
+          "Comment tu as trouvé ce poste ?"
         ],
         "lm": 202606,
         "subgroups": [
           {
-            "id": "sg_collegue_entreprise",
-            "title": "Premier jour & vie en entreprise",
-            "desc": "Découvrir l'entreprise, ses collègues, l'organisation du travail et la restauration.",
-            "qKeywords": [
-              "premier.*jour",
-              "nouveau.*entreprise",
-              "entreprise.*nouveau",
-              "venez.*entreprise",
-              "arrivé.*entreprise",
-              "collègue.*nouveau",
-              "nouveau.*collègue",
-              "organisation.*entreprise",
-              "conditions.*travail",
-              "comment.*fonctionne",
-              "ambiance.*entreprise",
-              "restaurant.*entreprise",
-              "cantine",
-              "horaires.*travail",
-              "télétravail.*collègue",
-              "collègue.*télétravail",
-              "poste.*collègue",
-              "nouveau.*poste.*collègue",
-              "changé.*poste"
+            "id": "sg_coll_nouveau",
+            "title": "Être nouveau dans l'entreprise",
+            "desc": "C'est votre premier jour / première semaine dans une entreprise canadienne",
+            "questions": [
+              "Qui sont les personnes clés à connaître dans l'équipe ?",
+              "Comment s'organise une journée de travail typique ?",
+              "Il y a une pause déjeuner collective ?",
+              "Quels outils / logiciels est-ce qu'on utilise ?",
+              "Y a-t-il des règles non-écrites à connaître ?"
             ]
           },
           {
-            "id": "sg_collegue_sorties",
-            "title": "Sorties & événements avec collègues",
-            "desc": "Spectacles, concerts, repas, fêtes et activités proposés par un collègue.",
-            "qKeywords": [
-              "spectacle.*collègue",
-              "collègue.*spectacle",
-              "concert.*collègue",
-              "collègue.*concert",
-              "mariage.*collègue",
-              "collègue.*mariage",
-              "événement.*collègue",
-              "collègue.*événement",
-              "dîner.*collègue",
-              "collègue.*dîner",
-              "sortie.*collègue",
-              "collègue.*sortie",
-              "accompagner.*collègue",
-              "collègue.*accompagner",
-              "billets.*festival",
-              "festival.*collègue",
-              "retraite.*collègue",
-              "collègue.*retraite",
-              "club.*jeux"
+            "id": "sg_coll_changer",
+            "title": "Changer d'emploi / nouveau poste",
+            "desc": "Collègue qui vient de changer de travail ou de poste",
+            "questions": [
+              "Pourquoi tu as voulu changer ?",
+              "Les conditions sont meilleures qu'avant (salaire, horaires) ?",
+              "L'ambiance est comment dans la nouvelle équipe ?",
+              "Tu as dû passer beaucoup d'entretiens ?",
+              "Qu'est-ce qui t'a convaincu d'accepter ce poste ?"
             ]
           },
           {
-            "id": "sg_collegue_vente",
-            "title": "Ventes & échanges entre collègues",
-            "desc": "Acheter une voiture ou des meubles à un collègue, partager une colocation.",
-            "qKeywords": [
-              "vendre.*voiture.*collègue",
-              "voiture.*collègue",
-              "vente.*collègue",
-              "meubl.*collègue",
-              "collègue.*meubl",
-              "coloc.*collègue",
-              "collègue.*coloc",
-              "vêtements.*occasion.*collègue",
-              "annonce.*travail",
-              "revends.*collègue"
-            ]
-          },
-          {
-            "id": "sg_collegue_voyage",
-            "title": "Voyages, séjours & expériences",
-            "desc": "Un collègue vous raconte ses voyages, séjours ou son expérience au Canada.",
-            "qKeywords": [
-              "voyage.*collègue",
-              "collègue.*voyage",
-              "séjour.*collègue",
-              "collègue.*séjour",
-              "canada.*collègue",
-              "collègue.*canada",
-              "région.*collègue",
-              "collègue.*région",
-              "circuit.*canada",
-              "collègue.*québec",
-              "québec.*collègue",
-              "expatriation.*collègue",
-              "collègue.*expatriation",
-              "vécu.*québec",
-              "vécu.*canada"
+            "id": "sg_coll_rythme_canada",
+            "title": "Rythme de travail au Canada",
+            "desc": "Collègue qui renseigne sur les habitudes et conditions de travail canadiennes",
+            "questions": [
+              "Les horaires de travail sont de quelle heure à quelle heure ?",
+              "Il y a combien de jours de congé par an ?",
+              "Le télétravail c'est courant ici ?",
+              "Les pauses, ça se passe comment ?",
+              "Comment ça se passe pour les arrêts maladie ?"
             ]
           }
         ]
@@ -17618,12 +17621,51 @@
           }
         ],
         "questions": [
-          "Comment s'est passée la fête ?",
-          "Qui était présent ?",
-          "Qu'avez-vous fait pendant la soirée ?"
+          "C'est à quelle date / quelle heure ?",
+          "C'est où / quel lieu ?",
+          "Il y a combien de personnes invitées ?",
+          "Qu'est-ce qu'on mange / boit ?",
+          "Faut-il apporter quelque chose ?"
         ],
         "lm": 202604,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_fete_anniversaire",
+            "title": "Anniversaire / cadeau",
+            "desc": "Fête d'anniversaire ou recherche de cadeau",
+            "questions": [
+              "Qu'est-ce qui lui ferait plaisir comme cadeau ?",
+              "C'est quoi son style / ses goûts ?",
+              "Quel est le budget pour le cadeau ?",
+              "Il y a déjà d'autres personnes qui cotisent ?",
+              "La fête, c'est à quelle heure / quel format ?"
+            ]
+          },
+          {
+            "id": "sg_fete_mariage",
+            "title": "Mariage",
+            "desc": "Invitation à un mariage",
+            "questions": [
+              "La cérémonie, c'est à quelle heure / dans quel lieu ?",
+              "Il y a un repas / une réception après ?",
+              "Quelle tenue vestimentaire est attendue ?",
+              "Il y a un cadeau de mariage / une liste ?",
+              "C'est loin ? Comment y aller ?"
+            ]
+          },
+          {
+            "id": "sg_fete_voisins",
+            "title": "Fête de quartier / de voisins",
+            "desc": "Organiser ou participer à une fête entre voisins / de quartier",
+            "questions": [
+              "C'est où et à quelle heure ?",
+              "Combien de personnes sont attendues ?",
+              "Qui s'occupe de la nourriture / des boissons ?",
+              "Je dois apporter quelque chose ?",
+              "Il y a de la musique / des activités prévues ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Location de logement",
@@ -18135,12 +18177,51 @@
           }
         ],
         "questions": [
-          "Dans quel quartier se situe l'appartement ?",
-          "Est-il meublé ?",
-          "Y a-t-il des transports à proximité ?"
+          "C'est où / quel quartier ?",
+          "Quelle est la superficie / le nombre de pièces ?",
+          "Quel est le loyer / les charges ?",
+          "C'est disponible à partir de quand ?",
+          "Quelles sont les conditions (caution, préavis…) ?"
         ],
         "lm": 202605,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_loc_coloc",
+            "title": "Colocation",
+            "desc": "Chambre disponible en colocation, ami ou collègue propose une chambre",
+            "questions": [
+              "On est combien dans l'appartement ?",
+              "Comment se passe le partage des charges ?",
+              "Il y a des règles de vie communes ?",
+              "C'est bien desservi par les transports ?",
+              "Le loyer, ça comprend quoi (électricité, wifi…) ?"
+            ]
+          },
+          {
+            "id": "sg_loc_particulier",
+            "title": "Location particulier / annonce",
+            "desc": "Appartement proposé par un particulier, annonce vue",
+            "questions": [
+              "L'appartement est au quel étage ? Il y a un ascenseur ?",
+              "Qu'est-ce qui est inclus dans le loyer ?",
+              "Quel est le montant de la caution ?",
+              "Il y a une place de parking / un local à vélos ?",
+              "Le quartier, comment il est (commerces, transports) ?"
+            ]
+          },
+          {
+            "id": "sg_loc_demenagement",
+            "title": "Déménagement (aide)",
+            "desc": "Ami qui déménage et on va l'aider",
+            "questions": [
+              "Le déménagement, c'est à quelle heure ?",
+              "Il y a beaucoup de meubles / cartons ?",
+              "On a besoin d'un camion / d'un véhicule ?",
+              "On sera combien à aider ?",
+              "Tu offres quelque chose après (repas, boissons) ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Association & bénévolat",
@@ -18522,40 +18603,36 @@
           }
         ],
         "questions": [
-          "Quelles actions menez-vous ?",
-          "Comment êtes-vous financés ?",
-          "Qui peut bénéficier de votre aide ?"
+          "Quel est l'objectif / la mission de l'association ?",
+          "Comment peut-on s'engager comme bénévole ?",
+          "Combien de temps faut-il consacrer par semaine ?",
+          "Y a-t-il une formation pour les nouveaux bénévoles ?",
+          "Qui peut vous contacter / comment s'inscrire ?"
         ],
         "lm": 202606,
         "subgroups": [
           {
-            "id": "sg_asso_benevolat",
-            "title": "Bénévolat & aide",
-            "desc": "Rejoindre une association de bénévolat, distribuer repas, aider les sans-abri.",
-            "qKeywords": [
-              "bénévol",
-              "distribu.*repas",
-              "sans-abri",
-              "aide.*associations",
-              "association.*aide",
-              "bénévolat.*ami"
+            "id": "sg_asso_benevole",
+            "title": "Devenir bénévole",
+            "desc": "Ami bénévole ou bureau d'information sur les associations",
+            "questions": [
+              "C'est quoi les missions concrètes du bénévole ?",
+              "Il faut s'engager pour combien de temps minimum ?",
+              "C'est à quelle fréquence et à quelles heures ?",
+              "Il y a une formation prévue au départ ?",
+              "Comment postuler / s'inscrire ?"
             ]
           },
           {
-            "id": "sg_asso_culturelle",
-            "title": "Associations culturelles & étudiantes",
-            "desc": "Rejoindre une association culturelle, écrire un article, participer à un événement.",
-            "qKeywords": [
-              "association.*culturelle",
-              "culturelle.*association",
-              "franco-canadien",
-              "film.*article",
-              "article.*film",
-              "revue.*film",
-              "étudier.*toronto",
-              "université.*toronto",
-              "québec.*étude",
-              "association.*francophone"
+            "id": "sg_asso_article",
+            "title": "Article pour revue de l'association",
+            "desc": "Rédiger un article sur un film / livre pour la revue de votre association",
+            "questions": [
+              "C'est quel genre (film / livre) ?",
+              "Tu peux me donner un résumé de l'histoire ?",
+              "Qu'est-ce qui t'a le plus marqué(e) ?",
+              "Tu le recommandes ? Pourquoi ?",
+              "Quels sont les thèmes principaux abordés ?"
             ]
           }
         ]
@@ -18965,12 +19042,39 @@
           }
         ],
         "questions": [
-          "Où se déroule le stage ?",
-          "Quel niveau est requis ?",
-          "Combien de stagiaires y a-t-il ?"
+          "Quelles destinations / formules proposez-vous ?",
+          "Quels sont les tarifs et ce qui est inclus ?",
+          "Quelle est la durée du séjour ?",
+          "Le transport est-il inclus ?",
+          "Comment réserver / quelles sont les conditions d'annulation ?"
         ],
         "lm": 202606,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_agence_tourisme",
+            "title": "Voyage touristique au Canada",
+            "desc": "Organiser un séjour touristique avec une agence",
+            "questions": [
+              "Quels circuits touristiques proposez-vous au Canada ?",
+              "Le logement est inclus dans le forfait ?",
+              "Y a-t-il un guide qui accompagne le groupe ?",
+              "Combien de personnes participent en général ?",
+              "Quelle est la meilleure période pour partir ?"
+            ]
+          },
+          {
+            "id": "sg_agence_linguistique",
+            "title": "Séjour linguistique",
+            "desc": "Séjour pour apprendre la langue à l'étranger",
+            "questions": [
+              "Le niveau de langue requis pour participer ?",
+              "Les cours, c'est combien d'heures par jour ?",
+              "On est hébergé chez l'habitant ou en résidence ?",
+              "Il y a des activités culturelles en dehors des cours ?",
+              "C'est à partir de quel âge ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Garde d'enfant / baby-sitter",
@@ -19325,12 +19429,51 @@
           }
         ],
         "questions": [
-          "Comment s'est passée la fête ?",
-          "Qui était présent ?",
-          "Qu'avez-vous fait pendant la soirée ?"
+          "L'enfant a quel âge ?",
+          "C'est pour quel(s) jour(s) et à quelles heures ?",
+          "Il mange quoi ? Il y a des allergies ?",
+          "Il y a une routine particulière (sieste, devoirs…) ?",
+          "Comment vous contacter en cas d'urgence ?"
         ],
         "lm": 202605,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_garde_ponctuel",
+            "title": "Garde ponctuelle (soirée / week-end)",
+            "desc": "Vous demandez à quelqu'un de garder votre enfant une fois",
+            "questions": [
+              "Tu rentres à quelle heure maximum ?",
+              "Il y a une télé / des jouets / des activités prévues ?",
+              "Il a l'habitude d'être gardé par quelqu'un d'autre ?",
+              "Il se couche à quelle heure ?",
+              "Qu'est-ce que je lui prépare à manger / à boire ?"
+            ]
+          },
+          {
+            "id": "sg_garde_babysitter",
+            "title": "Trouver une baby-sitter",
+            "desc": "Chercher quelqu'un de régulier ou obtenir une recommandation",
+            "questions": [
+              "Elle a de l'expérience avec des enfants du même âge ?",
+              "Quels sont ses tarifs ?",
+              "Elle est disponible quels jours / à quelles heures ?",
+              "Elle a des références qu'on peut contacter ?",
+              "Elle s'occupe aussi des devoirs / des activités ?"
+            ]
+          },
+          {
+            "id": "sg_garde_animal",
+            "title": "Garder un animal",
+            "desc": "Animal à garder pendant l'absence du propriétaire",
+            "questions": [
+              "Il faut le nourrir combien de fois par jour ?",
+              "Il sort combien de fois ? Pour combien de temps ?",
+              "Il y a des médicaments ou soins particuliers ?",
+              "Comment il réagit avec les étrangers ?",
+              "Que faire en cas de problème de santé ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Transports en commun",
@@ -19655,12 +19798,51 @@
           }
         ],
         "questions": [
-          "Les transports sont-ils ponctuels ?",
-          "Quelle est la fréquence des bus ?",
-          "Combien coûte un abonnement ?"
+          "Quels modes de transport sont disponibles ?",
+          "Quels sont les tarifs et les types d'abonnement ?",
+          "Quelle est la fréquence des passages ?",
+          "Comment se procurer un titre de transport ?",
+          "Y a-t-il une application / un plan disponible ?"
         ],
         "lm": 202603,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_tc_reseau",
+            "title": "Réseau de transport en commun",
+            "desc": "Agent des transports qui renseigne sur le réseau de la ville",
+            "questions": [
+              "Quelles lignes desservent le centre-ville ?",
+              "Un abonnement mensuel coûte combien ?",
+              "Les transports circulent jusqu'à quelle heure ?",
+              "Il y a une application pour suivre les horaires en temps réel ?",
+              "Y a-t-il des tarifs réduits (étudiant, senior) ?"
+            ]
+          },
+          {
+            "id": "sg_tc_autoecole",
+            "title": "Auto-école / permis de conduire",
+            "desc": "Apprendre à conduire, passer le permis au Canada",
+            "questions": [
+              "Combien de leçons faut-il en moyenne avant l'examen ?",
+              "Quel est le tarif par heure de conduite ?",
+              "L'examen, comment ça se passe ?",
+              "Mon permis étranger est-il reconnu ici ?",
+              "Il y a des cours théoriques aussi ?"
+            ]
+          },
+          {
+            "id": "sg_tc_location_voit",
+            "title": "Location de voiture",
+            "desc": "Louer une voiture pour se déplacer",
+            "questions": [
+              "Quels types de véhicules proposez-vous ?",
+              "Quel est le tarif à la journée / à la semaine ?",
+              "L'assurance est-elle incluse ?",
+              "Quels documents sont nécessaires ?",
+              "Y a-t-il des frais kilométriques ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Restaurant & repas",
@@ -19917,12 +20099,39 @@
           }
         ],
         "questions": [
-          "Quels plats recommandez-vous ?",
-          "Avez-vous des options végétariennes ?",
-          "Quel est le prix moyen ?"
+          "C'est quel type de cuisine ?",
+          "Quel est le budget / les prix moyens ?",
+          "C'est où ? Il faut réserver ?",
+          "Quelle est l'ambiance / la capacité ?",
+          "Il y a des menus / des formules ?"
         ],
         "lm": 202606,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_resto_orga",
+            "title": "Organiser un repas de groupe",
+            "desc": "Repas d'anniversaire, dîner de collègues, événement au restaurant",
+            "questions": [
+              "Vous pouvez accueillir un groupe de combien de personnes ?",
+              "Il y a un menu de groupe / un forfait ?",
+              "Il faut verser un acompte à la réservation ?",
+              "Vous faites des gâteaux d'anniversaire ou on peut en apporter un ?",
+              "Y a-t-il un accès pour les personnes à mobilité réduite ?"
+            ]
+          },
+          {
+            "id": "sg_resto_ami",
+            "title": "Ami recommande / invite au restaurant",
+            "desc": "Un ami connaît un restaurant et vous propose d'y aller",
+            "questions": [
+              "C'est bien l'entrée ? Le plat ? Le dessert ?",
+              "Il faut réserver à l'avance ?",
+              "On peut s'y garer facilement ?",
+              "C'est adapté pour une occasion spéciale ?",
+              "Il y a des options végétariennes / sans gluten ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Vente d'objets / occasion",
@@ -20164,12 +20373,39 @@
           }
         ],
         "questions": [
-          "Quel est l'état de l'objet ?",
-          "Quel est le prix demandé ?",
-          "Est-il possible de négocier ?"
+          "C'est en quel état ?",
+          "Quel est le prix que tu demandes ?",
+          "On peut voir l'objet / l'essayer avant ?",
+          "Pourquoi tu le vends ?",
+          "Comment se passe la transaction / la livraison ?"
         ],
         "lm": 202605,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_vente_meubles",
+            "title": "Vente de meubles",
+            "desc": "Ami/voisin/collègue vend ses meubles (déménagement)",
+            "questions": [
+              "Les dimensions sont combien ?",
+              "Il est en bon état ? Il y a des défauts ?",
+              "Tu peux m'envoyer des photos ?",
+              "On peut organiser le transport comment ?",
+              "C'est négociable le prix ?"
+            ]
+          },
+          {
+            "id": "sg_vente_velo",
+            "title": "Vente de vélo / véhicule",
+            "desc": "Vente d'un vélo, vélo électrique ou voiture",
+            "questions": [
+              "Il a été révisé récemment ?",
+              "Combien de kilomètres / d'heures d'utilisation ?",
+              "Il y a des accessoires inclus (antivol, casque…) ?",
+              "Je peux faire un essai ?",
+              "Les papiers / la garantie, c'est en règle ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Cours de langue / français",
@@ -20379,12 +20615,39 @@
           }
         ],
         "questions": [
-          "Où se déroule le stage ?",
-          "Quel niveau est requis ?",
-          "Combien de stagiaires y a-t-il ?"
+          "Les cours sont à quelle fréquence / durée ?",
+          "Quel est le niveau requis ?",
+          "Quel est le tarif ?",
+          "Il y a des examens ou certifications à la fin ?",
+          "C'est en groupe ou en individuel ?"
         ],
         "lm": 202605,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_langue_cours",
+            "title": "S'inscrire à des cours de français",
+            "desc": "École de langue, université, cours particuliers au Canada",
+            "questions": [
+              "Vous proposez quel niveau (débutant, intermédiaire, avancé) ?",
+              "Les cours ont lieu quand (soir, week-end) ?",
+              "C'est en groupe ou en individuel ?",
+              "Quel est le tarif par cours / par mois ?",
+              "Y a-t-il une certification reconnue à la fin ?"
+            ]
+          },
+          {
+            "id": "sg_langue_enquete",
+            "title": "Enquête / exposé pour les cours de français",
+            "desc": "Interroger un(e) Français(e)/Canadien(ne) pour un exposé scolaire",
+            "questions": [
+              "Comment se passe une journée typique chez vous ?",
+              "Qu'est-ce que vous faites pendant le week-end ?",
+              "Quelles fêtes / traditions célébrez-vous ?",
+              "Comment est organisé le mariage / les fêtes dans votre culture ?",
+              "Qu'est-ce qui vous semble différent de votre pays d'origine ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Théâtre / concert / spectacle",
@@ -20607,12 +20870,39 @@
           }
         ],
         "questions": [
-          "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "C'est quel type de spectacle / quel genre de musique ?",
+          "C'est à quelle date et à quelle heure ?",
+          "C'est où / quelle salle ?",
+          "Quel est le prix des places ?",
+          "Comment obtenir des billets ?"
         ],
         "lm": 202603,
-        "subgroups": []
+        "subgroups": [
+          {
+            "id": "sg_spec_invit",
+            "title": "Invitation à un concert / spectacle",
+            "desc": "Un ami/collègue vous propose de l'accompagner ou vous offre des billets",
+            "questions": [
+              "C'est quel style de spectacle / de musique ?",
+              "Tu y es déjà allé(e) / tu les connais bien ?",
+              "C'est comment comme ambiance ?",
+              "On se retrouve quand / où ?",
+              "On mange quelque chose avant ou après ?"
+            ]
+          },
+          {
+            "id": "sg_spec_cours",
+            "title": "Cours de théâtre / scène",
+            "desc": "Un ami prend des cours de théâtre et vous voulez vous inscrire",
+            "questions": [
+              "Les cours, c'est à quelle fréquence ?",
+              "C'est pour quel niveau / débutant accepté ?",
+              "Quel est le tarif par mois ?",
+              "Il y a des représentations à la fin de l'année ?",
+              "Comment s'inscrire ?"
+            ]
+          }
+        ]
       },
       {
         "cluster": "Hôtel & hébergement",
@@ -20741,12 +21031,13 @@
           }
         ],
         "questions": [
-          "Avez-vous des disponibilités ?",
-          "Quel est le prix par nuit ?",
-          "Y a-t-il une connexion Wi-Fi ?"
+          "Quels types de chambres / logements sont disponibles ?",
+          "Quel est le tarif par nuit ?",
+          "Le petit-déjeuner est-il inclus ?",
+          "Y a-t-il des services inclus (wifi, parking, piscine…) ?",
+          "Quelles sont les conditions d'annulation ?"
         ],
-        "lm": 202605,
-        "subgroups": []
+        "lm": 202605
       },
       {
         "cluster": "Rénovation / bricolage",
@@ -20878,12 +21169,13 @@
           }
         ],
         "questions": [
-          "Dans quel quartier se situe l'appartement ?",
-          "Est-il meublé ?",
-          "Y a-t-il des transports à proximité ?"
+          "Quels types de travaux faites-vous ?",
+          "Quel est le délai d'intervention ?",
+          "Quel est le tarif (forfait ou à l'heure) ?",
+          "Faut-il un devis préalable ?",
+          "Les matériaux sont fournis ou à notre charge ?"
         ],
-        "lm": 202411,
-        "subgroups": []
+        "lm": 202411
       },
       {
         "cluster": "Achat immobilier",
@@ -20979,12 +21271,13 @@
           }
         ],
         "questions": [
-          "Dans quel quartier se situe l'appartement ?",
-          "Est-il meublé ?",
-          "Y a-t-il des transports à proximité ?"
+          "Quel est le prix de vente ?",
+          "C'est combien de pièces / quelle superficie ?",
+          "Dans quel état est le bien ?",
+          "Quels sont les frais annexes (charges, taxes) ?",
+          "Le quartier est bien desservi ?"
         ],
-        "lm": 202606,
-        "subgroups": []
+        "lm": 202606
       },
       {
         "cluster": "Émission TV / jeu télévisé",
@@ -21078,12 +21371,13 @@
           }
         ],
         "questions": [
-          "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "C'est quel type d'émission / jeu ?",
+          "Comment ça se passe concrètement ?",
+          "C'était comment comme expérience ?",
+          "Comment tu as été sélectionné(e) ?",
+          "Il y a des prix à gagner ?"
         ],
-        "lm": 202606,
-        "subgroups": []
+        "lm": 202606
       },
       {
         "cluster": "Bibliothèque / médiathèque",
@@ -21179,12 +21473,13 @@
           }
         ],
         "questions": [
-          "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "Comment s'inscrire / quels sont les tarifs ?",
+          "Quels types de documents peut-on emprunter ?",
+          "Quelle est la durée du prêt ?",
+          "Y a-t-il des services numériques (ebooks, presse en ligne) ?",
+          "Quels sont les horaires d'ouverture ?"
         ],
-        "lm": 202606,
-        "subgroups": []
+        "lm": 202606
       },
       {
         "cluster": "Cinéma",
@@ -21274,12 +21569,13 @@
           }
         ],
         "questions": [
-          "Quels films sont à l'affiche ?",
-          "À quelle heure est la prochaine séance ?",
-          "Est-ce disponible en version originale ?"
+          "C'est quel genre de film ?",
+          "L'histoire, c'est quoi en gros ?",
+          "Tu le recommandes ? Pourquoi ?",
+          "Avec qui tu l'as vu ?",
+          "C'est long ?"
         ],
-        "lm": 202511,
-        "subgroups": []
+        "lm": 202511
       },
       {
         "cluster": "Voisins & immeuble",
@@ -21381,144 +21677,12 @@
           }
         ],
         "questions": [
-          "Dans quel quartier se situe l'appartement ?",
-          "Est-il meublé ?",
-          "Y a-t-il des transports à proximité ?"
+          "Vous habitez ici depuis longtemps ?",
+          "Comment se passe la vie dans l'immeuble ?",
+          "Y a-t-il des règles à connaître pour les nouveaux arrivants ?",
+          "À qui s'adresse-t-on en cas de problème ?"
         ],
-        "lm": 202606,
-        "subgroups": [
-          {
-            "id": "sg_voisins_decouverte",
-            "title": "Découvrir l'immeuble & le quartier",
-            "desc": "Vous venez d'emménager. Questions sur les règles, les voisins, les commerces et les services du quartier.",
-            "qKeywords": [
-              "nouveau.*immeuble",
-              "immeuble.*nouveau",
-              "venez.*installer.*immeuble",
-              "installer.*immeuble",
-              "voisin.*nouveau",
-              "nouveau.*voisin",
-              "emménag",
-              "ascenseur",
-              "règles.*immeuble",
-              "immeuble.*règle",
-              "gardien",
-              "habitants.*immeuble",
-              "organisation.*immeuble",
-              "vie.*immeuble",
-              "venez.*installer.*quartier",
-              "quartier.*voisin",
-              "nouveau.*quartier",
-              "quartier.*découvrir",
-              "commerces",
-              "magasins.*quartier",
-              "services.*quartier",
-              "arrivé.*quartier",
-              "connaissez.*quartier",
-              "voisin.*connaître.*quartier",
-              "apéritif.*bienvenue",
-              "bienvenue.*apéritif",
-              "accueill",
-              "venez d'arriver"
-            ]
-          },
-          {
-            "id": "sg_voisins_enfant_animal",
-            "title": "Garder enfant ou animal",
-            "desc": "Le voisin vous demande de garder son enfant ou son animal pendant son absence.",
-            "qKeywords": [
-              "garder.*enfant",
-              "enfant.*garder",
-              "garder.*animal",
-              "animal.*garder",
-              "garder mon chien",
-              "garder.*chat",
-              "baby.*sitter.*voisin",
-              "voisin.*baby",
-              "garde.*enfant.*voisin",
-              "enfant.*absent",
-              "animal.*absent",
-              "gardez.*enfant",
-              "vous.*occuper.*animal",
-              "vous.*occuper.*enfant",
-              "absent.*enfant",
-              "absent.*animal"
-            ]
-          },
-          {
-            "id": "sg_voisins_activites",
-            "title": "Activités, clubs & services",
-            "desc": "Le voisin propose une activité, un cours ou un service dans le quartier.",
-            "qKeywords": [
-              "randonnée",
-              "vélo.*voisin",
-              "voisin.*vélo",
-              "natation.*voisin",
-              "voisin.*natation",
-              "piscine.*voisin",
-              "voisin.*piscine",
-              "musique.*voisin",
-              "voisin.*musique",
-              "piano.*voisin",
-              "cours.*sport.*voisin",
-              "voisin.*cours.*sport",
-              "animateur.*sportif",
-              "bénévol.*voisin",
-              "voisin.*bénévol",
-              "jardinage",
-              "covoiturage.*voisin",
-              "voisin.*covoiturage",
-              "voisin.*cours",
-              "cours.*voisin",
-              "association.*voisin",
-              "voisin.*association",
-              "activité.*voisin",
-              "voisin.*activité",
-              "photographie.*voisin",
-              "atelier.*voisin"
-            ]
-          },
-          {
-            "id": "sg_voisins_achat_location",
-            "title": "Acheter, louer ou vendre",
-            "desc": "Le voisin vend des meubles, loue une maison ou un bien, ou vous visitez un logement.",
-            "qKeywords": [
-              "voisin.*vendre",
-              "vendre.*voisin",
-              "voisin.*meubl",
-              "meubl.*voisin",
-              "locat.*voisin",
-              "voisin.*locat",
-              "maison.*voisin.*bord",
-              "bord.*mer.*voisin",
-              "appartement.*louer",
-              "ancien.*locataire",
-              "visite.*appartement",
-              "logement.*visite"
-            ]
-          },
-          {
-            "id": "sg_voisins_fete_social",
-            "title": "Fête des voisins & rencontres",
-            "desc": "Organiser une fête de quartier, rencontrer de nouvelles personnes, s'intégrer socialement.",
-            "qKeywords": [
-              "fête.*voisin",
-              "voisin.*fête",
-              "fête.*quartier",
-              "quartier.*fête",
-              "rencontrer.*gens",
-              "faire.*amis.*voisin",
-              "nouveaux.*amis.*quartier",
-              "intégrer.*quartier",
-              "connaissance.*quartier",
-              "organiser.*fête",
-              "apéritif.*fête",
-              "soirée.*voisin",
-              "voisin.*soirée",
-              "réunion.*voisin"
-            ]
-          }
-        ]
+        "lm": 202606
       },
       {
         "cluster": "Musée",
@@ -21587,12 +21751,13 @@
           }
         ],
         "questions": [
+          "Quels types d'expositions proposez-vous ?",
           "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "Quel est le tarif d'entrée (adulte, enfant, étudiant) ?",
+          "Y a-t-il des visites guidées ?",
+          "Y a-t-il un café / une boutique sur place ?"
         ],
-        "lm": 202604,
-        "subgroups": []
+        "lm": 202604
       },
       {
         "cluster": "Recevoir des amis / conseils pratiques",
@@ -21650,12 +21815,13 @@
           }
         ],
         "questions": [
-          "Comment s'est passée la fête ?",
-          "Qui était présent ?",
-          "Qu'avez-vous fait pendant la soirée ?"
+          "Ils arrivent quand exactement ?",
+          "Quels sont leurs goûts / préférences ?",
+          "Qu'est-ce que tu me conseilles de préparer ?",
+          "Il y a des activités à prévoir pour les occuper ?",
+          "Quoi faire en cas de problème ?"
         ],
-        "lm": 202507,
-        "subgroups": []
+        "lm": 202507
       },
       {
         "cluster": "Centre de formation / cours professionnels",
@@ -21702,12 +21868,13 @@
           }
         ],
         "questions": [
-          "Où se déroule le stage ?",
-          "Quel niveau est requis ?",
-          "Combien de stagiaires y a-t-il ?"
+          "Quelle formation / quel programme vous proposez ?",
+          "C'est certifiant / reconnu par les employeurs ?",
+          "Quels sont les horaires et la durée ?",
+          "Quel est le tarif ?",
+          "Y a-t-il des aides / financements disponibles ?"
         ],
-        "lm": 202409,
-        "subgroups": []
+        "lm": 202409
       },
       {
         "cluster": "Services divers",
@@ -21782,9 +21949,10 @@
         ],
         "lm": 0,
         "questions": [
-          "Je suis producteur de fruits et légumes bio et je vends directement mes produits aux particuliers. Vous êtes intéressé(e",
-          "Je produis des fruits et légumes biologiques. Je les vends directement aux particuliers. Vous êtes intéressé(e) et vous ",
-          "Je tiens un kiosque à journaux. Vous souhaitez lire des journaux canadiens et me demandez des recommandations en fonctio"
+          "Quels services / produits proposez-vous ?",
+          "Quels sont les tarifs ?",
+          "C'est disponible immédiatement ?",
+          "Comment passer une commande / s'y rendre ?"
         ]
       },
       {
@@ -21845,12 +22013,13 @@
           }
         ],
         "questions": [
-          "Quels risques cette assurance couvre-t-elle ?",
-          "Quel est le montant de la prime mensuelle ?",
-          "Quelles sont les exclusions importantes ?"
+          "Qu'est-ce que cette assurance couvre exactement ?",
+          "Quel est le montant de la cotisation mensuelle ?",
+          "Comment déclarer un sinistre ?",
+          "Quel est le délai d'intervention / de remboursement ?",
+          "Y a-t-il une franchise ?"
         ],
-        "lm": 202602,
-        "subgroups": []
+        "lm": 202602
       },
       {
         "cluster": "Cours de cuisine",
@@ -21890,12 +22059,13 @@
           }
         ],
         "questions": [
-          "Quels sont les horaires d'ouverture ?",
-          "Quelles expositions sont disponibles ?",
-          "Y a-t-il des activités pour les enfants ?"
+          "Quel type de cuisine / plats on apprend ?",
+          "Les cours durent combien de temps ?",
+          "C'est pour quel niveau ?",
+          "On mange ce qu'on prépare pendant le cours ?",
+          "Quel est le tarif ?"
         ],
-        "lm": 202603,
-        "subgroups": []
+        "lm": 202603
       },
       {
         "cluster": "École (inscription enfant)",
@@ -21951,12 +22121,13 @@
           }
         ],
         "questions": [
-          "À partir de quel âge ?",
+          "L'école accueille des enfants à partir de quel âge ?",
           "Quels sont les horaires ?",
-          "Combien coûtent les cours ?"
+          "Quelles sont les procédures d'inscription ?",
+          "Il y a une cantine / des activités périscolaires ?",
+          "L'école est-elle proche / bien desservie ?"
         ],
-        "lm": 202606,
-        "subgroups": []
+        "lm": 202606
       },
       {
         "cluster": "Entretien d'embauche / emploi",
@@ -22001,12 +22172,13 @@
           }
         ],
         "questions": [
-          "J'aimerais changer de travail.",
-          "Je ne me sens plus épanoui dans mon poste.",
-          "Que me conseillez-vous ?"
+          "C'est quel type de poste / secteur ?",
+          "Comment préparer l'entretien ?",
+          "Quelles questions posent-ils généralement ?",
+          "Il faut s'habiller comment ?",
+          "Il y a des pièges à éviter ?"
         ],
-        "lm": 202605,
-        "subgroups": []
+        "lm": 202605
       },
       {
         "cluster": "Animalerie / adoption d'animal",
@@ -22027,12 +22199,13 @@
           }
         ],
         "questions": [
-          "Avez-vous déjà gardé des animaux ?",
-          "Êtes-vous disponible tous les jours ?",
-          "Savez-vous vous occuper d'un animal malade ?"
+          "Quels animaux sont disponibles à l'adoption ?",
+          "Quels sont les soins quotidiens nécessaires ?",
+          "Quel est le coût d'entretien mensuel environ ?",
+          "Il faut un espace particulier / un équipement spécifique ?",
+          "Y a-t-il un suivi vétérinaire inclus ?"
         ],
-        "lm": 202409,
-        "subgroups": []
+        "lm": 202409
       },
       {
         "cluster": "Conversations improvisées",
@@ -22088,9 +22261,10 @@
         ],
         "lm": 0,
         "questions": [
-          "Vous avez fait connaissance avec moi dans une gare. Engagez une conversation pour découvrir mon amour pour les montagnes",
-          "Nous participons à une soirée et nous venons de faire connaissance. Je vous mentionne que je reviens tout juste d'un séj",
-          "Nous venons de nous rencontrer dans une gare. Vous êtes intéressé(e) par mon amour pour la montagne et vous me posez des"
+          "D'où venez-vous ? Vous habitez ici ?",
+          "Vous voyagez pour le travail ou pour le plaisir ?",
+          "Vous connaissez bien cette région ?",
+          "C'était comment votre voyage / séjour ?"
         ]
       },
       {
@@ -22136,12 +22310,13 @@
           }
         ],
         "questions": [
-          "Comment trouver un médecin de famille ?",
-          "Les soins sont-ils remboursés ? Comment ?",
-          "Y a-t-il des délais d'attente importants ?"
+          "Le médecin / praticien est disponible quand ?",
+          "Il faut prendre un rendez-vous à l'avance ?",
+          "C'est couvert par l'assurance maladie ?",
+          "Il faut apporter des documents particuliers ?",
+          "Que faire en cas d'urgence ?"
         ],
-        "lm": 202605,
-        "subgroups": []
+        "lm": 202605
       },
       {
         "cluster": "Autres scénarios",
@@ -22194,130 +22369,11 @@
           }
         ],
         "questions": [
-          "Quels sont les détails pratiques (horaires, lieu, prix) ?",
-          "Y a-t-il des conditions particulières ?",
-          "Comment s'inscrire ou procéder ?"
+          "Pouvez-vous me donner plus de détails ?",
+          "Quels sont les tarifs / conditions ?",
+          "C'est disponible quand ?"
         ],
-        "lm": 202606,
-        "subgroups": [
-          {
-            "id": "sg_autres_logement_coloc",
-            "title": "Logement, coloc & déménagement",
-            "desc": "Chercher un logement, visiter une colocation, organiser un déménagement.",
-            "qKeywords": [
-              "coloc",
-              "chambre.*disponible",
-              "chambre.*libre",
-              "appartement.*louer",
-              "louer.*appartement",
-              "déménag",
-              "logement.*cherch",
-              "cherch.*logement",
-              "agence.*immo",
-              "immo.*agence",
-              "loyer",
-              "propriétaire",
-              "locataire",
-              "quartier.*vivre",
-              "louer.*chambre",
-              "colocation",
-              "emménag",
-              "trouver.*appartement"
-            ]
-          },
-          {
-            "id": "sg_autres_cadeau_evenement",
-            "title": "Cadeaux, mariages & anniversaires",
-            "desc": "Offrir un cadeau à quelqu'un, se préparer pour un mariage ou une fête.",
-            "qKeywords": [
-              "cadeau",
-              "anniversaire.*sœur",
-              "sœur.*anniversaire",
-              "anniversaire.*enfant",
-              "enfant.*anniversaire",
-              "mariage.*invité",
-              "invité.*mariage",
-              "mariage.*questions",
-              "célébration.*questions",
-              "cadeau.*offrir",
-              "offrir.*cadeau",
-              "l'anniversaire de",
-              "fête.*organiser",
-              "organiser.*fête.*ami"
-            ]
-          },
-          {
-            "id": "sg_autres_location_vehicule",
-            "title": "Location de vélo, voiture & livraison",
-            "desc": "Louer un vélo ou une voiture, faire livrer un meuble, services de transport.",
-            "qKeywords": [
-              "location.*vélo",
-              "vélo.*location",
-              "louer.*vélo",
-              "vélo.*louer",
-              "location.*voiture",
-              "voiture.*location",
-              "louer.*voiture",
-              "voiture.*louer",
-              "livraison.*meuble",
-              "meuble.*livraison",
-              "livrer",
-              "livreur",
-              "agence.*location.*vélo",
-              "location.*véhicule",
-              "véhicule.*location",
-              "transporter.*objet",
-              "objets.*lourds"
-            ]
-          },
-          {
-            "id": "sg_autres_emploi_integration",
-            "title": "Emploi au Canada & intégration",
-            "desc": "Chercher du travail au Canada, se renseigner sur les conditions de travail, s'installer.",
-            "qKeywords": [
-              "emploi.*canada",
-              "canada.*emploi",
-              "travail.*canada",
-              "canada.*travail",
-              "trouver.*travail.*canada",
-              "s'installer.*canada",
-              "arrivée.*canada",
-              "immigré.*canada",
-              "vie.*canada",
-              "conditions.*travail.*canada",
-              "entretien.*emploi",
-              "entretien.*embauche",
-              "cherch.*emploi"
-            ]
-          },
-          {
-            "id": "sg_autres_aide_quotidien",
-            "title": "Aide pratique & services à domicile",
-            "desc": "Aide pour garder les enfants, petits travaux, services à domicile, courses à livrer.",
-            "qKeywords": [
-              "garder.*enfant.*ami",
-              "ami.*garder.*enfant",
-              "vous occuper.*enfant",
-              "enfant.*confier",
-              "petits travaux",
-              "travaux.*logement",
-              "rénovation",
-              "courses.*livraison",
-              "épicerie.*livraison",
-              "livraison.*courses",
-              "chef.*domicile",
-              "cuisiner.*domicile",
-              "baby.*sitter.*ami",
-              "ami.*baby"
-            ]
-          },
-          {
-            "id": "sg_autres_amis_general",
-            "title": "Scénarios avec amis (général)",
-            "desc": "Scénarios variés avec des amis — sorties, conseils, découvertes, voyages.",
-            "qKeywords": []
-          }
-        ]
+        "lm": 202606
       },
       {
         "cluster": "Poste / envoi de colis",
@@ -22344,12 +22400,13 @@
           }
         ],
         "questions": [
-          "Combien coûte l'envoi ?",
-          "Est-ce qu'il existe une livraison express ?",
-          "Le colis est-il assuré ?"
+          "Quels sont les délais de livraison ?",
+          "Quel est le tarif selon le poids / la destination ?",
+          "Comment emballer correctement le colis ?",
+          "Peut-on suivre l'envoi en ligne ?",
+          "Que faire si le colis est perdu ou abîmé ?"
         ],
-        "lm": 202606,
-        "subgroups": []
+        "lm": 202606
       }
     ]
   },
