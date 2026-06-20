@@ -383,14 +383,15 @@ var T3_THEMES={
   'Divers':['autres','animaux','argent_bonheur']
 };
 var T2_THEMES={
-  'Logement':['Location de logement','Achat immobilier','Hôtel & hébergement','Voisins & immeuble','Rythme & conditions de travail au Canada'],
+  'Logement':['Location de logement','Achat immobilier','Hôtel & hébergement','Voisins & immeuble'],
   'Arrivée au Canada':['Arrivée dans ville / au Canada','Nouveau dans le quartier / au Canada','Cours de langue / français'],
-  'Vacances & voyages':['Vacances & destinations (office du tourisme)','Agence de voyages / séjour organisé','Croisière / voyage en bateau'],
+  'Vacances & voyages':['Vacances & destinations (office du tourisme)','Agence de voyages / séjour organisé'],
   'Travail':['Collègue & conditions de travail','Entretien d\'embauche / emploi','Centre de formation / cours professionnels'],
-  'Social':['Invitation & fête sociale','Garde d\'enfant / baby-sitter','Recevoir des amis / conseils pratiques','École (inscription enfant)','Association & bénévolat'],
+  'Social & famille':['Invitation & fête sociale','Garde d\'enfant / baby-sitter','Recevoir des amis / conseils pratiques','École (inscription enfant)'],
+  'Bénévolat & associations':['Association & bénévolat'],
   'Culture & loisirs':['Sport & clubs sportifs','Centre culturel & loisirs','Théâtre / concert / spectacle','Musée','Émission TV / jeu télévisé','Bibliothèque / médiathèque','Cinéma','Cours de cuisine'],
-  'Services & commerces':['Restaurant & repas','Vente d\'objets / occasion','Assurance','Rénovation / bricolage','Poste / envoi de colis','Animalerie / adoption d\'animal','Mairie & services publics','Santé & médecin','Transports en commun','Services divers'],
-  'Divers':['Autres scénarios']
+  'Services & commerces':['Restaurant & repas','Vente d\'objets / occasion','Assurance','Rénovation / bricolage','Transports en commun','Animalerie / adoption d\'animal','Santé & médecin','Poste / envoi de colis','Services divers','Mairie & services publics'],
+  'Divers':['Autres scénarios','Conversations improvisées']
 };
 
 // Tab switches
@@ -574,11 +575,11 @@ function renderEO(){
 fetch('tcf_data.json')
   .then(function(r){return r.json();})
   .then(function(data){
-    // Recompute apps from item counts so stored value is never stale
+    // Recompute apps and lm from item counts so stored values are never stale
     function reapps(clusters){
       clusters.forEach(function(c){
         c.apps=c.items.reduce(function(s,i){return s+(i.n||1);},0);
-        if(c.lm==null)c.lm=Math.max.apply(null,c.items.map(function(i){return i.lm||0;}).concat([0]));
+        c.lm=c.items.reduce(function(m,i){return Math.max(m,i.lm||0);},0);
       });
     }
     if(data.ee){if(data.ee.t1)reapps(data.ee.t1);if(data.ee.t2)reapps(data.ee.t2);}
