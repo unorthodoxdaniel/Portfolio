@@ -7,46 +7,9 @@
         "pour": "Avantages pratiques et bénéfices identifiables selon le sujet.",
         "contre": "Limites, risques et exceptions à considérer.",
         "nuance": "Nuancez toujours selon le contexte et le cas particulier.",
-        "n": 23,
-        "apps": 477,
+        "n": 5,
+        "apps": 5,
         "questions": [
-          {
-            "p": "Les jeux du hasard, qu'en pensez-vous ?",
-            "n": 7,
-            "m": [
-              "Novembre 2023",
-              "Juin 2024",
-              "Décembre 2024",
-              "Décembre 2024",
-              "Janvier 2024"
-            ],
-            "subgroup": "sg_autres_vie_quotidienne",
-            "lm": 202412
-          },
-          {
-            "p": "De nos jours, les gens ne s'envoient presque plus de courrier (cartes de vœux, lettres d'amour, etc.). Est-ce regrettable ?",
-            "n": 6,
-            "m": [
-              "Mai 2023",
-              "Juin 2023",
-              "Septembre 2023",
-              "Novembre 2023",
-              "Avril 2024"
-            ],
-            "subgroup": "sg_autres_vie_quotidienne",
-            "lm": 202404
-          },
-          {
-            "p": "Aujourd'hui, les personnes n'échangent presque plus de lettres ou de cartes (de vœux, d'amour, etc.). Pensez-vous que c'est dommage ?",
-            "n": 3,
-            "m": [
-              "Novembre 2025",
-              "Avril 2026",
-              "Juin 2026"
-            ],
-            "subgroup": "sg_autres_vie_quotidienne",
-            "lm": 202606
-          },
           {
             "p": "(repeat of #3 on source)",
             "n": 2,
@@ -67,15 +30,6 @@
             "lm": 202302
           },
           {
-            "p": "Aujourd'hui, les échanges par lettres ou cartes sont devenus très rares. Est-ce une évolution regrettable selon vous ?",
-            "n": 1,
-            "m": [
-              "Mai 2025"
-            ],
-            "subgroup": "sg_autres_vie_quotidienne",
-            "lm": 202505
-          },
-          {
             "p": "(repeat of #1 on source)",
             "n": 1,
             "m": [
@@ -83,15 +37,6 @@
             ],
             "subgroup": "sg_autres_general",
             "lm": 202507
-          },
-          {
-            "p": "De nos jours, les gens ne s'envoient presque plus de courrier (cartes de vœux, lettres d'amour, etc.). Est-ce que c'est regrettable ?",
-            "n": 1,
-            "m": [
-              "Décembre 2022"
-            ],
-            "subgroup": "sg_autres_vie_quotidienne",
-            "lm": 202212
           },
           {
             "p": "(Image sans texte lisible — sujet non extrait)",
@@ -503,7 +448,7 @@
         "contre": "La dépendance aux écrans, la désinformation et la fracture numérique sont des risques réels.",
         "nuance": "La technologie est un outil — c'est l'usage qu'on en fait qui détermine si l'impact est positif.",
         "n": 257,
-        "apps": 241,
+        "apps": 257,
         "questions": [
           {
             "p": "Nous utilisons tous les jours des appareils électroniques (ordinateurs, téléphones portables, tablettes, etc.) Selon vous, quels sont les risques liés à leur utilisation ?",
@@ -1921,7 +1866,7 @@
         "contre": "Le système actuel reste souvent inadapté aux besoins du marché et génère une pression excessive.",
         "nuance": "Les diplômes ouvrent des portes, mais les compétences pratiques et la curiosité comptent autant.",
         "n": 150,
-        "apps": 128,
+        "apps": 150,
         "questions": [
           {
             "p": "Pour gagner beaucoup d'argent, il est indispensable d'avoir fait des études. Êtes-vous d'accord avec cette affirmation ?",
@@ -2906,7 +2851,7 @@
         "contre": "La pression à s'assimiler peut menacer l'identité culturelle d'origine et créer un sentiment de perte.",
         "nuance": "La véritable intégration est un processus réciproque qui respecte les deux cultures impliquées.",
         "n": 227,
-        "apps": 127,
+        "apps": 227,
         "questions": [
           {
             "p": "Changer de pays, c'est changer de culture. Qu'en pensez-vous ?",
@@ -4115,7 +4060,7 @@
         "contre": "Le tourisme de masse dégrade les lieux, pollue et peut effacer l'authenticité locale.",
         "nuance": "La manière de voyager compte autant que la destination — lenteur, immersion et respect sont essentiels.",
         "n": 101,
-        "apps": 99,
+        "apps": 101,
         "questions": [
           {
             "p": "Certaines personnes préfèrent voyager seules. Qu'en pensez-vous?",
@@ -4715,7 +4660,7 @@
         "contre": "Un contrôle trop strict freine l'autonomie, la créativité et l'épanouissement de l'enfant.",
         "nuance": "L'équilibre entre liberté accordée et structure imposée varie selon l'âge et la personnalité.",
         "n": 102,
-        "apps": 89,
+        "apps": 102,
         "questions": [
           {
             "p": "Les jeux vidéo participent au développement de l'enfant. Qu'en pensez-vous?",
@@ -5363,7 +5308,7 @@
         "contre": "L'excès de travail nuit à la santé mentale et à la vie personnelle — l'équilibre est essentiel.",
         "nuance": "Le bonheur au travail dépend du sens trouvé dans ce qu'on fait, pas uniquement du salaire.",
         "n": 164,
-        "apps": 88,
+        "apps": 164,
         "questions": [
           {
             "p": "De nos jours, il est possible de changer de métier à tout âge. Qu'en pensez-vous ?",
@@ -6328,7 +6273,7 @@
         "contre": "L'isolement, les démarches administratives et le choc culturel représentent des défis réels.",
         "nuance": "Le succès à l'étranger dépend autant de la préparation que de l'ouverture d'esprit.",
         "n": 93,
-        "apps": 86,
+        "apps": 93,
         "questions": [
           {
             "p": "Vivre dans un pays étranger est difficile. Êtes-vous d'accord avec cette affirmation?",
@@ -6881,7 +6826,7 @@
         "contre": "Les relations superficielles et la pression sociale peuvent générer du stress et de l'anxiété.",
         "nuance": "La qualité des liens compte bien plus que leur nombre — quelques amis proches valent un large réseau.",
         "n": 130,
-        "apps": 86,
+        "apps": 130,
         "questions": [
           {
             "p": "De nos jours, les jeunes sont de moins en moins polis. Êtes-vous d'accord ? Pourquoi ?",
@@ -7632,7 +7577,7 @@
         "contre": "La liberté individuelle a des limites quand elle affecte la santé publique ou la société.",
         "nuance": "La liberté n'est pas absolue — elle s'exerce dans un cadre social et collectif.",
         "n": 80,
-        "apps": 76,
+        "apps": 80,
         "questions": [
           {
             "p": "Il est plus facile de vivre seul(e) qu'en famille. Qu'en pensez-vous ?",
@@ -8048,7 +7993,7 @@
         "contre": "La pression de performance et l'obsession de l'apparence peuvent nuire à l'estime de soi.",
         "nuance": "Toute activité physique régulière est bénéfique — l'essentiel est la régularité, pas l'intensité.",
         "n": 83,
-        "apps": 74,
+        "apps": 83,
         "questions": [
           {
             "p": "De nos jours, tout le monde veut paraître beau. Que pensez-vous de la beauté ?",
@@ -8553,7 +8498,7 @@
         "contre": "La ville peut être oppressante et chère ; la campagne peut souffrir d'isolement et de services éloignés.",
         "nuance": "Le télétravail ouvre de nouvelles possibilités pour concilier travail urbain et vie rurale.",
         "n": 72,
-        "apps": 70,
+        "apps": 72,
         "questions": [
           {
             "p": "Est-ce que vous pensez qu'aujourd'hui on peut vivre sans voiture ?",
@@ -9037,7 +8982,7 @@
         "contre": "Les contraintes écologiques ont un coût économique qui pèse souvent sur les plus défavorisés.",
         "nuance": "L'écologie efficace passe par des politiques systémiques, pas uniquement par les choix individuels.",
         "n": 63,
-        "apps": 59,
+        "apps": 63,
         "questions": [
           {
             "p": "Le développement du tourisme est contraire à la protection de l'environnement. Qu'en pensez-vous?",
@@ -9424,7 +9369,7 @@
         "contre": "Repousser la retraite est injuste pour les métiers pénibles — le droit au repos doit être respecté.",
         "nuance": "La question dépend de l'état de santé, de la nature du métier et des perspectives financières.",
         "n": 59,
-        "apps": 58,
+        "apps": 59,
         "questions": [
           {
             "p": "Pensez-vous que faire travailler les gens jusqu'à 70 ans est une mesure acceptable ?",
@@ -9759,7 +9704,7 @@
         "contre": "Les injonctions à la santé parfaite créent de la pression et peuvent mener à des troubles.",
         "nuance": "La santé est multidimensionnelle — physique, mentale et sociale — pas seulement l'absence de maladie.",
         "n": 72,
-        "apps": 55,
+        "apps": 72,
         "questions": [
           {
             "p": "Comment trouvez-vous l'alimentation dans votre pays ?",
@@ -10196,7 +10141,7 @@
         "contre": "La désillusion politique et le sentiment d'impuissance freinent l'engagement des citoyens.",
         "nuance": "L'État doit réguler sans contrôler excessivement — la frontière entre protection et ingérence est fragile.",
         "n": 75,
-        "apps": 49,
+        "apps": 75,
         "questions": [
           {
             "p": "Pour des raisons d'égalité, certains gouvernements comptent 50% d'hommes et 50% de femmes. Qu'en pensez-vous ?",
@@ -10614,7 +10559,7 @@
         "contre": "Certaines inégalités persistent malgré les politiques — les solutions sont souvent complexes et coûteuses.",
         "nuance": "L'égalité de droit ne garantit pas l'égalité de fait — des efforts ciblés restent nécessaires.",
         "n": 38,
-        "apps": 37,
+        "apps": 38,
         "questions": [
           {
             "p": "Les transports en commun doivent être gratuits en ville. Est-ce une bonne idée selon vous ?",
@@ -11085,7 +11030,7 @@
         "contre": "Le stress chronique détruit la santé mentale et physique — il doit être reconnu et traité.",
         "nuance": "Le stress positif (eustress) existe, mais la frontière avec le stress néfaste est fragile.",
         "n": 36,
-        "apps": 34,
+        "apps": 36,
         "questions": [
           {
             "p": "Est-il important de favoriser le bien-être au travail?",
@@ -11317,7 +11262,7 @@
         "contre": "La désinformation, les images violentes et les bulles de filtre nuisent à la qualité de l'information.",
         "nuance": "La liberté d'expression a des limites légitimes — discours haineux, désinformation, dignité humaine.",
         "n": 131,
-        "apps": 31,
+        "apps": 131,
         "questions": [
           {
             "p": "Certaines personnes refusent de regarder les actualités diffusées à la télévision. Qu'en pensez-vous?",
@@ -11995,7 +11940,7 @@
         "contre": "Certaines pratiques (chasse, élevage) font partie de traditions culturelles ou alimentaires légitimes.",
         "nuance": "Respect animal et activités humaines traditionnelles peuvent coexister avec une réglementation claire.",
         "n": 29,
-        "apps": 24,
+        "apps": 29,
         "questions": [
           {
             "p": "Les animaux de compagnie sont-ils essentiels pour le bien-être des personnes âgées ? Qu'en pensez-vous ?",
@@ -12177,7 +12122,7 @@
         "contre": "Au-delà du nécessaire, plus d'argent n'apporte pas automatiquement plus de bonheur.",
         "nuance": "Le bonheur vient des relations, du sens et de la santé — l'argent en est une condition, pas la garantie.",
         "n": 21,
-        "apps": 18,
+        "apps": 21,
         "questions": [
           {
             "p": "Pour gagner beaucoup d'argent, il est indispensable d'avoir fait des études. Êtes-vous d'accord avec cette affirmation ?",
@@ -12302,12 +12247,78 @@
           }
         ],
         "lm": 202605
+      },
+      {
+        "id": "vie_quotidienne",
+        "title": "Vie quotidienne & communication",
+        "pour": "Les pratiques traditionnelles (courrier, jeux, etc.) ont une valeur affective et culturelle.",
+        "contre": "L'évolution numérique rend certaines habitudes obsolètes.",
+        "nuance": "Il faut distinguer la nostalgie de la réelle utilité pratique.",
+        "n": 18,
+        "apps": 18,
+        "questions": [
+          {
+            "p": "Les jeux du hasard, qu'en pensez-vous ?",
+            "n": 7,
+            "m": [
+              "Novembre 2023",
+              "Juin 2024",
+              "Décembre 2024",
+              "Décembre 2024",
+              "Janvier 2024"
+            ],
+            "subgroup": "sg_autres_vie_quotidienne",
+            "lm": 202412
+          },
+          {
+            "p": "De nos jours, les gens ne s'envoient presque plus de courrier (cartes de vœux, lettres d'amour, etc.). Est-ce regrettable ?",
+            "n": 6,
+            "m": [
+              "Mai 2023",
+              "Juin 2023",
+              "Septembre 2023",
+              "Novembre 2023",
+              "Avril 2024"
+            ],
+            "subgroup": "sg_autres_vie_quotidienne",
+            "lm": 202404
+          },
+          {
+            "p": "Aujourd'hui, les personnes n'échangent presque plus de lettres ou de cartes (de vœux, d'amour, etc.). Pensez-vous que c'est dommage ?",
+            "n": 3,
+            "m": [
+              "Novembre 2025",
+              "Avril 2026",
+              "Juin 2026"
+            ],
+            "subgroup": "sg_autres_vie_quotidienne",
+            "lm": 202606
+          },
+          {
+            "p": "Aujourd'hui, les échanges par lettres ou cartes sont devenus très rares. Est-ce une évolution regrettable selon vous ?",
+            "n": 1,
+            "m": [
+              "Mai 2025"
+            ],
+            "subgroup": "sg_autres_vie_quotidienne",
+            "lm": 202505
+          },
+          {
+            "p": "De nos jours, les gens ne s'envoient presque plus de courrier (cartes de vœux, lettres d'amour, etc.). Est-ce que c'est regrettable ?",
+            "n": 1,
+            "m": [
+              "Décembre 2022"
+            ],
+            "subgroup": "sg_autres_vie_quotidienne",
+            "lm": 202212
+          }
+        ]
       }
     ],
     "t2": [
       {
         "cluster": "Autres scénarios",
-        "apps": 359,
+        "apps": 147,
         "items": [
           {
             "p": "Je suis votre ami, vous recevrez un groupe d'amis chez vous et vous avez besoin des conseils. Posez-moi des questions.",
@@ -12320,66 +12331,6 @@
               "Novembre 2022"
             ],
             "lm": 202402,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je veux organiser une sortie en famille dimanche prochain. Vous voulez m'aider à organiser cette sortie et vous me posez des questions (lieu, activités, budget, transports, etc.).",
-            "n": 4,
-            "m": [
-              "Mars 2023",
-              "Avril 2023",
-              "Octobre 2023",
-              "Novembre 2022"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) francophone, j'ai participé à un concours sportif organisé par un organisme francophone. Vous voulez participer au prochain concours. Vous m'interrogez sur mon expérience (préparation physique, alimentation, équipement, etc.).",
-            "n": 4,
-            "m": [
-              "Octobre 2023",
-              "Décembre 2023",
-              "Mai 2024",
-              "Juillet 2024"
-            ],
-            "lm": 202407,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) canadien(ne) que vous n'avez pas vu(e) depuis un long moment. Vous vous informez sur ma situation et vous m'interrogez sur ma vie quotidienne (emploi, proches, passe-temps, etc.).",
-            "n": 4,
-            "m": [
-              "Décembre 2025",
-              "Janvier 2026",
-              "Mars 2026",
-              "Juin 2026"
-            ],
-            "lm": 202606,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je vous propose de venir célébrer l'anniversaire de ma sœur. Vous me demandez des renseignements sur elle afin de choisir un cadeau approprié (goûts, loisirs, personnalité, etc.).",
-            "n": 4,
-            "m": [
-              "Décembre 2025",
-              "Janvier 2026",
-              "Mars 2026",
-              "Juin 2026"
-            ],
-            "lm": 202606,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Vous avez envie de commencer une série, mais vous êtes indécis(e). Vous me demandez des informations pour faire votre choix (catégorie, acteurs, plateforme de streaming, etc.).",
-            "n": 4,
-            "m": [
-              "Décembre 2025",
-              "Janvier 2026",
-              "Mars 2026",
-              "Juin 2026"
-            ],
-            "lm": 202606,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -12406,72 +12357,6 @@
             "subgroup": "sg_autres_logement_coloc"
           },
           {
-            "p": "Je suis votre ami d'Ottawa, vous venez de vous y installer et vous souhaitez faire du vélo. Posez-moi des questions.",
-            "n": 3,
-            "m": [
-              "Janvier 2023",
-              "Février 2023",
-              "Septembre 2023"
-            ],
-            "lm": 202309,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vis en colocation. Une chambre est disponible dans le logement. Cela vous intéresse, vous me posez des questions sur la colocation (loyer, pièces, habitants, etc.)",
-            "n": 3,
-            "m": [
-              "Mars 2023",
-              "Décembre 2023",
-              "Juillet 2024"
-            ],
-            "lm": 202407,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vais déménager le week-end prochain. Vous allez participer au déménagement et vous me posez des questions sur l'organisation de la journée (horaires, adresse, transport, etc.).",
-            "n": 3,
-            "m": [
-              "Mars 2023",
-              "Juillet 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami(e). J'utilise souvent un site Internet qui propose des sorties en groupe. Vous êtes intéressé(e) et vous me posez des questions pour obtenir des informations (inscription, participants, activités, etc.).",
-            "n": 3,
-            "m": [
-              "Mars 2023",
-              "Juillet 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Vous voulez offrir un cadeau à mon enfant pour son anniversaire. Vous me posez des questions pour savoir quel cadeau lui offrir (jeux, habitudes, goûts, etc.).",
-            "n": 3,
-            "m": [
-              "Mars 2023",
-              "Juillet 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vis au Canada. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité, etc.).",
-            "n": 3,
-            "m": [
-              "Mars 2023",
-              "Avril 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je travaille dans une auto-école, vous voulez apprendre à conduire. Vous me posez des questions pour avoir des informations.",
             "n": 3,
             "m": [
@@ -12492,17 +12377,6 @@
             ],
             "lm": 202408,
             "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions sur (le prix, les services, la formation, les équipements, les vêtements…)",
-            "n": 3,
-            "m": [
-              "Mai 2023",
-              "Décembre 2023",
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_amis_general"
           },
           {
             "p": "Je suis producteur de fruits et légumes bio et je vends directement mes produits aux particuliers. Vous êtes intéressé(e). Vous me posez des questions pour obtenir des informations utiles (prix, types de produits, livraison, etc.).",
@@ -12527,39 +12401,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami, c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.)",
-            "n": 3,
-            "m": [
-              "Novembre 2023",
-              "Mars 2024",
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami, j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport…)",
-            "n": 3,
-            "m": [
-              "Novembre 2023",
-              "Mars 2024",
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami, j'ai fêté mon anniversaire, vous n'étiez pas présent. Posez-moi des questions (activités, personnes, cadeaux…)",
-            "n": 3,
-            "m": [
-              "Novembre 2023",
-              "Décembre 2024",
-              "Décembre 2022"
-            ],
-            "lm": 202412,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Je travaille dans une agence immobilière. Vous cherchez un logement. Vous me posez des questions sur les offres disponibles (types de logement, prix, localisation, etc.).",
             "n": 3,
             "m": [
@@ -12571,51 +12412,7 @@
             "subgroup": "sg_autres_logement_coloc"
           },
           {
-            "p": "Je suis un(e) ami(e) et je me suis installé(e) au Québec il y a deux ans. Vous souhaitez vivre à l'étranger et vous me demandez des renseignements sur mon expérience (adaptation, obstacles, changements de mode de vie, etc.).",
-            "n": 3,
-            "m": [
-              "Octobre 2025",
-              "Mars 2026",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je travaille dans une agence qui loue des bicyclettes. Vous désirez en louer une. Vous me demandez des renseignements (modèles disponibles, prix, utilisation, etc.).",
-            "n": 3,
-            "m": [
-              "Décembre 2025",
-              "Février 2026",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) canadien(ne). Vous êtes nouvellement arrivé(e) dans ma ville et vous êtes hébergé(e) chez moi. Vous souhaitez vous promener en ville et vous me posez des questions sur les transports publics (types, trajets, horaires, prix, etc.).",
-            "n": 3,
-            "m": [
-              "Décembre 2025",
-              "Février 2026",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) francophone. Vous devez rédiger un article sur une ville pour un magazine culturel. Vous cherchez de l'inspiration et vous me posez des questions sur les villes que j'apprécie (loisirs, bâtiments, moyens de transport, etc.).",
-            "n": 3,
-            "m": [
-              "Décembre 2025",
-              "Février 2026",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je mets en place un festival musical dans votre ville. Vous voulez y assister et vous me posez des questions pour en savoir plus (calendrier, horaires, artistes, tarifs, etc.).",
             "n": 3,
             "m": [
               "Décembre 2025",
@@ -12637,16 +12434,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami, j'étudie à Toronto. Posez-moi des questions pour vous renseigner d'un cours à l'université de Toronto.",
-            "n": 2,
-            "m": [
-              "Janvier 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Vous êtes arrivé à Vancouver et vous voulez connaître les magasins et boutiques les plus proches. Posez-moi des questions.",
             "n": 2,
             "m": [
@@ -12655,36 +12442,6 @@
             ],
             "lm": 202302,
             "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je déménage dans un nouveau logement. Vous voulez m'aider. Vous me posez des questions pour obtenir des informations sur le déménagement (horaires, transport, organisation.)",
-            "n": 2,
-            "m": [
-              "Mars 2023",
-              "Décembre 2023"
-            ],
-            "lm": 202312,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami(e). Je pratique un sport depuis longtemps. Vous voulez pratiquer ce sport avec moi. Vous me posez des questions pour obtenir des renseignements sur cette activité (type de sport, lieu, équipement…)",
-            "n": 2,
-            "m": [
-              "Mars 2023",
-              "Décembre 2023"
-            ],
-            "lm": 202312,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vous invite à mon mariage. Vous me posez des questions pour avoir des informations sur le déroulement de l'événement (organisation, tenues, repas, etc.).",
-            "n": 2,
-            "m": [
-              "Mars 2023",
-              "Juillet 2023"
-            ],
-            "lm": 202307,
-            "subgroup": "sg_autres_cadeau_evenement"
           },
           {
             "p": "Je travaille dans une agence immobilière. Vous cherchez un nouveau logement. Vous me posez des questions pour avoir des informations sur les logements disponibles (lieu, loyer, nombre de pièces, etc.).",
@@ -12707,36 +12464,6 @@
             "subgroup": "sg_autres_logement_coloc"
           },
           {
-            "p": "Je suis votre ami(e), mon fils va se marier, vous êtes invité(e). Posez-moi des questions (invités, cadeau, organisation, etc.).",
-            "n": 2,
-            "m": [
-              "Avril 2023",
-              "Août 2024"
-            ],
-            "lm": 202408,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis un ami francophone. Il vous est demandé d'écrire un article sur une ville pour un magazine culturel. Vous cherchez des idées. Vous m'interrogez sur les villes que j'aime (activités, architecture, transports, etc.).",
-            "n": 2,
-            "m": [
-              "Mai 2023",
-              "Janvier 2024"
-            ],
-            "lm": 202401,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e), vous êtes invité à mon mariage. Posez-moi des questions (date, lieu, invité, etc).",
-            "n": 2,
-            "m": [
-              "Juillet 2023",
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Je travaille dans une agence immobilière, vous cherchez un logement, vous me posez des questions.",
             "n": 2,
             "m": [
@@ -12757,16 +12484,6 @@
             "subgroup": "sg_autres_logement_coloc"
           },
           {
-            "p": "Je suis votre ami(e). Mon fils va se marier. Vous êtes invité(e). Vous me posez des questions sur le mariage (organisation, invités, cadeau, etc.).",
-            "n": 2,
-            "m": [
-              "Juillet 2023",
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Je travaille dans une agence de location de voitures. Vous avez besoin de louer un véhicule. Vous me posez des questions sur les offres de location (types de véhicules, prix, options, etc.).",
             "n": 2,
             "m": [
@@ -12784,16 +12501,6 @@
               "Octobre 2023"
             ],
             "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) français(e). Vous voulez venir en France cet été mais vous hésitez entre plusieurs villes. Vous me posez des questions pour obtenir des informations sur ces différentes villes (climat, activités, transports, etc.) et choisir votre destination.",
-            "n": 2,
-            "m": [
-              "Septembre 2023",
-              "Janvier 2024"
-            ],
-            "lm": 202401,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -12827,36 +12534,6 @@
             "subgroup": "sg_autres_location_vehicule"
           },
           {
-            "p": "Je suis votre ami(e). Je voudrais faire des études au Canada. Vous m'interrogez pour mieux comprendre mon projet (spécialité, objectifs, lieu, etc.).",
-            "n": 2,
-            "m": [
-              "Mars 2024",
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). J'ai besoin de transporter des objets lourds mais je n'ai pas de véhicule. Vous m'interrogez pour m'aider à trouver une solution (objets, distance, date, etc.).",
-            "n": 2,
-            "m": [
-              "Mars 2024",
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vends des objets que je n'utilise plus sur Internet. Vous souhaitez faire la même chose. Vous me posez des questions pour avoir plus d'informations (type de site, types d'objets, modalités, etc.).",
-            "n": 2,
-            "m": [
-              "Juillet 2024",
-              "Novembre 2024"
-            ],
-            "lm": 202411,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je travaille dans une entreprise de services aux particuliers. Vous avez besoin de faire de petits travaux chez vous. Vous me posez des questions pour obtenir des informations (services proposés, tarifs, organisation, etc.).",
             "n": 2,
             "m": [
@@ -12865,16 +12542,6 @@
             ],
             "lm": 202411,
             "subgroup": "sg_autres_aide_quotidien"
-          },
-          {
-            "p": "Je suis votre ami(e). Mon enfant a effectué un voyage linguistique dans un pays étranger. Vous êtes intéressé(e) car vous cherchez un séjour pour votre enfant. Vous me posez des questions (pays, activités, conditions, etc.).",
-            "n": 2,
-            "m": [
-              "Octobre 2024",
-              "Janvier 2024"
-            ],
-            "lm": 202410,
-            "subgroup": "sg_autres_amis_general"
           },
           {
             "p": "Je suis votre ami, je fais du covoiturage, vous êtes intéressé. Posez-moi des questions (trajets, tarifs, disponibilité, etc).",
@@ -12906,40 +12573,10 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami(e) et je vous demande de garder ma fille de 3 ans pendant le week-end. Vous la connaissez un peu. Je vous indique les horaires et les consignes à faire. Vous me posez des questions pour bien vous organiser (repas, sommeil, activités, etc.).",
-            "n": 2,
-            "m": [
-              "Juin 2025",
-              "Septembre 2025"
-            ],
-            "lm": 202509,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je produis des fruits et légumes biologiques. Je les vends directement aux particuliers. Vous êtes intéressé(e) et vous me posez des questions pour connaître les prix, les produits, la livraison, etc.",
             "n": 2,
             "m": [
               "Juillet 2025",
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). J'ai récemment commencé un nouveau poste. Posez-moi des questions sur cette expérience professionnelle.",
-            "n": 2,
-            "m": [
-              "Septembre 2025",
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) et je possède un blog. Vous voulez voyager et vous cherchez des conseils pour créer un blog. Posez-moi toutes vos questions.",
-            "n": 2,
-            "m": [
-              "Septembre 2025",
               "Février 2026"
             ],
             "lm": 202602,
@@ -12954,46 +12591,6 @@
             ],
             "lm": 202511,
             "subgroup": "sg_autres_aide_quotidien"
-          },
-          {
-            "p": "Je suis un(e) ami(e) à vous. J'ai été récemment engagé(e) par une société implantée dans la périphérie de Toronto. Vous me sollicitez pour obtenir des renseignements sur mon nouveau poste (mes coéquipiers, les bureaux, les bénéfices, les événements organisés, etc.).",
-            "n": 2,
-            "m": [
-              "Septembre 2025",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) à vous. Je dispose d'une expérience significative en blogage. Vous souhaitez lancer un site personnel en prévision de votre futur séjour au Canada et vous me sollicitez pour des recommandations (organisation, fréquence de publication, type de contenus, etc.).",
-            "n": 2,
-            "m": [
-              "Septembre 2025",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) à vous. Vous souhaitez planifier un séjour au Canada afin de célébrer l'anniversaire de votre conjoint(e) et vous me posez des questions (destinations, activités, coûts, etc.).",
-            "n": 2,
-            "m": [
-              "Septembre 2025",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Vous êtes récemment arrivé(e) dans ma ville. Vous cherchez à organiser une sortie économique et vous me demandez des renseignements (endroits, activités, transports, etc.).",
-            "n": 2,
-            "m": [
-              "Octobre 2025",
-              "Janvier 2026"
-            ],
-            "lm": 202601,
-            "subgroup": "sg_autres_amis_general"
           },
           {
             "p": "Je suis employé(e) dans une boutique de mobilier. Vous désirez recevoir un meuble et vous me demandez des informations sur la livraison (coût, délai, moyen utilisé, etc.).",
@@ -13016,56 +12613,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Vous souhaitez faire une sortie ce soir, mais vous ne savez pas encore quoi faire. Nous en discutons entre amis et vous me posez des questions pour choisir une activité (endroit, transport, prix, etc.).",
-            "n": 2,
-            "m": [
-              "Octobre 2025",
-              "Mars 2026"
-            ],
-            "lm": 202603,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je désire continuer mes études au Canada. Vous me demandez des informations pour en savoir plus sur mon projet (ville, spécialité, buts, etc.).",
-            "n": 2,
-            "m": [
-              "Octobre 2025",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). J'ai des objets lourds à transporter et aucun véhicule pour le faire. Vous me demandez des précisions pour m'aider à organiser cela (nature d'objets, distance, date, etc.).",
-            "n": 2,
-            "m": [
-              "Octobre 2025",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et je participe à des cours de pâtisserie depuis un certain temps. Vous êtes intéressé(e) et vous me demandez des renseignements (coût, endroit, recettes apprises, etc.).",
-            "n": 2,
-            "m": [
-              "Novembre 2025",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je propose mes services de cuisine à domicile. Vous organisez un dîner familial et vous me demandez des renseignements concernant mes services (menus proposés, prix, équipements, etc.).",
-            "n": 2,
-            "m": [
-              "Novembre 2025",
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis employé(e) à l'accueil d'une école de musique. Vous désirez suivre des cours et vous me demandez des renseignements (tarifs, horaires, instruments, etc.).",
             "n": 2,
             "m": [
@@ -13077,16 +12624,6 @@
           },
           {
             "p": "Je suis parent d'un élève et nos enfants fréquentent la même école. Vous assistez à la fête de l'école pour la première fois et vous me demandez des informations sur l'événement (programme, horaires, animations, etc.).",
-            "n": 2,
-            "m": [
-              "Décembre 2025",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et je vis dans une grande ville. Vous souhaitez louer un logement ici. Vous me demandez des informations (offres disponibles, prix, quartier, etc.).",
             "n": 2,
             "m": [
               "Décembre 2025",
@@ -13126,26 +12663,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis un(e) ami(e) francophone. Vous envisagez de venir vivre dans ma ville et souhaitez des informations pour trouver un logement (procédures, lieux, coût, etc.).",
-            "n": 2,
-            "m": [
-              "Décembre 2025",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) francophone. Vous voulez choisir un endroit pour voyager et souhaitez connaître les pays que j'ai visités. Vous me posez des questions pour en savoir plus (activités, météo, prix, etc.).",
-            "n": 2,
-            "m": [
-              "Décembre 2025",
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je travaille dans un bureau de tourisme. Vous souhaitez visiter un parc de loisirs (aquarium, zoo, parc naturel). Vous me demandez des renseignements (heures d'ouverture, prix, services de restauration, etc.).",
             "n": 2,
             "m": [
@@ -13163,56 +12680,6 @@
               "Mai 2026"
             ],
             "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et j'habite au Canada depuis longtemps. Vous prévoyez de me rendre visite au mois de décembre. Vous me demandez des informations pour organiser votre voyage et vos bagages (climat, températures, habits, activités possibles, etc.).",
-            "n": 2,
-            "m": [
-              "Mars 2026",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Vous avez envie d'aller voir un film et vous me demandez des informations sur les films que j'ai vus dernièrement (genre, durée, acteurs, opinion, etc.).",
-            "n": 2,
-            "m": [
-              "Mars 2026",
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) français(e). Vous voulez passer l'été en France, mais vous ne savez pas encore quelle ville choisir. Vous me demandez des informations pour les comparer (temps, activités, transports, etc.) et choisir la meilleure destination.",
-            "n": 2,
-            "m": [
-              "Mai 2026",
-              "Juin 2026"
-            ],
-            "lm": 202606,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je souhaite trouver un appartement à louer. Vous essayez de m'aider et vous me demandez des informations (quartier, budget, superficie, etc.).",
-            "n": 2,
-            "m": [
-              "Mai 2026",
-              "Juin 2026"
-            ],
-            "lm": 202606,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami d'Ottawa, vous venez de vous y installer et vous souhaitez circuler en vélo. Posez-moi des questions.",
-            "n": 2,
-            "m": [
-              "Octobre 2022",
-              "Septembre 2022"
-            ],
-            "lm": 202210,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -13243,24 +12710,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami, j'organise une sortie en famille dimanche prochain. Vous voulez m'aider à organiser cette sortie et vous me posez des questions sur les lieux, les activités, le budget, le transport…",
-            "n": 1,
-            "m": [
-              "Mai 2023"
-            ],
-            "lm": 202305,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami. Je suis au Québec. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité…).",
-            "n": 1,
-            "m": [
-              "Mai 2023"
-            ],
-            "lm": 202305,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "De nos jours, les gens ne s'envoient presque plus de courrier (cartes de vœux, lettres d'amour, etc.). Est-ce regrettable ? [NOTE: mislabeled as Tâche2 sujet on source — see Tâche 3 Partie 1 below for actual T2P1 sujets]",
             "n": 1,
             "m": [
@@ -13288,15 +12737,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami, j'ai passé un week-end dans une ville que je connais très bien et vous voulez la visiter. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Septembre 2023"
-            ],
-            "lm": 202309,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis votre ami, j'ai visité un parc d'attractions. Posez-moi des questions.",
             "n": 1,
             "m": [
@@ -13306,48 +12746,12 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami et je joue d'un instrument de musique. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Septembre 2023"
-            ],
-            "lm": 202309,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je dois m'absenter un week-end. Je vous demande de garder ma fille de 3 ans. Vous la connaissez bien mais c'est la première fois que vous allez vous occuper d'elle pendant 2 jours. Vous me posez des questions pour connaître ses habitudes (alimentation, loisirs, sommeil, etc.).",
-            "n": 1,
-            "m": [
-              "Octobre 2023"
-            ],
-            "lm": 202310,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e), je vous invite à l'anniversaire de ma sœur. Vous me posez des questions pour savoir quel cadeau lui offrir.",
-            "n": 1,
-            "m": [
-              "Novembre 2023"
-            ],
-            "lm": 202311,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Je suis employé dans une agence de location, vous me consultez pour trouver un logement à votre arrivée au Québec. Questionnez-moi sur les démarches à suivre, les quartiers, le type de logement disponible, etc.",
             "n": 1,
             "m": [
               "Décembre 2023"
             ],
             "lm": 202312,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) et vous désirez avoir des informations sur des endroits où passer le week-end. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Mars 2024"
-            ],
-            "lm": 202403,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -13369,96 +12773,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis un(e) ami(e), je vis à Ottawa. Vous venez d'arriver dans la ville et vous souhaitez vous déplacer en vélo. Vous me posez des questions sur l'utilisation du vélo à Ottawa pour décider si c'est une bonne idée (pistes cyclables, agences de location, matériel, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis votre ami(e). J'ai immigré au Canada il y a deux ans. Vous êtes en train de faire les démarches d'immigration au Canada. Vous me posez des questions sur mon expérience (changement d'habitudes, vie quotidienne, adaptation au pays, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_emploi_integration"
-          },
-          {
-            "p": "Je suis votre prof de français. Vous voulez faire un séjour dans une ville francophone avec votre famille. Vous me posez des questions pour organiser votre séjour (activités, coûts, préparatifs, etc.) Exemples de villes francophones: Bruxelles, Dakar, Québec, etc.",
-            "n": 1,
-            "m": [
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un ami francophone, j'ai participé à un concours sportif organisé par un organisme francophone. Vous voulez participer au prochain concours. Vous m'interrogez sur mon expérience (préparation physique, alimentation, équipement, etc.)",
-            "n": 1,
-            "m": [
-              "Mai 2024"
-            ],
-            "lm": 202405,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e), j'ai fêté mon anniversaire, vous n'étiez pas présent(e). Posez-moi des questions (activités, personnes, cadeaux, etc.)",
-            "n": 1,
-            "m": [
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami(e). J'étudie dans une université à Toronto. Vous allez commencer vos études dans cette université. Vous me posez des questions sur cet établissement (cours, équipements, logement, etc.).",
-            "n": 1,
-            "m": [
-              "Juin 2024"
-            ],
-            "lm": 202406,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) au Canada, vous allez me rendre visite au mois de décembre. Posez-moi des questions sur les préparatifs de votre voyage (activités, vêtements, équipements, etc).",
-            "n": 1,
-            "m": [
-              "Juillet 2024"
-            ],
-            "lm": 202407,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions (prix, services, formation, équipements, vêtements, etc.)",
-            "n": 1,
-            "m": [
-              "Septembre 2024"
-            ],
-            "lm": 202409,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Vous cherchez un logement à Toronto. Vous me posez des questions pour avoir des conseils pratiques sur cette recherche (budget, démarches, sites spécialisés, etc.).",
-            "n": 1,
-            "m": [
-              "Septembre 2024"
-            ],
-            "lm": 202409,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami(e). Vous voulez regarder une série télévisée. Vous ne savez pas laquelle choisir. Vous me posez des questions pour choisir une série à regarder (types de séries, acteurs, chaînes, etc.).",
-            "n": 1,
-            "m": [
-              "Septembre 2024"
-            ],
-            "lm": 202409,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis un(e) ami(e). La semaine dernière, j'ai assisté à une émission de télé dans le public. Vous me posez des questions sur cette expérience (modalités d'inscription, durée de l'enregistrement, caractère de l'animateur, etc.).",
             "n": 1,
             "m": [
@@ -13475,51 +12789,6 @@
             ],
             "lm": 202410,
             "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e), je vous invite à l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.)",
-            "n": 1,
-            "m": [
-              "Octobre 2024"
-            ],
-            "lm": 202410,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami(e), j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport, etc).",
-            "n": 1,
-            "m": [
-              "Octobre 2024"
-            ],
-            "lm": 202410,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) et j'ai commencé un nouveau travail. Posez-moi des questions sur cette expérience.",
-            "n": 1,
-            "m": [
-              "Octobre 2024"
-            ],
-            "lm": 202410,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) et je tiens un blog. Vous souhaitez voyager et me demandez des conseils sur la création d'un blog. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Octobre 2024"
-            ],
-            "lm": 202410,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e), c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2024"
-            ],
-            "lm": 202411,
-            "subgroup": "sg_autres_cadeau_evenement"
           },
           {
             "p": "Vous organisez une réunion familiale et souhaitez discuter des options de menu, des prix et des équipements nécessaires avec un chef cuisinier. Posez-moi des questions",
@@ -13558,129 +12827,12 @@
             "subgroup": "sg_autres_location_vehicule"
           },
           {
-            "p": "Vous devez rédiger un article sur une ville pour un magazine culturel. Vous interrogez un(e) ami(e) francophone sur les villes qu'il/elle apprécie, en lui demandant des détails sur les activités, l'architecture et les infrastructures de transport.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Vous prévoyez de rendre visite à un(e) ami(e) au Canada en décembre et souhaitez bien organiser votre voyage. Vous lui posez des questions sur les activités hivernales, les vêtements adaptés et l'équipement nécessaire.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Votre ami(e) vit en colocation et une chambre se libère dans son logement. Vous êtes intéressé(e) et lui posez des questions sur le loyer, la répartition des espaces et la cohabitation avec les autres résidents.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
             "p": "Vous souhaitez apprendre la guitare et envisagez de prendre des cours. Vous posez des questions au professeur sur les horaires, les tarifs et les styles de musique enseignés.",
             "n": 1,
             "m": [
               "Janvier 2025"
             ],
             "lm": 202501,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Votre ami(e) envisage de poursuivre ses études au Canada. Vous l'interrogez pour mieux comprendre son projet : la spécialité qu'il/elle souhaite suivre, ses objectifs académiques et l'établissement envisagé.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Un(e) ami(e) doit transporter des objets lourds mais ne possède pas de véhicule. Vous lui posez des questions pour l'aider à trouver une solution, notamment sur le type d'objets à déplacer, la distance à parcourir et la date du transport.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Votre ami(e) vous invite à une fête, mais c'est votre première expérience de ce genre au Québec. Vous lui posez des questions sur les horaires, la tenue vestimentaire appropriée et les cadeaux éventuels à apporter.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Un(e) ami(e) déménage et vous propose de l'aider. Vous lui posez des questions sur la date, le lieu et les autres personnes présentes pour mieux organiser votre aide.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Un(e) ami(e) déménage à l'étranger et ne peut pas tout emporter. Il/elle met en vente certains biens. Vous souhaitez en savoir plus et lui posez des questions sur les objets disponibles, les prix et les modalités d'achat.",
-            "n": 1,
-            "m": [
-              "Janvier 2025"
-            ],
-            "lm": 202501,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Un(e) ami(e) doit s'absenter le temps d'un week-end et vous demande de garder sa fille de 3 ans. Bien que vous la connaissiez déjà, c'est la première fois que vous vous en occupez seul(e) pendant deux jours. Vous lui posez des questions pour mieux connaître ses habitudes alimentaires, ses loisirs préférés et son rythme de sommeil.",
-            "n": 1,
-            "m": [
-              "Février 2025"
-            ],
-            "lm": 202502,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Vous êtes invité au mariage d'une amie canadienne et souhaitez en savoir plus sur l'événement. Vous demandez des précisions sur le déroulement de la cérémonie, les invités, les cadeaux et la tenue vestimentaire appropriée.",
-            "n": 1,
-            "m": [
-              "Février 2025"
-            ],
-            "lm": 202502,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Vous devez rédiger un article pour une revue littéraire et cherchez un livre à présenter. Vous interrogez un ami francophone sur ses lectures récentes pour obtenir des suggestions et des idées.",
-            "n": 1,
-            "m": [
-              "Février 2025"
-            ],
-            "lm": 202502,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) et je réside au Canada. Vous venez d'arriver et vous avez des questions sur le travail. Je suis là pour y répondre, n'hésitez pas à me demander !",
-            "n": 1,
-            "m": [
-              "Février 2025"
-            ],
-            "lm": 202502,
-            "subgroup": "sg_autres_emploi_integration"
-          },
-          {
-            "p": "Vous cherchez un film à critiquer pour une revue et demandez à un(e) ami(e) des suggestions sur le genre, l'histoire et les récompenses.",
-            "n": 1,
-            "m": [
-              "Mars 2025"
-            ],
-            "lm": 202503,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -13703,15 +12855,6 @@
           },
           {
             "p": "En tant qu'employé(e) à l'accueil de cette salle de sport, je vous accueille pour vous fournir tous les détails concernant les activités, les tarifs et les horaires d'ouverture.",
-            "n": 1,
-            "m": [
-              "Mars 2025"
-            ],
-            "lm": 202503,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je vis au Canada depuis longtemps et, en tant qu'ami(e), je suis ravi(e) de vous accueillir dans ma ville. Vous souhaitez obtenir des recommandations sur votre installation, notamment pour trouver un logement, effectuer vos démarches administratives, vous déplacer, et découvrir les commerces et activités de loisirs.",
             "n": 1,
             "m": [
               "Mars 2025"
@@ -13774,15 +12917,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami(e) et j'organise une fête. Vous voulez participer à la préparation. Vous me demandez des détails sur l'organisation : repas, décoration, liste des invités…",
-            "n": 1,
-            "m": [
-              "Mai 2025"
-            ],
-            "lm": 202505,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je propose une location en bord de mer. Comme vous êtes intéressé(e), vous me posez des questions sur la maison.",
             "n": 1,
             "m": [
@@ -13810,51 +12944,6 @@
             "subgroup": "sg_autres_location_vehicule"
           },
           {
-            "p": "Je suis votre ami(e) et je vous invite à une fête. Comme vous êtes nouveau/nouvelle au Québec, vous me posez des questions sur l'événement, comme l'heure, le cadeau à apporter, la tenue, etc.",
-            "n": 1,
-            "m": [
-              "Mai 2025"
-            ],
-            "lm": 202505,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami(e). Pour l'anniversaire prochain de ma sœur, vous cherchez un cadeau. Vous me posez des questions sur ses goûts et ses préférences (loisirs, tempérament, …)",
-            "n": 1,
-            "m": [
-              "Juin 2025"
-            ],
-            "lm": 202506,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami(e) qui habite au Canada. Vous souhaitez vous informer sur les habitudes des Canadiens durant le week-end (loisirs, sports, sorties …).",
-            "n": 1,
-            "m": [
-              "Juin 2025"
-            ],
-            "lm": 202506,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) au Canada. Vous venez me voir en décembre. Vous me posez des questions pour bien préparer ce voyage (activités, vêtements, météo, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vis en colocation et une chambre est libre. Vous êtes intéressé(e). Vous me posez des questions sur le logement (loyer, pièces, colocataires, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
             "p": "Je suis enseignant de français. Vous cherchez un professeur pour des cours individuels. Vous vous renseignez sur mon parcours, mes méthodes pédagogiques et mes prix.",
             "n": 1,
             "m": [
@@ -13880,51 +12969,6 @@
             ],
             "lm": 202507,
             "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis votre ami(e) et j'habite à Ottawa. Vous venez d'arriver dans la ville et vous souhaitez circuler à vélo. Vous me posez des questions pour savoir si c'est pratique (pistes, location, matériel, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_location_vehicule"
-          },
-          {
-            "p": "Je suis votre ami(e). Je vis au Canada depuis deux ans. Vous êtes en train de préparer votre arrivée au Canada. Vous me posez des questions sur mon vécu (habitudes, vie courante, adaptation, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_emploi_integration"
-          },
-          {
-            "p": "Je suis votre ami(e). Je mets en vente un vélo électrique. Vous souhaitez en savoir plus et vous me posez des questions (tarif, couleur, type, état, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e) au Canada. Je fais du ski de fond. Vous voulez des informations sur ce sport et vous me posez des questions (tarifs, équipement, tenue, cours, etc.).",
-            "n": 1,
-            "m": [
-              "Juillet 2025"
-            ],
-            "lm": 202507,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Vous venez de découvrir ma ville. Vous m'interrogez afin de savoir comment sortir à moindre coût (lieux, loisirs, transports, etc.).",
-            "n": 1,
-            "m": [
-              "Août 2025"
-            ],
-            "lm": 202508,
-            "subgroup": "sg_autres_amis_general"
           },
           {
             "p": "Je travaille dans une boutique de meubles. Vous voulez recevoir un meuble à domicile. Vous m'interrogez sur les conditions de livraison (coût, durée, moyens utilisés, etc.).",
@@ -13972,52 +13016,7 @@
             "subgroup": "sg_autres_location_vehicule"
           },
           {
-            "p": "Je suis votre ami(e). Vous souhaitez connaître comment s'est passée ma première journée dans mon nouveau poste (ambiance, personnel, missions, etc.)",
-            "n": 1,
-            "m": [
-              "Septembre 2025"
-            ],
-            "lm": 202509,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). Vous souhaitez connaître comment s'est passée ma première journée dans mon nouveau poste (ambiance, personnels, missions, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2025"
-            ],
-            "lm": 202511,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je travaille à l'accueil d'un camping. Vous voulez réserver un emplacement et vous me demandez des informations (tarifs, prestations offertes, emplacements proposés, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2025"
-            ],
-            "lm": 202511,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) qui vit au Canada. Vous prévoyez de venir me rendre visite en décembre et vous m'interrogez pour préparer au mieux votre séjour (activités, vêtements, météo, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2025"
-            ],
-            "lm": 202511,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et je vis en colocation. Une chambre est disponible et vous êtes intéressé(e). Vous m'interrogez sur le logement (loyer, pièces, colocataires, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2025"
-            ],
-            "lm": 202511,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je prévois de partir en voyage et je vous demande de veiller sur mon logement. Vous me demandez des précisions (périodes, responsabilités, instructions, etc.).",
             "n": 1,
             "m": [
               "Novembre 2025"
@@ -14035,34 +13034,7 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis un(e) ami(e) et j'ai récemment rejoint le club sportif de la ville. Vous souhaitez en savoir plus et me demandez des informations (prix, horaires, activités proposées, etc.).",
-            "n": 1,
-            "m": [
-              "Décembre 2025"
-            ],
-            "lm": 202512,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis employé(e) dans un centre de langues. Vous souhaitez apprendre une langue étrangère et me demandez des informations (programmes, prix, formateurs, etc.).",
-            "n": 1,
-            "m": [
-              "Décembre 2025"
-            ],
-            "lm": 202512,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Vous êtes un(e) ami(e) et vous venez m'aider à déménager dans mon nouveau chez-moi. Vous me demandez des informations sur l'organisation (adresse, date, personnes présentes, etc.).",
-            "n": 1,
-            "m": [
-              "Décembre 2025"
-            ],
-            "lm": 202512,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis un(e) ami(e). L'an passé, j'ai voyagé au bord de la mer. Vous souhaitez organiser votre séjour et vous me demandez des conseils pour préparer votre séjour (logement, activités, coûts, etc.).",
             "n": 1,
             "m": [
               "Décembre 2025"
@@ -14089,60 +13061,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis un(e) ami(e) du Canada. Je rentre d'un excellent séjour à la montagne. Vous souhaitez organiser un voyage similaire et vous me demandez des informations sur mon expérience (destination, logement, activités, etc.).",
-            "n": 1,
-            "m": [
-              "Janvier 2026"
-            ],
-            "lm": 202601,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et je dois m'absenter pendant le week-end. Je vous demande de veiller sur ma fille de 3 ans. Vous la connaissez un peu, mais vous n'êtes pas très proches. Je vous donne des explications pour bien s'occuper d'elle. Vous me demandez des informations sur ses habitudes (repas, jeux, sommeil, etc.).",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) canadien(ne). Vous réalisez un sondage sur mes activités pendant le week-end au Canada. Vous me posez des questions (mes occupations, les lieux que je visite, le moment, les personnes qui m'accompagnent, etc.).",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) francophone. J'ai pris part à une compétition sportive. Vous souhaitez en savoir plus et vous me posez des questions sur mon expérience et sur mon entraînement pour une prochaine compétition.",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). J'ai fait un voyage en famille dans une ville francophone. Vous souhaitez en savoir plus et vous me posez des questions concernant ce voyage (activités, dépenses, organisation, préparatifs, etc.).",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) du Québec. Vous venez de vous installer au Québec. Vous allez assister à un mariage au Québec et vous me demandez des informations sur le déroulement (cérémonie, invités, cadeaux, etc.).",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Je suis un(e) responsable. Vous allez participer à une formation de deux semaines au Québec dans le cadre professionnel. Vous me demandez des renseignements sur le stage (logement, déplacements, emploi du temps, etc.).",
             "n": 1,
             "m": [
@@ -14152,51 +13070,6 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Vous possédez un appartement et vous souhaitez trouver un locataire. Mon logement vous attire et vous voulez le louer. Vous me demandez des renseignements pour décider si ma candidature est adaptée (profession, garanties, famille, etc.).",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je viens de rejoindre l'équipe et nous nous rencontrons pour la première fois. Vous me posez des questions pour mieux me connaître (poste, situation familiale, loisirs, etc.).",
-            "n": 1,
-            "m": [
-              "Mars 2026"
-            ],
-            "lm": 202603,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Nous sommes amis(e)s. J'ai fêté mon anniversaire récemment, mais vous n'avez pas pu être présent(e). Vous me demandez des informations sur le déroulement de la fête (activités, invités, cadeaux, ambiance, etc.).",
-            "n": 1,
-            "m": [
-              "Mars 2026"
-            ],
-            "lm": 202603,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et vous venez d'arriver dans ma ville. Vous voulez profiter de votre week-end et vous me posez des questions pour découvrir les endroits (quartiers vivants, activités à faire, lieux à visiter, etc.).",
-            "n": 1,
-            "m": [
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je déménage le week-end prochain. Vous allez m'aider et vous me demandez des informations pour organiser la journée (heure, lieu, transport, etc.).",
-            "n": 1,
-            "m": [
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
             "p": "Je suis un(e) ami(e). J'utilise régulièrement une plateforme en ligne qui organise des sorties en groupe. Vous êtes intéressé(e) et vous me posez des questions pour en savoir plus (inscription, participants, activités, etc.).",
             "n": 1,
             "m": [
@@ -14204,15 +13077,6 @@
             ],
             "lm": 202604,
             "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Vous souhaitez offrir un cadeau à mon enfant pour son anniversaire. Vous me posez des questions pour choisir le bon cadeau (jeux, habitudes, préférences, etc.).",
-            "n": 1,
-            "m": [
-              "Avril 2026"
-            ],
-            "lm": 202604,
-            "subgroup": "sg_autres_cadeau_evenement"
           },
           {
             "p": "Je suis employé(e) dans une agence immobilière au Canada. Vous cherchez un appartement. Vous me posez des questions pour vous renseigner (prix, conditions, procédures, etc.).",
@@ -14233,15 +13097,6 @@
             "subgroup": "sg_autres_logement_coloc"
           },
           {
-            "p": "Je suis un(e) ami(e). J'ai une boutique. Vous rêvez d'avoir votre propre magasin. Vous me posez des questions sur mon travail (jours d'ouverture, articles proposés, clientèle, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis employé(e) dans un magasin de déguisements. Vous avez besoin d'un costume pour une soirée. Vous me posez des questions (types de tenues, règles de location, prix, etc.).",
             "n": 1,
             "m": [
@@ -14249,51 +13104,6 @@
             ],
             "lm": 202605,
             "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je travaille comme chef cuisinier/cheffe cuisinière à domicile. Vous souhaitez préparer un repas en famille. Vous me posez des questions sur ce que je peux offrir (menus, équipement, prix, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_aide_quotidien"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Je voudrais préparer une sortie familiale pour dimanche prochain. Vous acceptez de m'aider et vous me demandez des informations pour bien préparer cette sortie (destination, loisirs, budget, transport, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis un(e) ami(e) et je réside au Canada. Vous prévoyez de vous installer prochainement ici. Vous me demandez des informations concernant les transports (types de transport, coût, horaires, rapidité, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Vous êtes arrivé(e) récemment au Canada. Je suis un(e) ami(e) et je vous accueille chez moi pour quelques jours. Vous me posez des questions pour trouver et louer un logement (prix du loyer, quartiers, formalités, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis un(e) ami(e). Vous souhaitez déménager dans ma ville. Vous me demandez des informations afin de trouver un quartier adapté à votre situation (atmosphère, coût des loyers, services disponibles, etc.).",
-            "n": 1,
-            "m": [
-              "Mai 2026"
-            ],
-            "lm": 202605,
-            "subgroup": "sg_autres_logement_coloc"
           },
           {
             "p": "Je suis employé(e) dans une agence de location de vélos au Canada. Vous aimeriez visiter la ville pendant votre séjour. Vous me posez des questions pour obtenir des informations (modèles proposés, conditions de location, prix, etc.).",
@@ -14359,39 +13169,12 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami. Vous êtes invité à une cérémonie de mariage d'une amie canadienne. Posez-moi des questions (cérémonie, invités, cadeaux, habillement).",
-            "n": 1,
-            "m": [
-              "Octobre 2022"
-            ],
-            "lm": 202210,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami, et j'ai fêté mon anniversaire, vous n'étiez pas présent, posez-moi des questions (activités, personnes et cadeaux, etc.)",
-            "n": 1,
-            "m": [
-              "Octobre 2022"
-            ],
-            "lm": 202210,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
             "p": "Vous recevez vos neveux, vous avez du mal à vous occuper d'eux. Posez-moi des questions pour vous apporter de l'aide.",
             "n": 1,
             "m": [
               "Septembre 2022"
             ],
             "lm": 202209,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions sur (le prix, les services, la formation, les équipements, les vêtements, etc.)",
-            "n": 1,
-            "m": [
-              "Novembre 2022"
-            ],
-            "lm": 202211,
             "subgroup": "sg_autres_amis_general"
           },
           {
@@ -14404,61 +13187,7 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami(e). Je vis au Québec. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité, etc.).",
-            "n": 1,
-            "m": [
-              "Novembre 2022"
-            ],
-            "lm": 202211,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami. Je vis en colocation. Une chambre est disponible dans le logement. Cela vous intéresse. Posez-moi des questions sur la colocation (loyer, pièces, habitants, etc.)",
-            "n": 1,
-            "m": [
-              "Novembre 2022"
-            ],
-            "lm": 202211,
-            "subgroup": "sg_autres_logement_coloc"
-          },
-          {
-            "p": "Je suis votre ami, c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, ses goûts, etc.)",
-            "n": 1,
-            "m": [
-              "Décembre 2022"
-            ],
-            "lm": 202212,
-            "subgroup": "sg_autres_cadeau_evenement"
-          },
-          {
-            "p": "Je suis votre ami, je pratique du sport et vous êtes intéressé. Posez-moi des questions (type, prix, participants, équipements, programme).",
-            "n": 1,
-            "m": [
-              "Décembre 2022"
-            ],
-            "lm": 202212,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami, j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport, etc.)",
-            "n": 1,
-            "m": [
-              "Décembre 2022"
-            ],
-            "lm": 202212,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis votre ami(e). Vous êtes récemment installé dans ma ville. Posez-moi des questions (activités, habitants, lieu).",
-            "n": 1,
-            "m": [
-              "Février 2022"
-            ],
-            "lm": 202202,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami(e). J'organise un voyage. Vous êtes intéressé(e). Posez-moi des questions (date, lieu, activités, participants).",
             "n": 1,
             "m": [
               "Février 2022"
@@ -14494,25 +13223,7 @@
             "subgroup": "sg_autres_amis_general"
           },
           {
-            "p": "Je suis votre ami et je souhaite que vous gardiez mon enfant. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Août 2022"
-            ],
-            "lm": 202208,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
             "p": "Je suis votre ami, j'ai visité le week-end dernier un parc d'attraction, vous êtes intéressé. Posez-moi des questions.",
-            "n": 1,
-            "m": [
-              "Août 2022"
-            ],
-            "lm": 202208,
-            "subgroup": "sg_autres_amis_general"
-          },
-          {
-            "p": "Je suis votre ami et je joue avec un instrument de musique. Posez-moi des questions.",
             "n": 1,
             "m": [
               "Août 2022"
@@ -16578,7 +15289,7 @@
       },
       {
         "cluster": "Vacances & destinations (office du tourisme)",
-        "apps": 189,
+        "apps": 226,
         "items": [
           {
             "p": "Je suis votre voisin. Vous venez de vous installer dans la région. Vous voulez partir en week-end avec votre famille pour visiter cette région. Vous me posez des questions sur les différentes possibilités.",
@@ -17417,6 +16128,259 @@
             ],
             "lm": 202202,
             "subgroup": "sg_vacances_office"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je me suis installé(e) au Québec il y a deux ans. Vous souhaitez vivre à l'étranger et vous me demandez des renseignements sur mon expérience (adaptation, obstacles, changements de mode de vie, etc.).",
+            "n": 3,
+            "m": [
+              "Octobre 2025",
+              "Mars 2026",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je voudrais faire des études au Canada. Vous m'interrogez pour mieux comprendre mon projet (spécialité, objectifs, lieu, etc.).",
+            "n": 2,
+            "m": [
+              "Mars 2024",
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Mon enfant a effectué un voyage linguistique dans un pays étranger. Vous êtes intéressé(e) car vous cherchez un séjour pour votre enfant. Vous me posez des questions (pays, activités, conditions, etc.).",
+            "n": 2,
+            "m": [
+              "Octobre 2024",
+              "Janvier 2024"
+            ],
+            "lm": 202410,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) et je possède un blog. Vous voulez voyager et vous cherchez des conseils pour créer un blog. Posez-moi toutes vos questions.",
+            "n": 2,
+            "m": [
+              "Septembre 2025",
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) à vous. Je dispose d'une expérience significative en blogage. Vous souhaitez lancer un site personnel en prévision de votre futur séjour au Canada et vous me sollicitez pour des recommandations (organisation, fréquence de publication, type de contenus, etc.).",
+            "n": 2,
+            "m": [
+              "Septembre 2025",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) à vous. Vous souhaitez planifier un séjour au Canada afin de célébrer l'anniversaire de votre conjoint(e) et vous me posez des questions (destinations, activités, coûts, etc.).",
+            "n": 2,
+            "m": [
+              "Septembre 2025",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je désire continuer mes études au Canada. Vous me demandez des informations pour en savoir plus sur mon projet (ville, spécialité, buts, etc.).",
+            "n": 2,
+            "m": [
+              "Octobre 2025",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) francophone. Vous voulez choisir un endroit pour voyager et souhaitez connaître les pays que j'ai visités. Vous me posez des questions pour en savoir plus (activités, météo, prix, etc.).",
+            "n": 2,
+            "m": [
+              "Décembre 2025",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et j'habite au Canada depuis longtemps. Vous prévoyez de me rendre visite au mois de décembre. Vous me demandez des informations pour organiser votre voyage et vos bagages (climat, températures, habits, activités possibles, etc.).",
+            "n": 2,
+            "m": [
+              "Mars 2026",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, j'ai passé un week-end dans une ville que je connais très bien et vous voulez la visiter. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Septembre 2023"
+            ],
+            "lm": 202309,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). J'ai immigré au Canada il y a deux ans. Vous êtes en train de faire les démarches d'immigration au Canada. Vous me posez des questions sur mon expérience (changement d'habitudes, vie quotidienne, adaptation au pays, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_emploi_integration"
+          },
+          {
+            "p": "Je suis votre prof de français. Vous voulez faire un séjour dans une ville francophone avec votre famille. Vous me posez des questions pour organiser votre séjour (activités, coûts, préparatifs, etc.) Exemples de villes francophones: Bruxelles, Dakar, Québec, etc.",
+            "n": 1,
+            "m": [
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) au Canada, vous allez me rendre visite au mois de décembre. Posez-moi des questions sur les préparatifs de votre voyage (activités, vêtements, équipements, etc).",
+            "n": 1,
+            "m": [
+              "Juillet 2024"
+            ],
+            "lm": 202407,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) et je tiens un blog. Vous souhaitez voyager et me demandez des conseils sur la création d'un blog. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Octobre 2024"
+            ],
+            "lm": 202410,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous prévoyez de rendre visite à un(e) ami(e) au Canada en décembre et souhaitez bien organiser votre voyage. Vous lui posez des questions sur les activités hivernales, les vêtements adaptés et l'équipement nécessaire.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Votre ami(e) envisage de poursuivre ses études au Canada. Vous l'interrogez pour mieux comprendre son projet : la spécialité qu'il/elle souhaite suivre, ses objectifs académiques et l'établissement envisagé.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Votre ami(e) vous invite à une fête, mais c'est votre première expérience de ce genre au Québec. Vous lui posez des questions sur les horaires, la tenue vestimentaire appropriée et les cadeaux éventuels à apporter.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e) et je réside au Canada. Vous venez d'arriver et vous avez des questions sur le travail. Je suis là pour y répondre, n'hésitez pas à me demander !",
+            "n": 1,
+            "m": [
+              "Février 2025"
+            ],
+            "lm": 202502,
+            "subgroup": "sg_autres_emploi_integration"
+          },
+          {
+            "p": "Je suis votre ami(e) et je vous invite à une fête. Comme vous êtes nouveau/nouvelle au Québec, vous me posez des questions sur l'événement, comme l'heure, le cadeau à apporter, la tenue, etc.",
+            "n": 1,
+            "m": [
+              "Mai 2025"
+            ],
+            "lm": 202505,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e) au Canada. Vous venez me voir en décembre. Vous me posez des questions pour bien préparer ce voyage (activités, vêtements, météo, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vis au Canada depuis deux ans. Vous êtes en train de préparer votre arrivée au Canada. Vous me posez des questions sur mon vécu (habitudes, vie courante, adaptation, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_emploi_integration"
+          },
+          {
+            "p": "Je suis un(e) ami(e) qui vit au Canada. Vous prévoyez de venir me rendre visite en décembre et vous m'interrogez pour préparer au mieux votre séjour (activités, vêtements, météo, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2025"
+            ],
+            "lm": 202511,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) canadien(ne). Vous réalisez un sondage sur mes activités pendant le week-end au Canada. Vous me posez des questions (mes occupations, les lieux que je visite, le moment, les personnes qui m'accompagnent, etc.).",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). J'ai fait un voyage en famille dans une ville francophone. Vous souhaitez en savoir plus et vous me posez des questions concernant ce voyage (activités, dépenses, organisation, préparatifs, etc.).",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) du Québec. Vous venez de vous installer au Québec. Vous allez assister à un mariage au Québec et vous me demandez des informations sur le déroulement (cérémonie, invités, cadeaux, etc.).",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et vous venez d'arriver dans ma ville. Vous voulez profiter de votre week-end et vous me posez des questions pour découvrir les endroits (quartiers vivants, activités à faire, lieux à visiter, etc.).",
+            "n": 1,
+            "m": [
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). J'organise un voyage. Vous êtes intéressé(e). Posez-moi des questions (date, lieu, activités, participants).",
+            "n": 1,
+            "m": [
+              "Février 2022"
+            ],
+            "lm": 202202,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -17498,7 +16462,7 @@
       },
       {
         "cluster": "Collègue & conditions de travail",
-        "apps": 163,
+        "apps": 176,
         "items": [
           {
             "p": "Je suis votre ancien(ne) collègue. Je viens de commencer un nouveau travail. Vous souhaitez changer d'emploi. Vous me posez des questions pour avoir des informations sur mon travail et mon entreprise (activités, salaire, collègues, etc.).",
@@ -18388,6 +17352,83 @@
             ],
             "lm": 202207,
             "subgroup": "sg_collegue_voyage"
+          },
+          {
+            "p": "Je suis un(e) ami(e) canadien(ne) que vous n'avez pas vu(e) depuis un long moment. Vous vous informez sur ma situation et vous m'interrogez sur ma vie quotidienne (emploi, proches, passe-temps, etc.).",
+            "n": 4,
+            "m": [
+              "Décembre 2025",
+              "Janvier 2026",
+              "Mars 2026",
+              "Juin 2026"
+            ],
+            "lm": 202606,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). J'ai récemment commencé un nouveau poste. Posez-moi des questions sur cette expérience professionnelle.",
+            "n": 2,
+            "m": [
+              "Septembre 2025",
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) à vous. J'ai été récemment engagé(e) par une société implantée dans la périphérie de Toronto. Vous me sollicitez pour obtenir des renseignements sur mon nouveau poste (mes coéquipiers, les bureaux, les bénéfices, les événements organisés, etc.).",
+            "n": 2,
+            "m": [
+              "Septembre 2025",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) et j'ai commencé un nouveau travail. Posez-moi des questions sur cette expérience.",
+            "n": 1,
+            "m": [
+              "Octobre 2024"
+            ],
+            "lm": 202410,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous souhaitez connaître comment s'est passée ma première journée dans mon nouveau poste (ambiance, personnel, missions, etc.)",
+            "n": 1,
+            "m": [
+              "Septembre 2025"
+            ],
+            "lm": 202509,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous souhaitez connaître comment s'est passée ma première journée dans mon nouveau poste (ambiance, personnels, missions, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2025"
+            ],
+            "lm": 202511,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je viens de rejoindre l'équipe et nous nous rencontrons pour la première fois. Vous me posez des questions pour mieux me connaître (poste, situation familiale, loisirs, etc.).",
+            "n": 1,
+            "m": [
+              "Mars 2026"
+            ],
+            "lm": 202603,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). J'ai une boutique. Vous rêvez d'avoir votre propre magasin. Vous me posez des questions sur mon travail (jours d'ouverture, articles proposés, clientèle, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -19728,7 +18769,7 @@
       },
       {
         "cluster": "Sport & clubs sportifs",
-        "apps": 55,
+        "apps": 112,
         "items": [
           {
             "p": "Je suis votre ami, je pratique du sport dans un club sportif et vous êtes intéressé. Posez-moi des questions (type, prix, participants, équipements, programme).",
@@ -19992,6 +19033,327 @@
             ],
             "lm": 202201,
             "subgroup": "sg_sport_club"
+          },
+          {
+            "p": "Je suis votre ami(e). Je veux organiser une sortie en famille dimanche prochain. Vous voulez m'aider à organiser cette sortie et vous me posez des questions (lieu, activités, budget, transports, etc.).",
+            "n": 4,
+            "m": [
+              "Mars 2023",
+              "Avril 2023",
+              "Octobre 2023",
+              "Novembre 2022"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) francophone, j'ai participé à un concours sportif organisé par un organisme francophone. Vous voulez participer au prochain concours. Vous m'interrogez sur mon expérience (préparation physique, alimentation, équipement, etc.).",
+            "n": 4,
+            "m": [
+              "Octobre 2023",
+              "Décembre 2023",
+              "Mai 2024",
+              "Juillet 2024"
+            ],
+            "lm": 202407,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vis au Canada. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité, etc.).",
+            "n": 3,
+            "m": [
+              "Mars 2023",
+              "Avril 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions sur (le prix, les services, la formation, les équipements, les vêtements…)",
+            "n": 3,
+            "m": [
+              "Mai 2023",
+              "Décembre 2023",
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport…)",
+            "n": 3,
+            "m": [
+              "Novembre 2023",
+              "Mars 2024",
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) canadien(ne). Vous êtes nouvellement arrivé(e) dans ma ville et vous êtes hébergé(e) chez moi. Vous souhaitez vous promener en ville et vous me posez des questions sur les transports publics (types, trajets, horaires, prix, etc.).",
+            "n": 3,
+            "m": [
+              "Décembre 2025",
+              "Février 2026",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) francophone. Vous devez rédiger un article sur une ville pour un magazine culturel. Vous cherchez de l'inspiration et vous me posez des questions sur les villes que j'apprécie (loisirs, bâtiments, moyens de transport, etc.).",
+            "n": 3,
+            "m": [
+              "Décembre 2025",
+              "Février 2026",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je pratique un sport depuis longtemps. Vous voulez pratiquer ce sport avec moi. Vous me posez des questions pour obtenir des renseignements sur cette activité (type de sport, lieu, équipement…)",
+            "n": 2,
+            "m": [
+              "Mars 2023",
+              "Décembre 2023"
+            ],
+            "lm": 202312,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un ami francophone. Il vous est demandé d'écrire un article sur une ville pour un magazine culturel. Vous cherchez des idées. Vous m'interrogez sur les villes que j'aime (activités, architecture, transports, etc.).",
+            "n": 2,
+            "m": [
+              "Mai 2023",
+              "Janvier 2024"
+            ],
+            "lm": 202401,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) français(e). Vous voulez venir en France cet été mais vous hésitez entre plusieurs villes. Vous me posez des questions pour obtenir des informations sur ces différentes villes (climat, activités, transports, etc.) et choisir votre destination.",
+            "n": 2,
+            "m": [
+              "Septembre 2023",
+              "Janvier 2024"
+            ],
+            "lm": 202401,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). J'ai besoin de transporter des objets lourds mais je n'ai pas de véhicule. Vous m'interrogez pour m'aider à trouver une solution (objets, distance, date, etc.).",
+            "n": 2,
+            "m": [
+              "Mars 2024",
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_location_vehicule"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Vous êtes récemment arrivé(e) dans ma ville. Vous cherchez à organiser une sortie économique et vous me demandez des renseignements (endroits, activités, transports, etc.).",
+            "n": 2,
+            "m": [
+              "Octobre 2025",
+              "Janvier 2026"
+            ],
+            "lm": 202601,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous souhaitez faire une sortie ce soir, mais vous ne savez pas encore quoi faire. Nous en discutons entre amis et vous me posez des questions pour choisir une activité (endroit, transport, prix, etc.).",
+            "n": 2,
+            "m": [
+              "Octobre 2025",
+              "Mars 2026"
+            ],
+            "lm": 202603,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). J'ai des objets lourds à transporter et aucun véhicule pour le faire. Vous me demandez des précisions pour m'aider à organiser cela (nature d'objets, distance, date, etc.).",
+            "n": 2,
+            "m": [
+              "Octobre 2025",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_location_vehicule"
+          },
+          {
+            "p": "Je suis un(e) ami(e) français(e). Vous voulez passer l'été en France, mais vous ne savez pas encore quelle ville choisir. Vous me demandez des informations pour les comparer (temps, activités, transports, etc.) et choisir la meilleure destination.",
+            "n": 2,
+            "m": [
+              "Mai 2026",
+              "Juin 2026"
+            ],
+            "lm": 202606,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, j'organise une sortie en famille dimanche prochain. Vous voulez m'aider à organiser cette sortie et vous me posez des questions sur les lieux, les activités, le budget, le transport…",
+            "n": 1,
+            "m": [
+              "Mai 2023"
+            ],
+            "lm": 202305,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami. Je suis au Québec. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité…).",
+            "n": 1,
+            "m": [
+              "Mai 2023"
+            ],
+            "lm": 202305,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un ami francophone, j'ai participé à un concours sportif organisé par un organisme francophone. Vous voulez participer au prochain concours. Vous m'interrogez sur mon expérience (préparation physique, alimentation, équipement, etc.)",
+            "n": 1,
+            "m": [
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions (prix, services, formation, équipements, vêtements, etc.)",
+            "n": 1,
+            "m": [
+              "Septembre 2024"
+            ],
+            "lm": 202409,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e), j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport, etc).",
+            "n": 1,
+            "m": [
+              "Octobre 2024"
+            ],
+            "lm": 202410,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous devez rédiger un article sur une ville pour un magazine culturel. Vous interrogez un(e) ami(e) francophone sur les villes qu'il/elle apprécie, en lui demandant des détails sur les activités, l'architecture et les infrastructures de transport.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Un(e) ami(e) doit transporter des objets lourds mais ne possède pas de véhicule. Vous lui posez des questions pour l'aider à trouver une solution, notamment sur le type d'objets à déplacer, la distance à parcourir et la date du transport.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_location_vehicule"
+          },
+          {
+            "p": "Je suis votre ami(e) qui habite au Canada. Vous souhaitez vous informer sur les habitudes des Canadiens durant le week-end (loisirs, sports, sorties …).",
+            "n": 1,
+            "m": [
+              "Juin 2025"
+            ],
+            "lm": 202506,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) au Canada. Je fais du ski de fond. Vous voulez des informations sur ce sport et vous me posez des questions (tarifs, équipement, tenue, cours, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous venez de découvrir ma ville. Vous m'interrogez afin de savoir comment sortir à moindre coût (lieux, loisirs, transports, etc.).",
+            "n": 1,
+            "m": [
+              "Août 2025"
+            ],
+            "lm": 202508,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et j'ai récemment rejoint le club sportif de la ville. Vous souhaitez en savoir plus et me demandez des informations (prix, horaires, activités proposées, etc.).",
+            "n": 1,
+            "m": [
+              "Décembre 2025"
+            ],
+            "lm": 202512,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) francophone. J'ai pris part à une compétition sportive. Vous souhaitez en savoir plus et vous me posez des questions sur mon expérience et sur mon entraînement pour une prochaine compétition.",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je voudrais préparer une sortie familiale pour dimanche prochain. Vous acceptez de m'aider et vous me demandez des informations pour bien préparer cette sortie (destination, loisirs, budget, transport, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je réside au Canada. Vous prévoyez de vous installer prochainement ici. Vous me demandez des informations concernant les transports (types de transport, coût, horaires, rapidité, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami au Canada, je fais du ski de fond (sport d'hiver), vous êtes intéressé. Posez-moi des questions sur (le prix, les services, la formation, les équipements, les vêtements, etc.)",
+            "n": 1,
+            "m": [
+              "Novembre 2022"
+            ],
+            "lm": 202211,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vis au Québec. Vous allez bientôt vous y installer. Vous voulez des renseignements sur l'organisation des transports (modes/moyens, prix, fréquence, rapidité, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2022"
+            ],
+            "lm": 202211,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, je pratique du sport et vous êtes intéressé. Posez-moi des questions (type, prix, participants, équipements, programme).",
+            "n": 1,
+            "m": [
+              "Décembre 2022"
+            ],
+            "lm": 202212,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, j'habite au Canada. Posez-moi des questions sur comment les Canadiens passent généralement leurs week-ends (activités, habitudes, sport, etc.)",
+            "n": 1,
+            "m": [
+              "Décembre 2022"
+            ],
+            "lm": 202212,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -20046,7 +19408,7 @@
       },
       {
         "cluster": "Centre culturel & loisirs",
-        "apps": 48,
+        "apps": 50,
         "items": [
           {
             "p": "Je suis parent d'élève. Vous voulez inscrire vos enfants à une activité après l'école. Vous me demandez des informations et des conseils sur les activités proposées dans le quartier (type d'activités, horaires, tarifs, animations, etc.).",
@@ -20276,6 +19638,24 @@
               "Octobre 2022"
             ],
             "lm": 202210
+          },
+          {
+            "p": "Je suis votre ami et je joue d'un instrument de musique. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Septembre 2023"
+            ],
+            "lm": 202309,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami et je joue avec un instrument de musique. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Août 2022"
+            ],
+            "lm": 202208,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -20295,7 +19675,7 @@
       },
       {
         "cluster": "Restaurant & repas",
-        "apps": 46,
+        "apps": 57,
         "items": [
           {
             "p": "Je suis votre collègue de travail. Vous venez d'arriver à Toronto. Vous cherchez un bon restaurant pour fêter votre anniversaire. Vous me posez des questions pour avoir des conseils sur les différents restaurants de la ville (spécialités, prix, ambiance, etc.).",
@@ -20495,6 +19875,73 @@
               "Juillet 2022"
             ],
             "lm": 202207
+          },
+          {
+            "p": "Je suis votre ami(e). Je vous invite à mon mariage. Vous me posez des questions pour avoir des informations sur le déroulement de l'événement (organisation, tenues, repas, etc.).",
+            "n": 2,
+            "m": [
+              "Mars 2023",
+              "Juillet 2023"
+            ],
+            "lm": 202307,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e) et je vous demande de garder ma fille de 3 ans pendant le week-end. Vous la connaissez un peu. Je vous indique les horaires et les consignes à faire. Vous me posez des questions pour bien vous organiser (repas, sommeil, activités, etc.).",
+            "n": 2,
+            "m": [
+              "Juin 2025",
+              "Septembre 2025"
+            ],
+            "lm": 202509,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je participe à des cours de pâtisserie depuis un certain temps. Vous êtes intéressé(e) et vous me demandez des renseignements (coût, endroit, recettes apprises, etc.).",
+            "n": 2,
+            "m": [
+              "Novembre 2025",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je propose mes services de cuisine à domicile. Vous organisez un dîner familial et vous me demandez des renseignements concernant mes services (menus proposés, prix, équipements, etc.).",
+            "n": 2,
+            "m": [
+              "Novembre 2025",
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) et j'organise une fête. Vous voulez participer à la préparation. Vous me demandez des détails sur l'organisation : repas, décoration, liste des invités…",
+            "n": 1,
+            "m": [
+              "Mai 2025"
+            ],
+            "lm": 202505,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je dois m'absenter pendant le week-end. Je vous demande de veiller sur ma fille de 3 ans. Vous la connaissez un peu, mais vous n'êtes pas très proches. Je vous donne des explications pour bien s'occuper d'elle. Vous me demandez des informations sur ses habitudes (repas, jeux, sommeil, etc.).",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je travaille comme chef cuisinier/cheffe cuisinière à domicile. Vous souhaitez préparer un repas en famille. Vous me posez des questions sur ce que je peux offrir (menus, équipement, prix, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_aide_quotidien"
           }
         ],
         "questions": [
@@ -20707,7 +20154,7 @@
       },
       {
         "cluster": "Location de logement",
-        "apps": 26,
+        "apps": 57,
         "items": [
           {
             "p": "Nous sommes amis. Vous voulez vous installer au Canada. J'habite dans un appartement en colocation à Toronto. Je vous propose de partager mon appartement. Vous me posez des questions pour décider si vous allez accepter (appartement, quartier, habitudes de vie, etc.).",
@@ -20832,6 +20279,221 @@
               "Novembre 2022"
             ],
             "lm": 202211
+          },
+          {
+            "p": "Je suis votre ami(e). Je vis en colocation. Une chambre est disponible dans le logement. Cela vous intéresse, vous me posez des questions sur la colocation (loyer, pièces, habitants, etc.)",
+            "n": 3,
+            "m": [
+              "Mars 2023",
+              "Décembre 2023",
+              "Juillet 2024"
+            ],
+            "lm": 202407,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vais déménager le week-end prochain. Vous allez participer au déménagement et vous me posez des questions sur l'organisation de la journée (horaires, adresse, transport, etc.).",
+            "n": 3,
+            "m": [
+              "Mars 2023",
+              "Juillet 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis votre ami(e). Je déménage dans un nouveau logement. Vous voulez m'aider. Vous me posez des questions pour obtenir des informations sur le déménagement (horaires, transport, organisation.)",
+            "n": 2,
+            "m": [
+              "Mars 2023",
+              "Décembre 2023"
+            ],
+            "lm": 202312,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je vis dans une grande ville. Vous souhaitez louer un logement ici. Vous me demandez des informations (offres disponibles, prix, quartier, etc.).",
+            "n": 2,
+            "m": [
+              "Décembre 2025",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) francophone. Vous envisagez de venir vivre dans ma ville et souhaitez des informations pour trouver un logement (procédures, lieux, coût, etc.).",
+            "n": 2,
+            "m": [
+              "Décembre 2025",
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je souhaite trouver un appartement à louer. Vous essayez de m'aider et vous me demandez des informations (quartier, budget, superficie, etc.).",
+            "n": 2,
+            "m": [
+              "Mai 2026",
+              "Juin 2026"
+            ],
+            "lm": 202606,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis votre ami(e). J'étudie dans une université à Toronto. Vous allez commencer vos études dans cette université. Vous me posez des questions sur cet établissement (cours, équipements, logement, etc.).",
+            "n": 1,
+            "m": [
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous cherchez un logement à Toronto. Vous me posez des questions pour avoir des conseils pratiques sur cette recherche (budget, démarches, sites spécialisés, etc.).",
+            "n": 1,
+            "m": [
+              "Septembre 2024"
+            ],
+            "lm": 202409,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Votre ami(e) vit en colocation et une chambre se libère dans son logement. Vous êtes intéressé(e) et lui posez des questions sur le loyer, la répartition des espaces et la cohabitation avec les autres résidents.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Un(e) ami(e) déménage et vous propose de l'aider. Vous lui posez des questions sur la date, le lieu et les autres personnes présentes pour mieux organiser votre aide.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Un(e) ami(e) déménage à l'étranger et ne peut pas tout emporter. Il/elle met en vente certains biens. Vous souhaitez en savoir plus et lui posez des questions sur les objets disponibles, les prix et les modalités d'achat.",
+            "n": 1,
+            "m": [
+              "Janvier 2025"
+            ],
+            "lm": 202501,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je vis au Canada depuis longtemps et, en tant qu'ami(e), je suis ravi(e) de vous accueillir dans ma ville. Vous souhaitez obtenir des recommandations sur votre installation, notamment pour trouver un logement, effectuer vos démarches administratives, vous déplacer, et découvrir les commerces et activités de loisirs.",
+            "n": 1,
+            "m": [
+              "Mars 2025"
+            ],
+            "lm": 202503,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vis en colocation et une chambre est libre. Vous êtes intéressé(e). Vous me posez des questions sur le logement (loyer, pièces, colocataires, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e) et je vis en colocation. Une chambre est disponible et vous êtes intéressé(e). Vous m'interrogez sur le logement (loyer, pièces, colocataires, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2025"
+            ],
+            "lm": 202511,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je prévois de partir en voyage et je vous demande de veiller sur mon logement. Vous me demandez des précisions (périodes, responsabilités, instructions, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2025"
+            ],
+            "lm": 202511,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous êtes un(e) ami(e) et vous venez m'aider à déménager dans mon nouveau chez-moi. Vous me demandez des informations sur l'organisation (adresse, date, personnes présentes, etc.).",
+            "n": 1,
+            "m": [
+              "Décembre 2025"
+            ],
+            "lm": 202512,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e). L'an passé, j'ai voyagé au bord de la mer. Vous souhaitez organiser votre séjour et vous me demandez des conseils pour préparer votre séjour (logement, activités, coûts, etc.).",
+            "n": 1,
+            "m": [
+              "Décembre 2025"
+            ],
+            "lm": 202512,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e) du Canada. Je rentre d'un excellent séjour à la montagne. Vous souhaitez organiser un voyage similaire et vous me demandez des informations sur mon expérience (destination, logement, activités, etc.).",
+            "n": 1,
+            "m": [
+              "Janvier 2026"
+            ],
+            "lm": 202601,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous possédez un appartement et vous souhaitez trouver un locataire. Mon logement vous attire et vous voulez le louer. Vous me demandez des renseignements pour décider si ma candidature est adaptée (profession, garanties, famille, etc.).",
+            "n": 1,
+            "m": [
+              "Février 2026"
+            ],
+            "lm": 202602,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je déménage le week-end prochain. Vous allez m'aider et vous me demandez des informations pour organiser la journée (heure, lieu, transport, etc.).",
+            "n": 1,
+            "m": [
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Vous êtes arrivé(e) récemment au Canada. Je suis un(e) ami(e) et je vous accueille chez moi pour quelques jours. Vous me posez des questions pour trouver et louer un logement (prix du loyer, quartiers, formalités, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Vous souhaitez déménager dans ma ville. Vous me demandez des informations afin de trouver un quartier adapté à votre situation (atmosphère, coût des loyers, services disponibles, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_logement_coloc"
+          },
+          {
+            "p": "Je suis votre ami. Je vis en colocation. Une chambre est disponible dans le logement. Cela vous intéresse. Posez-moi des questions sur la colocation (loyer, pièces, habitants, etc.)",
+            "n": 1,
+            "m": [
+              "Novembre 2022"
+            ],
+            "lm": 202211,
+            "subgroup": "sg_autres_logement_coloc"
           }
         ],
         "questions": [
@@ -20989,7 +20651,7 @@
       },
       {
         "cluster": "Garde d'enfant / baby-sitter",
-        "apps": 23,
+        "apps": 28,
         "items": [
           {
             "p": "Je suis votre ami(e). J'emploie un(e) baby-sitter toutes les semaines. Vous cherchez quelqu'un pour garder votre enfant. Vous me posez des questions sur ma baby-sitter (disponibilité, tarifs, activités avec les enfants, …)",
@@ -21067,6 +20729,43 @@
               "Février 2022"
             ],
             "lm": 202202
+          },
+          {
+            "p": "Je suis votre ami(e), mon fils va se marier, vous êtes invité(e). Posez-moi des questions (invités, cadeau, organisation, etc.).",
+            "n": 2,
+            "m": [
+              "Avril 2023",
+              "Août 2024"
+            ],
+            "lm": 202408,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je dois m'absenter un week-end. Je vous demande de garder ma fille de 3 ans. Vous la connaissez bien mais c'est la première fois que vous allez vous occuper d'elle pendant 2 jours. Vous me posez des questions pour connaître ses habitudes (alimentation, loisirs, sommeil, etc.).",
+            "n": 1,
+            "m": [
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Un(e) ami(e) doit s'absenter le temps d'un week-end et vous demande de garder sa fille de 3 ans. Bien que vous la connaissiez déjà, c'est la première fois que vous vous en occupez seul(e) pendant deux jours. Vous lui posez des questions pour mieux connaître ses habitudes alimentaires, ses loisirs préférés et son rythme de sommeil.",
+            "n": 1,
+            "m": [
+              "Février 2025"
+            ],
+            "lm": 202502,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami et je souhaite que vous gardiez mon enfant. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Août 2022"
+            ],
+            "lm": 202208,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -21086,7 +20785,7 @@
       },
       {
         "cluster": "Théâtre / concert / spectacle",
-        "apps": 23,
+        "apps": 28,
         "items": [
           {
             "p": "Je suis votre ami(e). Je prends des cours de théâtre toutes les semaines. Vous voulez vous inscrire à ces cours. Vous me posez des questions pour avoir des informations (tarifs, horaires, organisation, etc.).",
@@ -21179,6 +20878,35 @@
               "Janvier 2026"
             ],
             "lm": 202601
+          },
+          {
+            "p": "Je suis votre ami(e). Je mets en place un festival musical dans votre ville. Vous voulez y assister et vous me posez des questions pour en savoir plus (calendrier, horaires, artistes, tarifs, etc.).",
+            "n": 3,
+            "m": [
+              "Décembre 2025",
+              "Février 2026",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous voulez regarder une série télévisée. Vous ne savez pas laquelle choisir. Vous me posez des questions pour choisir une série à regarder (types de séries, acteurs, chaînes, etc.).",
+            "n": 1,
+            "m": [
+              "Septembre 2024"
+            ],
+            "lm": 202409,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Vous cherchez un film à critiquer pour une revue et demandez à un(e) ami(e) des suggestions sur le genre, l'histoire et les récompenses.",
+            "n": 1,
+            "m": [
+              "Mars 2025"
+            ],
+            "lm": 202503,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -21306,7 +21034,7 @@
       },
       {
         "cluster": "Transports en commun",
-        "apps": 20,
+        "apps": 28,
         "items": [
           {
             "p": "Je suis un(e) employé(e) de l'agence de transports en commun de la ville. C'est votre première visite. Vous m'interrogez pour savoir comment fonctionnent les transports en commun ici (type de transports, tarifs, horaires, etc.).",
@@ -21375,6 +21103,54 @@
               "Mars 2025"
             ],
             "lm": 202503
+          },
+          {
+            "p": "Je suis votre ami d'Ottawa, vous venez de vous y installer et vous souhaitez faire du vélo. Posez-moi des questions.",
+            "n": 3,
+            "m": [
+              "Janvier 2023",
+              "Février 2023",
+              "Septembre 2023"
+            ],
+            "lm": 202309,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami d'Ottawa, vous venez de vous y installer et vous souhaitez circuler en vélo. Posez-moi des questions.",
+            "n": 2,
+            "m": [
+              "Octobre 2022",
+              "Septembre 2022"
+            ],
+            "lm": 202210,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e), je vis à Ottawa. Vous venez d'arriver dans la ville et vous souhaitez vous déplacer en vélo. Vous me posez des questions sur l'utilisation du vélo à Ottawa pour décider si c'est une bonne idée (pistes cyclables, agences de location, matériel, etc.).",
+            "n": 1,
+            "m": [
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_location_vehicule"
+          },
+          {
+            "p": "Je suis votre ami(e) et j'habite à Ottawa. Vous venez d'arriver dans la ville et vous souhaitez circuler à vélo. Vous me posez des questions pour savoir si c'est pratique (pistes, location, matériel, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_location_vehicule"
+          },
+          {
+            "p": "Je suis votre ami(e). Je mets en vente un vélo électrique. Vous souhaitez en savoir plus et vous me posez des questions (tarif, couleur, type, état, etc.).",
+            "n": 1,
+            "m": [
+              "Juillet 2025"
+            ],
+            "lm": 202507,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -21574,7 +21350,7 @@
       },
       {
         "cluster": "Bibliothèque / médiathèque",
-        "apps": 16,
+        "apps": 17,
         "items": [
           {
             "p": "Je travaille à l'accueil d'une bibliothèque. Vous voulez vous inscrire. Vous me posez des questions sur le fonctionnement de cette bibliothèque (inscription, conditions d'emprunt, horaires, etc.).",
@@ -21654,6 +21430,15 @@
               "Février 2022"
             ],
             "lm": 202202
+          },
+          {
+            "p": "Vous devez rédiger un article pour une revue littéraire et cherchez un livre à présenter. Vous interrogez un ami francophone sur ses lectures récentes pour obtenir des suggestions et des idées.",
+            "n": 1,
+            "m": [
+              "Février 2025"
+            ],
+            "lm": 202502,
+            "subgroup": "sg_autres_amis_general"
           }
         ],
         "questions": [
@@ -21673,7 +21458,7 @@
       },
       {
         "cluster": "Invitation & fête sociale",
-        "apps": 14,
+        "apps": 41,
         "items": [
           {
             "p": "Je suis votre ami(e). J'organise ma fête d'anniversaire. Vous voulez m'aider. Vous me posez des questions sur la préparation de la fête (repas, décoration, invités, etc.).",
@@ -21744,6 +21529,161 @@
               "Novembre 2025"
             ],
             "lm": 202511
+          },
+          {
+            "p": "Je suis un(e) ami(e). Je vous propose de venir célébrer l'anniversaire de ma sœur. Vous me demandez des renseignements sur elle afin de choisir un cadeau approprié (goûts, loisirs, personnalité, etc.).",
+            "n": 4,
+            "m": [
+              "Décembre 2025",
+              "Janvier 2026",
+              "Mars 2026",
+              "Juin 2026"
+            ],
+            "lm": 202606,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e). Vous voulez offrir un cadeau à mon enfant pour son anniversaire. Vous me posez des questions pour savoir quel cadeau lui offrir (jeux, habitudes, goûts, etc.).",
+            "n": 3,
+            "m": [
+              "Mars 2023",
+              "Juillet 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami, c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.)",
+            "n": 3,
+            "m": [
+              "Novembre 2023",
+              "Mars 2024",
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami, j'ai fêté mon anniversaire, vous n'étiez pas présent. Posez-moi des questions (activités, personnes, cadeaux…)",
+            "n": 3,
+            "m": [
+              "Novembre 2023",
+              "Décembre 2024",
+              "Décembre 2022"
+            ],
+            "lm": 202412,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e), vous êtes invité à mon mariage. Posez-moi des questions (date, lieu, invité, etc).",
+            "n": 2,
+            "m": [
+              "Juillet 2023",
+              "Mai 2024"
+            ],
+            "lm": 202405,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e). Mon fils va se marier. Vous êtes invité(e). Vous me posez des questions sur le mariage (organisation, invités, cadeau, etc.).",
+            "n": 2,
+            "m": [
+              "Juillet 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e), je vous invite à l'anniversaire de ma sœur. Vous me posez des questions pour savoir quel cadeau lui offrir.",
+            "n": 1,
+            "m": [
+              "Novembre 2023"
+            ],
+            "lm": 202311,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e), j'ai fêté mon anniversaire, vous n'étiez pas présent(e). Posez-moi des questions (activités, personnes, cadeaux, etc.)",
+            "n": 1,
+            "m": [
+              "Juin 2024"
+            ],
+            "lm": 202406,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e), je vous invite à l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.)",
+            "n": 1,
+            "m": [
+              "Octobre 2024"
+            ],
+            "lm": 202410,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e), c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, goûts, etc.).",
+            "n": 1,
+            "m": [
+              "Novembre 2024"
+            ],
+            "lm": 202411,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Vous êtes invité au mariage d'une amie canadienne et souhaitez en savoir plus sur l'événement. Vous demandez des précisions sur le déroulement de la cérémonie, les invités, les cadeaux et la tenue vestimentaire appropriée.",
+            "n": 1,
+            "m": [
+              "Février 2025"
+            ],
+            "lm": 202502,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami(e). Pour l'anniversaire prochain de ma sœur, vous cherchez un cadeau. Vous me posez des questions sur ses goûts et ses préférences (loisirs, tempérament, …)",
+            "n": 1,
+            "m": [
+              "Juin 2025"
+            ],
+            "lm": 202506,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Vous souhaitez offrir un cadeau à mon enfant pour son anniversaire. Vous me posez des questions pour choisir le bon cadeau (jeux, habitudes, préférences, etc.).",
+            "n": 1,
+            "m": [
+              "Avril 2026"
+            ],
+            "lm": 202604,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami. Vous êtes invité à une cérémonie de mariage d'une amie canadienne. Posez-moi des questions (cérémonie, invités, cadeaux, habillement).",
+            "n": 1,
+            "m": [
+              "Octobre 2022"
+            ],
+            "lm": 202210,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami, et j'ai fêté mon anniversaire, vous n'étiez pas présent, posez-moi des questions (activités, personnes et cadeaux, etc.)",
+            "n": 1,
+            "m": [
+              "Octobre 2022"
+            ],
+            "lm": 202210,
+            "subgroup": "sg_autres_cadeau_evenement"
+          },
+          {
+            "p": "Je suis votre ami, c'est l'anniversaire de ma sœur et vous voulez lui acheter un cadeau. Posez-moi des questions (activités, personnalité, ses goûts, etc.)",
+            "n": 1,
+            "m": [
+              "Décembre 2022"
+            ],
+            "lm": 202212,
+            "subgroup": "sg_autres_cadeau_evenement"
           }
         ],
         "questions": [
@@ -21963,7 +21903,7 @@
       },
       {
         "cluster": "Centre de formation / cours professionnels",
-        "apps": 10,
+        "apps": 25,
         "items": [
           {
             "p": "Je travaille à l'accueil d'un centre de formation. Vous souhaitez commencer une nouvelle formation professionnelle. Vous me posez des questions pour obtenir des informations (durée, organisation, tarif, etc.)",
@@ -21994,6 +21934,77 @@
               "Avril 2023"
             ],
             "lm": 202304
+          },
+          {
+            "p": "Je suis un(e) ami(e). Vous avez envie de commencer une série, mais vous êtes indécis(e). Vous me demandez des informations pour faire votre choix (catégorie, acteurs, plateforme de streaming, etc.).",
+            "n": 4,
+            "m": [
+              "Décembre 2025",
+              "Janvier 2026",
+              "Mars 2026",
+              "Juin 2026"
+            ],
+            "lm": 202606,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). J'utilise souvent un site Internet qui propose des sorties en groupe. Vous êtes intéressé(e) et vous me posez des questions pour obtenir des informations (inscription, participants, activités, etc.).",
+            "n": 3,
+            "m": [
+              "Mars 2023",
+              "Juillet 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami, j'étudie à Toronto. Posez-moi des questions pour vous renseigner d'un cours à l'université de Toronto.",
+            "n": 2,
+            "m": [
+              "Janvier 2023",
+              "Octobre 2023"
+            ],
+            "lm": 202310,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e). Je vends des objets que je n'utilise plus sur Internet. Vous souhaitez faire la même chose. Vous me posez des questions pour avoir plus d'informations (type de site, types d'objets, modalités, etc.).",
+            "n": 2,
+            "m": [
+              "Juillet 2024",
+              "Novembre 2024"
+            ],
+            "lm": 202411,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis un(e) ami(e). Vous avez envie d'aller voir un film et vous me demandez des informations sur les films que j'ai vus dernièrement (genre, durée, acteurs, opinion, etc.).",
+            "n": 2,
+            "m": [
+              "Mars 2026",
+              "Mai 2026"
+            ],
+            "lm": 202605,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Je suis votre ami(e) et vous désirez avoir des informations sur des endroits où passer le week-end. Posez-moi des questions.",
+            "n": 1,
+            "m": [
+              "Mars 2024"
+            ],
+            "lm": 202403,
+            "subgroup": "sg_autres_amis_general"
+          },
+          {
+            "p": "Nous sommes amis(e)s. J'ai fêté mon anniversaire récemment, mais vous n'avez pas pu être présent(e). Vous me demandez des informations sur le déroulement de la fête (activités, invités, cadeaux, ambiance, etc.).",
+            "n": 1,
+            "m": [
+              "Mars 2026"
+            ],
+            "lm": 202603,
+            "subgroup": "sg_autres_cadeau_evenement"
           }
         ],
         "questions": [
@@ -22899,7 +22910,7 @@
       },
       {
         "cluster": "Autres messages",
-        "apps": 43,
+        "apps": 4,
         "items": [
           {
             "p": "(cf. variantes ci-dessus)",
@@ -23473,7 +23484,7 @@
       },
       {
         "cluster": "Études & vie étudiante",
-        "apps": 4,
+        "apps": 5,
         "items": [
           {
             "p": "Vous écrivez à un(e) ami(e) qui veut suivre des cours de langue dans votre école (emplacement, prix, types de cours).",
@@ -23823,84 +23834,8 @@
     ],
     "t2": [
       {
-        "cluster": "Autres textes",
-        "apps": 49,
-        "items": [
-          {
-            "p": "(cf. variantes ci-dessus)",
-            "n": 1,
-            "m": [
-              "Février 2026"
-            ],
-            "lm": 202602
-          },
-          {
-            "p": "Vous avez commencé un nouvel emploi. Racontez votre première semaine (entreprise, poste, missions).",
-            "n": 1,
-            "m": [
-              "Janvier 2026"
-            ],
-            "lm": 202601
-          },
-          {
-            "p": "INFOS FAMILLES — Vivre avec une personne âgée : comment s'organiser ? Vous avez cohabité avec une personne âgée : décrivez votre expérience.",
-            "n": 1,
-            "m": [
-              "Octobre 2025"
-            ],
-            "lm": 202510
-          },
-          {
-            "p": "Votre établissement vous confie l'organisation d'une journée d'accueil pour nouveaux étudiants francophones. Courriel avec infos utiles.",
-            "n": 1,
-            "m": [
-              "Août 2025"
-            ],
-            "lm": 202508
-          },
-          {
-            "p": "Vous avez publié une annonce pour louer votre appartement. Courriel d'infos sur le logement et le quartier.",
-            "n": 1,
-            "m": [
-              "Août 2025"
-            ],
-            "lm": 202508
-          },
-          {
-            "p": "Vous travaillez à l'étranger. Parlez de cette expérience professionnelle et de ce que vous avez apprécié.",
-            "n": 1,
-            "m": [
-              "Avril 2025"
-            ],
-            "lm": 202504
-          },
-          {
-            "p": "Message à des amis : séjour dans une belle région du pays (expérience, pourquoi appréciée).",
-            "n": 1,
-            "m": [
-              "Mars 2025"
-            ],
-            "lm": 202503
-          },
-          {
-            "p": "Message racontant un événement marquant (moments forts, émotions).",
-            "n": 1,
-            "m": [
-              "Mars 2025"
-            ],
-            "lm": 202503
-          }
-        ],
-        "hints": [
-          "Identifie le genre de texte attendu (article / lettre / forum / blog)",
-          "Structure : introduction + 2–3 idées développées + conclusion",
-          "Respecte le registre (formel ou semi-formel selon le destinataire)"
-        ],
-        "lm": 202605
-      },
-      {
         "cluster": "Article de blog — expérience vécue",
-        "apps": 40,
+        "apps": 41,
         "items": [
           {
             "p": "Vous avez pris part à un marché d'occasion dans votre ville. Rédigez un article sur votre blog pour raconter cette activité et dire pourquoi elle vous a plu.",
@@ -24186,6 +24121,14 @@
               "Mars 2025"
             ],
             "lm": 202503
+          },
+          {
+            "p": "Message racontant un événement marquant (moments forts, émotions).",
+            "n": 1,
+            "m": [
+              "Mars 2025"
+            ],
+            "lm": 202503
           }
         ],
         "hints": [
@@ -24458,7 +24401,7 @@
       },
       {
         "cluster": "Travail, emploi & formation",
-        "apps": 12,
+        "apps": 14,
         "items": [
           {
             "p": "Vous avez commencé un nouvel emploi. Vous envoyez un courriel à vos proches pour leur raconter votre première semaine (entreprise, poste, missions, etc.).",
@@ -24534,6 +24477,22 @@
               "Octobre 2025"
             ],
             "lm": 202510
+          },
+          {
+            "p": "Vous avez commencé un nouvel emploi. Racontez votre première semaine (entreprise, poste, missions).",
+            "n": 1,
+            "m": [
+              "Janvier 2026"
+            ],
+            "lm": 202601
+          },
+          {
+            "p": "Vous travaillez à l'étranger. Parlez de cette expérience professionnelle et de ce que vous avez apprécié.",
+            "n": 1,
+            "m": [
+              "Avril 2025"
+            ],
+            "lm": 202504
           }
         ],
         "hints": [
@@ -24597,7 +24556,7 @@
       },
       {
         "cluster": "Partager une expérience de voyage / séjour",
-        "apps": 9,
+        "apps": 11,
         "items": [
           {
             "p": "Vous avez séjourné dans une magnifique région de votre pays pendant vos vacances. Vous rédigez un message à vos amis dans lequel vous racontez votre séjour et les raisons pour lesquelles cette expérience vous a beaucoup plu.",
@@ -24671,6 +24630,14 @@
               "Mars 2025"
             ],
             "lm": 202503
+          },
+          {
+            "p": "Message à des amis : séjour dans une belle région du pays (expérience, pourquoi appréciée).",
+            "n": 1,
+            "m": [
+              "Mars 2025"
+            ],
+            "lm": 202503
           }
         ],
         "hints": [
@@ -24682,7 +24649,7 @@
       },
       {
         "cluster": "Lettre / courriel professionnel",
-        "apps": 7,
+        "apps": 8,
         "items": [
           {
             "p": "Rédiger un message à la direction pour informer qu'un lieu a été trouvé pour la fête de fin d'année, en précisant le lieu, les tarifs, les services et autres informations pertinentes.",
@@ -24739,6 +24706,14 @@
               "Avril 2025"
             ],
             "lm": 202504
+          },
+          {
+            "p": "Vous avez publié une annonce pour louer votre appartement. Courriel d'infos sur le logement et le quartier.",
+            "n": 1,
+            "m": [
+              "Août 2025"
+            ],
+            "lm": 202508
           }
         ],
         "hints": [
@@ -24860,7 +24835,7 @@
       },
       {
         "cluster": "Événement culturel / artistique",
-        "apps": 15,
+        "apps": 16,
         "items": [
           {
             "p": "Article sur la visite d'une exposition dédiée à votre artiste préféré (impressions, œuvres).",
@@ -24993,7 +24968,7 @@
       },
       {
         "cluster": "Sport & activités",
-        "apps": 4,
+        "apps": 6,
         "items": [
           {
             "p": "Vous avez participé à une compétition sportive et souhaitez partager votre expérience sur un site internet. Décrivez le déroulement de l'événement (lieu, date, organisation) et donnez votre avis sur votre participation.",
@@ -25005,19 +24980,21 @@
           },
           {
             "p": "Vous souhaitez trouver un(e) camarade pour faire du sport. Écrivez un message sur le site des étudiants en précisant vos horaires libres.",
-            "n": 1,
+            "n": 2,
             "m": [
-              "Février 2026"
+              "Février 2026",
+              202602
             ],
             "lm": 202602
           },
           {
             "p": "Vous souhaitez trouver un(e) camarade pour faire du sport. Écrivez sur le site des étudiants en précisant vos horaires libres.",
-            "n": 1,
+            "n": 2,
             "m": [
-              "Décembre 2025"
+              "Décembre 2025",
+              202602
             ],
-            "lm": 202512
+            "lm": 202602
           },
           {
             "p": "Vous avez participé à une compétition sportive. Décrivez le déroulement et donnez votre avis.",
@@ -25037,7 +25014,7 @@
       },
       {
         "cluster": "Études & formation",
-        "apps": 1,
+        "apps": 2,
         "items": [
           {
             "p": "Vous avez récemment entamé des cours dans une école de langues. Parlez à vos amis de votre première semaine (cours, enseignants, atmosphère).",
@@ -25046,6 +25023,14 @@
               "Avril 2026"
             ],
             "lm": 202604
+          },
+          {
+            "p": "Votre établissement vous confie l'organisation d'une journée d'accueil pour nouveaux étudiants francophones. Courriel avec infos utiles.",
+            "n": 1,
+            "m": [
+              "Août 2025"
+            ],
+            "lm": 202508
           }
         ],
         "hints": [
@@ -25093,7 +25078,7 @@
       },
       {
         "cluster": "Solidarité & bénévolat",
-        "apps": 1,
+        "apps": 2,
         "items": [
           {
             "p": "INFOS FAMILLES : Accueillir une personne âgée chez soi. Vous avez déjà accueilli une personne âgée : partagez votre expérience.",
@@ -25102,6 +25087,14 @@
               "Décembre 2025"
             ],
             "lm": 202512
+          },
+          {
+            "p": "INFOS FAMILLES — Vivre avec une personne âgée : comment s'organiser ? Vous avez cohabité avec une personne âgée : décrivez votre expérience.",
+            "n": 1,
+            "m": [
+              "Octobre 2025"
+            ],
+            "lm": 202510
           }
         ],
         "hints": [

@@ -345,20 +345,25 @@ function clusterCardHtml(c,innerTop,unit,sort){
 
 // T2 scenario cluster card (with optional subgroups)
 function t2ClusterCardHtml(c, sort){
-  var items=sortItems(c.items,sort);
-  var top3=items.slice(0,3),rest=items.slice(3);
+  var allItems=sortItems(c.items,sort);
+  // Exclude items already shown in subgroups from "Tous les scénarios"
+  var sgKeys=c.subgroups?c.subgroups.map(function(sg){return sg.id;}).filter(Boolean):[];
+  var rootItems=sgKeys.length?allItems.filter(function(i){return!i.subgroup||sgKeys.indexOf(i.subgroup)<0;}):allItems;
+  var showItems=rootItems.length?rootItems:allItems;
+  var top3=showItems.slice(0,3),rest=showItems.slice(3);
   var rb=isR(c.lm)?'<span class="badge-recent">'+lmStr(c.lm)+'</span>':'';
   var qHtml=c.questions&&c.questions.length?'<div class="questions-panel"><div class="ql">Questions clés</div>'+c.questions.map(function(qq){return'<div class="q-item">'+esc(qq)+'</div>';}).join('')+'</div>':'';
   var sgHtml=c.subgroups&&c.subgroups.length?sgPanelHtml(c.subgroups,c.items,sort,false):'';
   var restHtml=rest.length
     ?'<button class="variants-toggle">▶ Voir les variantes ('+rest.length+')</button>'
      +'<div class="variants-list">'+rest.map(function(i){return qRowHtml(i.p,i.n,i.lm);}).join('')+'</div>':'';
+  var tousLabel=sgHtml?'Autres scénarios':'Tous les scénarios';
   return'<div class="cluster-card"><div class="cluster-head"><div class="cluster-name">'+esc(c.cluster)+'</div>'
     +'<div class="cluster-badges">'+rb+'<span class="badge-apps">'+c.apps+'×</span><span class="badge-unique">'+c.items.length+' scénarios</span></div>'
     +'<span class="chevron">▶</span></div>'
     +'<div class="cluster-body">'+qHtml+sgHtml
-    +'<div class="variants-panel"><div class="arg-qs-label" style="font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.5rem">Tous les scénarios</div>'
-    +top3.map(function(i){return qRowHtml(i.p,i.n,i.lm);}).join('')+restHtml+'</div></div></div>';
+    +(showItems.length?'<div class="variants-panel"><div class="arg-qs-label" style="font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.5rem">'+tousLabel+'</div>'
+    +top3.map(function(i){return qRowHtml(i.p,i.n,i.lm);}).join('')+restHtml+'</div>':'')+'</div></div>';
 }
 
 // Theme maps
@@ -374,17 +379,18 @@ var T3_THEMES={
   'Vieillissement':['retraite_vieillissement'],
   'Médias & expression':['medias_liberte_expression','solidarite_politique'],
   'Voyages':['voyager_tourisme'],
+  'Vie quotidienne':['vie_quotidienne'],
   'Divers':['autres','animaux','argent_bonheur']
 };
 var T2_THEMES={
   'Logement':['Location de logement','Achat immobilier','Hôtel & hébergement','Rythme & conditions de travail au Canada'],
   'Voisinage':['Voisins & immeuble'],
-  'Vacances':['Vacances & destinations (office du tourisme)','Agence de voyages / séjour organisé'],
+  'Vacances & voyages':['Vacances & destinations (office du tourisme)','Agence de voyages / séjour organisé','Croisière / voyage en bateau'],
   'Travail':['Collègue & conditions de travail','Entretien d\'embauche / emploi','Centre de formation / cours professionnels'],
   'Arrivée au Canada':['Arrivée dans ville / au Canada','Cours de langue / français'],
-  'Amis & famille':['Autres scénarios','Garde d\'enfant / baby-sitter','Invitation & fête sociale','Recevoir des amis / conseils pratiques'],
+  'Amis & famille':['Autres scénarios','Garde d\'enfant / baby-sitter','Invitation & fête sociale','Recevoir des amis / conseils pratiques','École (inscription enfant)'],
   'Culture & loisirs':['Sport & clubs sportifs','Centre culturel & loisirs','Théâtre / concert / spectacle','Musée','Émission TV / jeu télévisé','Bibliothèque / médiathèque','Cinéma','Cours de cuisine'],
-  'Services':['Restaurant & repas','Association & bénévolat','Assurance','Rénovation / bricolage','Vente d\'objets / occasion','Poste / envoi de colis','Animalerie / adoption d\'animal','Mairie & services publics','Santé & médecin','Transports en commun','École (inscription enfant)']
+  'Services & commerces':['Restaurant & repas','Association & bénévolat','Assurance','Rénovation / bricolage','Vente d\'objets / occasion','Poste / envoi de colis','Animalerie / adoption d\'animal','Mairie & services publics','Santé & médecin','Transports en commun']
 };
 
 // Tab switches
@@ -545,7 +551,9 @@ function renderEO(){
     }else{
       el.className='clusters-grid';
       el.innerHTML=univHtml()+blocks.map(function(b){
-        var topQs=sortItems(b.questions,sort).slice(0,4);
+        var sgIds=b.subgroups?b.subgroups.map(function(sg){return sg.id;}).filter(Boolean):[];
+        var rootQs=b.questions.filter(function(qq){return!qq.subgroup||sgIds.indexOf(qq.subgroup)<0;});
+        var topQs=sortItems(rootQs.length?rootQs:b.questions,sort).slice(0,4);
         var rb=isR(b.lm)?'<span class="badge-recent">'+lmStr(b.lm)+'</span>':'';
         return'<div class="arg-block-card">'
           +'<div class="arg-block-head"><div class="arg-block-name">'+esc(b.title)+'</div>'
@@ -554,9 +562,9 @@ function renderEO(){
           +'<div class="arg-block-body">'
           +'<div class="arg-pcn">'+pcnHtml(b.pour,b.contre,b.nuance,false)+'</div>'
           +sgPanelHtml(b.subgroups,b.questions,sort,true)
-          +'<div class="arg-qs"><div class="arg-qs-label">Questions fréquentes</div>'
+          +(rootQs.length?'<div class="arg-qs"><div class="arg-qs-label">Questions fréquentes</div>'
           +topQs.map(function(q){return qRowHtml(q.p,q.n,q.lm);}).join('')
-          +'</div></div></div>';
+          +'</div>':'')+'</div></div>';
       }).join('');
     }
   }
