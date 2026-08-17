@@ -82,6 +82,14 @@
     padding:20px 22px 18px;
   }
   .hero.simple h2{font-size:1.15rem;}
+  @keyframes flashCard{
+    0%{box-shadow:0 0 0 3px var(--pine);}
+    100%{box-shadow:var(--shadow);}
+  }
+  .hero.flash{animation:flashCard 900ms ease-out;}
+  @media (prefers-reduced-motion:reduce){
+    .hero.flash{animation:none;}
+  }
   .cards-row{
     display:grid;grid-template-columns:1.3fr 1fr;gap:18px;
     margin-bottom:36px;align-items:start;
@@ -214,6 +222,16 @@
     font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);
     white-space:nowrap;
   }
+  .show-card-btn{
+    width:24px;height:24px;border-radius:6px;border:1px solid transparent;
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+    color:var(--ink-soft);cursor:pointer;background:none;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .show-card-btn:hover{background:var(--line-soft);color:var(--pine);border-color:var(--line);}
+  .show-card-btn:focus-visible{outline:2px solid var(--pine);outline-offset:1px;}
+  .show-card-btn svg{width:14px;height:14px;}
+  .show-card-btn.simple:hover{color:var(--amber);}
   .cluster-chev{color:var(--ink-soft);transition:transform .15s;flex-shrink:0;}
   .cluster.open .cluster-chev{transform:rotate(90deg);}
   .cluster-body{display:none;padding:6px 18px 16px 18px;}
@@ -469,19 +487,24 @@
   }
 
   // ---------- question row ----------
-  function questionRowHTML(q, idPrefix, i, term, simpleId){
+  function questionRowHTML(q, idPrefix, i, term, simpleId, showCardTarget){
     const hasDetail = q.dates || (q.variants && q.variants.length);
     const done = simpleId ? isCoveredSimple(simpleId) : false;
     const checkHtml = simpleId ? `
       <span class="simple-check ${done?'done':''}" role="checkbox" aria-checked="${done}" tabindex="0" title="Marquer comme couvert" data-sid="${simpleId}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
       </span>` : '';
+    const showBtnHtml = showCardTarget ? `
+      <button class="show-card-btn simple" type="button" title="Afficher comme fiche en haut de page" data-show-simple="${showCardTarget}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+      </button>` : '';
     return `
       <div class="qrow ${done?'covered-simple':''}" data-idx="${i}" ${simpleId?`data-simple-id="${simpleId}"`:''}>
         <div class="qhead" tabindex="0" role="button" aria-expanded="false" data-toggle="${idPrefix}-${i}">
           ${checkHtml}
           <span class="freq">${q.freq}x</span>
           <span class="qtext">${highlight(q.text, term)}</span>
+          ${showBtnHtml}
           ${hasDetail ? '<svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>' : ''}
         </div>
         ${hasDetail ? `<div class="qdetail" id="${idPrefix}-${i}">
@@ -497,7 +520,7 @@
   function wireQuestionRows(container){
     container.querySelectorAll('.qhead').forEach(head => {
       head.addEventListener('click', (e) => {
-        if(e.target.closest('.simple-check')) return;
+        if(e.target.closest('.simple-check') || e.target.closest('.show-card-btn')) return;
         toggleQ(head);
       });
       head.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){e.preventDefault(); toggleQ(head);} });
@@ -516,6 +539,13 @@
           renderIndex(lastTerm);
           applyHideCovered();
         }
+      });
+    });
+    container.querySelectorAll('[data-show-simple]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const [ti, si] = btn.dataset.showSimple.split(':').map(Number);
+        showStandaloneAsCard(ti, si);
       });
     });
   }
@@ -542,6 +572,36 @@
       if(!isCovered(cluster.id)) return {rotIdx: idx, baseIdx: start};
     }
     return null; // everything covered
+  }
+
+  function rotationIndexFor(themeIndex, clusterIndex){
+    return ROTATION.findIndex(e => e.themeIndex === themeIndex && e.clusterIndex === clusterIndex);
+  }
+  function simpleRotationIndexFor(themeIndex, standaloneIndex){
+    return STANDALONE_ROTATION.findIndex(e => e.themeIndex === themeIndex && e.standaloneIndex === standaloneIndex);
+  }
+  function flashHero(el){
+    el.classList.remove('flash');
+    void el.offsetWidth; // restart animation
+    el.classList.add('flash');
+  }
+  function showClusterAsCard(themeIndex, clusterIndex){
+    const idx = rotationIndexFor(themeIndex, clusterIndex);
+    if(idx === -1) return;
+    heroPick = idx; heroMode = 'random';
+    renderHero();
+    const hero = document.getElementById('heroCard');
+    if(typeof hero.scrollIntoView === 'function') hero.scrollIntoView({behavior:'smooth', block:'start'});
+    flashHero(hero);
+  }
+  function showStandaloneAsCard(themeIndex, standaloneIndex){
+    const idx = simpleRotationIndexFor(themeIndex, standaloneIndex);
+    if(idx === -1) return;
+    heroSimplePick = idx; heroSimpleMode = 'random';
+    renderHeroSimple();
+    const hero = document.getElementById('heroCardSimple');
+    if(typeof hero.scrollIntoView === 'function') hero.scrollIntoView({behavior:'smooth', block:'start'});
+    flashHero(hero);
   }
 
   function renderHero(){
@@ -711,6 +771,9 @@
           </span>
           <span class="cname">${highlight(cluster.name, term)}</span>
           <span class="cluster-meta">${cluster.count}q · ${cluster.total}x</span>
+          <button class="show-card-btn" type="button" title="Afficher comme fiche en haut de page" data-show-cluster="${tIdx}:${cIdx}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          </button>
           <svg class="cluster-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="cluster-body">
@@ -728,7 +791,7 @@
       <div class="standalone-block">
         <p class="standalone-title">Questions autonomes (${theme.standalone.length})</p>
         <div class="qlist">
-          ${theme.standalone.map((q,i) => questionRowHTML(q, `t${tIdx}s`, i, term, q.id)).join('')}
+          ${theme.standalone.map((q,i) => questionRowHTML(q, `t${tIdx}s`, i, term, q.id, `${tIdx}:${i}`)).join('')}
         </div>
       </div>` : '';
     const doneCount = theme.clusters.filter(c => isCovered(c.id)).length;
@@ -760,10 +823,17 @@
     });
     list.querySelectorAll('.cluster-head').forEach(head => {
       head.addEventListener('click', (e) => {
-        if(e.target.closest('.cluster-check')) return; // handled separately
+        if(e.target.closest('.cluster-check') || e.target.closest('.show-card-btn')) return;
         toggleCluster(head);
       });
       head.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){e.preventDefault(); toggleCluster(head);} });
+    });
+    list.querySelectorAll('[data-show-cluster]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const [ti, ci] = btn.dataset.showCluster.split(':').map(Number);
+        showClusterAsCard(ti, ci);
+      });
     });
     list.querySelectorAll('.cluster-check').forEach(chk => {
       chk.addEventListener('click', (e) => {
