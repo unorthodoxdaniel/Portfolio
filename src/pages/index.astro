@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AvailabilityBar from '../components/AvailabilityBar.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PhotoIntro from '../components/PhotoIntro.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+// Published projects, in their existing order.
+const projects = (await getCollection('projects'))
+  .filter((project) => project.data.status === 'published')
+  .sort((a, b) => (a.data.order ?? Infinity) - (b.data.order ?? Infinity));
+
+// Published testimonials, grouped by the project they reference.
+const testimonialsByProject = new Map<string, Awaited<ReturnType<typeof getCollection<'testimonials'>>>>();
+for (const testimonial of await getCollection('testimonials')) {
+  const projectId = testimonial.data.project?.id;
+  if (testimonial.data.status !== 'published' || !projectId) continue;
+  testimonialsByProject.set(projectId, [...(testimonialsByProject.get(projectId) ?? []), testimonial]);
+}
+
+// The legacy homepage shows no "Visit Website" link for these projects even though the
+// content record holds a url. Kept as an explicit, reversible exception; see migration notes.
+const hideVisitLink = new Set(['jensen-and-jensen']);
+---
+
+<BaseLayout
+  title="Daniel Abudu | Freelance Web Designer and Webflow Premium Partner"
+  description="Hi. I’m Daniel Abudu and I’m a Freelance Web Designer. I'm a certified Webflow expert with experience designing and building websites for a variety of clients. Let's work together!"
+  current="home"
+>
+  <AvailabilityBar />
+
+  <Hero title="I Help Founders and Marketing Teams Own Their Web Experiences." ctaLabel="Start a project" ctaHref="/contact">
+    <p>Hi, I'm Daniel and I'm a Web Designer and a Webflow Premium Partner ready to work with you on your amazing project!</p>
+  </Hero>
+
+  <section class="selected-work">
+    <div class="container">
+      <div class="heading">
+        <h2>Selected work</h2>
+        <img class="bob" src="/images/Arrow-2.svg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    {
+      projects.map((project, index) => (
+        <ProjectCard
+          project={project}
+          testimonials={testimonialsByProject.get(project.id)}
+          showUrl={!hideVisitLink.has(project.id)}
+          priority={index === 0}
+        />
+      ))
+    }
+  </section>
+
+  <PhotoIntro
+    heading="A Bit About Me"
+    ctaLabel="Learn more"
+    ctaHref="/about"
+    photo={{
+      src: '/images/62d2c382919b1440d81e431b_Daniel-9---Copy-1.jpg',
+      srcset:
+        '/images/62d2c382919b1440d81e431b_Daniel-9---Copy-1-p-500.jpg 500w, /images/62d2c382919b1440d81e431b_Daniel-9---Copy-1-p-800.jpg 800w, /images/62d2c382919b1440d81e431b_Daniel-9---Copy-1.jpg 1072w',
+    }}
+  >
+    <p>I partner with marketing teams and founders to create web experiences they can truly own and control. As a Certified Webflow Expert, I combine design skills with technical expertise to build websites that drive business growth and ROI.</p>
+  </PhotoIntro>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .selected-work {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem 0;
+  }
+
+  .heading {
+    position: relative;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .bob {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    animation: bob 3.2s ease-in-out infinite;
+  }
+
+  .projects {
+    padding-inline: 2rem;
+  }
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(6px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bob {
+      animation: none;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .selected-work {
+      padding-top: 2rem;
+      padding-inline: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .projects {
+      padding-inline: 0;
+    }
+  }
+</style>

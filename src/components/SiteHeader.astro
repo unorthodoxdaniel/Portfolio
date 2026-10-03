@@ -1,0 +1,122 @@
+---
+/* Site navigation. Collapses to a toggled menu below 992px. */
+interface Props {
+  current?: 'home' | 'about' | 'contact' | 'reading' | 'playing';
+}
+
+const { current } = Astro.props;
+
+const links = [
+  { key: 'home', href: '/', label: 'Home 🏠' },
+  { key: 'about', href: '/about', label: 'About 🎮' },
+  { key: 'contact', href: '/contact', label: 'Contact 💬' },
+  { key: 'reading', href: '/reading', label: 'Reading 📚' },
+  { key: 'playing', href: '/playing', label: 'Playing 🎮' },
+];
+---
+
+<header class="site-header">
+  <button class="menu-button" type="button" aria-label="menu" aria-expanded="false" aria-controls="site-nav">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M1 5h22M1 12h22M1 19h22" stroke="currentColor" stroke-width="3" />
+    </svg>
+  </button>
+  <nav id="site-nav" class="site-nav" aria-label="Main">
+    {
+      links.map((link) => (
+        <a href={link.href} aria-current={link.key === current ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    padding-inline: 2rem;
+    font-size: 1rem;
+    background-color: #000;
+    border-bottom: 0.2px solid #494848;
+    border-radius: 4px;
+  }
+
+  .site-nav {
+    display: flex;
+    /* legacy inline links were separated by a text space */
+    gap: 4.25px;
+  }
+
+  .site-nav a {
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .site-nav a:hover,
+  .site-nav a[aria-current='page'] {
+    color: #b6b3b3;
+  }
+
+  .menu-button {
+    display: none;
+    padding: 18px;
+    color: #fff;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .menu-button[aria-expanded='true'] {
+    color: #000;
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: 991px) {
+    .menu-button {
+      display: block;
+      margin-left: auto;
+    }
+
+    .site-nav {
+      display: none;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+    }
+
+    .site-header.open .site-nav {
+      display: block;
+    }
+
+    .site-nav a,
+    .site-nav a:hover,
+    .site-nav a[aria-current='page'] {
+      display: block;
+      color: #000;
+    }
+  }
+</style>
+
+<script>
+  // The only behaviour the nav needs: toggle the collapsed menu.
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const button = header?.querySelector<HTMLButtonElement>('.menu-button');
+
+  function setOpen(open: boolean) {
+    header?.classList.toggle('open', open);
+    button?.setAttribute('aria-expanded', String(open));
+  }
+
+  button?.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && setOpen(false));
+</script>

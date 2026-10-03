@@ -1,0 +1,63 @@
+---
+/* "Currently reading / playing" card: a label, one cover with its title, and a link to the full list. */
+interface Props {
+  label: string;
+  title: string;
+  image: string;
+  alt: string;
+  linkLabel: string;
+  linkHref: string;
+}
+
+const { label, title, image, alt, linkLabel, linkHref } = Astro.props;
+---
+
+<div class="card">
+  <div>{label}</div>
+  <div class="item">
+    <div class="cover"><img src={image} alt={alt} loading="lazy" /></div>
+    <div>{title}</div>
+  </div>
+  <p><a href={linkHref}>{linkLabel}</a></p>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    gap: 16px;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .cover {
+    position: relative;
+    aspect-ratio: 100 / 137;
+  }
+
+  .cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  p {
+    color: #ccc;
+  }
+
+  a {
+    color: #fff;
+    font-size: 0.85rem;
+  }
+</style>

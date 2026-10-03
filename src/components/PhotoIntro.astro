@@ -1,0 +1,96 @@
+---
+/*
+  Two-column intro: heading and text on one side, a photo on the other.
+  Used for the homepage "A Bit About Me" teaser (h3, with a button) and the About page hero (h1).
+*/
+import ArrowButton from './ArrowButton.astro';
+
+interface Props {
+  heading: string;
+  level?: 'h1' | 'h3';
+  ctaLabel?: string;
+  ctaHref?: string;
+  photo: { src: string; srcset?: string };
+}
+
+const { heading, level = 'h3', ctaLabel, ctaHref, photo } = Astro.props;
+const Heading = level;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="layout">
+      <div class="text">
+        <Heading class={level}>{heading}</Heading>
+        <div class="body"><slot /></div>
+        {ctaLabel && ctaHref && <ArrowButton href={ctaHref}>{ctaLabel}</ArrowButton>}
+      </div>
+      <div class="photo">
+        <img src={photo.src} srcset={photo.srcset} sizes="100vw" alt="" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* two rows, as in the legacy grid (the second is empty on desktop) */
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .h1 {
+    font-size: 4rem;
+  }
+
+  .h3 {
+    font-size: 2rem;
+  }
+
+  .body {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  /* several paragraphs are separated by one blank line, as the legacy line breaks were */
+  .body :global(p + p) {
+    margin-top: 1lh;
+  }
+
+  .photo {
+    position: relative;
+  }
+
+  .photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  @media screen and (max-width: 991px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .photo {
+      order: -1;
+      padding-top: 50%;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .h1 {
+      font-size: 2rem;
+    }
+
+    .h3 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

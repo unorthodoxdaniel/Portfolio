@@ -1,0 +1,66 @@
+---
+/* A project's headline numbers. Renders however many stats exist, including none. */
+interface Props {
+  stats: { value: string; label: string }[];
+}
+
+const { stats } = Astro.props;
+---
+
+{
+  stats.length > 0 && (
+    <ul class="stats">
+      {stats.map((stat) => (
+        <li>
+          <span class="value">{stat.value}</span>
+          <span class="label">{stat.label}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.032em;
+    line-height: 130%;
+  }
+
+  .label {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.3;
+    text-align: left;
+    /* labels keep the line breaks they were authored with */
+    white-space: pre-line;
+  }
+
+  @media screen and (max-width: 767px) {
+    .label {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .value {
+      font-size: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import ArrowButton from './ArrowButton.astro';
+
+interface Props {
+  title: string;
+  /** Heading level; a page's first hero is the h1, later heroes are h2. */
+  level?: 'h1' | 'h2';
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const { title, level = 'h1', ctaLabel, ctaHref } = Astro.props;
+const Heading = level;
+---
+
+<section class="hero">
+  <div class="container">
+    <Heading>{title}</Heading>
+    <div class="intro"><slot /></div>
+    {
+      ctaLabel && ctaHref && (
+        <div class="cta">
+          <ArrowButton href={ctaHref} size="large">
+            {ctaLabel}
+          </ArrowButton>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  h1,
+  h2 {
+    font-size: 4rem;
+  }
+
+  .intro {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  @media screen and (max-width: 479px) {
+    h1,
+    h2 {
+      font-size: 2rem;
+    }
+
+    /* the large call to action is not shown on small phones */
+    .cta {
+      display: none;
+    }
+  }
+</style>

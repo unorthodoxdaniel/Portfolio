@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CoverGrid from '../components/CoverGrid.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const books = await getCollection('books');
+const byOrder = (a: (typeof books)[number], b: (typeof books)[number]) =>
+  (a.data.order ?? Infinity) - (b.data.order ?? Infinity);
+
+// The page has two groups. Books with any other status are not shown here yet.
+const finished = books.filter((book) => book.data.status === 'finished').sort(byOrder);
+const unfinished = books.filter((book) => book.data.status === 'unfinished').sort(byOrder);
+const unshown = books.filter((book) => !['finished', 'unfinished'].includes(book.data.status));
+if (unshown.length > 0) {
+  console.warn(`[reading] ${unshown.length} book(s) have a status this page does not show: ${unshown.map((b) => b.id).join(', ')}`);
+}
+
+const toItem = (book: (typeof books)[number]) => ({
+  title: book.data.title,
+  cover: book.data.cover,
+  fit: book.data.coverFit,
+});
+---
+
+<BaseLayout
+  title="Daniel Abudu | What I've Read"
+  description="Here are a collection of books some that I've read and books I'm reading."
+  current="reading"
+>
+  <Hero title="Here are some of the books I've read (recently)">
+    <p>In no particular order.</p>
+    <p>Notes coming soon.</p>
+  </Hero>
+
+  <CoverGrid items={finished.map(toItem)} shape="portrait" />
+
+  <Hero title="And here are books I've dabbled in or started but haven't finished yet." level="h2">
+    <p>Also in no particular order. Maybe I'll finish them someday. Maybe I won't. No pressure.</p>
+  </Hero>
+
+  <CoverGrid items={unfinished.map(toItem)} shape="square" />
+
+  <SiteFooter />
+</BaseLayout>

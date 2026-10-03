@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CoverGrid from '../components/CoverGrid.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const games = await getCollection('games');
+const byOrder = (a: (typeof games)[number], b: (typeof games)[number]) =>
+  (a.data.order ?? Infinity) - (b.data.order ?? Infinity);
+
+// The page has two groups. Games with any other status are not shown here yet.
+const finished = games.filter((game) => game.data.status === 'finished').sort(byOrder);
+const unfinished = games.filter((game) => game.data.status === 'unfinished').sort(byOrder);
+const unshown = games.filter((game) => !['finished', 'unfinished'].includes(game.data.status));
+if (unshown.length > 0) {
+  console.warn(`[playing] ${unshown.length} game(s) have a status this page does not show: ${unshown.map((g) => g.id).join(', ')}`);
+}
+
+const toItem = (game: (typeof games)[number]) => ({
+  title: game.data.title,
+  cover: game.data.cover,
+});
+---
+
+<BaseLayout
+  title="Daniel Abudu | Games I've Played"
+  description="Here's a collection of games I've played for fun."
+  current="playing"
+>
+  <Hero title="Games I've Played">
+    <p>In no particular order.</p>
+  </Hero>
+
+  <CoverGrid items={finished.map(toItem)} shape="portrait" />
+
+  <Hero title="Games I haven't managed to finish yet." level="h2">
+    <p>Also in no particular order. Maybe I'll finish them someday. Maybe I won't. No pressure.</p>
+  </Hero>
+
+  <CoverGrid items={unfinished.map(toItem)} shape="portrait" />
+
+  <SiteFooter />
+</BaseLayout>
