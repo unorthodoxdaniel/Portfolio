@@ -1,0 +1,16 @@
+/*
+  The legacy contact page did not include the small style block the other pages carry, so its
+  text wraps normally (no balancing, no break-word) and uses the default selection colour.
+  Imported only by the Contact page, for parity. Delete this file and its import to give
+  Contact the same text treatment as the other pages.
+*/
+body {
+  text-wrap: wrap;
+  word-break: normal;
+  text-rendering: auto;
+}
+
+::selection {
+  color: HighlightText;
+  background: Highlight;
+}

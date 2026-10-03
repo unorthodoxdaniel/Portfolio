@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import '../styles/contact-parity.css';
+
+// The contact form is a Google Form embedded as-is; there is no form handling of our own.
+const formUrl =
+  'https://docs.google.com/forms/d/e/1FAIpQLSd7flQjvZBT_r53LU4jbf6k_WCGLqk6gN_bZ-yE-H43BEK5IQ/viewform?embedded=true';
+---
+
+<BaseLayout
+  title="Daniel Abudu | Get in Touch"
+  description="Ready to get to work on your amazing project? I'm here for you. Let's work together! You can contact me here."
+  current="contact"
+  floatingCta={false}
+>
+  <div class="intro">
+    <Hero title="Ready to get to work on your amazing project?">
+      <p>I'm here for you. Send a mail to <a href="mailto:hello@danielabudu.com">hello@danielabudu.com</a> or fill the form below</p>
+    </Hero>
+  </div>
+
+  <section class="form-section">
+    <div class="container">
+      <div class="form">
+        <iframe src={formUrl} width="100%" height="1850">Loading…</iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* the legacy page had an empty block above the heading that added one rem of space */
+  .intro {
+    padding-top: 1rem;
+  }
+
+  .intro a {
+    color: #fff;
+  }
+
+  .form-section {
+    padding-right: 2rem;
+  }
+
+  .form {
+    width: 600px;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .form {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .form-section {
+      padding-right: 0;
+    }
+  }
+</style>
