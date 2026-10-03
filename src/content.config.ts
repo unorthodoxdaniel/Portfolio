@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
@@ -11,9 +11,15 @@ import { z } from 'astro/zod';
     a project's description, a book's notes, an essay.
   - Anything the legacy site does not always have is optional. Required fields
     are only the ones an entry cannot meaningfully exist without.
-  - Local images use Astro's `image()` helper so they are validated and optimised.
-    Videos are plain strings (a /public path or a URL) because they are large and
-    may be hosted elsewhere; only their poster is a validated image.
+
+  Media (temporary representation)
+  - Media has NOT been migrated yet. Every media field is a plain string that
+    records where the file lives today: a repo-relative path such as
+    `images/Kachie.webp`, or the exact URL the legacy HTML references.
+    When media is migrated deliberately, these become `image()` fields / /public paths.
+  - `legacy` objects hold information carried over from the Webflow export that is
+    not yet resolved into the real fields (unresolved variants, provenance notes).
+    They are temporary and should be emptied as decisions are made.
 */
 
 // --- shared building blocks ---------------------------------------------------
@@ -23,6 +29,18 @@ const seo = z.object({
   description: z.string().optional(),
 });
 
+// A video exactly as the legacy site referenced it.
+const video = z.object({
+  sources: z.array(z.string()).min(1), // URLs as written in the legacy HTML (mp4, webm, …)
+  poster: z.string().optional(), // poster URL as written in the legacy HTML
+  localFiles: z.array(z.string()).optional(), // copies that exist in this repo, if any
+  caption: z.string().optional(),
+});
+
+// Visibility is always an explicit decision: there is no default.
+//   published = shown, hidden = kept but not shown, draft = work in progress
+const status = z.enum(['published', 'hidden', 'draft']);
+
 const reading = ['reading', 'finished', 'unfinished'] as const;
 const playing = ['playing', 'finished', 'unfinished'] as const;
 
@@ -30,105 +48,113 @@ const playing = ['playing', 'finished', 'unfinished'] as const;
 
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
-  schema: ({ image }) => {
-    const media = z.object({
-      src: image(),
-      alt: z.string(), // empty string is allowed for purely decorative images
-    });
+  schema: z.object({
+    // Identity
+    title: z.string(), // the name the project is listed under
+    client: z.string().optional(),
+    headline: z.string().optional(),
+    status,
 
-    const video = z.object({
-      sources: z.array(z.string()).min(1), // e.g. mp4 + webm, as /public paths or URLs
-      poster: image().optional(),
-    });
+    // What the work was
+    engagement: z.enum(['client', 'contract', 'personal']).optional(),
+    services: z.array(z.string()).default([]),
+    collaborators: z
+      .array(z.object({ name: z.string(), role: z.string().optional() }))
+      .default([]),
+    intermediary: z.object({ name: z.string(), url: z.url().optional() }).optional(),
 
-    const testimonial = z
+    // Where it lives, and when (only where known)
+    url: z.url().optional(),
+    startDate: z.coerce.date().optional(),
+    endDate: z.coerce.date().optional(),
+
+    // Results: any number of stats, including none
+    stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+
+    // Media (see note above). Testimonials live in their own collection.
+    images: z.array(z.object({ src: z.string(), alt: z.string() })).default([]),
+    video: video.optional(),
+
+    // Presentation
+    featured: z.boolean().default(false),
+    order: z.number().optional(),
+    seo: seo.optional(),
+
+    // Temporary: unresolved or provenance information from the Webflow export.
+    legacy: z
       .object({
-        quote: z.string().optional(),
-        author: z.string(),
-        role: z.string().optional(),
-        organization: z.string().optional(),
-        relationship: z.string().optional(), // e.g. "Client", "Project Lead"
-        image: image().optional(),
-        video: video.optional(),
-        // Preserved for every testimonial; whether it is shown is decided separately.
-        display: z.boolean().default(false),
+        sources: z.array(z.string()).default([]), // legacy pages the block appears on
+        variants: z
+          .array(
+            z.object({
+              label: z.string(),
+              title: z.string().optional(),
+              tags: z.array(z.string()).optional(), // legacy tag pills, verbatim
+              url: z.string().optional(),
+            }),
+          )
+          .default([]),
+        notes: z.array(z.string()).default([]),
       })
-      .refine((t) => t.quote || t.video, {
-        message: 'A testimonial needs a quote, a video, or both.',
-      });
+      .optional(),
+  }),
+});
 
-    return z.object({
-      // Identity
-      title: z.string(), // the name the project is listed under
-      client: z.string().optional(),
-      headline: z.string().optional(),
+// --- testimonials ---------------------------------------------------------------
 
-      // Visibility is always an explicit decision: there is no default.
-      //   published = shown, hidden = kept but not shown, draft = work in progress
-      status: z.enum(['published', 'hidden', 'draft']),
-
-      // What the work was
-      engagement: z.enum(['client', 'contract', 'personal']).optional(),
-      services: z.array(z.string()).default([]),
-      collaborators: z
-        .array(z.object({ name: z.string(), role: z.string().optional() }))
-        .default([]),
-      intermediary: z.object({ name: z.string(), url: z.url().optional() }).optional(),
-
-      // Where it lives, and when (only where known)
-      url: z.url().optional(),
-      startDate: z.coerce.date().optional(),
-      endDate: z.coerce.date().optional(),
-
-      // Results: any number of stats, including none
-      stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
-
-      // Media and social proof
-      images: z.array(media).default([]),
+// Independent of projects; may optionally point at one by slug.
+const testimonials = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/testimonials' }),
+  schema: z
+    .object({
+      author: z.string(),
+      role: z.string().optional(),
+      organization: z.string().optional(),
+      relationship: z.string().optional(), // how the author relates to the work/context
+      quote: z.string().optional(),
+      image: z.string().optional(), // author photo (see media note above)
       video: video.optional(),
-      testimonials: z.array(testimonial).default([]),
-
-      // Presentation
-      featured: z.boolean().default(false),
-      order: z.number().optional(),
-      seo: seo.optional(),
-    });
-  },
+      project: reference('projects').optional(),
+      status,
+      legacy: z.object({ notes: z.array(z.string()).default([]) }).optional(),
+    })
+    .refine((t) => t.quote || t.video, {
+      message: 'A testimonial needs a quote, a video, or both.',
+    }),
 });
 
 // --- books --------------------------------------------------------------------
 
 const books = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/books' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      author: z.string().optional(),
-      cover: image().optional(),
-      status: z.enum(reading),
-      order: z.number().optional(), // preserves a hand-set sequence where one matters
-      rating: z.number().int().min(1).max(5).optional(),
-      startedDate: z.coerce.date().optional(),
-      finishedDate: z.coerce.date().optional(),
-      // Notes go in the Markdown body; an individual page can be added later
-      // without changing this schema.
-    }),
+  schema: z.object({
+    // Optional only because one legacy cover carries no title anywhere in the export.
+    title: z.string().optional(),
+    author: z.string().optional(),
+    cover: z.string().optional(), // see media note above
+    status: z.enum(reading),
+    order: z.number().optional(), // position in the legacy page order
+    rating: z.number().int().min(1).max(5).optional(),
+    startedDate: z.coerce.date().optional(),
+    finishedDate: z.coerce.date().optional(),
+    // Notes go in the Markdown body; an individual page can be added later
+    // without changing this schema.
+  }),
 });
 
 // --- games --------------------------------------------------------------------
 
 const games = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/games' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      cover: image().optional(),
-      status: z.enum(playing),
-      order: z.number().optional(),
-      rating: z.number().int().min(1).max(5).optional(),
-      startedDate: z.coerce.date().optional(),
-      finishedDate: z.coerce.date().optional(),
-    }),
+  schema: z.object({
+    title: z.string(),
+    cover: z.string().optional(),
+    status: z.enum(playing),
+    order: z.number().optional(),
+    rating: z.number().int().min(1).max(5).optional(),
+    startedDate: z.coerce.date().optional(),
+    finishedDate: z.coerce.date().optional(),
+  }),
 });
 
 // --- notes and writing (intentionally simple) -----------------------------------
@@ -155,4 +181,4 @@ const writing = defineCollection({
   }),
 });
 
-export const collections = { projects, books, games, notes, writing };
+export const collections = { projects, testimonials, books, games, notes, writing };
