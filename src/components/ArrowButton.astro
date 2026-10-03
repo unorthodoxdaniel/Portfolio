@@ -1,0 +1,106 @@
+---
+/*
+  White call-to-action link with an offset outline and an arrow that slides on hover.
+  Used for "Start a project" (large), "Let's talk" and "Learn more" (small).
+*/
+interface Props {
+  href: string;
+  size?: 'small' | 'large';
+}
+
+const { href, size = 'small' } = Astro.props;
+const arrow = size === 'large' ? '/images/Arrow-3.svg' : '/images/Arrow-2-1.svg';
+---
+
+<a class:list={['arrow-button', size]} href={href}>
+  <span class="outline" aria-hidden="true"></span>
+  <span class="label"><slot /></span>
+  <img class="arrow" src={arrow} alt="" />
+</a>
+
+<style>
+  .arrow-button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #111;
+    background-color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  /* White frame offset down and to the right of the button. */
+  .outline {
+    position: absolute;
+    bottom: -10%;
+    left: 3%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    border-radius: 4px;
+  }
+
+  .label {
+    position: relative;
+  }
+
+  .arrow {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-button:hover .arrow,
+  .arrow-button:focus-visible .arrow {
+    transform: translateX(70%);
+  }
+
+  .small {
+    width: 8rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .small .arrow {
+    width: 11px;
+    height: auto;
+  }
+
+  .large {
+    width: 20rem;
+    padding: 1rem 1.5rem;
+    color: #000;
+    border: 2px solid #000;
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 991px) {
+    .small {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .small {
+      padding-inline: 1rem;
+    }
+
+    .large {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .large {
+      width: 17rem;
+      padding: 1.5rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .arrow {
+      transition: none;
+    }
+  }
+</style>

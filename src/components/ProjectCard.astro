@@ -1,0 +1,229 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { assetUrl, posterUrl, videoMime } from '../lib/media';
+import ArrowButton from './ArrowButton.astro';
+import ProjectStats from './ProjectStats.astro';
+import Testimonial from './Testimonial.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  testimonials?: CollectionEntry<'testimonials'>[];
+  /** Whether to show the "Visit Website" link when the project has a url. */
+  showUrl?: boolean;
+  /** Load the media immediately instead of lazily (for the first card on the page). */
+  priority?: boolean;
+}
+
+const { project, testimonials = [], showUrl = true, priority = false } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+
+const image = data.images[0];
+const video = data.video;
+// Some legacy descriptions end in a blank (zero-width) line before the link and some do not.
+// Add the missing space so "Visit Website" sits one line below the text in every card.
+// Remove this once the copy's trailing whitespace is cleaned up.
+const endsWithBlankLine = /\u200d\s*$/.test(project.body ?? '');
+const clientLine = data.client
+  ? `Client: ${data.client}${data.intermediary ? ` (through ${data.intermediary.name})` : ''}`
+  : undefined;
+---
+
+<article class="project">
+  <div class="media">
+    {
+      image ? (
+        <div class="frame image">
+          <img src={assetUrl(image.src)} alt={image.alt} loading={priority ? 'eager' : 'lazy'} />
+        </div>
+      ) : (
+        video && (
+          <div class="frame video">
+            <video autoplay loop muted playsinline poster={posterUrl(video)}>
+              {video.sources.map((src) => (
+                <source src={src} type={videoMime(src)} />
+              ))}
+            </video>
+          </div>
+        )
+      )
+    }
+  </div>
+
+  <div class="summary">
+    <h3 class="headline">{data.headline ?? data.title}</h3>
+    {clientLine && <p class="client">{clientLine}</p>}
+    <ProjectStats stats={data.stats} />
+    <p class="prompt">Want something like this?</p>
+    <div>
+      <ArrowButton href="/contact">Let's talk</ArrowButton>
+    </div>
+  </div>
+
+  <div class="description">
+    <div class="prose"><Content /></div>
+    {
+      showUrl && data.url && (
+        <a class:list={['visit', { spaced: !endsWithBlankLine }]} href={data.url}>
+          Visit Website
+        </a>
+      )
+    }
+  </div>
+
+  <div class="testimonials">
+    {testimonials.map((testimonial) => <Testimonial testimonial={testimonial} />)}
+  </div>
+</article>
+
+<style>
+  .project {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+    row-gap: 3rem;
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-block: 4rem 3rem;
+  }
+
+  .media {
+    grid-column: span 7;
+  }
+
+  .summary {
+    grid-column: span 5;
+  }
+
+  .description,
+  .testimonials {
+    grid-column: span 6;
+  }
+
+  .frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .frame.image {
+    aspect-ratio: 100 / 58;
+  }
+
+  .frame.video {
+    aspect-ratio: 100 / 61;
+    box-shadow: 4px 20px 20px 20px #0003;
+  }
+
+  .frame img,
+  .frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .headline {
+    font-size: 2rem;
+  }
+
+  .client {
+    color: #a6a6a6;
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* legacy used a div here, so it kept the body's line height rather than the global p one */
+    line-height: inherit;
+  }
+
+  .prompt {
+    color: #fff;
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 120%;
+    text-align: left;
+  }
+
+  .prose {
+    color: #ccc;
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .prose :global(p) {
+    font-size: inherit;
+    line-height: inherit;
+    /* the source copy uses single line breaks inside paragraphs; keep them */
+    white-space: pre-line;
+  }
+
+  .prose :global(p + p) {
+    margin-top: 1.3em;
+  }
+
+  .prose :global(strong) {
+    font-weight: 700;
+  }
+
+  .visit {
+    display: inline-block;
+    color: #fff;
+  }
+
+  .visit.spaced {
+    margin-top: calc(0.875rem * 1.3);
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 991px) {
+    .media,
+    .summary,
+    .description,
+    .testimonials {
+      grid-column: span 12;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .project {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      width: 85%;
+      padding-block: 3rem 4rem;
+    }
+
+    .headline {
+      font-size: 1.5rem;
+    }
+
+    .client {
+      font-size: 1.2rem;
+    }
+
+    .summary,
+    .description,
+    .testimonials {
+      width: 100%;
+    }
+  }
+</style>

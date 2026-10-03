@@ -1,0 +1,50 @@
+---
+import ArrowButton from './ArrowButton.astro';
+
+interface Props {
+  title: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const { title, ctaLabel, ctaHref } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>{title}</h1>
+    <div class="intro"><slot /></div>
+    {
+      ctaLabel && ctaHref && (
+        <div class="cta">
+          <ArrowButton href={ctaHref} size="large">
+            {ctaLabel}
+          </ArrowButton>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  h1 {
+    font-size: 4rem;
+  }
+
+  .intro {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+
+  @media screen and (max-width: 479px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    /* the large call to action is not shown on small phones */
+    .cta {
+      display: none;
+    }
+  }
+</style>

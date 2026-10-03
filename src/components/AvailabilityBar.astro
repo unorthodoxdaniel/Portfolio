@@ -1,0 +1,140 @@
+---
+/* Strip under the nav: availability status and a click-to-copy email address. */
+const email = 'hello@danielabudu.com';
+---
+
+<section class="availability-bar">
+  <div class="inner">
+    <a class="availability" href="/contact">
+      <span class="indicator" aria-hidden="true"></span>
+      <span>Available for work</span>
+    </a>
+    <button class="copy-email" type="button" data-email={email} aria-label={`Copy email address ${email}`}>
+      <span class="text">{email}</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m0 16H8V7h11z"
+        ></path>
+      </svg>
+    </button>
+    <span class="sr-only" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
+<style>
+  .availability-bar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem 0;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #000;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+
+  .availability {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .indicator {
+    width: 1rem;
+    height: 1rem;
+    background-color: #2cb946;
+    border-radius: 50%;
+  }
+
+  .copy-email {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 767px) {
+    .inner {
+      flex-direction: column;
+      width: 25rem;
+    }
+
+    .copy-email {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .availability-bar {
+      padding-inline: 0;
+    }
+
+    .inner {
+      width: 85%;
+    }
+  }
+</style>
+
+<script>
+  // Click-to-copy: copies the address, then briefly swaps the text for a confirmation.
+  const button = document.querySelector<HTMLButtonElement>('.copy-email');
+  const text = button?.querySelector<HTMLElement>('.text');
+  const status = document.querySelector<HTMLElement>('.availability-bar [role="status"]');
+
+  button?.addEventListener('click', async () => {
+    const email = button.dataset.email;
+    if (!email || !text) return;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      // The async Clipboard API can be unavailable or denied (embedded browsers, some contexts);
+      // the legacy script fell back to the older copy command, so this does too.
+      const field = document.createElement('textarea');
+      field.value = email;
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      const copied = document.execCommand('copy');
+      field.remove();
+      if (!copied) return;
+    }
+    const original = text.textContent;
+    text.textContent = 'Email Copied!';
+    if (status) status.textContent = 'Email Copied!';
+    setTimeout(() => {
+      text.textContent = original;
+      if (status) status.textContent = '';
+    }, 1000);
+  });
+</script>

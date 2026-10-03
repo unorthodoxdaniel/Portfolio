@@ -1,25 +1,165 @@
 /*
   Global stylesheet entry point — imported once, by BaseLayout.astro.
 
-  Layer order: later layers win. Component/page styles that are not in a layer
+  Layer order: later layers win. Component styles that are not in a layer
   always beat everything here, so they never need !important.
+
+  Values are translated from the legacy Webflow stylesheet (daniel-abudu.webflow.css)
+  so the Astro homepage matches the existing site. They are intentionally literal for
+  now; design tokens will be extracted in a later, deliberate step.
 */
 @layer reset, base;
 
 @import './reset.css' layer(reset);
 
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
-  /*
-    Placeholder tokens only. The legacy site's real design tokens (colours,
-    type scale, spacing) will be extracted deliberately in a later step, not
-    carried over from the Webflow CSS now.
-  */
   :root {
-    --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --color-bg: #000;
+    --color-text: #fff;
+    --color-text-muted: #ccc;
+    --color-text-subtle: #a6a6a6;
+    --font-sans: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --max-width: 80rem;
   }
 
   body {
     font-family: var(--font-sans);
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    text-rendering: optimizeLegibility;
+    text-wrap: balance;
+    word-break: break-word;
+  }
+
+  ::selection {
+    color: #000;
+    background: #f8a68a;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.032em;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 120%;
+  }
+
+  h2 {
+    font-size: 4rem;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-size: 4rem;
+    line-height: 130%;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* Shared page-width wrapper used by hero, project list and footer sections. */
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+  }
+
+  /* Intro-style section: used by the page hero and the About teaser. */
+  .hero {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 2rem 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    .hero {
+      padding-top: 8rem;
+    }
+
+    h2,
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    .container {
+      width: 25rem;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 150%;
+    }
+
+    .container {
+      width: 85%;
+    }
+
+    .hero {
+      padding-top: 4rem;
+      padding-inline: 0;
+    }
   }
 }

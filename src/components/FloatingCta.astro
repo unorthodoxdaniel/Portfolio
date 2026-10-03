@@ -1,0 +1,36 @@
+---
+/* Fixed "Let's Work Together" link: bottom-right on desktop, full-width bar on small phones. */
+---
+
+<a class="floating-cta" href="/contact">
+  <span>Let's Work Together</span>
+  <img src="/images/Arrow-3.svg" alt="" />
+</a>
+
+<style>
+  .floating-cta {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 479px) {
+    .floating-cta {
+      left: 0;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+      font-size: 1.2rem;
+      border-top: 1px solid #fff;
+    }
+  }
+</style>
