@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AvailabilityBar from '../components/AvailabilityBar.astro';
 import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import AboutTeaser from '../components/AboutTeaser.astro';
+import PhotoIntro from '../components/PhotoIntro.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 // Published projects, in their existing order.
@@ -58,7 +58,7 @@ const hideVisitLink = new Set(['jensen-and-jensen']);
     }
   </section>
 
-  <AboutTeaser
+  <PhotoIntro
     heading="A Bit About Me"
     ctaLabel="Learn more"
     ctaHref="/about"
@@ -69,7 +69,7 @@ const hideVisitLink = new Set(['jensen-and-jensen']);
     }}
   >
     <p>I partner with marketing teams and founders to create web experiences they can truly own and control. As a Certified Webflow Expert, I combine design skills with technical expertise to build websites that drive business growth and ROI.</p>
-  </AboutTeaser>
+  </PhotoIntro>
 
   <SiteFooter />
 </BaseLayout>

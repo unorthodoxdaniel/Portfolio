@@ -109,8 +109,9 @@
     margin-inline: auto;
   }
 
-  /* Intro-style section: used by the page hero and the About teaser. */
-  .hero {
+  /* Intro-style section: used by the page hero, the photo intro and About page sections. */
+  .hero,
+  .about-section {
     display: flex;
     justify-content: center;
     padding: 5rem 2rem 0;
@@ -121,7 +122,8 @@
       font-size: 3rem;
     }
 
-    .hero {
+    .hero,
+    .about-section {
       padding-top: 8rem;
     }
 
@@ -157,7 +159,8 @@
       width: 85%;
     }
 
-    .hero {
+    .hero,
+    .about-section {
       padding-top: 4rem;
       padding-inline: 0;
     }
