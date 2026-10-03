@@ -132,6 +132,9 @@ const books = defineCollection({
     title: z.string().optional(),
     author: z.string().optional(),
     cover: z.string().optional(), // see media note above
+    // Presentation hint carried over from the legacy page: a few covers were shown whole
+    // (letterboxed) instead of cropped to fill their cell. Unset means crop to fill.
+    coverFit: z.enum(['cover', 'contain']).optional(),
     status: z.enum(reading),
     order: z.number().optional(), // position in the legacy page order
     rating: z.number().int().min(1).max(5).optional(),

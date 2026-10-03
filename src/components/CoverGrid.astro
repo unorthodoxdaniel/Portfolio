@@ -1,0 +1,103 @@
+---
+/*
+  Responsive grid of cover images (books, and later games).
+  Five columns on desktop, three on tablets, two on phones.
+  "portrait" cells are 2:3; "square" cells are 1:1. Covers are cropped to fill their cell
+  unless an item asks to be shown whole ("contain").
+*/
+import { assetUrl } from '../lib/media';
+
+interface Item {
+  title?: string;
+  cover?: string;
+  fit?: 'cover' | 'contain';
+}
+
+interface Props {
+  items: Item[];
+  shape?: 'portrait' | 'square';
+}
+
+const { items, shape = 'portrait' } = Astro.props;
+---
+
+<div class="cover-grid">
+  <div class="container">
+    <ul class={shape}>
+      {
+        items.map((item) => (
+          <li>
+            {item.cover && (
+              <img
+                src={assetUrl(item.cover)}
+                alt={item.title ?? ''}
+                loading="lazy"
+                class:list={{ contain: item.fit === 'contain' }}
+              />
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .cover-grid {
+    padding-inline: 2rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* two rows, as in the legacy grid; further rows are created automatically */
+    grid-template-rows: auto auto;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+  }
+
+  .portrait li {
+    aspect-ratio: 2 / 3;
+  }
+
+  .square li {
+    aspect-ratio: 1;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  img.contain {
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 991px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .cover-grid {
+      padding-inline: 0;
+    }
+  }
+</style>
