@@ -1,0 +1,25 @@
+/*
+  Global stylesheet entry point — imported once, by BaseLayout.astro.
+
+  Layer order: later layers win. Component/page styles that are not in a layer
+  always beat everything here, so they never need !important.
+*/
+@layer reset, base;
+
+@import './reset.css' layer(reset);
+
+@layer base {
+  /*
+    Placeholder tokens only. The legacy site's real design tokens (colours,
+    type scale, spacing) will be extracted deliberately in a later step, not
+    carried over from the Webflow CSS now.
+  */
+  :root {
+    --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+}
